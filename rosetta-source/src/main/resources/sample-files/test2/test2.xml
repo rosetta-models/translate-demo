@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--  -->
+<a xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="test2.xsd test2.xsd">
+	<b>
+		<c>
+		FISH
+		</c>
+	</b>
+	<d>
+		<e>
+			CHIPS
+		</e>
+	</d>
+</a>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="a">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="b">
+					<xs:complexType>
+						<xs:all>
+							<xs:element name="c" type="xs:string" />
+						</xs:all>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name = "d">
+					<xs:complexType>
+						<xs:all>
+							<xs:element name="e" type="xs:string" />
+						</xs:all>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
