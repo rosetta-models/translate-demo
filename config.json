@@ -1,8 +1,8 @@
 
 {
-    "id":"DEMO",
-    "name":"DEMO",
-    "description":"Demonstration project",
+    "id":"TRANSLATE_DEMO",
+    "name":"TRANSLATE_DEMO",
+    "description":"Demonstration Translate project",
     "modelPath":"rosetta-source/src/main",
     "permissions":[
         ""
@@ -12,11 +12,11 @@
     "dependencyArtifact":{
         "groupId":"com.regnosys",
         "artifactId":"core-cdm-dependencies",
-        "version":"2.90.3"
+        "version":"2.168.1"
     },
     "modelArtifacts":[
         {
-            "groupId":"com.regnosys.demo",
+            "groupId":"com.regnosys.translate-demo",
             "artifactId":"rosetta-source",
             "version":"0.0.1"
         }
