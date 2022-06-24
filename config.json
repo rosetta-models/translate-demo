@@ -2,10 +2,9 @@
 {
     "id":"TRANSLATE-DEMO",
     "name":"TRANSLATE-DEMO",
-    "description":"Demonstration Translate project",
+    "description":"Demonstration Translate Project",
     "modelPath":"rosetta-source/src/main",
     "permissions":[
-        ""
     ],
     "lowestVersion":"0.0.1",
     "parentReadOnly":false,
