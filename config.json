@@ -1,7 +1,7 @@
 
 {
-    "id":"TRANSLATE_DEMO",
-    "name":"TRANSLATE_DEMO",
+    "id":"TRANSLATE-DEMO",
+    "name":"TRANSLATE-DEMO",
     "description":"Demonstration Translate project",
     "modelPath":"rosetta-source/src/main",
     "permissions":[
