@@ -5,7 +5,7 @@
     <parent>
         <artifactId>translate-demo</artifactId>
         <groupId>com.regnosys.model</groupId>
-        <version>0.0.0.master</version>
+        <version>0.0.3</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -16,7 +16,7 @@
         <dependency>
             <groupId>com.regnosys.model.translate-demo</groupId>
             <artifactId>rosetta-source</artifactId>
-            <version>0.0.0.master</version>
+            <version>0.0.3</version>
         </dependency>
 
         <dependency>
@@ -46,7 +46,7 @@
         <dependency>
             <groupId>com.regnosys.model.translate-demo</groupId>
             <artifactId>rosetta-source</artifactId>
-            <version>0.0.0.master</version>
+            <version>0.0.3</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
