@@ -1,2 +1,0 @@
-namespace demo.types
-version "${project.version}"

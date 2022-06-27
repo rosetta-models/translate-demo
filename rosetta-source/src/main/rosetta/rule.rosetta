@@ -1,2 +1,0 @@
-namespace demo.emissionsrules
-version "${project.version}"

@@ -14,14 +14,14 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.regnosys</groupId>
-            <artifactId>rosetta-translate</artifactId>
+            <groupId>com.regnosys.model.translate-demo</groupId>
+            <artifactId>rosetta-source</artifactId>
+            <version>0.0.0.master</version>
         </dependency>
 
         <dependency>
-            <groupId>com.regnosys.model.demo</groupId>
-            <artifactId>rosetta-source</artifactId>
-            <version>${version}</version>
+            <groupId>com.regnosys</groupId>
+            <artifactId>rosetta-translate</artifactId>
         </dependency>
 
         <dependency>
@@ -42,6 +42,12 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.regnosys.model.translate-demo</groupId>
+            <artifactId>rosetta-source</artifactId>
+            <version>0.0.0.master</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
