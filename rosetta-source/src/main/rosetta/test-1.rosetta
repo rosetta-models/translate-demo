@@ -4,6 +4,7 @@ version "${project.version}"
 synonym source StructureTest_1
 
 type Top:
+	[rootType]
 	aField A1 (1..1)
 	[synonym StructureTest_1 value "a"]
 
