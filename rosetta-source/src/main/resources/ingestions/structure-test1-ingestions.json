@@ -24,7 +24,7 @@
       "xmlExclusionsFilePath": "config/translate-demo.excluded-paths.txt",
       "cdmClassesDir": "",
       "integrationTestRoots": {
-        "Top": ["cdm-sample-files/structure_test/test1"]
+        "Top": ["cdm-sample-files/structure/test1"]
       },
       "default": true,
       "childPackageName":
