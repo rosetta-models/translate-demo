@@ -1,8 +1,10 @@
 package com.regnosys;
 
 import java.io.IOException;
+import java.nio.file.CopyOption;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -25,8 +27,8 @@ public class TranslateSampleGenerator {
 
     public TranslateSampleGenerator(Path base) throws IOException {
         this.base = base;
-        expectationsTemplate = Files.readString(base.resolve(EXPECTATION_JSON_TEMPLATE));
-        ingestionTemplate = Files.readString(base.resolve(INGESTIONS_JSON_TEMPLATE));
+        expectationsTemplate = Files.readString(base.resolve("test-generation").resolve(EXPECTATION_JSON_TEMPLATE));
+        ingestionTemplate = Files.readString(base.resolve("test-generation").resolve(INGESTIONS_JSON_TEMPLATE));
 
     }
 
@@ -61,22 +63,21 @@ public class TranslateSampleGenerator {
     }
 
     void writeSchema(SampleSet sampleSet) throws IOException {
+        Path schemas = Files.createDirectories(base.resolve("schemas").resolve(sampleSet.categoryName)
+                .resolve(sampleSet.testName));
         Files.copy(sampleSet.xdsFile,
-                base.resolve("schemas").resolve(sampleSet.categoryName).resolve(sampleSet.testName)
-                        .resolve(sampleSet.xdsFile.getFileName().toString()));
+                schemas.resolve(sampleSet.xdsFile.getFileName().toString()), StandardCopyOption.REPLACE_EXISTING);
     }
 
     void writeXMLSamples(SampleSet sampleSet) throws IOException {
-
+        Path testDir = Files.createDirectories(base.resolve("cdm-sample-files").resolve(sampleSet.categoryName)
+                .resolve(sampleSet.testName));
         for (Path xmlFile : sampleSet.xmlFiles) {
             Files.copy(xmlFile,
-                    base.resolve("cdm-sample-files").resolve(sampleSet.categoryName).resolve(sampleSet.testName)
-                            .resolve(xmlFile.getFileName().toString()));
+                    testDir.resolve(xmlFile.getFileName().toString()), StandardCopyOption.REPLACE_EXISTING);
         }
 
-        Path expectationsPath = base.resolve("cdm-sample-files").resolve(sampleSet.categoryName)
-                .resolve(sampleSet.testName)
-                .resolve("expectations.json");
+        Path expectationsPath = testDir.resolve("expectations.json");
 
         String expectations = sampleSet.xmlFiles.stream()
                 .map(xmlSample ->
@@ -92,23 +93,24 @@ public class TranslateSampleGenerator {
 
     void writeIngestionJson(SampleSet sampleSet) throws IOException {
 
-        Path ingestionPath = base.resolve("ingestions").resolve(sampleSet.categoryName)
+        Path ingestions = Files.createDirectories(base.resolve("ingestions").resolve(sampleSet.categoryName));
+        Path ingestionPath = ingestions
                 .resolve(sampleSet.categoryName + sampleSet.testName + "-ingestions.json");
 
         String ingestionsJson = ingestionTemplate
                 .replace($CATEGORY_NAME$, sampleSet.categoryName)
                 .replace($TEST_NAME$, sampleSet.testName)
                 .replace($SYNONYM_NAME$, sampleSet.getSynonymName())
-                .replace($ROOT_TYPE$, "Root")
-                ;
+                .replace($ROOT_TYPE$, "Root");
 
         Files.write(ingestionPath, ingestionsJson.getBytes());
     }
 
-    void writeRosetta( SampleSet sampleSet) throws IOException {
+    void writeRosetta(SampleSet sampleSet) throws IOException {
         Files.copy(sampleSet.rosettaFile,
-                base.resolve("schemas").resolve(sampleSet.categoryName).resolve(sampleSet.testName)
-                        .resolve(sampleSet.rosettaFile.getFileName().toString()));
+                base.getParent().resolve("rosetta")
+                        .resolve(sampleSet.categoryName + "-" + sampleSet.rosettaFile.getFileName()
+                                .toString()), StandardCopyOption.REPLACE_EXISTING);
     }
 
     void writeUnitTest(SampleSet sampleSet) {
