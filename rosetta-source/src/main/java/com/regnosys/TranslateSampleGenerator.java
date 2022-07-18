@@ -1,7 +1,8 @@
 package com.regnosys;
 
+import com.google.common.base.CaseFormat;
+
 import java.io.IOException;
-import java.nio.file.CopyOption;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
@@ -13,7 +14,10 @@ public class TranslateSampleGenerator {
 
     public static final String EXPECTATION_JSON_TEMPLATE = "expectation.json.template";
     public static final String INGESTIONS_JSON_TEMPLATE = "ingestion.json.template";
+    public static final String UNIT_TEST_JAVA_TEMPLATE = "ingestion-test.java.template";
 
+    public static final String $UNIT_TEST_NAME$ = "$UNIT_TEST_NAME$";
+    public static final String $NAMESPACE$ = "$NAMESPACE$";
     public static final String $CATEGORY_NAME$ = "$CATEGORY_NAME$";
     public static final String $TEST_NAME$ = "$TEST_NAME$";
     public static final String $TEST_SAMPLE_NAME$ = "$TEST_SAMPLE_NAME$";
@@ -24,12 +28,13 @@ public class TranslateSampleGenerator {
     private final Path base;
     private final String expectationsTemplate;
     private final String ingestionTemplate;
+    private final String unitTestTemplate;
 
     public TranslateSampleGenerator(Path base) throws IOException {
         this.base = base;
         expectationsTemplate = Files.readString(base.resolve("test-generation").resolve(EXPECTATION_JSON_TEMPLATE));
         ingestionTemplate = Files.readString(base.resolve("test-generation").resolve(INGESTIONS_JSON_TEMPLATE));
-
+        unitTestTemplate = Files.readString(base.resolve("test-generation").resolve(UNIT_TEST_JAVA_TEMPLATE));
     }
 
     public List<SampleSet> sampleSets(Path testGenerationBase) throws IOException {
@@ -63,8 +68,7 @@ public class TranslateSampleGenerator {
     }
 
     void writeSchema(SampleSet sampleSet) throws IOException {
-        Path schemas = Files.createDirectories(base.resolve("schemas").resolve(sampleSet.categoryName)
-                .resolve(sampleSet.testName));
+        Path schemas = Files.createDirectories(base.resolve("schemas").resolve(sampleSet.categoryName));
         Files.copy(sampleSet.xdsFile,
                 schemas.resolve(sampleSet.xdsFile.getFileName().toString()), StandardCopyOption.REPLACE_EXISTING);
     }
@@ -86,18 +90,19 @@ public class TranslateSampleGenerator {
                                 .replace($TEST_NAME$, sampleSet.testName)
                                 .replace($TEST_SAMPLE_NAME$, xmlSample.getFileName().toString())
                 )
-                .collect(Collectors.joining(",", "[", "]"));
+                .collect(Collectors.joining(",\n", "[", "]"));
 
         Files.write(expectationsPath, expectations.getBytes());
     }
 
     void writeIngestionJson(SampleSet sampleSet) throws IOException {
 
-        Path ingestions = Files.createDirectories(base.resolve("ingestions").resolve(sampleSet.categoryName));
+        Path ingestions = Files.createDirectories(base.resolve("ingestions"));
         Path ingestionPath = ingestions
-                .resolve(sampleSet.categoryName + sampleSet.testName + "-ingestions.json");
+                .resolve(sampleSet.categoryName + "-" + sampleSet.testName + "-ingestions.json");
 
         String ingestionsJson = ingestionTemplate
+                .replace($NAMESPACE$, sampleSet.getNamespace())
                 .replace($CATEGORY_NAME$, sampleSet.categoryName)
                 .replace($TEST_NAME$, sampleSet.testName)
                 .replace($SYNONYM_NAME$, sampleSet.getSynonymName())
@@ -113,8 +118,19 @@ public class TranslateSampleGenerator {
                                 .toString()), StandardCopyOption.REPLACE_EXISTING);
     }
 
-    void writeUnitTest(SampleSet sampleSet) {
+    void writeUnitTest(SampleSet sampleSet) throws IOException {
+        Path testPath = Files.createDirectories(base.resolve("../../../../tests/src/test/java/demo/translate"));
+        Path unitTestPath = testPath.resolve(sampleSet.getUnitTestName() + ".java");
 
+        String unitTestJava = unitTestTemplate
+                .replace($UNIT_TEST_NAME$, sampleSet.getUnitTestName())
+                .replace($NAMESPACE$, sampleSet.getNamespace())
+                .replace($CATEGORY_NAME$, sampleSet.categoryName)
+                .replace($TEST_NAME$, sampleSet.testName)
+                .replace($SYNONYM_NAME$, sampleSet.getSynonymName())
+                .replace($ROOT_TYPE$, "Root");
+
+        Files.write(unitTestPath, unitTestJava.getBytes());
     }
 
     public static void main(String[] args) throws IOException {
@@ -130,7 +146,7 @@ public class TranslateSampleGenerator {
             translateSampleGenerator.writeIngestionJson(sampleSet);
             translateSampleGenerator.writeRosetta(sampleSet);
             translateSampleGenerator.writeXMLSamples(sampleSet);
-            translateSampleGenerator.writeIngestionJson(sampleSet);
+            translateSampleGenerator.writeUnitTest(sampleSet);
         }
     }
 
@@ -150,7 +166,17 @@ public class TranslateSampleGenerator {
         }
 
         public String getSynonymName() {
-            return (categoryName + "_" + testName).toUpperCase();
+            return (categoryName + "_" + testName).toUpperCase().replace("-", "_");
+        }
+
+        public String getNamespace() {
+            return ("demo.translate." + categoryName + "." + testName).toLowerCase().replace("-", "_");
+        }
+
+        public String getUnitTestName() {
+            return (CaseFormat.LOWER_HYPHEN.to(CaseFormat.UPPER_CAMEL, categoryName)
+                    + CaseFormat.LOWER_HYPHEN.to(CaseFormat.UPPER_CAMEL, testName)
+                    + "IngestionTest");
         }
     }
 }

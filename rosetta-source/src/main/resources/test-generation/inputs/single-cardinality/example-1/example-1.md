@@ -1,0 +1,1 @@
+Map single cardinality complex object using value syntax

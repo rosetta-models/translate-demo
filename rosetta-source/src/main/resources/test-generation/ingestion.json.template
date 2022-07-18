@@ -7,7 +7,7 @@
       "modelFileDirIncludeRegex": ".*\\.rosetta",
       "modelFileDirExcludeRegex": null,
       "rosettaClasses": ["$ROOT_TYPE$"],
-      "generatedPackage": "$CATEGORY_NAME$.$TEST_NAME$",
+      "generatedPackage": "$NAMESPACE$",
       "generatedFactoryName": "$SYNONYM_NAME$XmlHandlerFactory",
       "xsdFilePaths": {
         "$ROOT_TYPE$": "schemas/$CATEGORY_NAME$/$TEST_NAME$.xsd"
@@ -16,7 +16,7 @@
           "$ROOT_TYPE$": ["$SYNONYM_NAME$"]
       },
       "topLevelTags": {
-        "$ROOT_TYPE$": ["$ROOT_TYPE$"]
+        "$ROOT_TYPE$": ["root"]
       },
       "verbose": false,
       "clean": false,
@@ -29,9 +29,9 @@
       "default": true,
       "childPackageName":
         {
-          "$ROOT_TYPE$": "$CATEGORY_NAME$.$TEST_NAME$"
+          "$ROOT_TYPE$": "root"
         },
-      "fullClassnames": { "$ROOT_TYPE$": "$CATEGORY_NAME$.$TEST_NAME$.$ROOT_TYPE$" }
+      "fullClassnames": { "$ROOT_TYPE$": "$NAMESPACE$.$ROOT_TYPE$" }
     }
   }
 }
