@@ -16,7 +16,7 @@
           "Root": ["SINGLE_CARDINALITY_EXAMPLE_1"]
       },
       "topLevelTags": {
-        "Root": ["root"]
+        "Root": ["dataDocument"]
       },
       "verbose": false,
       "clean": false,

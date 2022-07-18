@@ -5,12 +5,12 @@ synonym source SINGLE_CARDINALITY_EXAMPLE_1
 
 type Root:
     [rootType]
-	aField A1 (1..1)
-	[synonym SINGLE_CARDINALITY_EXAMPLE_1 value "a"]
+	wField W1 (1..1)
+	    [synonym SINGLE_CARDINALITY_EXAMPLE_1 value "a"]
 
-type A1 :
+type W1:
 	xField X1 (1..1)
 
-type X1 :
-	bField string (1..1)
-	[synonym SINGLE_CARDINALITY_EXAMPLE_1 value "b"]
+type X1:
+	yField string (1..1)
+	    [synonym SINGLE_CARDINALITY_EXAMPLE_1 value "b"]

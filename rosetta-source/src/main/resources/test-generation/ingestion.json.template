@@ -16,7 +16,7 @@
           "$ROOT_TYPE$": ["$SYNONYM_NAME$"]
       },
       "topLevelTags": {
-        "$ROOT_TYPE$": ["root"]
+        "$ROOT_TYPE$": ["dataDocument"]
       },
       "verbose": false,
       "clean": false,
