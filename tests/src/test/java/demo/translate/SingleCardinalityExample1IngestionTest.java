@@ -1,4 +1,4 @@
-package com.regnosys.ingestion.test;
+package demo.translate;
 
 import com.regnosys.granite.ingestor.ExpectationUtil;
 import com.regnosys.granite.ingestor.IngestionTest;
@@ -13,9 +13,9 @@ import java.net.URL;
 import java.util.*;
 import java.util.stream.Stream;
 
-public class StructureTest1IngestionTest extends IngestionTest<structure.test1.Top> {
+public class SingleCardinalityExample1IngestionTest extends IngestionTest<demo.translate.single_cardinality.example_1.Root> {
 
-    private static final String SAMPLE_FILES_DIR = "cdm-sample-files/structure/test1";
+    private static final String SAMPLE_FILES_DIR = "cdm-sample-files/single-cardinality/example-1";
 
     private static IngestionService ingestionService;
 
@@ -23,18 +23,18 @@ public class StructureTest1IngestionTest extends IngestionTest<structure.test1.T
     static void setup() {
         writeActualExpectations = ExpectationUtil.WRITE_EXPECTATIONS;
 
-        ClassLoader cl = StructureTest1IngestionTest.class.getClassLoader();
+        ClassLoader cl = SingleCardinalityExample1IngestionTest.class.getClassLoader();
         Collection<URL> ingestURLs = List.of(
-                Objects.requireNonNull(cl.getResource("ingestions/structure-test1-ingestions.json")));
+                Objects.requireNonNull(cl.getResource("ingestions/single-cardinality-example-1-ingestions.json")));
         ModelRuntimeModule runtimeModule = new ModelRuntimeModule();
         initialiseIngestionFactory(ingestURLs, runtimeModule, new ArrayList<>(IngestionTestUtil.getPostProcessors(runtimeModule)));
         IngestionFactory factory = IngestionFactory.getInstance();
-        ingestionService = factory.getService("StructureTest_1");
+        ingestionService = factory.getService("SINGLE_CARDINALITY_EXAMPLE_1");
     }
 
     @Override
-    protected Class<structure.test1.Top> getClazz() {
-        return structure.test1.Top.class;
+    protected Class<demo.translate.single_cardinality.example_1.Root> getClazz() {
+        return demo.translate.single_cardinality.example_1.Root.class;
     }
 
     @Override

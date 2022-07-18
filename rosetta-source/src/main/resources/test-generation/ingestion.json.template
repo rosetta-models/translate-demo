@@ -1,22 +1,22 @@
 {
-  "defaultTranslator": "StructureTest_1",
+  "defaultTranslator": "$SYNONYM_NAME$",
   "options": {
-    "StructureTest_1": {
-      "name": "StructureTest_1",
+    "$SYNONYM_NAME$": {
+      "name": "$SYNONYM_NAME$",
       "modelClasspath": ["model", "translate-demo/rosetta"],
       "modelFileDirIncludeRegex": ".*\\.rosetta",
       "modelFileDirExcludeRegex": null,
-      "rosettaClasses": ["Top"],
-      "generatedPackage": "structure.test1",
-      "generatedFactoryName": "StructureTest_1XmlHandlerFactory",
+      "rosettaClasses": ["$ROOT_TYPE$"],
+      "generatedPackage": "$NAMESPACE$",
+      "generatedFactoryName": "$SYNONYM_NAME$XmlHandlerFactory",
       "xsdFilePaths": {
-        "Top": "schemas/test1.xsd"
+        "$ROOT_TYPE$": "schemas/$CATEGORY_NAME$/$TEST_NAME$.xsd"
       },
       "synonymSources": {
-          "Top": ["StructureTest_1"]
+          "$ROOT_TYPE$": ["$SYNONYM_NAME$"]
       },
       "topLevelTags": {
-        "Top": ["top"]
+        "$ROOT_TYPE$": ["root"]
       },
       "verbose": false,
       "clean": false,
@@ -24,14 +24,14 @@
       "xmlExclusionsFilePath": "config/translate-demo.excluded-paths.txt",
       "cdmClassesDir": "",
       "integrationTestRoots": {
-        "Top": ["cdm-sample-files/structure/test1"]
+        "$ROOT_TYPE$": ["cdm-sample-files/$CATEGORY_NAME$/$TEST_NAME$"]
       },
       "default": true,
       "childPackageName":
         {
-          "Top": "structure.test1"
+          "$ROOT_TYPE$": "root"
         },
-      "fullClassnames": { "Top": "structure.test1.Top" }
+      "fullClassnames": { "$ROOT_TYPE$": "$NAMESPACE$.$ROOT_TYPE$" }
     }
   }
 }
