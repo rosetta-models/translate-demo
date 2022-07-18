@@ -1,19 +1,19 @@
 {
-  "defaultTranslator": "SINGLE_CARDINALITY_EXAMPLE_1",
+  "defaultTranslator": "SINGLE_CARDINALITY_EXAMPLE_2",
   "options": {
-    "SINGLE_CARDINALITY_EXAMPLE_1": {
-      "name": "SINGLE_CARDINALITY_EXAMPLE_1",
+    "SINGLE_CARDINALITY_EXAMPLE_2": {
+      "name": "SINGLE_CARDINALITY_EXAMPLE_2",
       "modelClasspath": ["model", "translate-demo/rosetta"],
       "modelFileDirIncludeRegex": ".*\\.rosetta",
       "modelFileDirExcludeRegex": null,
       "rosettaClasses": ["Root"],
-      "generatedPackage": "demo.translate.single_cardinality.example_1",
-      "generatedFactoryName": "SINGLE_CARDINALITY_EXAMPLE_1XmlHandlerFactory",
+      "generatedPackage": "demo.translate.single_cardinality.example_2",
+      "generatedFactoryName": "SINGLE_CARDINALITY_EXAMPLE_2XmlHandlerFactory",
       "xsdFilePaths": {
-        "Root": "schemas/single-cardinality/example-1.xsd"
+        "Root": "schemas/single-cardinality/example-2.xsd"
       },
       "synonymSources": {
-          "Root": ["SINGLE_CARDINALITY_EXAMPLE_1"]
+          "Root": ["SINGLE_CARDINALITY_EXAMPLE_2"]
       },
       "topLevelTags": {
         "Root": ["dataDocument"]
@@ -24,14 +24,14 @@
       "xmlExclusionsFilePath": "config/translate-demo.excluded-paths.txt",
       "cdmClassesDir": "",
       "integrationTestRoots": {
-        "Root": ["cdm-sample-files/single-cardinality/example-1"]
+        "Root": ["cdm-sample-files/single-cardinality/example-2"]
       },
       "default": true,
       "childPackageName":
         {
           "Root": "dataDocument"
         },
-      "fullClassnames": { "Root": "demo.translate.single_cardinality.example_1.Root" }
+      "fullClassnames": { "Root": "demo.translate.single_cardinality.example_2.Root" }
     }
   }
 }

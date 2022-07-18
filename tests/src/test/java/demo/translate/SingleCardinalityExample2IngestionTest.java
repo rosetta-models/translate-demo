@@ -13,10 +13,10 @@ import java.net.URL;
 import java.util.*;
 import java.util.stream.Stream;
 
-public class SingleCardinalityExample1IngestionTest extends IngestionTest<demo.translate.single_cardinality.example_1.Root> {
+public class SingleCardinalityExample2IngestionTest extends IngestionTest<demo.translate.single_cardinality.example_2.Root> {
 
-    private static final String SAMPLE_FILES_DIR = "cdm-sample-files/single-cardinality/example-1";
-    private static final String INSTANCE_NAME = "target/SINGLE_CARDINALITY_EXAMPLE_1";
+    private static final String SAMPLE_FILES_DIR = "cdm-sample-files/single-cardinality/example-2";
+    private static final String INSTANCE_NAME = "target/SINGLE_CARDINALITY_EXAMPLE_2";
 
     private static IngestionService ingestionService;
 
@@ -24,18 +24,18 @@ public class SingleCardinalityExample1IngestionTest extends IngestionTest<demo.t
     static void setup() {
         writeActualExpectations = ExpectationUtil.WRITE_EXPECTATIONS;
 
-        ClassLoader cl = SingleCardinalityExample1IngestionTest.class.getClassLoader();
+        ClassLoader cl = SingleCardinalityExample2IngestionTest.class.getClassLoader();
         Collection<URL> ingestURLs = List.of(
-                Objects.requireNonNull(cl.getResource("ingestions/single-cardinality-example-1-ingestions.json")));
+                Objects.requireNonNull(cl.getResource("ingestions/single-cardinality-example-2-ingestions.json")));
         ModelRuntimeModule runtimeModule = new ModelRuntimeModule();
         initialiseIngestionFactory(INSTANCE_NAME, ingestURLs, runtimeModule, new ArrayList<>(IngestionTestUtil.getPostProcessors(runtimeModule)));
         IngestionFactory factory = IngestionFactory.getInstance(INSTANCE_NAME);
-        ingestionService = factory.getService("SINGLE_CARDINALITY_EXAMPLE_1");
+        ingestionService = factory.getService("SINGLE_CARDINALITY_EXAMPLE_2");
     }
 
     @Override
-    protected Class<demo.translate.single_cardinality.example_1.Root> getClazz() {
-        return demo.translate.single_cardinality.example_1.Root.class;
+    protected Class<demo.translate.single_cardinality.example_2.Root> getClazz() {
+        return demo.translate.single_cardinality.example_2.Root.class;
     }
 
     @Override
