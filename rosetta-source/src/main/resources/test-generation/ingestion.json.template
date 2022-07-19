@@ -29,7 +29,7 @@
       "default": true,
       "childPackageName":
         {
-          "$ROOT_TYPE$": "root"
+          "$ROOT_TYPE$": "dataDocument"
         },
       "fullClassnames": { "$ROOT_TYPE$": "$NAMESPACE$.$ROOT_TYPE$" }
     }

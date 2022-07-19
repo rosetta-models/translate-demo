@@ -1,0 +1,1 @@
+Map two single cardinality complex objects on to single rosetta type using value and path syntax

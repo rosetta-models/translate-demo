@@ -16,6 +16,7 @@ import java.util.stream.Stream;
 public class $UNIT_TEST_NAME$ extends IngestionTest<$NAMESPACE$.$ROOT_TYPE$> {
 
     private static final String SAMPLE_FILES_DIR = "cdm-sample-files/$CATEGORY_NAME$/$TEST_NAME$";
+    private static final String INSTANCE_NAME = "target/$SYNONYM_NAME$";
 
     private static IngestionService ingestionService;
 
@@ -27,8 +28,8 @@ public class $UNIT_TEST_NAME$ extends IngestionTest<$NAMESPACE$.$ROOT_TYPE$> {
         Collection<URL> ingestURLs = List.of(
                 Objects.requireNonNull(cl.getResource("ingestions/$CATEGORY_NAME$-$TEST_NAME$-ingestions.json")));
         ModelRuntimeModule runtimeModule = new ModelRuntimeModule();
-        initialiseIngestionFactory(ingestURLs, runtimeModule, new ArrayList<>(IngestionTestUtil.getPostProcessors(runtimeModule)));
-        IngestionFactory factory = IngestionFactory.getInstance();
+        initialiseIngestionFactory(INSTANCE_NAME, ingestURLs, runtimeModule, new ArrayList<>(IngestionTestUtil.getPostProcessors(runtimeModule)));
+        IngestionFactory factory = IngestionFactory.getInstance(INSTANCE_NAME);
         ingestionService = factory.getService("$SYNONYM_NAME$");
     }
 
