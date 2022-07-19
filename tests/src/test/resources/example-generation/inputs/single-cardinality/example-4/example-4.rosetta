@@ -1,0 +1,24 @@
+namespace demo.translate.single_cardinality.example_4
+version "${project.version}"
+
+synonym source SINGLE_CARDINALITY_EXAMPLE_4
+
+type Root:
+    [rootType]
+    aField A4 (1..1)
+    	[synonym SINGLE_CARDINALITY_EXAMPLE_4 value "a"]
+
+type A4 :
+    dField string (1..1)
+        [synonym SINGLE_CARDINALITY_EXAMPLE_4 value "d" path "b"]
+    cField C4 (1..1)
+    eField E4 (1..1)
+        [synonym SINGLE_CARDINALITY_EXAMPLE_4 value "e"]
+
+type C4 :
+    dField string (1..1)
+        [synonym SINGLE_CARDINALITY_EXAMPLE_4 value "d" path "c"]
+
+type E4 :
+    dField string (1..1)
+        [synonym SINGLE_CARDINALITY_EXAMPLE_4 value "d"]

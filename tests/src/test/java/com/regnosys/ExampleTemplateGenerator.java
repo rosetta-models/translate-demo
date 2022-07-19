@@ -58,7 +58,7 @@ public class ExampleTemplateGenerator {
 
     public static void main(String[] args) throws IOException {
         String categoryName = "single-cardinality";
-        String filenameSuffix = "3";
+        String filenameSuffix = "4";
         Path basePath = Path.of("src/test/resources/example-generation");
 
         ExampleTemplateGenerator generator = new ExampleTemplateGenerator(basePath, categoryName, filenameSuffix);
