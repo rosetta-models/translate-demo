@@ -35,10 +35,10 @@ public class ExampleGenerator {
         this.mainResourcesPath = mainPath.resolve("resources");
         this.testJavaPath = testPath.resolve("java");
 
-        Path testResourcesPath = testPath.resolve("resources");
-        expectationsTemplate = Files.readString(testResourcesPath.resolve("example-generation").resolve(EXPECTATION_JSON_TEMPLATE));
-        ingestionTemplate = Files.readString(testResourcesPath.resolve("example-generation").resolve(INGESTIONS_JSON_TEMPLATE));
-        unitTestTemplate = Files.readString(testResourcesPath.resolve("example-generation").resolve(UNIT_TEST_JAVA_TEMPLATE));
+        Path templatePath = testPath.resolve("resources").resolve("example-generation");
+        expectationsTemplate = Files.readString(templatePath.resolve(EXPECTATION_JSON_TEMPLATE));
+        ingestionTemplate = Files.readString(templatePath.resolve(INGESTIONS_JSON_TEMPLATE));
+        unitTestTemplate = Files.readString(templatePath.resolve(UNIT_TEST_JAVA_TEMPLATE));
     }
 
     public List<ExampleSet> inputExampleSets(Path exampleGenerationInputsPath) throws IOException {
