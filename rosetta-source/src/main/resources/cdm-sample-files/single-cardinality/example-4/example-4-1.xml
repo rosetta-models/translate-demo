@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<dataDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="example-4.xsd example-4.xsd">
+    <a>
+        <b>
+            <d>FISH</d>
+        </b>
+        <c>
+            <d>And</d>
+        </c>
+        <e>
+            <d>CHIPS</d>
+        </e>
+    </a>
+</dataDocument>
