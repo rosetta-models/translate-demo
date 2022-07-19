@@ -1,0 +1,8 @@
+namespace $NAMESPACE$
+version "${project.version}"
+
+synonym source $SYNONYM_NAME$
+
+type $ROOT_TYPE$:
+    [rootType]
+    // add content here

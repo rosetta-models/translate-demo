@@ -24,6 +24,8 @@ public class ExampleGenerator {
     public static final String $SYNONYM_NAME$ = "$SYNONYM_NAME$";
     public static final String $ROOT_TYPE$ = "$ROOT_TYPE$";
 
+    public static final String ROOT_TYPE = "Root";
+
     private final Path mainResourcesPath;
     private final Path testJavaPath;
 
@@ -35,7 +37,10 @@ public class ExampleGenerator {
         this.mainResourcesPath = mainPath.resolve("resources");
         this.testJavaPath = testPath.resolve("java");
 
-        Path templatePath = testPath.resolve("resources").resolve("example-generation");
+        Path templatePath = testPath
+                .resolve("resources")
+                .resolve("example-generation")
+                .resolve("templates");
         expectationsTemplate = Files.readString(templatePath.resolve(EXPECTATION_JSON_TEMPLATE));
         ingestionTemplate = Files.readString(templatePath.resolve(INGESTIONS_JSON_TEMPLATE));
         unitTestTemplate = Files.readString(templatePath.resolve(UNIT_TEST_JAVA_TEMPLATE));
@@ -159,6 +164,18 @@ public class ExampleGenerator {
         }
     }
 
+    public static String getNamespace(String categoryName, String exampleName) {
+        return ("demo.translate." + categoryName + "." + exampleName)
+                .toLowerCase()
+                .replace("-", "_");
+    }
+
+    public static String getSynonymName(String categoryName, String exampleName) {
+        return (categoryName + "_" + exampleName)
+                .toUpperCase()
+                .replace("-", "_");
+    }
+
     static class ExampleSet {
         private final String categoryName;
         private final String testName;
@@ -175,11 +192,11 @@ public class ExampleGenerator {
         }
 
         public String getSynonymName() {
-            return (categoryName + "_" + testName).toUpperCase().replace("-", "_");
+            return ExampleGenerator.getSynonymName(categoryName, testName);
         }
 
         public String getNamespace() {
-            return ("demo.translate." + categoryName + "." + testName).toLowerCase().replace("-", "_");
+            return ExampleGenerator.getNamespace(categoryName, testName);
         }
 
         public String getUnitTestName() {
