@@ -25,7 +25,6 @@ public class ExampleGenerator {
     public static final String $ROOT_TYPE$ = "$ROOT_TYPE$";
 
     private final Path mainResourcesPath;
-    private final Path testResourcesPath;
     private final Path testJavaPath;
 
     private final String expectationsTemplate;
@@ -34,9 +33,9 @@ public class ExampleGenerator {
 
     public ExampleGenerator(Path mainPath, Path testPath) throws IOException {
         this.mainResourcesPath = mainPath.resolve("resources");
-        this.testResourcesPath = testPath.resolve("resources");
         this.testJavaPath = testPath.resolve("java");
 
+        Path testResourcesPath = testPath.resolve("resources");
         expectationsTemplate = Files.readString(testResourcesPath.resolve("example-generation").resolve(EXPECTATION_JSON_TEMPLATE));
         ingestionTemplate = Files.readString(testResourcesPath.resolve("example-generation").resolve(INGESTIONS_JSON_TEMPLATE));
         unitTestTemplate = Files.readString(testResourcesPath.resolve("example-generation").resolve(UNIT_TEST_JAVA_TEMPLATE));
@@ -66,11 +65,10 @@ public class ExampleGenerator {
     }
 
     private Path path(String suffix, String msg, Path test) throws IOException {
-        Path rosettaPath = Files.list(test)
+        return Files.list(test)
                 .filter(Files::isRegularFile)
                 .filter(y -> y.toString().endsWith(suffix))
                 .findFirst().orElseThrow(() -> new IllegalStateException(msg + test.toAbsolutePath()));
-        return rosettaPath;
     }
 
     void writeSchema(ExampleSet exampleSet) throws IOException {
