@@ -1,0 +1,1 @@
+Map two xml elements on to single nested rosetta type using value syntax
