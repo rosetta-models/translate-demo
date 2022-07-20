@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="dataDocument">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="relativeDateSequence" type="RelativeDateSequence"/>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="RelativeDateSequence">
+        <xs:sequence>
+            <xs:element name="dateOffset" type="DateOffset" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="DateOffset">
+        <xs:sequence>
+            <xs:element name="periodMultiplier" type="xs:integer"/>
+            <xs:element name="businessDayConvention" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

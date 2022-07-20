@@ -8,8 +8,8 @@ import static com.regnosys.ExampleGenerator.*;
 
 public class ExampleTemplateGenerator {
 
-    public static final String CATEGORY_NAME = "single-cardinality";
-    public static final String FILENAME_SUFFIX = "5";
+    public static final String CATEGORY_NAME = "type-inheritance";
+    public static final String FILENAME_SUFFIX = "1";
 
     private final String categoryName;
     private final String exampleName;
