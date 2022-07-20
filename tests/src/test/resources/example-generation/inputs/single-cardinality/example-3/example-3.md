@@ -1,0 +1,1 @@
+Map object with 2 attributes using value syntax
