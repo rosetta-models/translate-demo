@@ -8,6 +8,9 @@ import static com.regnosys.ExampleGenerator.*;
 
 public class ExampleTemplateGenerator {
 
+    public static final String CATEGORY_NAME = "single-cardinality";
+    public static final String FILENAME_SUFFIX = "5";
+
     private final String categoryName;
     private final String exampleName;
 
@@ -57,11 +60,9 @@ public class ExampleTemplateGenerator {
     }
 
     public static void main(String[] args) throws IOException {
-        String categoryName = "single-cardinality";
-        String filenameSuffix = "5";
         Path basePath = Path.of("src/test/resources/example-generation");
 
-        ExampleTemplateGenerator generator = new ExampleTemplateGenerator(basePath, categoryName, filenameSuffix);
+        ExampleTemplateGenerator generator = new ExampleTemplateGenerator(basePath, CATEGORY_NAME, FILENAME_SUFFIX);
         generator.writeMd();
         generator.writeRosetta();
         generator.writeXml();
