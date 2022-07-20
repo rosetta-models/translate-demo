@@ -1,1 +1,1 @@
-Map object using value syntax
+Map xml element to rosetta type using value syntax

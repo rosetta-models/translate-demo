@@ -1,1 +1,1 @@
-Map two objects on to single rosetta type using value and path syntax
+Map two xml elements on to single rosetta type using value and path syntax

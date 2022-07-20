@@ -1,1 +1,1 @@
-Map object with 2 attributes using value syntax
+Map xml elements with 2 attributes using value syntax
