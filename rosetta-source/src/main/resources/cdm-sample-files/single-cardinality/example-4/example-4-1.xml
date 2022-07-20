@@ -2,13 +2,10 @@
 <dataDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="example-4.xsd example-4.xsd">
     <a>
         <b>
-            <d>FISH</d>
+            <c>FISH</c>
         </b>
-        <c>
-            <d>And</d>
-        </c>
-        <e>
-            <d>CHIPS</d>
-        </e>
+        <d>
+            <e>CHIPS</e>
+        </d>
     </a>
 </dataDocument>

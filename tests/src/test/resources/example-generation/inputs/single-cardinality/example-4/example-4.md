@@ -1,1 +1,1 @@
-Map two xml elements (that use xml reference in xsd) on to single rosetta type using value and path syntax
+Map two xml elements on to single nested rosetta type using value syntax

@@ -9,21 +9,14 @@
                             <xs:element name="b">
                                 <xs:complexType>
                                     <xs:all>
-                                        <xs:element ref="d"/>
+                                        <xs:element name="c" type="xs:string" />
                                     </xs:all>
                                 </xs:complexType>
                             </xs:element>
-                            <xs:element name="c">
+                            <xs:element name="d">
                                 <xs:complexType>
                                     <xs:all>
-                                        <xs:element ref="d"/>
-                                    </xs:all>
-                                </xs:complexType>
-                            </xs:element>
-                            <xs:element name="e">
-                                <xs:complexType>
-                                    <xs:all>
-                                        <xs:element ref="d"/>
+                                        <xs:element name="e" type="xs:string" />
                                     </xs:all>
                                 </xs:complexType>
                             </xs:element>
@@ -33,5 +26,4 @@
             </xs:all>
         </xs:complexType>
     </xs:element>
-    <xs:element name="d" type="xs:string"/>
 </xs:schema>
