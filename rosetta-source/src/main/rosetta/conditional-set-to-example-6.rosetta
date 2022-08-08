@@ -1,0 +1,8 @@
+namespace demo.translate.conditional_set_to.example_6
+version "${project.version}"
+
+synonym source CONDITIONAL_SET_TO_EXAMPLE_6
+
+type Root:
+    [rootType]
+    // add content here

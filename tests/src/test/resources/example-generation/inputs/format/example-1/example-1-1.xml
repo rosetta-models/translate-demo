@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<dataDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="example-1.xsd example-1.xsd">
+    <startDate>01/31/2020</startDate>
+    <tenor>6M</tenor>
+    <b>Fish and Chips</b>
+    <bplus>Fish and Chips</bplus>
+</dataDocument>

@@ -1,0 +1,8 @@
+namespace demo.translate.meta_scoped_reference.example_2
+version "${project.version}"
+
+synonym source META_SCOPED_REFERENCE_EXAMPLE_2
+
+type Root:
+    [rootType]
+    // add content here

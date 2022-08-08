@@ -1,0 +1,20 @@
+namespace demo.translate.multi_cardinality.example_7
+version "${project.version}"
+
+synonym source MULTI_CARDINALITY_EXAMPLE_7
+
+type Top6:
+	aField A6 (1..1)
+	[synonym Bank_A value "a"]
+
+
+type A6:
+	bField B6 (1..*)
+	[synonym Bank_A value "b"]
+
+
+type B6:
+	cField string (1..1)
+	[synonym Bank_A value "c"]
+	dField string (1..1)
+	[synonym Bank_A value "d"]
