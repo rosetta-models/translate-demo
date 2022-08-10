@@ -1,0 +1,56 @@
+namespace demo.translate.multi_cardinality.example_10
+version "${project.version}"
+
+synonym source MULTI_CARDINALITY_EXAMPLE_10
+
+type Top10_1:
+	vField V10_1 (1..1)
+	    [synonym MULTI_CARDINALITY_EXAMPLE_10 value "a"]
+	    [synonym MULTI_CARDINALITY_EXAMPLE_10 value "a"]
+	    [synonym MULTI_CARDINALITY_EXAMPLE_10 value "a"]
+	    [synonym MULTI_CARDINALITY_EXAMPLE_10 value "a"]
+	    [synonym MULTI_CARDINALITY_EXAMPLE_10 value "a"]
+	    [synonym MULTI_CARDINALITY_EXAMPLE_10 value "a"]
+
+type V10_1:
+	wField W10_1 (0..*)
+	[synonym MULTI_CARDINALITY_EXAMPLE_10 value "b", "c"]
+	[synonym MULTI_CARDINALITY_EXAMPLE_10 value "b"]
+	[synonym MULTI_CARDINALITY_EXAMPLE_10 value "c"]
+	[synonym MULTI_CARDINALITY_EXAMPLE_10 value "b"]
+	[synonym MULTI_CARDINALITY_EXAMPLE_10 hint "c"]
+	[synonym MULTI_CARDINALITY_EXAMPLE_10 value "a"]
+
+type W10_1:
+    xField X10_1 (0..*)
+        [synonym MULTI_CARDINALITY_EXAMPLE_10 value "b", "c"]
+        [synonym MULTI_CARDINALITY_EXAMPLE_10 value "b"]
+        [synonym MULTI_CARDINALITY_EXAMPLE_10 value "c"]
+        [synonym MULTI_CARDINALITY_EXAMPLE_10 value "c"]
+        [synonym MULTI_CARDINALITY_EXAMPLE_10 hint "d"]
+        [synonym MULTI_CARDINALITY_EXAMPLE_10 value "a"]
+type X10_1:
+	yField string (0..1)
+	    [synonym MULTI_CARDINALITY_EXAMPLE_10 value "d"]
+	    [synonym MULTI_CARDINALITY_EXAMPLE_10 value "d"]
+	    [synonym MULTI_CARDINALITY_EXAMPLE_10 value "d"]
+	    [synonym MULTI_CARDINALITY_EXAMPLE_10 value "d"]
+	    [synonym MULTI_CARDINALITY_EXAMPLE_10 value "d"]
+	    [synonym MULTI_CARDINALITY_EXAMPLE_10 value "d" path "b"]
+	    [synonym MULTI_CARDINALITY_EXAMPLE_10 value "d" path "b"]
+	    [synonym MULTI_CARDINALITY_EXAMPLE_10 value "d" path "b"]
+	    [synonym MULTI_CARDINALITY_EXAMPLE_10 value "d" path "a->b"]
+	zField string (0..1)
+	    [synonym MULTI_CARDINALITY_EXAMPLE_10 value "e"]
+	    [synonym MULTI_CARDINALITY_EXAMPLE_10 value "e"]
+	    [synonym MULTI_CARDINALITY_EXAMPLE_10 value "e"]
+	    [synonym MULTI_CARDINALITY_EXAMPLE_10 value "e"]
+	    [synonym MULTI_CARDINALITY_EXAMPLE_10 value "e"]
+	    [synonym MULTI_CARDINALITY_EXAMPLE_10 value "e" path "c"]
+	    [synonym MULTI_CARDINALITY_EXAMPLE_10 value "e" path "c"]
+	    [synonym MULTI_CARDINALITY_EXAMPLE_10 value "e" path "c"]
+	    [synonym MULTI_CARDINALITY_EXAMPLE_10 value "e" path "a->c"]
+
+
+
+

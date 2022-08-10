@@ -1,0 +1,8 @@
+namespace demo.translate.meta_external_reference.example_5
+version "${project.version}"
+
+synonym source META_EXTERNAL_REFERENCE_EXAMPLE_5
+
+type Root:
+    [rootType]
+    // add content here

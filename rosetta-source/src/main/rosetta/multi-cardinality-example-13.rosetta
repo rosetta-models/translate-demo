@@ -1,0 +1,8 @@
+namespace demo.translate.multi_cardinality.example_13
+version "${project.version}"
+
+synonym source MULTI_CARDINALITY_EXAMPLE_13
+
+type Root:
+    [rootType]
+    // add content here
