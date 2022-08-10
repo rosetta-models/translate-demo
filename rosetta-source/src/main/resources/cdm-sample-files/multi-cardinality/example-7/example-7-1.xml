@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<a xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="example-7.xsd example-7.xsd">
+    <b>
+        <c>FISH</c>
+        <c>AND</c>
+    </b>
+    <b>
+        <c>CHIPS</c>
+    </b>
+</a>
