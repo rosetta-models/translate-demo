@@ -1,1 +1,0 @@
-Map list of complex types to list of basic types

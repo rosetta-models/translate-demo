@@ -1,1 +1,0 @@
-Map similar list of complex types (single attributes)

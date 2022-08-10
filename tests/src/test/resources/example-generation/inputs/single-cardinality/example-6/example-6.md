@@ -1,1 +1,0 @@
-Map two different xml elements on to two instances of a rosetta type using value and path syntax

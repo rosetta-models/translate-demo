@@ -1,8 +1,0 @@
-namespace demo.translate.conditional_default.example_2
-version "${project.version}"
-
-synonym source CONDITIONAL_DEFAULT_EXAMPLE_2
-
-type Root:
-    [rootType]
-    // add content here

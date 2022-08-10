@@ -1,8 +1,0 @@
-namespace demo.translate.external_synonym.example_1
-version "${project.version}"
-
-synonym source EXTERNAL_SYNONYM_EXAMPLE_1
-
-type Root:
-    [rootType]
-    // add content here
