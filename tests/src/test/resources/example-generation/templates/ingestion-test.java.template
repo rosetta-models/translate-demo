@@ -13,6 +13,7 @@ import java.net.URL;
 import java.util.*;
 import java.util.stream.Stream;
 
+$TEST_ANNOTATIONS$
 public class $UNIT_TEST_NAME$ extends IngestionTest<$NAMESPACE$.$ROOT_TYPE$> {
 
     private static final String SAMPLE_FILES_DIR = "cdm-sample-files/$CATEGORY_NAME$/$TEST_NAME$";
