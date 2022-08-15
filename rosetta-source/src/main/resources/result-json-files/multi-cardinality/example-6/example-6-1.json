@@ -1,1 +1,10 @@
-null
+{
+  "afield" : {
+    "bfield" : [ {
+      "cfield" : "FISH",
+      "dfield" : "AND"
+    }, {
+      "cfield" : "CHIPS"
+    } ]
+  }
+}

@@ -5,14 +5,18 @@ synonym source MULTI_CARDINALITY_EXAMPLE_4
 
 type Root:
     [rootType]
-    xField X4 (1..*)
+	aField A4_5 (1..1)
 	    [synonym MULTI_CARDINALITY_EXAMPLE_4 value "a"]
 
+type A4_5:
+	xField X4_5 (1..*)
 
-type X4:
-    aField string (1..*)
-        [synonym MULTI_CARDINALITY_EXAMPLE_4 value "a"]
-	bField string (0..1)
-	    [synonym MULTI_CARDINALITY_EXAMPLE_4 value "b" path "a"]
-	cField string (0..1)
-	    [synonym MULTI_CARDINALITY_EXAMPLE_4 value "c" path "a"]
+type X4_5:
+	bField B4_5 (1..1)
+	    [synonym MULTI_CARDINALITY_EXAMPLE_4 value "b"]
+
+type B4_5:
+	cField string (1..1)
+	    [synonym MULTI_CARDINALITY_EXAMPLE_4 value "c"]
+	dField string (1..1)
+	    [synonym MULTI_CARDINALITY_EXAMPLE_4 value "d"]

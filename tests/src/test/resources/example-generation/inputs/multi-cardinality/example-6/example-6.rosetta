@@ -3,7 +3,8 @@ version "${project.version}"
 
 synonym source MULTI_CARDINALITY_EXAMPLE_6
 
-type Top6:
+type Root:
+    [rootType]
 	aField A6 (1..1)
 	[synonym MULTI_CARDINALITY_EXAMPLE_6 value "a"]
 

@@ -13,6 +13,7 @@ import java.net.URL;
 import java.util.*;
 import java.util.stream.Stream;
 
+
 public class FormatExample1IngestionTest extends IngestionTest<demo.translate.format.example_1.Root> {
 
     private static final String SAMPLE_FILES_DIR = "cdm-sample-files/format/example-1";

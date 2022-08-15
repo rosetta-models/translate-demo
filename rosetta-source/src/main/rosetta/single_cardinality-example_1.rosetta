@@ -1,0 +1,16 @@
+namespace demo.translate.single_cardinality.example_1
+version "${project.version}"
+
+synonym source SINGLE_CARDINALITY_EXAMPLE_1
+
+type Root:
+    [rootType]
+	wField W1 (1..1)
+	    [synonym SINGLE_CARDINALITY_EXAMPLE_1 value "a"]
+
+type W1:
+	xField X1 (1..1)
+
+type X1:
+	yField string (1..1)
+	    [synonym SINGLE_CARDINALITY_EXAMPLE_1 value "b"]

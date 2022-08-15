@@ -1,22 +1,29 @@
 package com.regnosys;
 
 import com.google.common.base.CaseFormat;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 import java.util.stream.Collectors;
 
 public class ExampleGenerator {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(ExampleGenerator.class);
 
     public static final String EXPECTATION_JSON_TEMPLATE = "expectation.json.template";
     public static final String INGESTIONS_JSON_TEMPLATE = "ingestion.json.template";
     public static final String UNIT_TEST_JAVA_TEMPLATE = "ingestion-test.java.template";
 
     public static final String $UNIT_TEST_NAME$ = "$UNIT_TEST_NAME$";
+    public static final String $TEST_ANNOTATIONS$ = "$TEST_ANNOTATIONS$";
     public static final String $NAMESPACE$ = "$NAMESPACE$";
     public static final String $CATEGORY_NAME$ = "$CATEGORY_NAME$";
     public static final String $TEST_NAME$ = "$TEST_NAME$";
@@ -25,6 +32,8 @@ public class ExampleGenerator {
     public static final String $ROOT_TYPE$ = "$ROOT_TYPE$";
 
     public static final String ROOT_TYPE = "Root";
+    public static final String SETTINGS_PROPERTIES_FILE_NAME = "settings.properties";
+    public static final String TEST_ANNOTATIONS_SETTING_NAME = "testAnnotations";
 
     private final Path mainResourcesPath;
     private final Path testJavaPath;
@@ -63,10 +72,31 @@ public class ExampleGenerator {
                 List<Path> xmlPath = Files.list(test).filter(Files::isRegularFile)
                         .filter(x -> x.toString().endsWith(".xml"))
                         .collect(Collectors.toList());
-                exampleSets.add(new ExampleSet(categoryName, testName, rosettaPath, schemaPath, xmlPath));
+
+                if (ignoreExampleSet(rosettaPath)) {
+                    LOGGER.warn("Ignoring example set {}", category);
+                    continue;
+                }
+
+                Properties settings = new Properties();
+                Path settingsFilePath = test.resolve(SETTINGS_PROPERTIES_FILE_NAME);
+                if (Files.exists(settingsFilePath)) {
+                    settings.load(new FileInputStream(settingsFilePath.toFile()));
+                }
+
+                exampleSets.add(new ExampleSet(categoryName, testName, rosettaPath, schemaPath, xmlPath, settings));
             }
         }
         return exampleSets;
+    }
+
+    private boolean ignoreExampleSet(Path rosettaPath) {
+        try {
+            return Files.readString(rosettaPath).contains("// add content here");
+        } catch (IOException e) {
+            e.printStackTrace();
+            return true;
+        }
     }
 
     private Path path(String suffix, String msg, Path test) throws IOException {
@@ -125,15 +155,18 @@ public class ExampleGenerator {
     void writeRosetta(ExampleSet exampleSet) throws IOException {
         Files.copy(exampleSet.rosettaFile,
                 mainResourcesPath.getParent().resolve("rosetta")
-                        .resolve(exampleSet.categoryName + "-" + exampleSet.rosettaFile.getFileName()
-                                .toString()), StandardCopyOption.REPLACE_EXISTING);
+                        .resolve(exampleSet.categoryName.replace("-", "_")
+                                + "-" + exampleSet.rosettaFile.getFileName().toString().replace("-", "_")),
+                StandardCopyOption.REPLACE_EXISTING);
     }
 
     void writeUnitTest(ExampleSet exampleSet) throws IOException {
         Path unitTestBasePath = Files.createDirectories(testJavaPath.resolve("demo").resolve("translate"));
         Path unitTestPath = unitTestBasePath.resolve(exampleSet.getUnitTestName() + ".java");
 
+        String testAnnotations = exampleSet.settings.getProperty(TEST_ANNOTATIONS_SETTING_NAME, "");
         String unitTestJava = unitTestTemplate
+                .replace($TEST_ANNOTATIONS$, testAnnotations)
                 .replace($UNIT_TEST_NAME$, exampleSet.getUnitTestName())
                 .replace($NAMESPACE$, exampleSet.getNamespace())
                 .replace($CATEGORY_NAME$, exampleSet.categoryName)
@@ -182,13 +215,16 @@ public class ExampleGenerator {
         private final Path rosettaFile;
         private final Path xsdFile;
         private final List<Path> xmlFiles;
+        private final Properties settings;
 
-        public ExampleSet(String categoryName, String testName, Path rosettaFile, Path xsdFile, List<Path> xmlFiles) {
+
+        public ExampleSet(String categoryName, String testName, Path rosettaFile, Path xsdFile, List<Path> xmlFiles, Properties settings) {
             this.categoryName = categoryName;
             this.testName = testName;
             this.rosettaFile = rosettaFile;
             this.xsdFile = xsdFile;
             this.xmlFiles = xmlFiles;
+            this.settings = settings;
         }
 
         public String getSynonymName() {

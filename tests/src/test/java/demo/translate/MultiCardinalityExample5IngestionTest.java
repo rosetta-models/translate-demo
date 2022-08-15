@@ -13,6 +13,7 @@ import java.net.URL;
 import java.util.*;
 import java.util.stream.Stream;
 
+
 public class MultiCardinalityExample5IngestionTest extends IngestionTest<demo.translate.multi_cardinality.example_5.Root> {
 
     private static final String SAMPLE_FILES_DIR = "cdm-sample-files/multi-cardinality/example-5";

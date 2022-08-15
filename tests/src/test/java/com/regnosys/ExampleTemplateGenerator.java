@@ -33,7 +33,7 @@ public class ExampleTemplateGenerator {
     public void writeRosetta() throws IOException {
         Files.createDirectories(inputExampleBasePath);
 
-        String templateRosetta = Files.readString( templatesPath.resolve("example.rosetta.template"));
+        String templateRosetta = Files.readString(templatesPath.resolve("example.rosetta.template"));
         String rosetta = templateRosetta
                 .replace($NAMESPACE$, getNamespace(categoryName, exampleName))
                 .replace($SYNONYM_NAME$, getSynonymName(categoryName, exampleName))
@@ -46,7 +46,7 @@ public class ExampleTemplateGenerator {
     public void writeXml() throws IOException {
         Files.createDirectories(inputExampleBasePath);
 
-        String templateXml = Files.readString( templatesPath.resolve("example.xml.template"));
+        String templateXml = Files.readString(templatesPath.resolve("example.xml.template"));
         String xml = templateXml.replace($TEST_NAME$, exampleName);
 
         Path xmlPath = inputExampleBasePath.resolve(exampleName + "-1.xml");
@@ -56,7 +56,12 @@ public class ExampleTemplateGenerator {
     public void writeXsd() throws IOException {
         Files.createDirectories(inputExampleBasePath);
         Files.copy(templatesPath.resolve("example.xsd"),
-                inputExampleBasePath.resolve(exampleName +  ".xsd"));
+                inputExampleBasePath.resolve(exampleName + ".xsd"));
+    }
+
+    public void writeSettings() throws IOException {
+        Files.createDirectories(inputExampleBasePath);
+        Files.copy(templatesPath.resolve("settings.properties"), inputExampleBasePath.resolve("settings.properties"));
     }
 
     public static void main(String[] args) throws IOException {
@@ -67,5 +72,6 @@ public class ExampleTemplateGenerator {
         generator.writeRosetta();
         generator.writeXml();
         generator.writeXsd();
+        generator.writeSettings();
     }
 }

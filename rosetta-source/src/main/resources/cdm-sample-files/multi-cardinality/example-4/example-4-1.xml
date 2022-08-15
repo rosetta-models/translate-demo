@@ -1,5 +1,12 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <dataDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="example-4.xsd example-4.xsd">
-    <a>FISH</a>
-    <a>CHIPS</a>
+    <a>
+        <b>
+            <c>FISH</c>
+            <d>AND</d>
+        </b>
+        <b>
+            <c>CHIPS</c>
+        </b>
+    </a>
 </dataDocument>

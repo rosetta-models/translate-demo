@@ -1,7 +1,1 @@
 File Name,Result,Input Path,Indexless Input Path,Unmappable CDM Path Count,Unmappable CDM Paths,Reason For Failure
-cdm-sample-files/multi-cardinality/example-4/example-4-2.xml,Success,a(0).b,a.b,0,,had no destination : Element could not be mapped to a rosettaField
-cdm-sample-files/multi-cardinality/example-4/example-4-2.xml,Success,a(1).b,a.b,0,,had no destination : Element could not be mapped to a rosettaField
-cdm-sample-files/multi-cardinality/example-4/example-4-2.xml,Success,a(1).c,a.c,0,,had no destination : Element could not be mapped to a rosettaField
-cdm-sample-files/multi-cardinality/example-4/example-4-1.xml,Success,a(0).b,a.b,0,,had no destination : Element could not be mapped to a rosettaField
-cdm-sample-files/multi-cardinality/example-4/example-4-1.xml,Success,a(1).b,a.b,0,,had no destination : Element could not be mapped to a rosettaField
-cdm-sample-files/multi-cardinality/example-4/example-4-1.xml,Success,a(0).c,a.c,0,,had no destination : Element could not be mapped to a rosettaField

@@ -1,5 +1,2 @@
 File Name,Result,Input Path,Indexless Input Path,Unmappable CDM Path Count,Unmappable CDM Paths,Reason For Failure
-cdm-sample-files/format/example-1/example-1-1.xml,Success,startDate,startDate,0,,had no destination : Element could not be mapped to a rosettaField
-cdm-sample-files/format/example-1/example-1-1.xml,Success,bplus,bplus,0,,had no destination : Element could not be mapped to a rosettaField
-cdm-sample-files/format/example-1/example-1-1.xml,Success,tenor,tenor,0,,had no destination : Element could not be mapped to a rosettaField
-cdm-sample-files/format/example-1/example-1-1.xml,Success,b,b,0,,had no destination : Element could not be mapped to a rosettaField
+cdm-sample-files/format/example-1/example-1-1.xml,Fail_MappedMultiple,a.tenor,a.tenor,2,Root.aField.periodMultiplier=[6] Root.aField.period=[M],Element mapped to multiple rosettaFields

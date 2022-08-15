@@ -5,9 +5,9 @@ synonym source MULTI_CARDINALITY_EXAMPLE_3
 
 type Root:
     [rootType]
-	aField A3 (1..*)
-	    [synonym MULTI_CARDINALITY_EXAMPLE_3 value "a"]
+	aField A3 (1..1)
+    	[synonym MULTI_CARDINALITY_EXAMPLE_3 value "a"]
 
 type A3:
-    bField string (1..*)
-        [synonym MULTI_CARDINALITY_EXAMPLE_3 value "b"]
+	cField string (1..*)
+	    [synonym MULTI_CARDINALITY_EXAMPLE_3 value "c" path "b"]
