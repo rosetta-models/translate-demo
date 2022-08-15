@@ -12,9 +12,9 @@ type A4:
 	startDate date (1..1)
 		[synonym FORMAT_EXAMPLE_1 value "startDate" dateFormat "MM/dd/yyyy"]
 	periodMultiplier int (1..1)
-		[synonym FORMAT_EXAMPLE_1 value "tenor" pattern "([0-9])*.*" "$1"]
+		[synonym FORMAT_EXAMPLE_1 value "tenor" maps 2 pattern "([0-9])*.*" "$1"]
 	period PeriodEnum (1..1)
-		[synonym FORMAT_EXAMPLE_1 value "tenor" pattern "[0-9]*(.*)" "$1"]
+		[synonym FORMAT_EXAMPLE_1 value "tenor" maps 2 pattern "[0-9]*(.*)" "$1"]
 	b string (0..*)
 		[synonym FORMAT_EXAMPLE_1 value "b"]
 		[synonym FORMAT_EXAMPLE_1 value "bplus" pattern "Fish and ([a-zA-Z]*)" "$1"]

@@ -23,8 +23,8 @@
         <maven-surefire-plugin.version>2.22.1</maven-surefire-plugin.version>
         <xtext.version>2.25.0</xtext.version>
 
-        <rosetta.bundle.version>3.7.1</rosetta.bundle.version>
-        <rosetta.dsl.version>4.40.0</rosetta.dsl.version>
+        <rosetta.bundle.version>3.12.4</rosetta.bundle.version>
+        <rosetta.dsl.version>4.42.0</rosetta.dsl.version>
         <guava.version>30.0-jre</guava.version>
 
         <!-- Testing -->
@@ -67,7 +67,7 @@
             <dependency>
                 <groupId>com.regnosys</groupId>
                 <artifactId>ingest-test-framework</artifactId>
-                <version>${rosetta.bundle.version}</version>
+                <version>0.0.0.master</version>
             </dependency>
             <dependency>
                 <groupId>com.regnosys.rosetta</groupId>
