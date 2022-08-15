@@ -15,4 +15,4 @@ type B7:
     cField string (1..1)
         [synonym SINGLE_CARDINALITY_EXAMPLE_5 value "c" path "b"]
     dField string (1..1)
-        [synonym SINGLE_CARDINALITY_EXAMPLE_5 value "e" path "b"]
+        [synonym SINGLE_CARDINALITY_EXAMPLE_5 value "d" path "b"]

@@ -1,0 +1,14 @@
+{
+  "afield" : {
+    "xfield" : [ {
+      "bfield" : {
+        "cfield" : "FISH",
+        "dfield" : "AND"
+      }
+    }, {
+      "bfield" : {
+        "cfield" : "CHIPS"
+      }
+    } ]
+  }
+}

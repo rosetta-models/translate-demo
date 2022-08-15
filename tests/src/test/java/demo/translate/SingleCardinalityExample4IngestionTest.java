@@ -13,6 +13,7 @@ import java.net.URL;
 import java.util.*;
 import java.util.stream.Stream;
 
+//@org.junit.jupiter.api.Disabled
 public class SingleCardinalityExample4IngestionTest extends IngestionTest<demo.translate.single_cardinality.example_4.Root> {
 
     private static final String SAMPLE_FILES_DIR = "cdm-sample-files/single-cardinality/example-4";

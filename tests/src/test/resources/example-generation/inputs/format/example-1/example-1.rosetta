@@ -1,0 +1,30 @@
+namespace demo.translate.format.example_1
+version "${project.version}"
+
+synonym source FORMAT_EXAMPLE_1
+
+type Root:
+    [rootType]
+	aField A4 (0..1)
+		[synonym FORMAT_EXAMPLE_1 value "a"]
+
+type A4:
+	startDate date (1..1)
+		[synonym FORMAT_EXAMPLE_1 value "startDate" dateFormat "MM/dd/yyyy"]
+	periodMultiplier int (1..1)
+		[synonym FORMAT_EXAMPLE_1 value "tenor" pattern "([0-9])*.*" "$1"]
+	period PeriodEnum (1..1)
+		[synonym FORMAT_EXAMPLE_1 value "tenor" pattern "[0-9]*(.*)" "$1"]
+	b string (0..*)
+		[synonym FORMAT_EXAMPLE_1 value "b"]
+		[synonym FORMAT_EXAMPLE_1 value "bplus" pattern "Fish and ([a-zA-Z]*)" "$1"]
+
+enum PeriodEnum:
+	D <"Day">
+		[synonym FORMAT_EXAMPLE_1 value "D" pattern "[0-9]*(.*)" "$1"]
+	W
+		[synonym FORMAT_EXAMPLE_1 value "W" pattern "[0-9]*(.*)" "$1"]
+	M
+		[synonym FORMAT_EXAMPLE_1 value "M" pattern "[0-9]*(.*)" "$1"]
+	Y
+		[synonym FORMAT_EXAMPLE_1 value "Y" pattern "[0-9]*(.*)" "$1"]
