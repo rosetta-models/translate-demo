@@ -1,0 +1,1 @@
+shouldSetFieldFromSynonymSetWhen test 3.1

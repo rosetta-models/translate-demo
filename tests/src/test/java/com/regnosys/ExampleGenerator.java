@@ -1,8 +1,6 @@
 package com.regnosys;
 
 import com.google.common.base.CaseFormat;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -15,8 +13,6 @@ import java.util.Properties;
 import java.util.stream.Collectors;
 
 public class ExampleGenerator {
-
-    private static final Logger LOGGER = LoggerFactory.getLogger(ExampleGenerator.class);
 
     public static final String EXPECTATION_JSON_TEMPLATE = "expectation.json.template";
     public static final String INGESTIONS_JSON_TEMPLATE = "ingestion.json.template";
@@ -73,11 +69,6 @@ public class ExampleGenerator {
                         .filter(x -> x.toString().endsWith(".xml"))
                         .collect(Collectors.toList());
 
-                if (ignoreExampleSet(rosettaPath)) {
-                    LOGGER.warn("Ignoring example set {}", category);
-                    continue;
-                }
-
                 Properties settings = new Properties();
                 Path settingsFilePath = test.resolve(SETTINGS_PROPERTIES_FILE_NAME);
                 if (Files.exists(settingsFilePath)) {
@@ -88,15 +79,6 @@ public class ExampleGenerator {
             }
         }
         return exampleSets;
-    }
-
-    private boolean ignoreExampleSet(Path rosettaPath) {
-        try {
-            return Files.readString(rosettaPath).contains("// add content here");
-        } catch (IOException e) {
-            e.printStackTrace();
-            return true;
-        }
     }
 
     private Path path(String suffix, String msg, Path test) throws IOException {
@@ -155,9 +137,8 @@ public class ExampleGenerator {
     void writeRosetta(ExampleSet exampleSet) throws IOException {
         Files.copy(exampleSet.rosettaFile,
                 mainResourcesPath.getParent().resolve("rosetta")
-                        .resolve(exampleSet.categoryName.replace("-", "_")
-                                + "-" + exampleSet.rosettaFile.getFileName().toString().replace("-", "_")),
-                StandardCopyOption.REPLACE_EXISTING);
+                        .resolve(exampleSet.categoryName + "-" + exampleSet.rosettaFile.getFileName()
+                                .toString()), StandardCopyOption.REPLACE_EXISTING);
     }
 
     void writeUnitTest(ExampleSet exampleSet) throws IOException {
@@ -194,6 +175,7 @@ public class ExampleGenerator {
             exampleGenerator.writeRosetta(inputSet);
             exampleGenerator.writeXmlSamples(inputSet);
             exampleGenerator.writeUnitTest(inputSet);
+
         }
     }
 

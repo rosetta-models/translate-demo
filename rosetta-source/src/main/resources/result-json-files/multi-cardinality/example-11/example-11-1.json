@@ -1,0 +1,21 @@
+{
+  "vfield" : {
+    "wfield" : [ {
+      "xfield" : [ {
+        "yfield" : "FISH"
+      } ]
+    }, {
+      "xfield" : [ {
+        "yfield" : "SAUSAGE"
+      } ]
+    }, {
+      "xfield" : [ {
+        "zfield" : "STEAK"
+      } ]
+    }, {
+      "xfield" : [ {
+        "zfield" : "PIZZA"
+      } ]
+    } ]
+  }
+}
