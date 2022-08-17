@@ -1,0 +1,1 @@
+shouldSetFieldFromSynonymSetWhenExists test 4.1

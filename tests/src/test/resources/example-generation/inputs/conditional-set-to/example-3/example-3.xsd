@@ -3,7 +3,20 @@
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <!-- add content here -->
+                <xs:element name="b">
+                    <xs:complexType>
+                        <xs:all>
+                            <xs:element name="c">
+                                <xs:complexType>
+                                    <xs:all>
+                                        <xs:element name="d" type="xs:string" />
+                                        <xs:element name="e" type="xs:string" />
+                                    </xs:all>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:all>
+                    </xs:complexType>
+                </xs:element>
             </xs:all>
         </xs:complexType>
     </xs:element>

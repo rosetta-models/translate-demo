@@ -5,4 +5,3 @@ synonym source META_EXTERNAL_REFERENCE_EXAMPLE_4
 
 type Root:
     [rootType]
-    // add content here

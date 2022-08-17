@@ -91,12 +91,13 @@ public class ExampleGenerator {
     }
 
     private boolean ignoreExampleSet(Path rosettaPath) {
-        try {
-            return Files.readString(rosettaPath).contains("// add content here");
-        } catch (IOException e) {
-            e.printStackTrace();
-            return true;
-        }
+//        try {
+//            return Files.readString(rosettaPath).contains("// add content here");
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//            return true;
+//        }
+        return false;
     }
 
     private Path path(String suffix, String msg, Path test) throws IOException {

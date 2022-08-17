@@ -1,9 +1,9 @@
 {
   "afield" : [ {
-    "cfield" : "Chips",
-    "bfield" : "Fish"
+    "bfield" : "Fish",
+    "cfield" : "Chips"
   }, {
-    "cfield" : "Chips",
-    "bfield" : "Meat"
+    "bfield" : "Meat",
+    "cfield" : "Chips"
   } ]
 }

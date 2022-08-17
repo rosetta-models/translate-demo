@@ -15,7 +15,7 @@ import java.net.URL;
 import java.util.*;
 import java.util.stream.Stream;
 
-
+//@org.junit.jupiter.api.Disabled
 public class MultiCardinalityExample4IngestionTest extends IngestionTest<demo.translate.multi_cardinality.example_4.Root> {
 
     private static final String SAMPLE_FILES_DIR = "cdm-sample-files/multi-cardinality/example-4";
