@@ -1,2 +1,2 @@
 File Name,Result,Input Path,Indexless Input Path,Unmappable CDM Path Count,Unmappable CDM Paths,Reason For Failure
-cdm-sample-files/meta-scoped-reference/example-1/example-1-1.xml,Success,a.b.c,a.b.c,0,,had no destination : Element could not be mapped to a rosettaField
+cdm-sample-files/meta-scoped-reference/example-1/example-1-1.xml,Success,a.b.c,a.b.c,2,Root.rpq.resolvedQuantity.value.amount=[3] Root.pq.quantity.value.amount=[3],Element mapped to already populated field
