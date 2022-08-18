@@ -5,4 +5,24 @@ synonym source META_SCOPED_REFERENCE_EXAMPLE_1
 
 type Root:
     [rootType]
-    // add content here
+	pq PriceQuantity (1..1)
+	rpq ResolvablePayoutQuantity (1..1)
+	[synonym META_SCOPED_REFERENCE_EXAMPLE_1 value "a"] //BankA synonym
+	[synonym META_SCOPED_REFERENCE_EXAMPLE_1 value "b" path "a"] //BankB synonym
+
+type PriceQuantity:
+	quantity Quantity (1..1)
+	[metadata location]
+	[synonym META_SCOPED_REFERENCE_EXAMPLE_1 value "b" path "a"]    //BankA synonym
+	[synonym META_SCOPED_REFERENCE_EXAMPLE_1 value "b" path "a"]    //BankB synonym
+
+type ResolvablePayoutQuantity:
+	resolvedQuantity Quantity (1..1)
+	[metadata address "pointsTo"=PriceQuantity->quantity]
+	[synonym META_SCOPED_REFERENCE_EXAMPLE_1 value "b" meta "c"]    //BankA synonym
+	[synonym META_SCOPED_REFERENCE_EXAMPLE_1 meta "c"]  //BankB synonym
+
+type Quantity:
+	amount number (1..1)
+	[synonym META_SCOPED_REFERENCE_EXAMPLE_1 value "c"] //BankA synonym
+	[synonym META_SCOPED_REFERENCE_EXAMPLE_1 value "c"] //BankB synonym

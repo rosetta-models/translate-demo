@@ -1,0 +1,14 @@
+{
+  "vfield1" : {
+    "wfield" : {
+      "xfield" : "FOO",
+      "sfield" : "FISH"
+    }
+  },
+  "vfield2" : {
+    "wfield" : {
+      "xfield" : "BAR",
+      "sfield" : "CHIPS"
+    }
+  }
+}

@@ -1,1 +1,1 @@
-shouldSetFieldFromSynonymSetWhen test 3.1
+shouldSetFieldFromSynonymSetWhen test 3.1 and shouldNotSetFieldFromSynonymSetWhen test 3.2

@@ -15,7 +15,7 @@ import java.net.URL;
 import java.util.*;
 import java.util.stream.Stream;
 
-@org.junit.jupiter.api.Disabled
+//@org.junit.jupiter.api.Disabled
 public class MetaExternalReferenceExample6IngestionTest extends IngestionTest<demo.translate.meta_external_reference.example_6.Root> {
 
     private static final String SAMPLE_FILES_DIR = "cdm-sample-files/meta-external-reference/example-6";

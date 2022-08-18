@@ -8,7 +8,7 @@ import static com.regnosys.ExampleGenerator.*;
 
 public class ExampleTemplateGenerator {
 
-    public static final String CATEGORY_NAME = "multi-cardinality";
+    public static final String CATEGORY_NAME = "conditional-set";
     public static final String FILENAME_SUFFIX = "25";
 
     private final String categoryName;

@@ -1,0 +1,22 @@
+namespace demo.translate.conditional_set.example_22
+version "${project.version}"
+
+synonym source CONDITIONAL_SET_EXAMPLE_22
+
+type Root:
+    [rootType]
+	vField V24b (1..1)
+	[synonym CONDITIONAL_SET_EXAMPLE_22 value "a"]
+
+
+type V24b:
+	wField1 string (0..1)
+	[synonym CONDITIONAL_SET_EXAMPLE_22 value "b" set when "c" is absent]
+	wField2 W24b (0..*)
+	wField3 string (0..1)
+	[synonym CONDITIONAL_SET_EXAMPLE_22 value "e"]
+
+
+type W24b:
+	xField string (0..1)
+	[synonym CONDITIONAL_SET_EXAMPLE_22 value "d" path "c"]

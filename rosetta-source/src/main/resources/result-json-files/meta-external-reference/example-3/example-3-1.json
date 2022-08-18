@@ -1,1 +1,13 @@
-null
+{
+  "partyTradeId" : {
+    "partyReference" : {
+      "value" : {
+        "meta" : {
+          "externalKey" : "g4789",
+          "globalKey" : "2e2df1"
+        },
+        "name" : "blah"
+      }
+    }
+  }
+}

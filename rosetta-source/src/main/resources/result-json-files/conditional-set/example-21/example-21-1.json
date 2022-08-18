@@ -1,0 +1,9 @@
+{
+  "vfield" : {
+    "wfield2" : [ {
+      "xfield" : "and"
+    } ],
+    "wfield1" : "fish",
+    "wfield3" : "chips"
+  }
+}

@@ -1,0 +1,1 @@
+test 9.1,2 shouldSetFieldFromSynonymSetToEnum and shouldNotSetFieldFromSynonymSetToEnum

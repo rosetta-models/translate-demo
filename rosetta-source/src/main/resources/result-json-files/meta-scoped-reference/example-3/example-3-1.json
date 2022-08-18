@@ -1,1 +1,23 @@
-null
+{
+  "pq" : {
+    "quantity" : {
+      "meta" : {
+        "location" : [ {
+          "scope" : "DOCUMENT",
+          "value" : "quantity-1"
+        } ]
+      },
+      "value" : {
+        "amount" : 3
+      }
+    }
+  },
+  "rpq" : {
+    "resolvedQuantity" : {
+      "address" : {
+        "scope" : "DOCUMENT",
+        "value" : "quantity-1"
+      }
+    }
+  }
+}

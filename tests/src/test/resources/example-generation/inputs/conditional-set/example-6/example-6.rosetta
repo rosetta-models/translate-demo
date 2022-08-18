@@ -1,0 +1,15 @@
+namespace demo.translate.conditional_set.example_6
+version "${project.version}"
+
+synonym source CONDITIONAL_SET_EXAMPLE_6
+
+type Root:
+    [rootType]
+	vField V12 (1..1)
+	[synonym CONDITIONAL_SET_EXAMPLE_6 value "a"]
+
+
+type V12:
+	xField string (1..1)
+	[synonym CONDITIONAL_SET_EXAMPLE_6 value "e" path "b->c" set when "b->c->d" = "FISH"]
+	[synonym CONDITIONAL_SET_EXAMPLE_6 value "f" path "b->c" set when "b->c->d" = "SAUSAGE"]

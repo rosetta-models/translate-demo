@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<dataDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="example-10.xsd example-10.xsd">
+    <a>
+        <b>
+            <d>
+                <e>FISH</e>
+            </d>
+        </b>
+        <b>
+            <d>
+                <e>SAUSAGE</e>
+            </d>
+        </b>
+        <b>
+            <d>
+                <e>STEAK</e>
+            </d>
+        </b>
+        <c>CHIPS</c>
+    </a>
+</dataDocument>

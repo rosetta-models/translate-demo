@@ -1,1 +1,7 @@
-null
+{
+  "partyTradeId" : {
+    "partyCount" : [ {
+      "externalReference" : "g4789"
+    } ]
+  }
+}

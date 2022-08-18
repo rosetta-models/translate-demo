@@ -1,1 +1,1 @@
-test 2.2 shouldNotSetFieldFromSynonymSetTo
+shouldSetNestedFieldFromSynonymSetTo test 2.1

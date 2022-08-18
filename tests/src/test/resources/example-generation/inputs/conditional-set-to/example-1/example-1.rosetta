@@ -5,4 +5,21 @@ synonym source CONDITIONAL_SET_TO_EXAMPLE_1
 
 type Root:
     [rootType]
-    // add content here
+	vField V2 (1..1)
+	[synonym CONDITIONAL_SET_TO_EXAMPLE_1 value "a"]
+
+
+type V2:
+	wField W2 (1..1)
+	[synonym CONDITIONAL_SET_TO_EXAMPLE_1 value "b"]
+	xField string (1..1)
+	[synonym CONDITIONAL_SET_TO_EXAMPLE_1 set to "OTHER" when "b->c->e" exists]
+
+
+type W2:
+	yField Y2 (1..1)
+	[synonym CONDITIONAL_SET_TO_EXAMPLE_1 value "c"]
+
+type Y2:
+	zField string (1..1)
+	[synonym CONDITIONAL_SET_TO_EXAMPLE_1 value "d"]

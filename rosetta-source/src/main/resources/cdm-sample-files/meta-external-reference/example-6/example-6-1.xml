@@ -1,4 +1,10 @@
 <?xml version="1.0"?>
 <dataDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="example-6.xsd example-6.xsd">
-    <!-- add content here -->
+    <a>
+        <partyTradeIdentifier>
+            <party id="g4789">
+                <name>blah</name>
+            </party>
+        </partyTradeIdentifier>
+    </a>
 </dataDocument>
