@@ -1,0 +1,1 @@
+shouldSetNestedFieldFromSynonymSetTo test 2.1

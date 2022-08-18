@@ -1,0 +1,26 @@
+namespace demo.translate.conditional_set.example_10
+version "${project.version}"
+
+synonym source CONDITIONAL_SET_EXAMPLE_10
+
+type Root:
+    [rootType]
+	vField V17_2 (1..1)
+	[synonym CONDITIONAL_SET_EXAMPLE_10 value "a"]
+
+
+type V17_2:
+	wField W17_2 (0..*)
+
+	xField string (0..1)
+	[synonym CONDITIONAL_SET_EXAMPLE_10 value "c"]
+
+
+type W17_2:
+	yField Y17_2 (0..1)
+	[synonym CONDITIONAL_SET_EXAMPLE_10 value "d" path "b" set when "c" = "CHIPS"]
+
+
+type Y17_2:
+	zField string (0..1)
+	[synonym CONDITIONAL_SET_EXAMPLE_10 value "e"]

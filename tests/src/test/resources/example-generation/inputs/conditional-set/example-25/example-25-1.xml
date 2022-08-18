@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<dataDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="example-25.xsd example-25.xsd">
+    <a>
+        <b id="source">
+            <bId>source-bid</bId>
+        </b>
+        <b id="counter">
+            <bId>counter-bid</bId>
+        </b>
+        <c>
+            <bref href="counter"/>
+            <pid>counter-pid</pid>
+        </c>
+        <c>
+            <bref href="source"/>
+            <pid>source-pid</pid>
+        </c>
+    </a>
+</dataDocument>

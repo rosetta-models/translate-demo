@@ -1,0 +1,24 @@
+namespace demo.translate.conditional_set.example_25
+version "${project.version}"
+
+synonym source CONDITIONAL_SET_EXAMPLE_25
+
+type Root:
+    [rootType]
+	xField X28 (0..1)
+		[synonym CONDITIONAL_SET_EXAMPLE_25 value "a"]
+
+type X28:
+    yField_s Y28 (0..1)
+        [synonym CONDITIONAL_SET_EXAMPLE_25 value "c" set when "c->bref->href" = "source"]
+        [synonym CONDITIONAL_SET_EXAMPLE_25 value "b" set when "b->id" = "source"]
+    yField_c Y28 (0..1)
+        [synonym CONDITIONAL_SET_EXAMPLE_25 value "c" set when "c->bref->href" = "counter"]
+        [synonym CONDITIONAL_SET_EXAMPLE_25 value "b" set when "b->id" = "counter"]
+
+
+type Y28:
+    z1 string (0..1)
+        [synonym CONDITIONAL_SET_EXAMPLE_25 value "bId"]
+    z2 string (0..1)
+        [synonym CONDITIONAL_SET_EXAMPLE_25 value "pid"]

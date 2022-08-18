@@ -1,0 +1,19 @@
+namespace demo.translate.multi_cardinality.example_6
+version "${project.version}"
+
+synonym source MULTI_CARDINALITY_EXAMPLE_6
+
+type Root:
+    [rootType]
+	aField A6 (1..1)
+    	[synonym MULTI_CARDINALITY_EXAMPLE_6 value "a"]
+
+type A6:
+	bField B6 (1..*)
+	    [synonym MULTI_CARDINALITY_EXAMPLE_6 value "b"]
+
+type B6:
+	cField string (1..1)
+	    [synonym MULTI_CARDINALITY_EXAMPLE_6 value "c"]
+	dField string (1..1)
+	    [synonym MULTI_CARDINALITY_EXAMPLE_6 value "d"]

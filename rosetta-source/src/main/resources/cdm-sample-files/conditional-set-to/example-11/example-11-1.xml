@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<dataDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="example-11.xsd example-11.xsd">
+    <a>
+        <TrdCaptRpt>
+            <RptSide ClOrdID="43401154-1">
+                <Pty R="24"/>
+            </RptSide>
+            <RptSide ClOrdID="43401154-2">
+                <Pty R="24"/>
+            </RptSide>
+        </TrdCaptRpt>
+    </a>
+</dataDocument>

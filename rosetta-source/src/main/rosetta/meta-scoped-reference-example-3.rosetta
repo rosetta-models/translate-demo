@@ -1,0 +1,28 @@
+namespace demo.translate.meta_scoped_reference.example_3
+version "${project.version}"
+
+synonym source META_SCOPED_REFERENCE_EXAMPLE_3
+
+type Root:
+    [rootType]
+	pq PriceQuantity (1..1)
+	rpq ResolvablePayoutQuantity (1..1)
+	[synonym META_SCOPED_REFERENCE_EXAMPLE_3 value "a"] //BankA synonym
+	[synonym META_SCOPED_REFERENCE_EXAMPLE_3 value "b" path "a"] //BankB synonym
+
+type PriceQuantity:
+	quantity Quantity (1..1)
+	[metadata location]
+	[synonym META_SCOPED_REFERENCE_EXAMPLE_3 value "b" path "a"]    //BankA synonym
+	[synonym META_SCOPED_REFERENCE_EXAMPLE_3 value "b" path "a"]    //BankB synonym
+
+type ResolvablePayoutQuantity:
+	resolvedQuantity Quantity (1..1)
+	[metadata address "pointsTo"=PriceQuantity->quantity]
+	[synonym META_SCOPED_REFERENCE_EXAMPLE_3 value "b" meta "c"]    //BankA synonym
+	[synonym META_SCOPED_REFERENCE_EXAMPLE_3 meta "c"]  //BankB synonym
+
+type Quantity:
+	amount number (1..1)
+	[synonym META_SCOPED_REFERENCE_EXAMPLE_3 value "c"] //BankA synonym
+	[synonym META_SCOPED_REFERENCE_EXAMPLE_3 value "c"] //BankB synonym

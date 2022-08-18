@@ -1,0 +1,10 @@
+{
+  "wfield" : [ {
+    "xfield" : "FISH",
+    "yfield" : "CHIPS"
+  }, {
+    "yfield" : "GRAVY"
+  }, {
+    "yfield" : "POTATOS"
+  } ]
+}

@@ -1,0 +1,26 @@
+namespace demo.translate.multi_cardinality.example_12
+version "${project.version}"
+
+synonym source MULTI_CARDINALITY_EXAMPLE_12
+
+type Root:
+    [rootType]
+	vField V10_1 (1..1)
+	    [synonym MULTI_CARDINALITY_EXAMPLE_12 value "a"]
+
+type V10_1:
+	wField W10_1 (0..*)
+	    [synonym MULTI_CARDINALITY_EXAMPLE_12 value "b"]
+	    [synonym MULTI_CARDINALITY_EXAMPLE_12 hint "c"]
+
+type W10_1:
+    xField X10_1 (0..*)
+        [synonym MULTI_CARDINALITY_EXAMPLE_12 value "c"]
+        [synonym MULTI_CARDINALITY_EXAMPLE_12 hint "d"]
+
+type X10_1:
+	yField string (0..1)
+	    [synonym MULTI_CARDINALITY_EXAMPLE_12 value "d"]
+
+	zField string (0..1)
+	    [synonym MULTI_CARDINALITY_EXAMPLE_12 value "e"]

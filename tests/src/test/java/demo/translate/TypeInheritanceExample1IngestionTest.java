@@ -13,6 +13,7 @@ import java.net.URL;
 import java.util.*;
 import java.util.stream.Stream;
 
+//@org.junit.jupiter.api.Disabled
 public class TypeInheritanceExample1IngestionTest extends IngestionTest<demo.translate.type_inheritance.example_1.Root> {
 
     private static final String SAMPLE_FILES_DIR = "cdm-sample-files/type-inheritance/example-1";

@@ -1,0 +1,1 @@
+test 7.1 shouldSetFieldFromSynonymSetToMultipleWhen1,2,3

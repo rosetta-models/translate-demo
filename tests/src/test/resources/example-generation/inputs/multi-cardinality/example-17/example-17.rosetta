@@ -1,0 +1,35 @@
+namespace demo.translate.multi_cardinality.example_17
+version "${project.version}"
+
+synonym source MULTI_CARDINALITY_EXAMPLE_17
+
+type Root:
+    [rootType]
+    tField T10_2 (1..1)
+    	[synonym MULTI_CARDINALITY_EXAMPLE_17 value "a"]
+
+
+    type T10_2:
+    	uField U10_2 (0..*)
+    	[synonym MULTI_CARDINALITY_EXAMPLE_17 value "b", "c"]
+
+
+    type U10_2:
+    	vField V10_2 (0..*)
+    	[synonym MULTI_CARDINALITY_EXAMPLE_17 hint "d", "e"] // hints have no effect in terms of keeping the list items merged
+
+
+    type V10_2:
+    	wField W10_2 (0..*)
+    	[synonym MULTI_CARDINALITY_EXAMPLE_17 hint "d", "e"]
+
+    type W10_2:
+    	xField X10_2 (0..*)
+    	[synonym MULTI_CARDINALITY_EXAMPLE_17 hint "d", "e"]
+
+    type X10_2:
+    	yField string (0..1)
+    	[synonym MULTI_CARDINALITY_EXAMPLE_17 value "d"]
+
+    	zField string (0..1)
+    	[synonym MULTI_CARDINALITY_EXAMPLE_17 value "e"]

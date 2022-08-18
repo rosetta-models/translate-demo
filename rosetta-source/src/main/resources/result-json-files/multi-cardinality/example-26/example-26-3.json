@@ -1,0 +1,10 @@
+{
+  "payout" : {
+    "irps" : [ {
+      "bfield" : "FISH"
+    }, {
+      "dfield" : "CHIPS",
+      "bfield" : "AND"
+    } ]
+  }
+}

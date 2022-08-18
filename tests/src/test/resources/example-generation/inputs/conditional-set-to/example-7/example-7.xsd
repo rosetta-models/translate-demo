@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="dataDocument">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="a">
+                    <xs:complexType>
+                        <xs:all>
+                            <xs:element name="b">
+                                <xs:complexType>
+                                    <xs:all>
+                                        <xs:element name="c">
+                                            <xs:complexType>
+                                                <xs:all>
+                                                    <xs:element name="d" type="TestEnum" />
+                                                    <xs:element name="e" type="TestEnum" minOccurs="0"/>
+                                                </xs:all>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:all>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:all>
+                    </xs:complexType>
+                </xs:element>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+    <xs:simpleType name="TestEnum">
+        <xs:restriction base="xs:token">
+            <xs:enumeration value="foo">
+            </xs:enumeration>
+            <xs:enumeration value="bar">
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

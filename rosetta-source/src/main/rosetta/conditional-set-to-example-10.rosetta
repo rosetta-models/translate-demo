@@ -1,0 +1,20 @@
+namespace demo.translate.conditional_set_to.example_10
+version "${project.version}"
+
+synonym source CONDITIONAL_SET_TO_EXAMPLE_10
+
+type Root:
+    [rootType]
+	vField V14 (1..1)
+	[synonym CONDITIONAL_SET_TO_EXAMPLE_10 value "a"]
+
+
+type V14:
+	xField TestEnum (1..1)
+	[synonym CONDITIONAL_SET_TO_EXAMPLE_10 set to TestEnum -> FOO when "b->c->d" = True]
+
+enum TestEnum:
+	FOO
+	[synonym CONDITIONAL_SET_TO_EXAMPLE_10 value "foo"]
+	BAR
+	[synonym CONDITIONAL_SET_TO_EXAMPLE_10 value "bar"]

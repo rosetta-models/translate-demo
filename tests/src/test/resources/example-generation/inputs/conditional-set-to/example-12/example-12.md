@@ -1,0 +1,1 @@
+test21_2 shouldAllowPathAndEqualsTests

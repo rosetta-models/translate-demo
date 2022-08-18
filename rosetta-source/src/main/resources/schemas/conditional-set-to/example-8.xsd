@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="dataDocument">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="a">
+                    <xs:complexType>
+                        <xs:all>
+                            <xs:element name="b">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="c" type="PartyReference"/>
+                                        <xs:element name="e" type="PartyReference"/>
+                                    </xs:sequence>
+                                    <xs:attribute name="id" type="xs:string"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:all>
+                    </xs:complexType>
+                </xs:element>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="PartyReference">
+        <xs:all>
+            <xs:element name = "f" type = "xs:string"/>
+        </xs:all>
+        <xs:attribute name="id" type="xs:string"/>
+    </xs:complexType>
+</xs:schema>

@@ -1,0 +1,13 @@
+{
+  "payout" : {
+    "ids" : [ {
+      "id" : "FISH"
+    }, {
+      "id" : "CHIPS"
+    }, {
+      "id" : "SAUSAGE"
+    }, {
+      "id" : "MASH"
+    } ]
+  }
+}

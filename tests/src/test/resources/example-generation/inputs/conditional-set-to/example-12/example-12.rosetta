@@ -1,0 +1,24 @@
+namespace demo.translate.conditional_set_to.example_12
+version "${project.version}"
+
+synonym source CONDITIONAL_SET_TO_EXAMPLE_12
+
+type Root:
+    [rootType]
+	vField V21_2 (1..*)
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_12 value "RptSide" path "a->TrdCaptRpt"]
+
+
+type V21_2:
+	wField W21_2 (1..*)
+
+
+type W21_2:
+	itemName string (1..1)
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_12 set to "ClientOrderId" when path = "ClOrdID"]
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_12 set to "ExecutionTime" when path = "TrdRegTS->TS" and "TrdRegTS->Typ"=1]
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_12 set to "PartyType" when path = "Pty->R"]
+	itemValue string (1..1)
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_12 value "ClOrdID"]
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_12 value "TS" path "TrdRegTS"]
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_12 set to "Customer Account" when "Pty->R" = "24"]

@@ -1,0 +1,24 @@
+{
+  "vfield" : [ {
+    "wfield" : [ {
+      "itemName" : "ClientOrderId",
+      "itemValue" : "43401154-1"
+    }, {
+      "itemName" : "ExecutionTime",
+      "itemValue" : "2018-10-31T14:13:19.9Z"
+    }, {
+      "itemName" : "PartyType",
+      "itemValue" : "Customer Account"
+    } ]
+  }, {
+    "wfield" : [ {
+      "itemName" : "ClientOrderId",
+      "itemValue" : "43401154-2"
+    }, {
+      "itemValue" : "2018-10-31T00:00:00.00Z"
+    }, {
+      "itemName" : "PartyType",
+      "itemValue" : "Customer Account"
+    } ]
+  } ]
+}

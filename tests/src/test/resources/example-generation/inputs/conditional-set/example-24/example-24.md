@@ -1,0 +1,1 @@
+enumWithSchemeCondition test26

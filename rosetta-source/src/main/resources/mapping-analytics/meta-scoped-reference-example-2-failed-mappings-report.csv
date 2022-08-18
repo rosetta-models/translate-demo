@@ -1,0 +1,2 @@
+File Name,Result,Input Path,Indexless Input Path,Unmappable CDM Path Count,Unmappable CDM Paths,Reason For Failure
+cdm-sample-files/meta-scoped-reference/example-2/example-2-1.xml,Success,a.b.c,a.b.c,2,Root.rpq.resolvedQuantity.value.amount=[3] Root.pq.quantity.value.amount=[3],Element mapped to already populated field

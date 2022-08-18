@@ -1,0 +1,1 @@
+test 6.1 shouldSetFieldFromSynonymSetToWhen and test 6.2 shouldNotSetFieldFromSynonymSetToWhen

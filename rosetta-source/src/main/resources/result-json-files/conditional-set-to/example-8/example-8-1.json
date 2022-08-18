@@ -1,0 +1,11 @@
+{
+  "vfield" : {
+    "wfield" : [ {
+      "id" : "foo",
+      "role" : "FOO"
+    }, {
+      "id" : "bar",
+      "role" : "BAR"
+    } ]
+  }
+}

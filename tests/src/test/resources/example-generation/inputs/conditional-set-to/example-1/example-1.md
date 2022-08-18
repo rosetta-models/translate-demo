@@ -1,0 +1,1 @@
+conditional-set-to test 2.1 shouldSetFieldFromSynonymSetTo and test 2.2 shouldNotSetFieldFromSynonymSetTo
