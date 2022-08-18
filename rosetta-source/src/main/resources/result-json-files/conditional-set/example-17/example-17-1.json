@@ -1,0 +1,10 @@
+{
+  "wfield" : [ {
+    "xfield" : {
+      "meta" : {
+        "scheme" : "sausageScheme"
+      },
+      "value" : "SAUSAGE"
+    }
+  } ]
+}

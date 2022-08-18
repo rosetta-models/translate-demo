@@ -1,0 +1,15 @@
+{
+  "partyTradeId" : {
+    "party" : [ {
+      "meta" : {
+        "scheme" : "scheme1"
+      },
+      "value" : "FISH"
+    }, {
+      "meta" : {
+        "scheme" : "scheme2"
+      },
+      "value" : "CHIPS"
+    } ]
+  }
+}

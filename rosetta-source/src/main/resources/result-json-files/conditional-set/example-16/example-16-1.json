@@ -1,0 +1,12 @@
+{
+  "vfield" : {
+    "wfield" : [ {
+      "xfield" : {
+        "meta" : {
+          "scheme" : "fishScheme"
+        },
+        "value" : "FISH"
+      }
+    } ]
+  }
+}
