@@ -1,5 +1,6 @@
-Mapping Coverage,33.33
+Mapping Coverage,0.00
 
 Input Path,Failed Mapping Count
 a.party.id,1
+a.partyTradeIdentifier.partyReference.href,1
 a.party,1

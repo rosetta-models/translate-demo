@@ -1,4 +1,14 @@
 <?xml version="1.0"?>
 <dataDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="example-6.xsd example-6.xsd">
-    <!-- add content here -->
+    <a>
+        <b>
+            <cRef href="xyz" />
+        </b>
+        <c id="xyz">
+            <d>FISH</d>
+            <e>CHIPS</e>
+            <f>AA</f>
+            <g>SODA</g>
+        </c>
+    </a>
 </dataDocument>

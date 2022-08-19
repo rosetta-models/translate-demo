@@ -1,0 +1,18 @@
+namespace demo.translate.conditional_set.example_16
+version "${project.version}"
+
+synonym source CONDITIONAL_SET_EXAMPLE_16
+
+type Root:
+    [rootType]
+	vField V19_3 (1..1)
+	[synonym CONDITIONAL_SET_EXAMPLE_16 value "a"]
+
+
+type V19_3:
+	wField W19_3 (1..*)
+
+
+type W19_3:
+	xField string (1..1) [metadata scheme]
+	[synonym CONDITIONAL_SET_EXAMPLE_16 value "c" path "b" set when "b->c->scheme"="fishScheme" and rosettaPath = Root->vField->wField -> xField meta "scheme"]

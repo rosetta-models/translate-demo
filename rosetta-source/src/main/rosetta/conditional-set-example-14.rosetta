@@ -1,0 +1,14 @@
+namespace demo.translate.conditional_set.example_14
+version "${project.version}"
+
+synonym source CONDITIONAL_SET_EXAMPLE_14
+
+type Root:
+    [rootType]
+	wField W19_1 (1..*)
+	[synonym CONDITIONAL_SET_EXAMPLE_14 value "b" path "a"]
+
+
+type W19_1:
+	xField string (1..1) [metadata scheme]
+	[synonym CONDITIONAL_SET_EXAMPLE_14 value "c" set when "c->scheme" = "fishScheme" meta "scheme"]

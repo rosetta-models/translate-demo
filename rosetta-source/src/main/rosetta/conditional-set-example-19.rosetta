@@ -1,0 +1,18 @@
+namespace demo.translate.conditional_set.example_19
+version "${project.version}"
+
+synonym source CONDITIONAL_SET_EXAMPLE_19
+
+type Root:
+    [rootType]
+	vField V23 (1..1)
+	[synonym CONDITIONAL_SET_EXAMPLE_19 value "a"]
+
+
+type V23:
+	wField1 string (0..1)
+	[synonym CONDITIONAL_SET_EXAMPLE_19 value "b" set when "c" exists]
+	wField2 string (0..1)
+	[synonym CONDITIONAL_SET_EXAMPLE_19 value "c"]
+	wField3 string (0..1)
+	[synonym CONDITIONAL_SET_EXAMPLE_19 value "d"]

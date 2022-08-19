@@ -1,0 +1,26 @@
+namespace demo.translate.conditional_set_to.example_2
+version "${project.version}"
+
+synonym source CONDITIONAL_SET_TO_EXAMPLE_2
+
+type Root:
+    [rootType]
+	vField V2_1 (1..1)
+	[synonym CONDITIONAL_SET_TO_EXAMPLE_2 value "a"]
+
+type V2_1:
+	wField W2_1 (1..1)
+	[synonym CONDITIONAL_SET_TO_EXAMPLE_2 value "b"]
+	xField X2_1 (1..1)
+
+type W2_1:
+	yField Y2_1 (1..1)
+	[synonym CONDITIONAL_SET_TO_EXAMPLE_2 value "c"]
+
+type X2_1:
+	setToField string (1..1)
+	[synonym CONDITIONAL_SET_TO_EXAMPLE_2 set to "OTHER" when "b->c->e" exists]
+
+type Y2_1:
+	zField string (1..1)
+	[synonym CONDITIONAL_SET_TO_EXAMPLE_2 value "d"]
