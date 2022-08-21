@@ -1,18 +1,18 @@
 {
-  "wfield2" : [ {
-    "xfield" : {
-      "meta" : {
-        "scheme" : "steakScheme"
-      },
-      "value" : "STEAK"
-    }
-  } ],
   "wfield" : [ {
     "xfield" : {
       "meta" : {
         "scheme" : "sausageScheme"
       },
       "value" : "SAUSAGE"
+    }
+  } ],
+  "wfield2" : [ {
+    "xfield" : {
+      "meta" : {
+        "scheme" : "steakScheme"
+      },
+      "value" : "STEAK"
     }
   } ]
 }
