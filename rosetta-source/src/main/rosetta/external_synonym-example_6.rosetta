@@ -2,7 +2,89 @@ namespace demo.translate.external_synonym.example_6
 version "${project.version}"
 
 synonym source EXTERNAL_SYNONYM_EXAMPLE_6
+synonym source Bank_B5 extends EXTERNAL_SYNONYM_EXAMPLE_6   //extends BankB
+{
+	Root:
+		+ xField
+			[value "a"]
+
+	X5:
+		+ yReference
+			[value "cRef" path "b" meta "href"]
+		+ yField
+			[value "c"]
+
+	Y5:
+		[value "Y5" meta "id"]
+		+ name
+			[value "d"]
+		+ zField
+			[value "f"]
+
+	enums
+	ZEnum5:
+		+ ZELDA
+			[value "AA"]
+
+		+ WARRIOR
+			[value "BB"]
+
+}
+
+
+synonym source Bank_B6 extends Bank_B5
+{
+	Y5:
+		- name
+	enums
+	ZEnum5:
+		- ZELDA
+
+}
+
+synonym source Bank_B6_1 extends Bank_B5
+{
+	Y5:
+		- name
+		+ name
+			[value "e"]
+
+	enums
+	ZEnum5:
+		- ZELDA
+		+ ZELDA
+			[value "BB"]
+
+		- WARRIOR
+		+ WARRIOR
+			[value "AA"]
+}
+
 
 type Root:
     [rootType]
-    // add content here
+	xField X5 (0..1)
+		[synonym EXTERNAL_SYNONYM_EXAMPLE_6 value "a"]
+
+type X5:
+	yReference Y5 (1..1)
+		[metadata reference]
+		[synonym EXTERNAL_SYNONYM_EXAMPLE_6 value "cRef" path "b" meta "href"]
+	yField Y5 (1..1)
+		[synonym EXTERNAL_SYNONYM_EXAMPLE_6 value "c"]
+
+type Y5:
+	[metadata key]
+	[synonym EXTERNAL_SYNONYM_EXAMPLE_6 value "Y5" meta "id"]
+	name string (0..1)
+		[synonym EXTERNAL_SYNONYM_EXAMPLE_6 value "d"]
+	zField ZEnum5 (0..1)
+		[synonym EXTERNAL_SYNONYM_EXAMPLE_6 value "f"]
+	z2Field string (0..1)
+		[synonym EXTERNAL_SYNONYM_EXAMPLE_6 value "g"]
+
+enum ZEnum5:
+	ZELDA
+		[synonym EXTERNAL_SYNONYM_EXAMPLE_6 value "AA"]
+	WARRIOR
+		[synonym EXTERNAL_SYNONYM_EXAMPLE_6 value "BB"]

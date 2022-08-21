@@ -2,7 +2,29 @@ namespace demo.translate.external_synonym.example_4
 version "${project.version}"
 
 synonym source EXTERNAL_SYNONYM_EXAMPLE_4
+synonym source Bank_A4_BASE extends EXTERNAL_SYNONYM_EXAMPLE_4
+{
+	Root:
+		+ partyTradeId
+			[value "partyTradeIdentifier" path "a"]
+}
+
+
+synonym source Bank_A4 extends Bank_A4_BASE
+{
+	PartyTradeIdentifier4:
+		+ party
+			[value "partyReference" meta "scheme"]
+}
 
 type Root:
     [rootType]
-    // add content here
+	partyTradeId PartyTradeIdentifier4 (0..1)
+
+
+type PartyTradeIdentifier4:
+	party string (1..*)
+		[metadata scheme]
+	account string (1..*)
+		[metadata scheme]
+		[synonym EXTERNAL_SYNONYM_EXAMPLE_4 value "accountReference" meta "scheme"]

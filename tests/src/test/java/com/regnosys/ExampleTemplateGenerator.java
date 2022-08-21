@@ -8,8 +8,8 @@ import static com.regnosys.ExampleGenerator.*;
 
 public class ExampleTemplateGenerator {
 
-    public static final String CATEGORY_NAME = "conditional-set";
-    public static final String FILENAME_SUFFIX = "25";
+    public static final String CATEGORY_NAME = "mappers";
+    public static final String FILENAME_SUFFIX = "2";
 
     private final String categoryName;
     private final String exampleName;

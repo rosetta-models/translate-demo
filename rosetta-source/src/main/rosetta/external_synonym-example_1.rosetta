@@ -3,6 +3,21 @@ version "${project.version}"
 
 synonym source EXTERNAL_SYNONYM_EXAMPLE_1
 
+synonym source Bank_A1 extends EXTERNAL_SYNONYM_EXAMPLE_1
+{
+	Root:
+		+ partyTradeId
+			[value "partyTradeIdentifier" path "a"]
+
+	PartyTradeIdentifier1:
+		+ party
+			[value "partyReference" meta "scheme"]
+}
+
 type Root:
     [rootType]
-    // add content here
+	partyTradeId PartyTradeIdentifier1 (0..1)
+
+type PartyTradeIdentifier1:
+	party string (1..*)
+		[metadata scheme]

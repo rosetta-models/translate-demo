@@ -3,6 +3,37 @@ version "${project.version}"
 
 synonym source EXTERNAL_SYNONYM_EXAMPLE_5
 
+synonym source Bank_A7Base extends EXTERNAL_SYNONYM_EXAMPLE_5
+{
+	AssignedIdentifier7:
+		+ identifier
+			[value "accountReference" meta "scheme"]
+}
+
+synonym source Bank_A7 extends Bank_A7Base
+{
+	Contract7:
+		+ id
+			[value "partyTradeIdentifier" path "a"]
+
+	AssignedIdentifier7:
+		+ identifier
+			[value "partyReference" meta "scheme"]
+}
+
 type Root:
     [rootType]
-    // add content here
+	contract Contract7 (1..1)
+
+type Contract7:
+	id Identifier7 (1..*)
+
+type Identifier7:
+	assignedId AssignedIdentifier7 (1..*)
+
+type AssignedIdentifier7:
+	identifier string (1..1)
+		[metadata scheme]
+
+metaType reference string
+metaType id string
