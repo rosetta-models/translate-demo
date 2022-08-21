@@ -5,22 +5,19 @@ synonym source CONDITIONAL_DEFAULT_EXAMPLE_1
 
 type Root:
     [rootType]
-	vField V1 (1..1)
-	[synonym CONDITIONAL_DEFAULT_EXAMPLE_1 value "a"]
+	xField X (1..1)
+	    [synonym CONDITIONAL_DEFAULT_EXAMPLE_1 value "a"]
 
+type X:
+	yField Y (1..1)
+	    [synonym CONDITIONAL_DEFAULT_EXAMPLE_1 value "b"]
+	strField string (1..1)
+	    [synonym CONDITIONAL_DEFAULT_EXAMPLE_1 value "e" path "b->c" default to "DEFAULT"]
 
-type V1:
-	wField W1 (1..1)
-	[synonym CONDITIONAL_DEFAULT_EXAMPLE_1 value "b"]
-	xField string (1..1)
-	[synonym CONDITIONAL_DEFAULT_EXAMPLE_1 value "e" path "b->c" default to "DEFAULT"]
+type Y:
+	zField Z (1..1)
+	    [synonym CONDITIONAL_DEFAULT_EXAMPLE_1 value "c"]
 
-
-type W1:
-	yField Y1 (1..1)
-	[synonym CONDITIONAL_DEFAULT_EXAMPLE_1 value "c"]
-
-
-type Y1:
-	zField string (1..1)
-	[synonym CONDITIONAL_DEFAULT_EXAMPLE_1 value "d"]
+type Z:
+	strField string (1..1)
+	    [synonym CONDITIONAL_DEFAULT_EXAMPLE_1 value "d"]

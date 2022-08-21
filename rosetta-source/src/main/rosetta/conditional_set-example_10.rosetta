@@ -12,7 +12,7 @@ type Root:
 type V17_2:
 	wField W17_2 (0..*)
 
-	xField string (0..1)
+	strField string (0..1)
 	[synonym CONDITIONAL_SET_EXAMPLE_10 value "c"]
 
 
@@ -22,5 +22,5 @@ type W17_2:
 
 
 type Y17_2:
-	zField string (0..1)
+	strField string (0..1)
 	[synonym CONDITIONAL_SET_EXAMPLE_10 value "e"]

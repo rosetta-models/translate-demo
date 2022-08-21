@@ -1,10 +1,10 @@
 {
-  "vfield" : {
-    "wfield" : {
-      "yfield" : {
-        "zfield" : "FISH"
+  "xfield" : {
+    "strField" : "DEFAULT",
+    "yfield" : {
+      "zfield" : {
+        "strField" : "FISH"
       }
-    },
-    "xfield" : "DEFAULT"
+    }
   }
 }

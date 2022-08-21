@@ -1,6 +1,6 @@
 {
-  "vfield" : {
-    "wfield1" : "fish",
-    "wfield3" : "chips"
+  "yfield" : {
+    "str1Field" : "fish",
+    "str2Field" : "chips"
   }
 }

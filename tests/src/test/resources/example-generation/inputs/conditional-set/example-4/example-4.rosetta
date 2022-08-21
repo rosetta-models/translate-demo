@@ -5,19 +5,19 @@ synonym source CONDITIONAL_SET_EXAMPLE_4
 
 type Root:
     [rootType]
-    vField V8 (1..1)
+    xField X (1..1)
         [synonym CONDITIONAL_SET_EXAMPLE_4 value "a"]
 
-type V8:
-    wField W8 (1..1)
+type X:
+    yField Y (1..1)
         [synonym CONDITIONAL_SET_EXAMPLE_4 value "b"]
-    xField string (1..1)
+    strField string (1..1)
         [synonym CONDITIONAL_SET_EXAMPLE_4 value "e" path "b->c" set when "b->c->d" = True]
 
-type W8:
-    yField Y8 (1..1)
+type Y:
+    zField Z (1..1)
         [synonym CONDITIONAL_SET_EXAMPLE_4 value "c"]
 
-type Y8:
-    zField boolean (1..1)
+type Z:
+    boolField boolean (1..1)
         [synonym CONDITIONAL_SET_EXAMPLE_4 value "d"]

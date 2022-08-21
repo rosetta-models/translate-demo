@@ -1,10 +1,10 @@
 {
-  "wfield" : [ {
-    "xfield" : "FISH",
-    "yfield" : "CHIPS"
+  "zfield" : [ {
+    "str1Field" : "FISH",
+    "str2Field" : "CHIPS"
   }, {
-    "yfield" : "GRAVY"
+    "str2Field" : "GRAVY"
   }, {
-    "yfield" : "POTATOS"
+    "str2Field" : "POTATOS"
   } ]
 }

@@ -1,5 +1,5 @@
 {
-  "xfield" : {
-    "yfield" : "FOO"
+  "zfield" : {
+    "enum1Field" : "FOO"
   }
 }

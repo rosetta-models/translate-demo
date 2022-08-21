@@ -1,8 +1,8 @@
 {
-  "vfield" : {
-    "wfield" : {
-      "yfield" : {
-        "zfield" : false
+  "xfield" : {
+    "yfield" : {
+      "zfield" : {
+        "boolField" : false
       }
     }
   }

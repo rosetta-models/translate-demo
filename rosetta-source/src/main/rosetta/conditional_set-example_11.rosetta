@@ -5,12 +5,11 @@ synonym source CONDITIONAL_SET_EXAMPLE_11
 
 type Root:
     [rootType]
-	wField W18_1 (1..*)
-	[synonym CONDITIONAL_SET_EXAMPLE_11 value "b" path "a"]
+	zField Z (1..*)
+	    [synonym CONDITIONAL_SET_EXAMPLE_11 value "b" path "a"]
 
-
-type W18_1:
-	xField string (1..1)
-	[synonym CONDITIONAL_SET_EXAMPLE_11 value "c" set when "d" = "CHIPS"]
-	yField string (1..1)
-	[synonym CONDITIONAL_SET_EXAMPLE_11 value "d"]
+type Z:
+	str1Field string (1..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_11 value "c" set when "d" = "CHIPS"]
+	str2Field string (1..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_11 value "d"]

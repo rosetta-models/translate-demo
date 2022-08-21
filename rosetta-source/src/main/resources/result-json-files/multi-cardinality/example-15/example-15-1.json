@@ -2,8 +2,8 @@
   "vfield" : {
     "wfield" : [ {
       "xfield" : [ {
-        "zfield" : "STEAK",
-        "yfield" : "FISH"
+        "yfield" : "FISH",
+        "zfield" : "STEAK"
       } ]
     } ]
   }

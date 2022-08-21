@@ -12,7 +12,7 @@ type Root:
 type V17_1:
 	wField W17_1 (0..*)
 	[synonym CONDITIONAL_SET_EXAMPLE_9 value "b" set when "c" = "CHIPS"]
-	xField string (0..1)
+	strField string (0..1)
 	[synonym CONDITIONAL_SET_EXAMPLE_9 value "c"]
 
 
@@ -22,5 +22,5 @@ type W17_1:
 
 
 type Y17_1:
-	zField string (0..1)
+	strField string (0..1)
 	[synonym CONDITIONAL_SET_EXAMPLE_9 value "e"]

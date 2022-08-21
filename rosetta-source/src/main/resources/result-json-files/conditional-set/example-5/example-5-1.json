@@ -1,7 +1,7 @@
 {
-  "vfield" : {
-    "wfield2" : {
-      "id" : "foo"
+  "yfield" : {
+    "z2Field" : {
+      "strField" : "foo"
     }
   }
 }

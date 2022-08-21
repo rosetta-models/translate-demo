@@ -1,10 +1,10 @@
 {
   "vfield" : {
+    "xfield" : "FOO",
     "wfield" : {
       "yfield" : {
         "zfield" : "BAR"
       }
-    },
-    "xfield" : "FOO"
+    }
   }
 }

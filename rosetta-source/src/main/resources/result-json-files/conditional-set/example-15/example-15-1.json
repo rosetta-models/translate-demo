@@ -1,6 +1,6 @@
 {
-  "wfield" : [ {
-    "xfield" : {
+  "zfield" : [ {
+    "strField" : {
       "meta" : {
         "scheme" : "fishScheme"
       },

@@ -5,21 +5,21 @@ synonym source CONDITIONAL_SET_EXAMPLE_24
 
 type Root:
     [rootType]
-	xField X26_5 (0..1)
-	[synonym CONDITIONAL_SET_EXAMPLE_24 value "a"]
+	zField Z (0..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_24 value "a"]
 
-type X26_5:
-	yField TestEnum (0..1)
-	[synonym CONDITIONAL_SET_EXAMPLE_24 value "b" set when "b->scheme" = "abc"]
-	zField Test2Enum (0..1)
-	[synonym CONDITIONAL_SET_EXAMPLE_24 value "b" set when "b->scheme" = "def"]
+type Z:
+	enum1Field TestEnum (0..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_24 value "b" set when "b->scheme" = "abc"]
+	enum2Field Test2Enum (0..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_24 value "b" set when "b->scheme" = "def"]
 
 enum TestEnum:
 	FOO
-	[synonym CONDITIONAL_SET_EXAMPLE_24 value "foo"]
+	    [synonym CONDITIONAL_SET_EXAMPLE_24 value "foo"]
 	BAR
-	[synonym CONDITIONAL_SET_EXAMPLE_24 value "bar"]
+	    [synonym CONDITIONAL_SET_EXAMPLE_24 value "bar"]
 
 enum Test2Enum:
 	BAZ
-	[synonym CONDITIONAL_SET_EXAMPLE_24 value "baz"]
+	    [synonym CONDITIONAL_SET_EXAMPLE_24 value "baz"]

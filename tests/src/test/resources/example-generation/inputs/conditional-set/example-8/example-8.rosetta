@@ -5,22 +5,19 @@ synonym source CONDITIONAL_SET_EXAMPLE_8
 
 type Root:
     [rootType]
-	vField V16 (0..1)
-	[synonym CONDITIONAL_SET_EXAMPLE_8 value "a"]
+	xField X (0..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_8 value "a"]
 
+type X:
+	yField Y (0..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_8 value "b" set when "c" = "CHIPS"]
+	strField string (0..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_8 value "c"]
 
-type V16:
-	wField W16 (0..1)
-	[synonym CONDITIONAL_SET_EXAMPLE_8 value "b" set when "c" = "CHIPS"]
-	xField string (0..1)
-	[synonym CONDITIONAL_SET_EXAMPLE_8 value "c"]
+type Y:
+	zField Z (0..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_8 value "d"]
 
-
-type W16:
-	yField Y16 (0..1)
-	[synonym CONDITIONAL_SET_EXAMPLE_8 value "d"]
-
-
-type Y16:
-	zField string (0..1)
-	[synonym CONDITIONAL_SET_EXAMPLE_8 value "e"]
+type Z:
+	strField string (0..1)
+    	[synonym CONDITIONAL_SET_EXAMPLE_8 value "e"]

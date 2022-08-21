@@ -1,7 +1,7 @@
 {
-  "vfield" : {
-    "wfield2" : "and",
-    "wfield1" : "fish",
-    "wfield3" : "chips"
+  "zfield" : {
+    "str1Field" : "fish",
+    "str2Field" : "and",
+    "str3Field" : "chips"
   }
 }

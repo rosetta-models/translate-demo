@@ -1,10 +1,10 @@
 {
-  "vfield" : {
-    "wfield" : {
-      "yfield" : {
-        "zfield" : true
+  "xfield" : {
+    "strField" : "CHIPS",
+    "yfield" : {
+      "zfield" : {
+        "boolField" : true
       }
-    },
-    "xfield" : "CHIPS"
+    }
   }
 }

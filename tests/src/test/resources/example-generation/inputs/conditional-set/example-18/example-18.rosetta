@@ -5,11 +5,12 @@ synonym source CONDITIONAL_SET_EXAMPLE_18
 
 type Root:
     [rootType]
-	wField W20_2 (1..*)
-	wField2 W20_2 (1..*)
+	z1Field Z (1..*)
+	z2Field Z (1..*)
 
-
-type W20_2:
-	xField string (1..1)  [metadata scheme]
-	[synonym CONDITIONAL_SET_EXAMPLE_18 value "c"  path "a" set when "a->c->scheme" = "sausageScheme" and rosettaPath = Root -> wField -> xField
-		,set when "a->c->scheme" = "steakScheme" and rosettaPath = Root -> wField2 -> xField meta "scheme"]
+type Z:
+	strField string (1..1)  
+        [metadata scheme]
+        [synonym CONDITIONAL_SET_EXAMPLE_18 value "c" path "a" 
+            set when "a->c->scheme" = "sausageScheme" and rosettaPath = Root->z1Field->strField,
+            set when "a->c->scheme" = "steakScheme" and rosettaPath = Root->z2Field->strField meta "scheme"]

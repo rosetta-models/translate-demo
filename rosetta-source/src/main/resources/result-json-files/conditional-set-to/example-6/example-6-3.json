@@ -1,10 +1,10 @@
 {
   "vfield" : {
+    "xfield" : "DEFAULT",
     "wfield" : {
       "yfield" : {
         "zfield" : "PIZZA"
       }
-    },
-    "xfield" : "DEFAULT"
+    }
   }
 }

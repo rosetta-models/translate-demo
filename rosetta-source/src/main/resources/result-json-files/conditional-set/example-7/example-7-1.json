@@ -1,14 +1,14 @@
 {
-  "vfield1" : {
-    "wfield" : {
-      "sfield" : "FISH",
-      "xfield" : "FOO"
+  "y1Field" : {
+    "zfield" : {
+      "str1Field" : "FISH",
+      "str2Field" : "FOO"
     }
   },
-  "vfield2" : {
-    "wfield" : {
-      "sfield" : "CHIPS",
-      "xfield" : "BAR"
+  "y2Field" : {
+    "zfield" : {
+      "str1Field" : "CHIPS",
+      "str2Field" : "BAR"
     }
   }
 }

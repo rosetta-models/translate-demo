@@ -1,8 +1,8 @@
 {
-  "vfield" : {
-    "wfield" : {
-      "yfield" : {
-        "zfield" : "FISH"
+  "xfield" : {
+    "yfield" : {
+      "zfield" : {
+        "strField" : "FISH"
       }
     }
   }

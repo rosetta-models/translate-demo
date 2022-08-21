@@ -1,7 +1,7 @@
 {
-  "vfield" : {
-    "wfield" : [ {
-      "xfield" : {
+  "yfield" : {
+    "zfield" : [ {
+      "strField" : {
         "meta" : {
           "scheme" : "fishScheme"
         },

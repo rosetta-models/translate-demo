@@ -1,6 +1,6 @@
 {
-  "vfield" : {
-    "wfield2" : "and",
-    "wfield3" : "chips"
+  "zfield" : {
+    "str2Field" : "and",
+    "str3Field" : "chips"
   }
 }
