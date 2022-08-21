@@ -3,6 +3,83 @@ version "${project.version}"
 
 synonym source EXTERNAL_SYNONYM_EXAMPLE_8
 
+synonym source Bank_A8 extends EXTERNAL_SYNONYM_EXAMPLE_8
+{
+	Root:
+		+ xField
+			[value "a"]
+		+ yField
+			[value "a"]
+
+	Super8:
+		+ superField
+			[value "b"]
+			[value "d"]
+
+	X8:
+		+ xxField
+			[value "c"]
+
+	Y8:
+		+ yyField
+			[value "e"]
+}
+
+synonym source Bank_A8_1 extends EXTERNAL_SYNONYM_EXAMPLE_8
+{
+	Root:
+		+ xField
+			[value "a"]
+		+ yField
+			[value "a"]
+
+	X8:
+		+ superField
+			[value "b"]
+		+ xxField
+			[value "c"]
+
+	Y8:
+		+ superField
+			[value "d"]
+		+ yyField
+			[value "e"]
+}
+
+synonym source Bank_A8_2 extends EXTERNAL_SYNONYM_EXAMPLE_8
+{
+	Root:
+		+ xField
+			[value "a"]
+		+ yField
+			[value "a"]
+
+	Super8:
+		+ superField
+			[value "b" set when rosettaPath = Root -> xField -> superField]
+			[value "d" set when rosettaPath = Root -> yField -> superField]
+
+	X8:
+		+ xxField
+			[value "c"]
+
+	Y8:
+		+ yyField
+			[value "e"]
+}
+
 type Root:
     [rootType]
-    // add content here
+	xField X8 (0..1)
+	yField Y8 (0..1)
+
+type Super8:
+	superField string (0..1)
+
+type X8 extends Super8:
+	xxField string (1..1)
+
+type Y8 extends Super8:
+	yyField string (0..1)
+
+

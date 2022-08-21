@@ -1,1 +1,10 @@
-null
+{
+  "vfield" : {
+    "wfield" : {
+      "yfield" : {
+        "zfield" : true
+      }
+    },
+    "xfield" : "CHIPS"
+  }
+}

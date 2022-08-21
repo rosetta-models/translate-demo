@@ -1,1 +1,9 @@
-null
+{
+  "vfield" : {
+    "wfield" : {
+      "yfield" : {
+        "zfield" : "FISH"
+      }
+    }
+  }
+}

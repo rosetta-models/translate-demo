@@ -1,11 +1,13 @@
 package demo.translate;
 
+import com.regnosys.TestUtils;
 import com.regnosys.granite.ingestor.ExpectationUtil;
 import com.regnosys.granite.ingestor.IngestionTest;
 import com.regnosys.granite.ingestor.IngestionTestUtil;
 import com.regnosys.granite.ingestor.service.IngestionFactory;
 import com.regnosys.granite.ingestor.service.IngestionService;
 import com.regnosys.model.ModelRuntimeModule;
+import org.junit.jupiter.api.function.Executable;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.params.provider.Arguments;
 
@@ -13,7 +15,7 @@ import java.net.URL;
 import java.util.*;
 import java.util.stream.Stream;
 
-//@org.junit.jupiter.api.Disabled
+@org.junit.jupiter.api.Disabled
 public class MetaScopedReferenceExample2IngestionTest extends IngestionTest<demo.translate.meta_scoped_reference.example_2.Root> {
 
     private static final String SAMPLE_FILES_DIR = "cdm-sample-files/meta-scoped-reference/example-2";
@@ -42,6 +44,11 @@ public class MetaScopedReferenceExample2IngestionTest extends IngestionTest<demo
     @Override
     protected IngestionService ingestionService() {
         return ingestionService;
+    }
+
+    @Override
+    protected Executable assertJsonEquals(String expectedJson, String resultJson) {
+        return TestUtils.assertJsonEquals(expectedJson, resultJson, getClazz());
     }
 
     @SuppressWarnings("unused")//used by the junit parameterized test

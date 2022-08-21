@@ -1,1 +1,5 @@
 File Name,Result,Input Path,Indexless Input Path,Unmappable CDM Path Count,Unmappable CDM Paths,Reason For Failure
+cdm-sample-files/external-synonym/example-1/example-1-1.xml,Success,a.partyTradeIdentifier.partyReference(0)[scheme=scheme1].scheme,a.partyTradeIdentifier.partyReference[scheme=scheme1].scheme,0,,Element could not be mapped to a rosettaField
+cdm-sample-files/external-synonym/example-1/example-1-1.xml,Success,a.partyTradeIdentifier.partyReference(1)[scheme=scheme2].scheme,a.partyTradeIdentifier.partyReference[scheme=scheme2].scheme,0,,Element could not be mapped to a rosettaField
+cdm-sample-files/external-synonym/example-1/example-1-1.xml,Success,a.partyTradeIdentifier.partyReference(0)[scheme=scheme1],a.partyTradeIdentifier.partyReference[scheme=scheme1],0,,had no destination : Element could not be mapped to a rosettaField
+cdm-sample-files/external-synonym/example-1/example-1-1.xml,Success,a.partyTradeIdentifier.partyReference(1)[scheme=scheme2],a.partyTradeIdentifier.partyReference[scheme=scheme2],0,,had no destination : Element could not be mapped to a rosettaField

@@ -1,11 +1,13 @@
 package demo.translate;
 
+import com.regnosys.TestUtils;
 import com.regnosys.granite.ingestor.ExpectationUtil;
 import com.regnosys.granite.ingestor.IngestionTest;
 import com.regnosys.granite.ingestor.IngestionTestUtil;
 import com.regnosys.granite.ingestor.service.IngestionFactory;
 import com.regnosys.granite.ingestor.service.IngestionService;
 import com.regnosys.model.ModelRuntimeModule;
+import org.junit.jupiter.api.function.Executable;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.params.provider.Arguments;
 
@@ -42,6 +44,11 @@ public class ConditionalSetExample15IngestionTest extends IngestionTest<demo.tra
     @Override
     protected IngestionService ingestionService() {
         return ingestionService;
+    }
+
+    @Override
+    protected Executable assertJsonEquals(String expectedJson, String resultJson) {
+        return TestUtils.assertJsonEquals(expectedJson, resultJson, getClazz());
     }
 
     @SuppressWarnings("unused")//used by the junit parameterized test

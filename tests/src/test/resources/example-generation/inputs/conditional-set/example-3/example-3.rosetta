@@ -5,14 +5,19 @@ synonym source CONDITIONAL_SET_EXAMPLE_3
 
 type Root:
     [rootType]
-	aField A5 (1..1)
-	[synonym CONDITIONAL_SET_EXAMPLE_3 value "a"]
+	vField V5 (1..1)
+    	[synonym CONDITIONAL_SET_EXAMPLE_3 value "a"]
 
+type V5:
+	wField W5 (1..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_3 value "b"]
+	xField string (1..1)
+    	[synonym CONDITIONAL_SET_EXAMPLE_3 value "e" path "b->c" set when "b->c->d" is absent]
 
-type A5:
-	xField X5 (1..1)
+type W5:
+	yField Y5 (1..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_3 value "c"]
 
-
-type X5:
-	bField string (1..*)
-	[synonym CONDITIONAL_SET_EXAMPLE_3 value "b"]
+type Y5:
+	zField string (1..1)
+    	[synonym CONDITIONAL_SET_EXAMPLE_3 value "d"]
