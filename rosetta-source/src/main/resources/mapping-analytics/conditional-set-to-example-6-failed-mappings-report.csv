@@ -1,0 +1,4 @@
+File Name,Result,Input Path,Indexless Input Path,Unmappable CDM Path Count,Unmappable CDM Paths,Reason For Failure
+cdm-sample-files/conditional-set-to/example-6/example-6-1.xml,Fail_MappedNone,a.b.c.e,a.b.c.e,0,,Element with value CHIPS could not be mapped to a rosettaField
+cdm-sample-files/conditional-set-to/example-6/example-6-2.xml,Fail_MappedNone,a.b.c.e,a.b.c.e,0,,Element with value CHIPS could not be mapped to a rosettaField
+cdm-sample-files/conditional-set-to/example-6/example-6-3.xml,Fail_MappedNone,a.b.c.e,a.b.c.e,0,,Element with value CHIPS could not be mapped to a rosettaField

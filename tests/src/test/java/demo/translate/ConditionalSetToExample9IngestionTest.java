@@ -15,7 +15,7 @@ import java.net.URL;
 import java.util.*;
 import java.util.stream.Stream;
 
-@org.junit.jupiter.api.Disabled
+//@org.junit.jupiter.api.Disabled
 public class ConditionalSetToExample9IngestionTest extends IngestionTest<demo.translate.conditional_set_to.example_9.Root> {
 
     private static final String SAMPLE_FILES_DIR = "cdm-sample-files/conditional-set-to/example-9";

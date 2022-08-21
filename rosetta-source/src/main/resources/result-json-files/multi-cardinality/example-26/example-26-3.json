@@ -3,8 +3,8 @@
     "irps" : [ {
       "bfield" : "FISH"
     }, {
-      "dfield" : "CHIPS",
-      "bfield" : "AND"
+      "bfield" : "AND",
+      "dfield" : "CHIPS"
     } ]
   }
 }

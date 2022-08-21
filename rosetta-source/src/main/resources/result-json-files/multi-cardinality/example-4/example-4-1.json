@@ -2,8 +2,8 @@
   "afield" : {
     "xfield" : [ {
       "bfield" : {
-        "dfield" : "AND",
-        "cfield" : "FISH"
+        "cfield" : "FISH",
+        "dfield" : "AND"
       }
     }, {
       "bfield" : {

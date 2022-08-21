@@ -1,4 +1,4 @@
 File Name,Result,Input Path,Indexless Input Path,Unmappable CDM Path Count,Unmappable CDM Paths,Reason For Failure
 cdm-sample-files/conditional-set-to/example-13/example-13-2.xml,Success,a.b.c2.d,a.b.c2.d,0,,had no destination : Element could not be mapped to a rosettaField
-cdm-sample-files/conditional-set-to/example-13/example-13-1.xml,Success,a.b.c2.d,a.b.c2.d,0,,had no destination : Element could not be mapped to a rosettaField
-cdm-sample-files/conditional-set-to/example-13/example-13-1.xml,Success,a.b.c1.d,a.b.c1.d,0,,had no destination : Element could not be mapped to a rosettaField
+cdm-sample-files/conditional-set-to/example-13/example-13-1.xml,Fail_MappedNone,a.b.c2.d,a.b.c2.d,0,,Element with value BAR could not be mapped to a rosettaField
+cdm-sample-files/conditional-set-to/example-13/example-13-1.xml,Fail_MappedNone,a.b.c1.d,a.b.c1.d,0,,Element with value FOO could not be mapped to a rosettaField

@@ -1,1 +1,0 @@
-shouldSetFieldFromSynonymDefault test 1.2

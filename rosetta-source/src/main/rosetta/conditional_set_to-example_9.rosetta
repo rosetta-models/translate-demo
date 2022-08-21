@@ -5,27 +5,23 @@ synonym source CONDITIONAL_SET_TO_EXAMPLE_9
 
 type Root:
     [rootType]
-	vField V10_2 (1..1)
-	[synonym CONDITIONAL_SET_TO_EXAMPLE_9 value "c" path "a->b", "e" path "a->b"]
-
+    vField V10_2 (1..1)
+        [synonym CONDITIONAL_SET_TO_EXAMPLE_9 value
+            "c" path "a->b",
+            "e" path "a->b"]
 
 type V10_2:
-	wField W10_2 (0..1)
-	[synonym CONDITIONAL_SET_TO_EXAMPLE_9 value "c" path "a->b", "e" path "a->b"]
-
+    wField W10_2 (0..1)
 
 type W10_2:
-	id string (1..1)
-	[synonym CONDITIONAL_SET_TO_EXAMPLE_9 value "f"] //BankA
-	[synonym CONDITIONAL_SET_TO_EXAMPLE_9 value "f"]  //BankB
-	role TestEnum (1..1)
-	[synonym CONDITIONAL_SET_TO_EXAMPLE_9 set to TestEnum -> FOO when path = "b->c"]  //BankA
-	[synonym CONDITIONAL_SET_TO_EXAMPLE_9 set to TestEnum -> BAR when path = "b->e"]  //BankA
-	[synonym CONDITIONAL_SET_TO_EXAMPLE_9 set to TestEnum -> FOO when path = "b->c"]  //BankB
-	[synonym CONDITIONAL_SET_TO_EXAMPLE_9 set to TestEnum -> BAR when path = "b->e"]  //BankB
+    id string (1..1)
+        [synonym CONDITIONAL_SET_TO_EXAMPLE_9 value "f"]
+    role TestEnum (1..1)
+        [synonym CONDITIONAL_SET_TO_EXAMPLE_9 set to TestEnum -> FOO when path = "b->c"]
+        [synonym CONDITIONAL_SET_TO_EXAMPLE_9 set to TestEnum -> BAR when path = "b->e"]
 
 enum TestEnum:
 	FOO
-	[synonym CONDITIONAL_SET_TO_EXAMPLE_9 value "foo"]
+	    [synonym CONDITIONAL_SET_TO_EXAMPLE_9 value "foo"]
 	BAR
-	[synonym CONDITIONAL_SET_TO_EXAMPLE_9 value "bar"]
+	    [synonym CONDITIONAL_SET_TO_EXAMPLE_9 value "bar"]

@@ -1,0 +1,12 @@
+{
+  "vfield" : {
+    "wfield" : {
+      "yfield" : {
+        "zfield" : "FISH"
+      }
+    },
+    "xfield" : {
+      "setToField" : "OTHER"
+    }
+  }
+}
