@@ -5,6 +5,10 @@ synonym source CONDITIONAL_SET_TO_EXAMPLE_13
 
 type Root:
     [rootType]
+    x1 string (1..1)
+        [synonym CONDITIONAL_SET_TO_EXAMPLE_13 value "d" path "a->b->c1"]
+    x2 string (1..1)
+        [synonym CONDITIONAL_SET_TO_EXAMPLE_13 value "d" path "a->b->c2"]
     rField R27 (1..*)
         [synonym CONDITIONAL_SET_TO_EXAMPLE_13 value "a"]
 

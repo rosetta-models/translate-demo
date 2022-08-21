@@ -1,4 +1,6 @@
 {
+  "x1" : "FOO",
+  "x2" : "BAR",
   "rfield" : [ {
     "sfield" : [ {
       "zfield" : "FOO"

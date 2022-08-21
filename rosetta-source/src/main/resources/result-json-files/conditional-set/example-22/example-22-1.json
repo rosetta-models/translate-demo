@@ -1,8 +1,8 @@
 {
   "vfield" : {
-    "wfield3" : "chips",
     "wfield2" : [ {
       "xfield" : "and"
-    } ]
+    } ],
+    "wfield3" : "chips"
   }
 }
