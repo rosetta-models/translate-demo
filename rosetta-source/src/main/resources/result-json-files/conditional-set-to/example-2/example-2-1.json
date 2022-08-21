@@ -1,11 +1,11 @@
 {
-  "vfield" : {
-    "xfield" : {
-      "setToField" : "OTHER"
+  "wfield" : {
+    "yfield" : {
+      "strField" : "OTHER"
     },
-    "wfield" : {
+    "xfield" : {
       "yfield" : {
-        "zfield" : "FISH"
+        "strField" : "FISH"
       }
     }
   }

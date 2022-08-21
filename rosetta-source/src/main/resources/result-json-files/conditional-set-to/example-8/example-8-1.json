@@ -1,11 +1,11 @@
 {
-  "vfield" : {
-    "wfield" : [ {
-      "id" : "foo",
-      "role" : "FOO"
+  "yfield" : {
+    "zfield" : [ {
+      "enumField" : "FOO",
+      "strField" : "foo"
     }, {
-      "id" : "bar",
-      "role" : "BAR"
+      "enumField" : "BAR",
+      "strField" : "bar"
     } ]
   }
 }

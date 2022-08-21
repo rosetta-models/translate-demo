@@ -1,9 +1,9 @@
 {
-  "vfield" : {
-    "xfield" : "FOO",
-    "wfield" : {
-      "yfield" : {
-        "zfield" : "BAR"
+  "xfield" : {
+    "enumField" : "FOO",
+    "yfield" : {
+      "zfield" : {
+        "enumField" : "BAR"
       }
     }
   }

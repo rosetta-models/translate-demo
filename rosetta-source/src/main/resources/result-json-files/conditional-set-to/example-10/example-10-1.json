@@ -1,5 +1,5 @@
 {
-  "vfield" : {
-    "xfield" : "FOO"
+  "zfield" : {
+    "enumField" : "FOO"
   }
 }

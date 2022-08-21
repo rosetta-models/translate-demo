@@ -1,9 +1,9 @@
 {
-  "vfield" : {
-    "xfield" : "DEFAULT",
-    "wfield" : {
-      "yfield" : {
-        "zfield" : "PIZZA"
+  "xfield" : {
+    "strField" : "DEFAULT",
+    "yfield" : {
+      "zfield" : {
+        "strField" : "PIZZA"
       }
     }
   }

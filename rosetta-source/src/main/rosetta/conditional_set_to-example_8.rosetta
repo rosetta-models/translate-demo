@@ -5,24 +5,22 @@ synonym source CONDITIONAL_SET_TO_EXAMPLE_8
 
 type Root:
     [rootType]
-	vField V10 (1..1)
-	[synonym CONDITIONAL_SET_TO_EXAMPLE_8 value "a"]
+	yField Y (1..1)
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_8 value "a"]
 
+type Y:
+	zField Z (0..*)
 
-type V10:
-	wField W10 (0..*)
-
-
-type W10:
-	id string (1..1)
-	[synonym CONDITIONAL_SET_TO_EXAMPLE_8 value "f" path "b->c" ]
-	[synonym CONDITIONAL_SET_TO_EXAMPLE_8 value "f" path "b->e" ]
-	role TestEnum (1..1)
-	[synonym CONDITIONAL_SET_TO_EXAMPLE_8 set to TestEnum -> FOO when path = "b->c"]
-	[synonym CONDITIONAL_SET_TO_EXAMPLE_8 set to TestEnum -> BAR when path = "b->e"]
+type Z:
+	strField string (1..1)
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_8 value "f" path "b->c" ]
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_8 value "f" path "b->e" ]
+	enumField TestEnum (1..1)
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_8 set to TestEnum -> FOO when path = "b->c"]
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_8 set to TestEnum -> BAR when path = "b->e"]
 
 enum TestEnum:
 	FOO
-	[synonym CONDITIONAL_SET_TO_EXAMPLE_8 value "foo"]
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_8 value "foo"]
 	BAR
-	[synonym CONDITIONAL_SET_TO_EXAMPLE_8 value "bar"]
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_8 value "bar"]

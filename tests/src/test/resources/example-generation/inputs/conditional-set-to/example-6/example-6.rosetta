@@ -5,25 +5,22 @@ synonym source CONDITIONAL_SET_TO_EXAMPLE_6
 
 type Root:
     [rootType]
-	vField V7 (1..1)
-	[synonym CONDITIONAL_SET_TO_EXAMPLE_6 value "a"]
+	xField X (1..1)
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_6 value "a"]
 
-
-type V7:
-	wField W7 (1..1)
-	[synonym CONDITIONAL_SET_TO_EXAMPLE_6 value "b"]
-	xField string (1..1)
-	[synonym CONDITIONAL_SET_TO_EXAMPLE_6
+type X:
+	yField Y (1..1)
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_6 value "b"]
+	strField string (1..1)
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_6
 			set to "FISH2" when "b->c->d" = "FISH",
 			set to "SAUSAGE2" when "b->c->d" = "SAUSAGE",
 			set to "DEFAULT"]
 
+type Y:
+	zField Z (1..1)
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_6 value "c"]
 
-type W7:
-	yField Y7 (1..1)
-	[synonym CONDITIONAL_SET_TO_EXAMPLE_6 value "c"]
-
-
-type Y7:
-	zField string (1..1)
-	[synonym CONDITIONAL_SET_TO_EXAMPLE_6 value "d"]
+type Z:
+	strField string (1..1)
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_6 value "d"]

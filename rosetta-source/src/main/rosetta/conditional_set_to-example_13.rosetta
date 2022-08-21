@@ -5,20 +5,20 @@ synonym source CONDITIONAL_SET_TO_EXAMPLE_13
 
 type Root:
     [rootType]
-    x1 string (1..1)
+    str1Field string (1..1)
         [synonym CONDITIONAL_SET_TO_EXAMPLE_13 value "d" path "a->b->c1"]
-    x2 string (1..1)
+    str2Field string (1..1)
         [synonym CONDITIONAL_SET_TO_EXAMPLE_13 value "d" path "a->b->c2"]
-    rField R27 (1..*)
+    yField Y (1..*)
         [synonym CONDITIONAL_SET_TO_EXAMPLE_13 value "a"]
 
-type R27:
-    sField S27 (1..*)
+type Y:
+    zField Z (1..*)
         [synonym CONDITIONAL_SET_TO_EXAMPLE_13 value "b"]
 
-type S27:
-    zField Z27Enum (0..1)
-        [synonym CONDITIONAL_SET_TO_EXAMPLE_13 set to Z27Enum->FOO when "c2" exists and "c1" exists]
+type Z:
+    enumField TestEnum (0..1)
+        [synonym CONDITIONAL_SET_TO_EXAMPLE_13 set to TestEnum->FOO when "c2" exists and "c1" exists]
 
-enum Z27Enum:
+enum TestEnum:
     FOO

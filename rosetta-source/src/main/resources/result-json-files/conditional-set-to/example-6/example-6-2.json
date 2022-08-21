@@ -1,9 +1,9 @@
 {
-  "vfield" : {
-    "xfield" : "SAUSAGE2",
-    "wfield" : {
-      "yfield" : {
-        "zfield" : "SAUSAGE"
+  "xfield" : {
+    "strField" : "SAUSAGE2",
+    "yfield" : {
+      "zfield" : {
+        "strField" : "SAUSAGE"
       }
     }
   }
