@@ -8,7 +8,6 @@ type Root:
     partyTradeId PartyTradeIdentifier4 (0..1)
     	[synonym META_SCHEME_EXAMPLE_1 value "partyTradeIdentifier" path "a"]
 
-
 type PartyTradeIdentifier4:
     party string (1..*)
         [metadata scheme]

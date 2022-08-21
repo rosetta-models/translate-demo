@@ -15,7 +15,6 @@ type V10_1:
 type W10_1:
     xField X10_1 (0..*)
 
-
 type X10_1:
 	yField string (0..1)
 	    [synonym MULTI_CARDINALITY_EXAMPLE_8 value "d"]

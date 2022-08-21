@@ -11,7 +11,6 @@ type Root:
 type V10_1:
 	wField W10_1 (0..*)
 
-
 type W10_1:
     xField X10_1 (0..*)
         [synonym MULTI_CARDINALITY_EXAMPLE_11 value "b"]

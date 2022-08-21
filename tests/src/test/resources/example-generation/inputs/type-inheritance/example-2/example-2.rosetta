@@ -8,11 +8,9 @@ type Root:
 	employee FullPerson (1..1)
 	[synonym TYPE_INHERITANCE_EXAMPLE_2 value "employee"]
 
-
 type FullPerson extends Person:
 	address string (1..1)
 	[synonym TYPE_INHERITANCE_EXAMPLE_2 value "address"]
-
 
 type Person:
 	firstName string (1..1)

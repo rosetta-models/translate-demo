@@ -8,16 +8,13 @@ type Root:
     tField T10_2 (1..1)
     	[synonym MULTI_CARDINALITY_EXAMPLE_17 value "a"]
 
-
     type T10_2:
     	uField U10_2 (0..*)
     	[synonym MULTI_CARDINALITY_EXAMPLE_17 value "b", "c"]
 
-
     type U10_2:
     	vField V10_2 (0..*)
     	[synonym MULTI_CARDINALITY_EXAMPLE_17 hint "d", "e"] // hints have no effect in terms of keeping the list items merged
-
 
     type V10_2:
     	wField W10_2 (0..*)

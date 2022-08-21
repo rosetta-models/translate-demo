@@ -7,7 +7,6 @@ type Root:
 	partyTradeId PartyTradeIdentifier3 (0..1)
 	[synonym META_EXTERNAL_REFERENCE_EXAMPLE_4 value "partyTradeIdentifier" path "a"]
 
-
 type PartyTradeIdentifier3:
 	party Party1 (1..1)
 		[metadata reference]

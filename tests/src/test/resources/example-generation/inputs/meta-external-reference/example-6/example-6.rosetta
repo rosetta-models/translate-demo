@@ -7,7 +7,6 @@ type Root:
     [rootType]
 	inter Intermediate (0..*)
 
-
 type Intermediate :
 	party Party1 (1..1)
 	[metadata reference]

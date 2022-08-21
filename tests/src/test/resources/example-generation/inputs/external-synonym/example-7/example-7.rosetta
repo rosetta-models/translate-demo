@@ -32,7 +32,6 @@ synonym source EXTERNAL_SYNONYM_EXAMPLE_6 extends EXTERNAL_SYNONYM_EXAMPLE_6_BAS
 			[value "BB"]
 }
 
-
 synonym source EXTERNAL_SYNONYM_EXAMPLE_7 extends EXTERNAL_SYNONYM_EXAMPLE_6
 {
 	Y5:
