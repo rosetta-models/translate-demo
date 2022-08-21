@@ -1,12 +1,12 @@
 {
   "xfield" : {
-    "yfield_c" : {
-      "z1" : "counter-bid",
-      "z2" : "counter-pid"
-    },
     "yfield_s" : {
       "z1" : "source-bid",
       "z2" : "source-pid"
+    },
+    "yfield_c" : {
+      "z1" : "counter-bid",
+      "z2" : "counter-pid"
     }
   }
 }

@@ -16,6 +16,5 @@ type W10_1:
 type X10_1:
 	yField string (0..1)
 	    [synonym MULTI_CARDINALITY_EXAMPLE_16 value "d" path "a->b"]
-
 	zField string (0..1)
 	    [synonym MULTI_CARDINALITY_EXAMPLE_16 value "e" path "a->c"]

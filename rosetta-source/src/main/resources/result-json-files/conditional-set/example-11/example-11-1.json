@@ -1,7 +1,7 @@
 {
   "wfield" : [ {
-    "yfield" : "CHIPS",
-    "xfield" : "FISH"
+    "xfield" : "FISH",
+    "yfield" : "CHIPS"
   }, {
     "yfield" : "GRAVY"
   }, {
