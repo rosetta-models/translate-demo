@@ -1,85 +1,93 @@
 namespace demo.translate.external_synonym.example_8
 version "${project.version}"
 
-synonym source EXTERNAL_SYNONYM_EXAMPLE_8
+synonym source EXTERNAL_SYNONYM_EXAMPLE_6_BASE
 
-synonym source Bank_A8 extends EXTERNAL_SYNONYM_EXAMPLE_8
+synonym source EXTERNAL_SYNONYM_EXAMPLE_6 extends EXTERNAL_SYNONYM_EXAMPLE_6_BASE
 {
 	Root:
 		+ xField
 			[value "a"]
+
+	X5:
+		+ yReference
+			[value "cRef" path "b" meta "href"]
 		+ yField
-			[value "a"]
-
-	Super8:
-		+ superField
-			[value "b"]
-			[value "d"]
-
-	X8:
-		+ xxField
 			[value "c"]
 
-	Y8:
-		+ yyField
-			[value "e"]
+	Y5:
+		[value "Y5" meta "id"]
+		+ name
+			[value "d"]
+		+ zField
+			[value "f"]
+
+	enums
+
+	ZEnum5:
+		+ ZELDA
+			[value "AA"]
+
+		+ WARRIOR
+			[value "BB"]
 }
 
-synonym source Bank_A8_1 extends EXTERNAL_SYNONYM_EXAMPLE_8
+
+synonym source EXTERNAL_SYNONYM_EXAMPLE_7 extends EXTERNAL_SYNONYM_EXAMPLE_6
 {
-	Root:
-		+ xField
-			[value "a"]
-		+ yField
-			[value "a"]
+	Y5:
+		- name
 
-	X8:
-		+ superField
-			[value "b"]
-		+ xxField
-			[value "c"]
+	enums
 
-	Y8:
-		+ superField
-			[value "d"]
-		+ yyField
-			[value "e"]
+	ZEnum5:
+		- ZELDA
+
 }
 
-synonym source Bank_A8_2 extends EXTERNAL_SYNONYM_EXAMPLE_8
+synonym source EXTERNAL_SYNONYM_EXAMPLE_8 extends EXTERNAL_SYNONYM_EXAMPLE_7
 {
-	Root:
-		+ xField
-			[value "a"]
-		+ yField
-			[value "a"]
-
-	Super8:
-		+ superField
-			[value "b" set when rosettaPath = Root -> xField -> superField]
-			[value "d" set when rosettaPath = Root -> yField -> superField]
-
-	X8:
-		+ xxField
-			[value "c"]
-
-	Y8:
-		+ yyField
+	Y5:
+		- name
+		+ name
 			[value "e"]
+
+	enums
+
+	ZEnum5:
+		- ZELDA
+		+ ZELDA
+			[value "BB"]
+
+		- WARRIOR
+		+ WARRIOR
+			[value "AA"]
 }
 
 type Root:
     [rootType]
-	xField X8 (0..1)
-	yField Y8 (0..1)
+	xField X5 (0..1)
+		[synonym EXTERNAL_SYNONYM_EXAMPLE_6 value "a"]
 
-type Super8:
-	superField string (0..1)
+type X5:
+	yReference Y5 (1..1)
+		[metadata reference]
+		[synonym EXTERNAL_SYNONYM_EXAMPLE_6 value "cRef" path "b" meta "href"]
+	yField Y5 (1..1)
+		[synonym EXTERNAL_SYNONYM_EXAMPLE_6 value "c"]
 
-type X8 extends Super8:
-	xxField string (1..1)
+type Y5:
+	[metadata key]
+	[synonym EXTERNAL_SYNONYM_EXAMPLE_6 value "Y5" meta "id"]
+	name string (0..1)
+		[synonym EXTERNAL_SYNONYM_EXAMPLE_6 value "d"]
+	zField ZEnum5 (0..1)
+		[synonym EXTERNAL_SYNONYM_EXAMPLE_6 value "f"]
+	z2Field string (0..1)
+		[synonym EXTERNAL_SYNONYM_EXAMPLE_6 value "g"]
 
-type Y8 extends Super8:
-	yyField string (0..1)
-
-
+enum ZEnum5:
+	ZELDA
+		[synonym EXTERNAL_SYNONYM_EXAMPLE_6 value "AA"]
+	WARRIOR
+		[synonym EXTERNAL_SYNONYM_EXAMPLE_6 value "BB"]

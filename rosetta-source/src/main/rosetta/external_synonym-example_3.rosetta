@@ -1,8 +1,9 @@
 namespace demo.translate.external_synonym.example_3
 version "${project.version}"
 
-synonym source EXTERNAL_SYNONYM_EXAMPLE_3
-synonym source Bank_A3 extends EXTERNAL_SYNONYM_EXAMPLE_3
+synonym source EXTERNAL_SYNONYM_EXAMPLE_3_BASE
+
+synonym source EXTERNAL_SYNONYM_EXAMPLE_3 extends EXTERNAL_SYNONYM_EXAMPLE_3_BASE
 {
 	Root:
 		+ partyTradeId
@@ -13,6 +14,7 @@ synonym source Bank_A3 extends EXTERNAL_SYNONYM_EXAMPLE_3
 			[value "partyReference"]
 
 	enums
+
 	PartyEnum3:
 		+ FishParty
 			[value "FISH"]

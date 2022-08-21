@@ -1,8 +1,9 @@
 namespace demo.translate.external_synonym.example_6
 version "${project.version}"
 
-synonym source EXTERNAL_SYNONYM_EXAMPLE_6
-synonym source Bank_B5 extends EXTERNAL_SYNONYM_EXAMPLE_6   //extends BankB
+synonym source EXTERNAL_SYNONYM_EXAMPLE_6_BASE
+
+synonym source EXTERNAL_SYNONYM_EXAMPLE_6 extends EXTERNAL_SYNONYM_EXAMPLE_6_BASE
 {
 	Root:
 		+ xField
@@ -22,44 +23,14 @@ synonym source Bank_B5 extends EXTERNAL_SYNONYM_EXAMPLE_6   //extends BankB
 			[value "f"]
 
 	enums
+
 	ZEnum5:
 		+ ZELDA
 			[value "AA"]
 
 		+ WARRIOR
 			[value "BB"]
-
 }
-
-
-synonym source Bank_B6 extends Bank_B5
-{
-	Y5:
-		- name
-	enums
-	ZEnum5:
-		- ZELDA
-
-}
-
-synonym source Bank_B6_1 extends Bank_B5
-{
-	Y5:
-		- name
-		+ name
-			[value "e"]
-
-	enums
-	ZEnum5:
-		- ZELDA
-		+ ZELDA
-			[value "BB"]
-
-		- WARRIOR
-		+ WARRIOR
-			[value "AA"]
-}
-
 
 type Root:
     [rootType]

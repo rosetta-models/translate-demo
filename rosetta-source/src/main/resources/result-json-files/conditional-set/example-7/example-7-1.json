@@ -1,14 +1,14 @@
 {
   "vfield1" : {
     "wfield" : {
-      "sfield" : "FISH",
-      "xfield" : "FOO"
+      "xfield" : "FOO",
+      "sfield" : "FISH"
     }
   },
   "vfield2" : {
     "wfield" : {
-      "sfield" : "CHIPS",
-      "xfield" : "BAR"
+      "xfield" : "BAR",
+      "sfield" : "CHIPS"
     }
   }
 }

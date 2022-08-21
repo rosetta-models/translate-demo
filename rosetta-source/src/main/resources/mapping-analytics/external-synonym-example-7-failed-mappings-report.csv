@@ -1,0 +1,4 @@
+File Name,Result,Input Path,Indexless Input Path,Unmappable CDM Path Count,Unmappable CDM Paths,Reason For Failure
+cdm-sample-files/external-synonym/example-7/example-7-1.xml,Fail_MappedNone,a.c[id=xyz].f,a.c[id=xyz].f,0,,Element with value AA could not be mapped to a rosettaField
+cdm-sample-files/external-synonym/example-7/example-7-1.xml,Fail_MappedNone,a.c[id=xyz].e,a.c[id=xyz].e,0,,Element with value CHIPS could not be mapped to a rosettaField
+cdm-sample-files/external-synonym/example-7/example-7-1.xml,Fail_MappedNone,a.c[id=xyz].d,a.c[id=xyz].d,0,,Element with value FISH could not be mapped to a rosettaField

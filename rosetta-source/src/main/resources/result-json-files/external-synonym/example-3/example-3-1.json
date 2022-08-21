@@ -1,0 +1,5 @@
+{
+  "partyTradeId" : {
+    "partyEnum" : [ "FISH_PARTY", "CHIP_PARTY" ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "partyTradeId" : {
+    "account" : [ {
+      "meta" : {
+        "scheme" : "acc-scheme1"
+      },
+      "value" : "FRITES"
+    } ],
+    "party" : [ {
+      "meta" : {
+        "scheme" : "scheme1"
+      },
+      "value" : "FISH"
+    }, {
+      "meta" : {
+        "scheme" : "scheme2"
+      },
+      "value" : "CHIPS"
+    } ]
+  }
+}

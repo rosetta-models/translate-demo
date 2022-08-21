@@ -1,0 +1,28 @@
+{
+  "contract" : {
+    "id" : [ {
+      "assignedId" : [ {
+        "identifier" : {
+          "meta" : {
+            "scheme" : "scheme1"
+          },
+          "value" : "FISH"
+        }
+      }, {
+        "identifier" : {
+          "meta" : {
+            "scheme" : "scheme2"
+          },
+          "value" : "CHIPS"
+        }
+      }, {
+        "identifier" : {
+          "meta" : {
+            "scheme" : "acc-scheme1"
+          },
+          "value" : "FRITES"
+        }
+      } ]
+    } ]
+  }
+}

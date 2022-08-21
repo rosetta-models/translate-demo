@@ -1,9 +1,9 @@
 namespace demo.translate.external_synonym.example_2
 version "${project.version}"
 
-synonym source EXTERNAL_SYNONYM_EXAMPLE_2
+synonym source EXTERNAL_SYNONYM_EXAMPLE_2_BASE
 
-synonym source Bank_A2 extends EXTERNAL_SYNONYM_EXAMPLE_2
+synonym source EXTERNAL_SYNONYM_EXAMPLE_2 extends EXTERNAL_SYNONYM_EXAMPLE_2_BASE
 {
 	Root:
 		+ partyTradeId

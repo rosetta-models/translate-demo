@@ -1,0 +1,17 @@
+{
+  "xfield" : {
+    "yreference" : {
+      "externalReference" : "xyz",
+      "globalReference" : "c9d25430"
+    },
+    "yfield" : {
+      "meta" : {
+        "externalKey" : "xyz",
+        "globalKey" : "c9d25430"
+      },
+      "name" : "CHIPS",
+      "z2Field" : "SODA",
+      "zfield" : "WARRIOR"
+    }
+  }
+}

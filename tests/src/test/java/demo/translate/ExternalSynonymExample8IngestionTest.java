@@ -15,7 +15,7 @@ import java.net.URL;
 import java.util.*;
 import java.util.stream.Stream;
 
-@org.junit.jupiter.api.Disabled
+//@org.junit.jupiter.api.Disabled
 public class ExternalSynonymExample8IngestionTest extends IngestionTest<demo.translate.external_synonym.example_8.Root> {
 
     private static final String SAMPLE_FILES_DIR = "cdm-sample-files/external-synonym/example-8";

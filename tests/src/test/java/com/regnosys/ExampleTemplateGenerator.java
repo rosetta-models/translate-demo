@@ -8,8 +8,8 @@ import static com.regnosys.ExampleGenerator.*;
 
 public class ExampleTemplateGenerator {
 
-    public static final String CATEGORY_NAME = "mappers";
-    public static final String FILENAME_SUFFIX = "2";
+    public static final String CATEGORY_NAME = "external-synonym";
+    public static final String FILENAME_SUFFIX = "8";
 
     private final String categoryName;
     private final String exampleName;
