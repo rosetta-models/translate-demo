@@ -1,16 +1,16 @@
 {
-  "vfield" : {
+  "xfield" : {
     "strField" : "CHIPS",
-    "wfield" : [ {
-      "yfield" : {
+    "yfield" : [ {
+      "zfield" : {
         "strField" : "FISH"
       }
     }, {
-      "yfield" : {
+      "zfield" : {
         "strField" : "SAUSAGE"
       }
     }, {
-      "yfield" : {
+      "zfield" : {
         "strField" : "STEAK"
       }
     } ]
