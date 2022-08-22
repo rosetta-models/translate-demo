@@ -5,10 +5,10 @@ synonym source META_SCHEME_EXAMPLE_1
 
 type Root:
     [rootType]
-    partyTradeId PartyTradeIdentifier4 (0..1)
+    zField Z (0..1)
     	[synonym META_SCHEME_EXAMPLE_1 value "partyTradeIdentifier" path "a"]
 
-type PartyTradeIdentifier4:
-    party string (1..*)
+type Z:
+    strField string (1..*)
         [metadata scheme]
         [synonym META_SCHEME_EXAMPLE_1 value "partyReference" meta "scheme"]

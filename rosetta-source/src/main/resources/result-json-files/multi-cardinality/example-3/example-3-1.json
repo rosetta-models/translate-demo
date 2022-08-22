@@ -1,5 +1,5 @@
 {
-  "afield" : {
-    "cfield" : [ "FISH", "CHIPS" ]
+  "zfield" : {
+    "strField" : [ "FISH", "CHIPS" ]
   }
 }

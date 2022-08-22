@@ -1,9 +1,9 @@
 {
-  "afield" : {
-    "bfield" : [ {
-      "cfield" : "CHIPS"
+  "yfield" : {
+    "zfield" : [ {
+      "strField" : "CHIPS"
     }, {
-      "cfield" : "FISH"
+      "strField" : "FISH"
     } ]
   }
 }

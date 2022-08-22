@@ -5,18 +5,18 @@ synonym source MULTI_CARDINALITY_EXAMPLE_7
 
 type Root:
     [rootType]
-    vField V10_1 (1..1)
+    xField X (1..1)
         [synonym MULTI_CARDINALITY_EXAMPLE_7 value "a"]
 
-type V10_1:
-    wField W10_1 (0..*)
+type X:
+    yField Y (0..*)
         [synonym MULTI_CARDINALITY_EXAMPLE_7 value "b", "c"]
 
-type W10_1:
-    xField X10_1 (0..*)
+type Y:
+    zField Z (0..*)
 
-type X10_1:
-    yField string (0..1)
+type Z:
+    str1Field string (0..1)
         [synonym MULTI_CARDINALITY_EXAMPLE_7 value "d"]
-    zField string (0..1)
+    str2Field string (0..1)
         [synonym MULTI_CARDINALITY_EXAMPLE_7 value "e"]

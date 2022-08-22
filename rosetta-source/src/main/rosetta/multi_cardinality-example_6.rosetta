@@ -5,15 +5,15 @@ synonym source MULTI_CARDINALITY_EXAMPLE_6
 
 type Root:
     [rootType]
-	aField A6 (1..1)
+	yField Y (1..1)
     	[synonym MULTI_CARDINALITY_EXAMPLE_6 value "a"]
 
-type A6:
-	bField B6 (1..*)
+type Y:
+	zField Z (1..*)
 	    [synonym MULTI_CARDINALITY_EXAMPLE_6 value "b"]
 
-type B6:
-	cField string (1..1)
+type Z:
+	str1Field string (1..1)
 	    [synonym MULTI_CARDINALITY_EXAMPLE_6 value "c"]
-	dField string (1..1)
+	str2Field string (1..1)
 	    [synonym MULTI_CARDINALITY_EXAMPLE_6 value "d"]

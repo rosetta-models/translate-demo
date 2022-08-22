@@ -5,24 +5,13 @@ synonym source MULTI_CARDINALITY_EXAMPLE_27
 
 type Root:
     [rootType]
-    payout Event_1 (1..1)
+    yField Y (1..1)
         [synonym MULTI_CARDINALITY_EXAMPLE_27 value "a"]
-    //payout Event_2 (1..1)
-    //	[synonym MULTI_CARDINALITY_EXAMPLE_27 hint "a"]
 
-type Event_1:
-	ids Identifier(1..*)
+type Y:
+	zField Z (1..*)
 
-type Identifier:
-	id string(1..1)
-	[synonym MULTI_CARDINALITY_EXAMPLE_27 value "id" path "submitter"]
-	[synonym MULTI_CARDINALITY_EXAMPLE_27 value "id" path "walker"]
-
-type Event_2:
-	ids Identifier_2(1..*)
-	[synonym MULTI_CARDINALITY_EXAMPLE_27 value "submitter"]
-	[synonym MULTI_CARDINALITY_EXAMPLE_27 value "walker"]
-
-type Identifier_2:
-	id string(1..1)
-	[synonym MULTI_CARDINALITY_EXAMPLE_27 value "id"]
+type Z:
+	strField string (1..1)
+        [synonym MULTI_CARDINALITY_EXAMPLE_27 value "id" path "submitter"]
+        [synonym MULTI_CARDINALITY_EXAMPLE_27 value "id" path "walker"]

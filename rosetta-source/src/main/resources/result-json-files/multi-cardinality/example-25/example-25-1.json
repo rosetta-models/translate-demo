@@ -1,30 +1,30 @@
 {
-  "tfield" : {
-    "ufield" : [ {
-      "vfield" : [ {
-        "wfield" : [ {
-          "xfield" : [ {
-            "yfield" : "FISH"
+  "vfield" : {
+    "wfield" : [ {
+      "xfield" : [ {
+        "yfield" : [ {
+          "zfield" : [ {
+            "str1Field" : "FISH"
           } ]
         } ]
       }, {
-        "wfield" : [ {
-          "xfield" : [ {
-            "zfield" : "STEAK"
+        "yfield" : [ {
+          "zfield" : [ {
+            "str2Field" : "STEAK"
           } ]
         } ]
       } ]
     }, {
-      "vfield" : [ {
-        "wfield" : [ {
-          "xfield" : [ {
-            "yfield" : "SAUSAGE"
+      "xfield" : [ {
+        "yfield" : [ {
+          "zfield" : [ {
+            "str1Field" : "SAUSAGE"
           } ]
         } ]
       }, {
-        "wfield" : [ {
-          "xfield" : [ {
-            "zfield" : "PIZZA"
+        "yfield" : [ {
+          "zfield" : [ {
+            "str2Field" : "PIZZA"
           } ]
         } ]
       } ]

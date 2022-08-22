@@ -1,22 +1,22 @@
 {
-  "tfield" : {
-    "ufield" : [ {
-      "vfield" : [ {
-        "wfield" : [ {
-          "xfield" : [ {
-            "yfield" : "FISH"
+  "vfield" : {
+    "wfield" : [ {
+      "xfield" : [ {
+        "yfield" : [ {
+          "zfield" : [ {
+            "str1Field" : "FISH"
           }, {
-            "zfield" : "STEAK"
+            "str2Field" : "STEAK"
           } ]
         } ]
       } ]
     }, {
-      "vfield" : [ {
-        "wfield" : [ {
-          "xfield" : [ {
-            "yfield" : "SAUSAGE"
+      "xfield" : [ {
+        "yfield" : [ {
+          "zfield" : [ {
+            "str1Field" : "SAUSAGE"
           }, {
-            "zfield" : "PIZZA"
+            "str2Field" : "PIZZA"
           } ]
         } ]
       } ]

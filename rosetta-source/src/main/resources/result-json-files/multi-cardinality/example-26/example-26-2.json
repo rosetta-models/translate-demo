@@ -1,9 +1,9 @@
 {
-  "payout" : {
-    "irps" : [ {
-      "bfield" : "FISH"
+  "zfield" : {
+    "zfield" : [ {
+      "str1Field" : "FISH"
     }, {
-      "dfield" : "CHIPS"
+      "str2Field" : "CHIPS"
     } ]
   }
 }

@@ -5,16 +5,16 @@ synonym source MULTI_CARDINALITY_EXAMPLE_26
 
 type Root:
     [rootType]
-    payout Payout1 (1..1)
-    [synonym MULTI_CARDINALITY_EXAMPLE_26 value "a"]
+    zField Y (1..1)
+        [synonym MULTI_CARDINALITY_EXAMPLE_26 value "a"]
 
-type Payout1:
-	irps InterestRatePayout (0..*)
-	[synonym MULTI_CARDINALITY_EXAMPLE_26 value "swapStream"]
-	[synonym MULTI_CARDINALITY_EXAMPLE_26  value "feeLeg", "generalTerms"]
+type Y:
+	zField Z (0..*)
+        [synonym MULTI_CARDINALITY_EXAMPLE_26 value "swapStream"]
+        [synonym MULTI_CARDINALITY_EXAMPLE_26  value "feeLeg", "generalTerms"]
 
-type InterestRatePayout:
-	bField string (1..1)
-	[synonym MULTI_CARDINALITY_EXAMPLE_26 value "b"]
-	dField string (1..1)
-	[synonym MULTI_CARDINALITY_EXAMPLE_26 value "d"]
+type Z:
+	str1Field string (1..1)
+	    [synonym MULTI_CARDINALITY_EXAMPLE_26 value "b"]
+	str2Field string (1..1)
+	    [synonym MULTI_CARDINALITY_EXAMPLE_26 value "d"]

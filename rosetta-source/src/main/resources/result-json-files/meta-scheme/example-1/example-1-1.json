@@ -1,6 +1,6 @@
 {
-  "partyTradeId" : {
-    "party" : [ {
+  "zfield" : {
+    "strField" : [ {
       "meta" : {
         "scheme" : "scheme1"
       },

@@ -1,13 +1,13 @@
 {
-  "payout" : {
-    "ids" : [ {
-      "id" : "FISH"
+  "yfield" : {
+    "zfield" : [ {
+      "strField" : "FISH"
     }, {
-      "id" : "CHIPS"
+      "strField" : "CHIPS"
     }, {
-      "id" : "SAUSAGE"
+      "strField" : "SAUSAGE"
     }, {
-      "id" : "MASH"
+      "strField" : "MASH"
     } ]
   }
 }

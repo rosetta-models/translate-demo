@@ -1,7 +1,7 @@
 {
-  "afield" : {
-    "xfield" : {
-      "bfield" : [ "FISH", "CHIPS" ]
+  "yfield" : {
+    "zfield" : {
+      "strField" : [ "FISH", "CHIPS" ]
     }
   }
 }
