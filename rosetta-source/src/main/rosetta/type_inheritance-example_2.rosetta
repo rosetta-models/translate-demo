@@ -5,15 +5,15 @@ synonym source TYPE_INHERITANCE_EXAMPLE_2
 
 type Root:
     [rootType]
-	employee FullPerson (1..1)
-	[synonym TYPE_INHERITANCE_EXAMPLE_2 value "employee"]
+	zField Z (1..1)
+	    [synonym TYPE_INHERITANCE_EXAMPLE_2 value "employee"]
 
-type FullPerson extends Person:
-	address string (1..1)
-	[synonym TYPE_INHERITANCE_EXAMPLE_2 value "address"]
+type Y:
+	yStr1Field string (1..1)
+	    [synonym TYPE_INHERITANCE_EXAMPLE_2 value "firstname"]
+	yStr2Field string (1..1)
+	    [synonym TYPE_INHERITANCE_EXAMPLE_2 value "lastname"]
 
-type Person:
-	firstName string (1..1)
-	[synonym TYPE_INHERITANCE_EXAMPLE_2 value "firstname"]
-	lastName string(1..1)
-	[synonym TYPE_INHERITANCE_EXAMPLE_2 value "lastname"]
+type Z extends Y:
+	zStrField string (1..1)
+	    [synonym TYPE_INHERITANCE_EXAMPLE_2 value "address"]

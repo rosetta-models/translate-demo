@@ -1,7 +1,7 @@
 {
-  "employee" : {
-    "firstName" : "tom",
-    "lastName" : "forwood",
-    "address" : "out there"
+  "zfield" : {
+    "zstrField" : "out there",
+    "ystr1Field" : "tom",
+    "ystr2Field" : "forwood"
   }
 }

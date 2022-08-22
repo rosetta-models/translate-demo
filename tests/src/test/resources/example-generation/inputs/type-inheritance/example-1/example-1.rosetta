@@ -5,18 +5,18 @@ synonym source TYPE_INHERITANCE_EXAMPLE_1
 
 type Root:
     [rootType]
-    relativeDates RelativeDateOffset_10 (1..1)
+    zField Z (1..1)
         [synonym TYPE_INHERITANCE_EXAMPLE_1 value "relativeDateSequence"]
 
-type RelativeDateOffset_10 extends Offset_10:
-    businessDayConvention string (1..1)
-        [synonym TYPE_INHERITANCE_EXAMPLE_1 value "businessDayConvention" path "dateOffset"]
-
-type Offset_10 extends Period_10:
-    dayType string (0..1)
-
-type Period_10:
-    periodMultiplier int (1..1)
+type X:
+    xIntField int (1..1)
         [synonym TYPE_INHERITANCE_EXAMPLE_1 value "periodMultiplier" path "dateOffset"]
-    period string (1..1)
+    xStrField string (1..1)
         [synonym TYPE_INHERITANCE_EXAMPLE_1 value "period" path "dateOffset"]
+
+type Y extends X:
+    yStrField string (0..1)
+
+type Z extends Y:
+    zStrField string (1..1)
+        [synonym TYPE_INHERITANCE_EXAMPLE_1 value "businessDayConvention" path "dateOffset"]

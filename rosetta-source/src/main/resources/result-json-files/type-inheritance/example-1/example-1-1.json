@@ -1,6 +1,6 @@
 {
-  "relativeDates" : {
-    "periodMultiplier" : -2,
-    "businessDayConvention" : "PRECEDING"
+  "zfield" : {
+    "zstrField" : "PRECEDING",
+    "xintField" : -2
   }
 }

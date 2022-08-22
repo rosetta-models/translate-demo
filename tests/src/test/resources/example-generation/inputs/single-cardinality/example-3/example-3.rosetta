@@ -5,15 +5,15 @@ synonym source SINGLE_CARDINALITY_EXAMPLE_3
 
 type Root:
     [rootType]
-    wField W3 (1..1)
+    yField Y (1..1)
         [synonym SINGLE_CARDINALITY_EXAMPLE_3 value "a"]
 
-type W3:
-    xField string (1..1)
-        [synonym SINGLE_CARDINALITY_EXAMPLE_3 value "c" path "b"]
-    yField Y3 (1..1)
+type Y:
+    zField Z (1..1)
         [synonym SINGLE_CARDINALITY_EXAMPLE_3 value "b"]
+    strField string (1..1)
+        [synonym SINGLE_CARDINALITY_EXAMPLE_3 value "c" path "b"]
 
-type Y3:
-    zField string (1..1)
+type Z:
+    strField string (1..1)
         [synonym SINGLE_CARDINALITY_EXAMPLE_3 value "d"]
