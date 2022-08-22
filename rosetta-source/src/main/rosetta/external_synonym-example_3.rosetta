@@ -6,29 +6,30 @@ synonym source EXTERNAL_SYNONYM_EXAMPLE_3_BASE
 synonym source EXTERNAL_SYNONYM_EXAMPLE_3 extends EXTERNAL_SYNONYM_EXAMPLE_3_BASE
 {
 	Root:
-		+ partyTradeId
+		+ zField
 			[value "partyTradeIdentifier" path "a"]
 
-	PartyTradeIdentifier3:
-		+ partyEnum
+	Z:
+		+ enumField
 			[value "partyReference"]
 
 	enums
 
-	PartyEnum3:
-		+ FishParty
+	TestEnum:
+		+ Foo
 			[value "FISH"]
-		+ ChipParty
+		+ Bar
 			[value "CHIPS"]
 }
 
 type Root:
     [rootType]
-    partyTradeId PartyTradeIdentifier3 (0..1)
+    zField Z (0..1)
 
-enum PartyEnum3:
-    FishParty
-    ChipParty
 
-type PartyTradeIdentifier3:
-    partyEnum PartyEnum3 (1..*)
+type Z:
+    enumField TestEnum (1..*)
+
+enum TestEnum:
+    Foo
+    Bar

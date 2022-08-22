@@ -23,7 +23,6 @@ type Event_2:
 	[synonym MULTI_CARDINALITY_EXAMPLE_27 value "submitter"]
 	[synonym MULTI_CARDINALITY_EXAMPLE_27 value "walker"]
 
-
 type Identifier_2:
 	id string(1..1)
 	[synonym MULTI_CARDINALITY_EXAMPLE_27 value "id"]

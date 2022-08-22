@@ -1,5 +1,5 @@
 {
-  "partyTradeId" : {
-    "party" : [ "FISH", "CHIPS" ]
+  "zfield" : {
+    "strField" : [ "FISH", "CHIPS" ]
   }
 }

@@ -1,12 +1,6 @@
 {
-  "partyTradeId" : {
-    "account" : [ {
-      "meta" : {
-        "scheme" : "acc-scheme1"
-      },
-      "value" : "FRITES"
-    } ],
-    "party" : [ {
+  "zfield" : {
+    "str1Field" : [ {
       "meta" : {
         "scheme" : "scheme1"
       },
@@ -16,6 +10,12 @@
         "scheme" : "scheme2"
       },
       "value" : "CHIPS"
+    } ],
+    "str2Field" : [ {
+      "meta" : {
+        "scheme" : "acc-scheme1"
+      },
+      "value" : "FRITES"
     } ]
   }
 }

@@ -8,10 +8,8 @@ type Root:
     tField T10_2 (1..1)
     	[synonym MULTI_CARDINALITY_EXAMPLE_20 value "a"]
 
-
     type T10_2:
     	uField U10_2 (0..*)
-
 
     type U10_2:
     	vField V10_2 (0..*)

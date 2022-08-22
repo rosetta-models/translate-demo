@@ -6,88 +6,75 @@ synonym source EXTERNAL_SYNONYM_EXAMPLE_6_BASE
 synonym source EXTERNAL_SYNONYM_EXAMPLE_6 extends EXTERNAL_SYNONYM_EXAMPLE_6_BASE
 {
 	Root:
-		+ xField
+		+ yField
 			[value "a"]
 
-	X5:
-		+ yReference
+	Y:
+		+ zRefField
 			[value "cRef" path "b" meta "href"]
-		+ yField
+		+ zField
 			[value "c"]
 
-	Y5:
-		[value "Y5" meta "id"]
-		+ name
+	Z:
+		[value "Z" meta "id"]
+		+ str1Field
 			[value "d"]
-		+ zField
+		+ enumField
 			[value "f"]
 
 	enums
 
-	ZEnum5:
-		+ ZELDA
+	TestEnum:
+		+ Foo
 			[value "AA"]
-
-		+ WARRIOR
+		+ Bar
 			[value "BB"]
 }
 
-
 synonym source EXTERNAL_SYNONYM_EXAMPLE_7 extends EXTERNAL_SYNONYM_EXAMPLE_6
 {
-	Y5:
-		- name
+	Z:
+		- str1Field
 
 	enums
 
-	ZEnum5:
-		- ZELDA
-
+	TestEnum:
+		- Foo
 }
 
 synonym source EXTERNAL_SYNONYM_EXAMPLE_8 extends EXTERNAL_SYNONYM_EXAMPLE_7
 {
-	Y5:
-		- name
-		+ name
+	Z:
+		- str1Field
+		+ str1Field
 			[value "e"]
 
 	enums
 
-	ZEnum5:
-		- ZELDA
-		+ ZELDA
+	TestEnum:
+		- Foo
+		+ Foo
 			[value "BB"]
-
-		- WARRIOR
-		+ WARRIOR
+		- Bar
+		+ Bar
 			[value "AA"]
 }
 
 type Root:
     [rootType]
-	xField X5 (0..1)
-		[synonym EXTERNAL_SYNONYM_EXAMPLE_6 value "a"]
+	yField Y (0..1)
 
-type X5:
-	yReference Y5 (1..1)
+type Y:
+	zRefField Z (1..1)
 		[metadata reference]
-		[synonym EXTERNAL_SYNONYM_EXAMPLE_6 value "cRef" path "b" meta "href"]
-	yField Y5 (1..1)
-		[synonym EXTERNAL_SYNONYM_EXAMPLE_6 value "c"]
+	zField Z (1..1)
 
-type Y5:
+type Z:
 	[metadata key]
-	[synonym EXTERNAL_SYNONYM_EXAMPLE_6 value "Y5" meta "id"]
-	name string (0..1)
-		[synonym EXTERNAL_SYNONYM_EXAMPLE_6 value "d"]
-	zField ZEnum5 (0..1)
-		[synonym EXTERNAL_SYNONYM_EXAMPLE_6 value "f"]
-	z2Field string (0..1)
-		[synonym EXTERNAL_SYNONYM_EXAMPLE_6 value "g"]
+	str1Field string (0..1)
+	str2Field string (0..1)
+    enumField TestEnum (0..1)
 
-enum ZEnum5:
-	ZELDA
-		[synonym EXTERNAL_SYNONYM_EXAMPLE_6 value "AA"]
-	WARRIOR
-		[synonym EXTERNAL_SYNONYM_EXAMPLE_6 value "BB"]
+enum TestEnum:
+	Foo
+	Bar

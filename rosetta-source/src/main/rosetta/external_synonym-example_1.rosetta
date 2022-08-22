@@ -6,18 +6,18 @@ synonym source EXTERNAL_SYNONYM_EXAMPLE_1_BASE
 synonym source EXTERNAL_SYNONYM_EXAMPLE_1 extends EXTERNAL_SYNONYM_EXAMPLE_1_BASE
 {
 	Root:
-		+ partyTradeId
+		+ zField
 			[value "partyTradeIdentifier" path "a"]
 
-	PartyTradeIdentifier1:
-		+ party
+	Z:
+		+ strField
 			[value "partyReference" meta "scheme"]
 }
 
 type Root:
     [rootType]
-	partyTradeId PartyTradeIdentifier1 (0..1)
+	zField Z (0..1)
 
-type PartyTradeIdentifier1:
-	party string (1..*)
+type Z:
+	strField string (1..*)
 		[metadata scheme]

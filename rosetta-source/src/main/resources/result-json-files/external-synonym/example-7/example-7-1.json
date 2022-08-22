@@ -1,15 +1,7 @@
 {
-  "xfield" : {
-    "yreference" : {
-      "externalReference" : "xyz",
-      "globalReference" : "26ebd9"
-    },
-    "yfield" : {
-      "meta" : {
-        "externalKey" : "xyz",
-        "globalKey" : "26ebd9"
-      },
-      "z2Field" : "SODA"
+  "yfield" : {
+    "zrefField" : {
+      "externalReference" : "xyz"
     }
   }
 }

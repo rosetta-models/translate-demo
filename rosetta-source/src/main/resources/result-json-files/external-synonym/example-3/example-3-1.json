@@ -1,5 +1,5 @@
 {
-  "partyTradeId" : {
-    "partyEnum" : [ "FISH_PARTY", "CHIP_PARTY" ]
+  "zfield" : {
+    "enumField" : [ "FOO", "BAR" ]
   }
 }

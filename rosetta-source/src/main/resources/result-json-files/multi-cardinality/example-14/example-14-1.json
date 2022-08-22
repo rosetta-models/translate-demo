@@ -2,11 +2,11 @@
   "vfield" : {
     "wfield" : [ {
       "xfield" : [ {
-        "zfield" : "STEAK",
-        "yfield" : "FISH"
+        "yfield" : "FISH",
+        "zfield" : "STEAK"
       }, {
-        "zfield" : "PIZZA",
-        "yfield" : "SAUSAGE"
+        "yfield" : "SAUSAGE",
+        "zfield" : "PIZZA"
       } ]
     } ]
   }

@@ -1,17 +1,16 @@
 {
-  "xfield" : {
-    "yreference" : {
-      "externalReference" : "xyz",
-      "globalReference" : "c9d25430"
-    },
-    "yfield" : {
+  "yfield" : {
+    "zfield" : {
+      "enumField" : "BAR",
       "meta" : {
         "externalKey" : "xyz",
-        "globalKey" : "c9d25430"
+        "globalKey" : "3f0fbf4"
       },
-      "name" : "CHIPS",
-      "z2Field" : "SODA",
-      "zfield" : "WARRIOR"
+      "str1Field" : "CHIPS"
+    },
+    "zrefField" : {
+      "externalReference" : "xyz",
+      "globalReference" : "3f0fbf4"
     }
   }
 }

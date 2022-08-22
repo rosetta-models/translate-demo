@@ -1,22 +1,22 @@
 {
-  "contract" : {
-    "id" : [ {
-      "assignedId" : [ {
-        "identifier" : {
+  "xfield" : {
+    "yfield" : [ {
+      "zfield" : [ {
+        "strField" : {
           "meta" : {
             "scheme" : "scheme1"
           },
           "value" : "FISH"
         }
       }, {
-        "identifier" : {
+        "strField" : {
           "meta" : {
             "scheme" : "scheme2"
           },
           "value" : "CHIPS"
         }
       }, {
-        "identifier" : {
+        "strField" : {
           "meta" : {
             "scheme" : "acc-scheme1"
           },
