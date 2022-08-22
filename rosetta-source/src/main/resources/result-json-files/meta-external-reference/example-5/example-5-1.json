@@ -1,6 +1,6 @@
 {
-  "partyTradeId" : {
-    "partyCount" : [ {
+  "zfield" : {
+    "numberField" : [ {
       "externalReference" : "g4789"
     } ]
   }

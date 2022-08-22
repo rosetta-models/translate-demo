@@ -1,12 +1,12 @@
 {
-  "inter" : [ {
-    "party" : {
+  "yfield" : [ {
+    "zfield" : {
       "value" : {
         "meta" : {
           "externalKey" : "g4789",
           "globalKey" : "2e2df1"
         },
-        "name" : "blah"
+        "strField" : "blah"
       }
     }
   } ]

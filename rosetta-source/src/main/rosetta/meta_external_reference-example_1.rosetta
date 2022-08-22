@@ -5,11 +5,11 @@ synonym source META_EXTERNAL_REFERENCE_EXAMPLE_1
 
 type Root:
     [rootType]
-    party Party1 (0..1)
+    zField Z (0..1)
         [synonym META_EXTERNAL_REFERENCE_EXAMPLE_1 value "party" path "a"]
 
-type Party1:
+type Z:
     [metadata key]
     [synonym META_EXTERNAL_REFERENCE_EXAMPLE_1 meta "id"]
-    name string (0..1)
+    strField string (0..1)
         [synonym META_EXTERNAL_REFERENCE_EXAMPLE_1 value "name"]
