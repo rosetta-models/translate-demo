@@ -2,28 +2,24 @@ namespace demo.translate.conditional_set.example_3
 version "${project.version}"
 
 /*
-shouldSetFieldFromSynonymSetWhenAbsent test 5.1  and shouldNotSetFieldFromSynonymSetWhenAbsent test5.2
+Example 3:
+
+Conditional mapping using "set" with a "when" clause that is predicated on whether a xml element at the specified xml path is absent.
+
+The attribute Z->str2Field is conditionally set from xml path a->b->c->e when there is no value at xml path a->b->c->d.
 */
 synonym source CONDITIONAL_SET_EXAMPLE_3
 
 type Root:
     [rootType]
-	xField X (1..1)
-    	[synonym CONDITIONAL_SET_EXAMPLE_3 value "a"]
-
-type X:
-	yField Y (1..1)
-	    [synonym CONDITIONAL_SET_EXAMPLE_3 value "b"]
-	strField string (1..1)
-    	[synonym CONDITIONAL_SET_EXAMPLE_3 value "e" path "b->c" set when "b->c->d" is absent]
-
-type Y:
 	zField Z (1..1)
-	    [synonym CONDITIONAL_SET_EXAMPLE_3 value "c"]
+	    [synonym CONDITIONAL_SET_EXAMPLE_3 value "a"]
 
 type Z:
-	strField string (1..1)
-    	[synonym CONDITIONAL_SET_EXAMPLE_3 value "d"]
+	str1Field string (1..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_3 value "f" path "b->c"]
+	str2Field string (0..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_3 value "e" path "b->c" set when "b->c->d" is absent]
 
 /*
 Schema:

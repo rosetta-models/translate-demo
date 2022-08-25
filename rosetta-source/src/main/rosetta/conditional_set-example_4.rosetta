@@ -2,28 +2,24 @@ namespace demo.translate.conditional_set.example_4
 version "${project.version}"
 
 /*
+Example 4:
 
+Conditional mapping using "set" with a "when" clause that is predicated on the value of a xml element at the specified xml path.
+
+The attribute Z->str2Field is conditionally set from xml path a->b->c->e when the value at xml path a->b->c->d is True.
 */
 synonym source CONDITIONAL_SET_EXAMPLE_4
 
 type Root:
     [rootType]
-    xField X (1..1)
-        [synonym CONDITIONAL_SET_EXAMPLE_4 value "a"]
-
-type X:
-    yField Y (1..1)
-        [synonym CONDITIONAL_SET_EXAMPLE_4 value "b"]
-    strField string (1..1)
-        [synonym CONDITIONAL_SET_EXAMPLE_4 value "e" path "b->c" set when "b->c->d" = True]
-
-type Y:
-    zField Z (1..1)
-        [synonym CONDITIONAL_SET_EXAMPLE_4 value "c"]
+	zField Z (1..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_4 value "a"]
 
 type Z:
-    boolField boolean (1..1)
-        [synonym CONDITIONAL_SET_EXAMPLE_4 value "d"]
+	str1Field string (1..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_4 value "f" path "b->c"]
+	str2Field string (0..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_4 value "e" path "b->c" set when "b->c->d" = True]
 
 /*
 Schema:
@@ -44,6 +40,7 @@ Schema:
                                                 <xs:all>
                                                     <xs:element name="d" type="xs:boolean" />
                                                     <xs:element name="e" type="xs:string" />
+                                                    <xs:element name="f" type="xs:string" />
                                                 </xs:all>
                                             </xs:complexType>
                                         </xs:element>

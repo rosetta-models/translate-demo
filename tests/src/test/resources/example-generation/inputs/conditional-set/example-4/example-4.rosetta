@@ -8,22 +8,14 @@ synonym source CONDITIONAL_SET_EXAMPLE_4
 
 type Root:
     [rootType]
-    xField X (1..1)
-        [synonym CONDITIONAL_SET_EXAMPLE_4 value "a"]
-
-type X:
-    yField Y (1..1)
-        [synonym CONDITIONAL_SET_EXAMPLE_4 value "b"]
-    strField string (1..1)
-        [synonym CONDITIONAL_SET_EXAMPLE_4 value "e" path "b->c" set when "b->c->d" = True]
-
-type Y:
-    zField Z (1..1)
-        [synonym CONDITIONAL_SET_EXAMPLE_4 value "c"]
+	zField Z (1..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_4 value "a"]
 
 type Z:
-    boolField boolean (1..1)
-        [synonym CONDITIONAL_SET_EXAMPLE_4 value "d"]
+	str1Field string (1..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_4 value "f" path "b->c"]
+	str2Field string (0..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_4 value "e" path "b->c" set when "b->c->d" = True]
 
 /*
 Schema:
