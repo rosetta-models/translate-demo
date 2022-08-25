@@ -2,28 +2,24 @@ namespace demo.translate.conditional_default.example_1
 version "${project.version}"
 
 /*
-shouldNotSetFieldFromSynonymDefault test 1.1
+Example 1:
+
+Conditional mapping using a "default" clause that sets an attribute if it is unmapped.
+
+The attribute Z->str2Field is mapped to xml path a->b->c->e, if that path does not exist, then the attribute is set to "DEFAULT".
 */
 synonym source CONDITIONAL_DEFAULT_EXAMPLE_1
 
 type Root:
     [rootType]
-	xField X (1..1)
+	zField Z (1..1)
 	    [synonym CONDITIONAL_DEFAULT_EXAMPLE_1 value "a"]
 
-type X:
-	yField Y (1..1)
-	    [synonym CONDITIONAL_DEFAULT_EXAMPLE_1 value "b"]
-	strField string (1..1)
-	    [synonym CONDITIONAL_DEFAULT_EXAMPLE_1 value "e" path "b->c" default to "DEFAULT"]
-
-type Y:
-	zField Z (1..1)
-	    [synonym CONDITIONAL_DEFAULT_EXAMPLE_1 value "c"]
-
 type Z:
-	strField string (1..1)
-	    [synonym CONDITIONAL_DEFAULT_EXAMPLE_1 value "d"]
+	str1Field string (1..1)
+	    [synonym CONDITIONAL_DEFAULT_EXAMPLE_1 value "f" path "b->c"]
+	str2Field string (0..1)
+	    [synonym CONDITIONAL_DEFAULT_EXAMPLE_1 value "e" path "b->c" default to "DEFAULT"]
 
 /*
 Schema:

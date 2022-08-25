@@ -1,10 +1,6 @@
 {
-  "xfield" : {
-    "strField" : "DEFAULT",
-    "yfield" : {
-      "zfield" : {
-        "strField" : "FISH"
-      }
-    }
+  "zfield" : {
+    "str1Field" : "PIZZA",
+    "str2Field" : "DEFAULT"
   }
 }
