@@ -1,9 +1,9 @@
 namespace demo.translate.external_synonym.example_8
 version "${project.version}"
 
-synonym source EXTERNAL_SYNONYM_EXAMPLE_6_BASE
+synonym source EXTERNAL_SYNONYM_EXAMPLE_8_BASE_0
 
-synonym source EXTERNAL_SYNONYM_EXAMPLE_6 extends EXTERNAL_SYNONYM_EXAMPLE_6_BASE
+synonym source EXTERNAL_SYNONYM_EXAMPLE_8_BASE_1 extends EXTERNAL_SYNONYM_EXAMPLE_8_BASE_0
 {
 	Root:
 		+ yField
@@ -31,7 +31,7 @@ synonym source EXTERNAL_SYNONYM_EXAMPLE_6 extends EXTERNAL_SYNONYM_EXAMPLE_6_BAS
 			[value "BB"]
 }
 
-synonym source EXTERNAL_SYNONYM_EXAMPLE_7 extends EXTERNAL_SYNONYM_EXAMPLE_6
+synonym source EXTERNAL_SYNONYM_EXAMPLE_8_BASE_2 extends EXTERNAL_SYNONYM_EXAMPLE_8_BASE_1
 {
 	Z:
 		- str1Field
@@ -42,7 +42,7 @@ synonym source EXTERNAL_SYNONYM_EXAMPLE_7 extends EXTERNAL_SYNONYM_EXAMPLE_6
 		- Foo
 }
 
-synonym source EXTERNAL_SYNONYM_EXAMPLE_8 extends EXTERNAL_SYNONYM_EXAMPLE_7
+synonym source EXTERNAL_SYNONYM_EXAMPLE_8 extends EXTERNAL_SYNONYM_EXAMPLE_8_BASE_2
 {
 	Z:
 		- str1Field
