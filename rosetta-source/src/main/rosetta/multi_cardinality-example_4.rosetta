@@ -1,6 +1,9 @@
 namespace demo.translate.multi_cardinality.example_4
 version "${project.version}"
 
+/*
+Map list of complex types to list of complex types (multiple attributes)
+*/
 synonym source MULTI_CARDINALITY_EXAMPLE_4
 
 type Root:
@@ -20,3 +23,31 @@ type Z:
 	    [synonym MULTI_CARDINALITY_EXAMPLE_4 value "c"]
 	str2Field string (1..1)
 	    [synonym MULTI_CARDINALITY_EXAMPLE_4 value "d"]
+
+/*
+Schema:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="dataDocument">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="a">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="b" maxOccurs="100">
+                                <xs:complexType>
+                                    <xs:all>
+                                        <xs:element name="c" type="xs:string"/>
+                                        <xs:element name="d" type="xs:string" minOccurs="0"/>
+                                    </xs:all>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
+*/

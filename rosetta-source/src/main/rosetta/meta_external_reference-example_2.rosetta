@@ -1,6 +1,9 @@
 namespace demo.translate.meta_external_reference.example_2
 version "${project.version}"
 
+/*
+testGenerateAndParse2 external meta test
+*/
 synonym source META_EXTERNAL_REFERENCE_EXAMPLE_2
 
 type Root:
@@ -19,3 +22,60 @@ type Z:
 	[synonym META_EXTERNAL_REFERENCE_EXAMPLE_2 meta "id"]
 	strField string (0..1)
 		[synonym META_EXTERNAL_REFERENCE_EXAMPLE_2 value "name"]
+
+/*
+Schema:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="dataDocument">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="a">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="partyTradeIdentifier">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="partyReference"
+                                                    type="PartyReference" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="party" type="Party"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType abstract="true" name="Reference">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">The abstract base class
+                for all types which define intra-document pointers.
+            </xs:documentation>
+        </xs:annotation>
+    </xs:complexType>
+
+    <xs:complexType name="PartyReference">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">Reference to a party.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="Reference">
+                <xs:attribute name="href" type="xs:IDREF"
+                              use="required" />
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="Party">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:ID" name="id" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+</xs:schema>
+*/

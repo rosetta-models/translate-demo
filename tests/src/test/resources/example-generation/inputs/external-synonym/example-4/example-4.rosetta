@@ -1,6 +1,9 @@
 namespace demo.translate.external_synonym.example_4
 version "${project.version}"
 
+/*
+$DESCRIPTION$
+*/
 synonym source EXTERNAL_SYNONYM_EXAMPLE_4_BASE
 
 synonym source EXTERNAL_SYNONYM_EXAMPLE_4_MID extends EXTERNAL_SYNONYM_EXAMPLE_4_BASE
@@ -27,3 +30,9 @@ type Z:
 	str2Field string (1..*)
 		[metadata scheme]
 		[synonym EXTERNAL_SYNONYM_EXAMPLE_4_BASE value "accountReference" meta "scheme"]
+
+/*
+Schema:
+
+$SCHEMA$
+*/

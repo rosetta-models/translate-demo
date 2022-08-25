@@ -1,6 +1,9 @@
 namespace demo.translate.conditional_set_to.example_11
 version "${project.version}"
 
+/*
+$DESCRIPTION$
+*/
 synonym source CONDITIONAL_SET_TO_EXAMPLE_11
 
 type Root:
@@ -18,3 +21,9 @@ type Z:
     str2Field string (1..1)
         [synonym CONDITIONAL_SET_TO_EXAMPLE_11 value "ClOrdID"]
         [synonym CONDITIONAL_SET_TO_EXAMPLE_11 set to "Customer Account" when "Pty->R" = "24"]
+
+/*
+Schema:
+
+$SCHEMA$
+*/

@@ -1,6 +1,9 @@
 namespace demo.translate.conditional_set.example_9
 version "${project.version}"
 
+/*
+shouldSetWhenForBranchWithMultipleCardinality1 test 17
+*/
 synonym source CONDITIONAL_SET_EXAMPLE_9
 
 type Root:
@@ -21,3 +24,37 @@ type Y:
 type Z:
 	strField string (0..1)
 	    [synonym CONDITIONAL_SET_EXAMPLE_9 value "e"]
+
+/*
+Schema:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="dataDocument">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="a">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="b" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="d">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="e" type="xs:string" />
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="c" type="xs:string" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
+*/

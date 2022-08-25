@@ -1,6 +1,9 @@
 namespace demo.translate.multi_cardinality.example_17
 version "${project.version}"
 
+/*
+$DESCRIPTION$
+*/
 synonym source MULTI_CARDINALITY_EXAMPLE_17
 
 type Root:
@@ -29,3 +32,9 @@ type Z:
     	[synonym MULTI_CARDINALITY_EXAMPLE_17 value "d"]
     str2Field string (0..1)
     	[synonym MULTI_CARDINALITY_EXAMPLE_17 value "e"]
+
+/*
+Schema:
+
+$SCHEMA$
+*/

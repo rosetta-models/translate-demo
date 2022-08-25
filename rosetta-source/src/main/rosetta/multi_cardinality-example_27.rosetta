@@ -1,6 +1,9 @@
 namespace demo.translate.multi_cardinality.example_27
 version "${project.version}"
 
+/*
+testGenerateAndParse2, what to o with testGenerateAndParse2Errors
+*/
 synonym source MULTI_CARDINALITY_EXAMPLE_27
 
 type Root:
@@ -15,3 +18,30 @@ type Z:
 	strField string (1..1)
         [synonym MULTI_CARDINALITY_EXAMPLE_27 value "id" path "submitter"]
         [synonym MULTI_CARDINALITY_EXAMPLE_27 value "id" path "walker"]
+
+/*
+Schema:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="dataDocument">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="a">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="submitter" type="Identifier" maxOccurs="unbounded"/>
+                            <xs:element name="walker" type="Identifier" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="Identifier">
+        <xs:sequence>
+            <xs:element name="id" type="xs:string" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
+*/

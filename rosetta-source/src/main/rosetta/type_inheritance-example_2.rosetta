@@ -1,6 +1,9 @@
 namespace demo.translate.type_inheritance.example_2
 version "${project.version}"
 
+/*
+testGenerateAndParse1 extends example
+*/
 synonym source TYPE_INHERITANCE_EXAMPLE_2
 
 type Root:
@@ -17,3 +20,35 @@ type Y:
 type Z extends Y:
 	zStrField string (1..1)
 	    [synonym TYPE_INHERITANCE_EXAMPLE_2 value "address"]
+
+/*
+Schema:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="dataDocument">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="employee" type="fullpersoninfo" />
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="personinfo">
+        <xs:sequence>
+            <xs:element name="firstname" type="xs:string" />
+            <xs:element name="lastname" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="fullpersoninfo">
+        <xs:complexContent>
+            <xs:extension base="personinfo">
+                <xs:sequence>
+                    <xs:element name="address" type="xs:string" />
+                    <xs:element name="city" type="xs:string" />
+                    <xs:element name="country" type="xs:string" />
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+</xs:schema>
+*/

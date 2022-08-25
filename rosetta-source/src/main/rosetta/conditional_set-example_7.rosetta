@@ -1,6 +1,9 @@
 namespace demo.translate.conditional_set.example_7
 version "${project.version}"
 
+/*
+shouldSetFieldWhenRosettaPath test 13
+*/
 synonym source CONDITIONAL_SET_EXAMPLE_7
 
 type Root:
@@ -20,3 +23,42 @@ type Z:
 	str2Field string (1..1)
 	    [synonym CONDITIONAL_SET_EXAMPLE_7 set to "FOO" when rosettaPath = Root->y1Field->zField]
 	    [synonym CONDITIONAL_SET_EXAMPLE_7 set to "BAR" when rosettaPath = Root->y2Field->zField]
+
+/*
+Schema:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="dataDocument">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="a">
+                    <xs:complexType>
+                        <xs:all>
+                            <xs:element name="b">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="d" type="d"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="c">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="d" type="d"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:all>
+                    </xs:complexType>
+                </xs:element>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="d">
+        <xs:all>
+            <xs:element name="e" type="xs:string" />
+        </xs:all>
+    </xs:complexType>
+</xs:schema>
+*/

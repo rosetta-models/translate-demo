@@ -1,6 +1,9 @@
 namespace demo.translate.conditional_set.example_25
 version "${project.version}"
 
+/*
+twoConditions test28
+*/
 synonym source CONDITIONAL_SET_EXAMPLE_25
 
 type Root:
@@ -21,3 +24,47 @@ type Z:
         [synonym CONDITIONAL_SET_EXAMPLE_25 value "bId"]
     str2Field string (0..1)
         [synonym CONDITIONAL_SET_EXAMPLE_25 value "pid"]
+
+/*
+Schema:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="dataDocument">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="a">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="b" maxOccurs="unbounded" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element type="xs:string" name="bId" />
+                                    </xs:sequence>
+                                    <xs:attribute type="xs:string" name="id" use="optional" />
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="c" maxOccurs="unbounded" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="bref">
+                                            <xs:complexType>
+                                                <xs:simpleContent>
+                                                    <xs:extension base="xs:string">
+                                                        <xs:attribute type="xs:string" name="href" use="optional" />
+                                                    </xs:extension>
+                                                </xs:simpleContent>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element type="xs:string" name="pid" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
+*/

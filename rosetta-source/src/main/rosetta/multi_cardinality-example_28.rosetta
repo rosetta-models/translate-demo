@@ -1,6 +1,9 @@
 namespace demo.translate.multi_cardinality.example_28
 version "${project.version}"
 
+/*
+testGenerateAndParse3
+*/
 synonym source MULTI_CARDINALITY_EXAMPLE_28
 
 type Root:
@@ -15,3 +18,25 @@ type Z:
     strField string (1..1)
         [synonym MULTI_CARDINALITY_EXAMPLE_28 value "c1"]
         [synonym MULTI_CARDINALITY_EXAMPLE_28 value "c2"]
+
+/*
+Schema:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="dataDocument">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="a">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="c1" type="xs:string" maxOccurs="unbounded"/>
+                            <xs:element name="c2" type="xs:string" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
+*/

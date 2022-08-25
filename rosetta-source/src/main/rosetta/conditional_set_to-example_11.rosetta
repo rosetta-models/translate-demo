@@ -1,6 +1,9 @@
 namespace demo.translate.conditional_set_to.example_11
 version "${project.version}"
 
+/*
+test21 shouldConditionallyMultiCardItemValue
+*/
 synonym source CONDITIONAL_SET_TO_EXAMPLE_11
 
 type Root:
@@ -18,3 +21,47 @@ type Z:
     str2Field string (1..1)
         [synonym CONDITIONAL_SET_TO_EXAMPLE_11 value "ClOrdID"]
         [synonym CONDITIONAL_SET_TO_EXAMPLE_11 set to "Customer Account" when "Pty->R" = "24"]
+
+/*
+Schema:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="dataDocument">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="a">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="TrdCaptRpt">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="RptSide" minOccurs="0" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="Pty" minOccurs="0" maxOccurs="unbounded">
+                                                        <xs:complexType>
+                                                            <xs:attribute type="xs:string" name="R" use="optional"/>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element name="TrdRegTS" minOccurs="0" maxOccurs="unbounded">
+                                                        <xs:complexType>
+                                                            <xs:attribute type="xs:string" name="TS" use="optional"/>
+                                                            <xs:attribute type="xs:string" name="Typ" use="optional"/>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute type="xs:string" name="ClOrdID"/>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
+*/

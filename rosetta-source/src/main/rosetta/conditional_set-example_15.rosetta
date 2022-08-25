@@ -1,6 +1,9 @@
 namespace demo.translate.conditional_set.example_15
 version "${project.version}"
 
+/*
+shouldConditionallySetWithMultipleCardinalityAndMeta2 test19
+*/
 synonym source CONDITIONAL_SET_EXAMPLE_15
 
 type Root:
@@ -12,3 +15,38 @@ type Z:
 	strField string (1..1) 
 	    [metadata scheme]
 	    [synonym CONDITIONAL_SET_EXAMPLE_15 value "c" meta "scheme"]
+
+/*
+Schema:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="dataDocument">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="a">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="b" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="c">
+                                            <xs:complexType>
+                                                <xs:simpleContent>
+                                                    <xs:extension base="xs:string">
+                                                        <xs:attribute name="scheme" type="xs:string"/>
+                                                    </xs:extension>
+                                                </xs:simpleContent>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
+*/

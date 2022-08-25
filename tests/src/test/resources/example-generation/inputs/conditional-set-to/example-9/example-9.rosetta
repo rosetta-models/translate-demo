@@ -1,6 +1,9 @@
 namespace demo.translate.conditional_set_to.example_9
 version "${project.version}"
 
+/*
+$DESCRIPTION$
+*/
 synonym source CONDITIONAL_SET_TO_EXAMPLE_9
 
 type Root:
@@ -25,3 +28,9 @@ enum TestEnum:
 	    [synonym CONDITIONAL_SET_TO_EXAMPLE_9 value "foo"]
 	BAR
 	    [synonym CONDITIONAL_SET_TO_EXAMPLE_9 value "bar"]
+
+/*
+Schema:
+
+$SCHEMA$
+*/

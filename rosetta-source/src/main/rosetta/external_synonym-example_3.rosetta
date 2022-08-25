@@ -1,6 +1,9 @@
 namespace demo.translate.external_synonym.example_3
 version "${project.version}"
 
+/*
+testGenerateAndParse3 test
+*/
 synonym source EXTERNAL_SYNONYM_EXAMPLE_3_BASE
 
 synonym source EXTERNAL_SYNONYM_EXAMPLE_3 extends EXTERNAL_SYNONYM_EXAMPLE_3_BASE

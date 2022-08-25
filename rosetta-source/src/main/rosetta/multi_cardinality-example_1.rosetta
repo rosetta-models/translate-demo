@@ -1,6 +1,11 @@
 namespace demo.translate.multi_cardinality.example_1
 version "${project.version}"
 
+/*
+example1-1.xml: Map similar list of basic types (list with 2 items)
+
+example1-2.xml: Map similar list of basic types (list with 1 item) - same schema and rosetta, different xml
+*/
 synonym source MULTI_CARDINALITY_EXAMPLE_1
 
 type Root:
@@ -13,3 +18,27 @@ type Z:
 	    [synonym MULTI_CARDINALITY_EXAMPLE_1 value "b"]
 	str2Field string (0..1)
 	    [synonym MULTI_CARDINALITY_EXAMPLE_1 value "c"]
+
+/*
+Schema:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="dataDocument">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="a" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="b" type="xs:string" minOccurs="0"/>
+                            <xs:element name="c" type="xs:string" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
+
+
+*/

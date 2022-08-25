@@ -1,6 +1,9 @@
 namespace demo.translate.multi_cardinality.example_26
 version "${project.version}"
 
+/*
+Hard test_1,2,3 with schema1
+*/
 synonym source MULTI_CARDINALITY_EXAMPLE_26
 
 type Root:
@@ -18,3 +21,42 @@ type Z:
 	    [synonym MULTI_CARDINALITY_EXAMPLE_26 value "b"]
 	str2Field string (1..1)
 	    [synonym MULTI_CARDINALITY_EXAMPLE_26 value "d"]
+
+/*
+Schema:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="dataDocument">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="a">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="swapStream" type="SwapStream" minOccurs="0" maxOccurs="unbounded"/>
+                            <xs:element name="feeLeg" type="FeeLeg" minOccurs="0" maxOccurs="unbounded"/>
+                            <xs:element name="generalTerms" type="GeneralTerms" minOccurs="0" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="SwapStream">
+            <xs:all>
+                <xs:element name="b" type="xs:string" minOccurs="0"/>
+                <xs:element name="d" minOccurs="0" type="xs:string"/>
+            </xs:all>
+    </xs:complexType>
+    <xs:complexType name="FeeLeg">
+        <xs:all>
+            <xs:element name="b" type="xs:string"/>
+        </xs:all>
+    </xs:complexType>
+    <xs:complexType name="GeneralTerms">
+        <xs:all>
+            <xs:element name="d" type="xs:string"/>
+        </xs:all>
+    </xs:complexType>
+</xs:schema>
+*/

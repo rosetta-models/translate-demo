@@ -30,6 +30,8 @@ public class ExampleGenerator {
     public static final String $TEST_SAMPLE_NAME$ = "$TEST_SAMPLE_NAME$";
     public static final String $SYNONYM_NAME$ = "$SYNONYM_NAME$";
     public static final String $ROOT_TYPE$ = "$ROOT_TYPE$";
+    public static final String $DESCRIPTION$ = "$DESCRIPTION$";
+    public static final String $SCHEMA$ = "$SCHEMA$";
 
     public static final String ROOT_TYPE = "Root";
     public static final String SETTINGS_PROPERTIES_FILE_NAME = "settings.properties";
@@ -67,6 +69,7 @@ public class ExampleGenerator {
             List<Path> tests = Files.list(category).filter(Files::isDirectory).collect(Collectors.toList());
             for (Path test : tests) {
                 String testName = test.getFileName().toString();
+                Path mdPath = path(".md", "Only one md file can be in ", test);
                 Path rosettaPath = path(".rosetta", "Only one rosetta file can be in ", test);
                 Path schemaPath = path(".xsd", "Only one xsd file can be in ", test);
                 List<Path> xmlPath = Files.list(test).filter(Files::isRegularFile)
@@ -84,7 +87,7 @@ public class ExampleGenerator {
                     settings.load(new FileInputStream(settingsFilePath.toFile()));
                 }
 
-                exampleSets.add(new ExampleSet(categoryName, testName, rosettaPath, schemaPath, xmlPath, settings));
+                exampleSets.add(new ExampleSet(categoryName, testName, mdPath, rosettaPath, schemaPath, xmlPath, settings));
             }
         }
         return exampleSets;
@@ -154,11 +157,18 @@ public class ExampleGenerator {
     }
 
     void writeRosetta(ExampleSet exampleSet) throws IOException {
-        Files.copy(exampleSet.rosettaFile,
-                mainResourcesPath.getParent().resolve("rosetta")
-                        .resolve(exampleSet.categoryName.replace("-", "_")
-                                + "-" + exampleSet.rosettaFile.getFileName().toString().replace("-", "_")),
-                StandardCopyOption.REPLACE_EXISTING);
+        String description = Files.readString(exampleSet.mdFile);
+        String schema = Files.readString(exampleSet.xsdFile);
+        String rosetta =
+                Files.readString(exampleSet.rosettaFile)
+                        .replace($DESCRIPTION$, description)
+                        .replace($SCHEMA$, schema);
+
+        Path rosettaPath = mainResourcesPath.getParent().resolve("rosetta")
+                .resolve(exampleSet.categoryName.replace("-", "_")
+                        + "-" + exampleSet.rosettaFile.getFileName().toString().replace("-", "_"));
+
+        Files.write(rosettaPath, rosetta.getBytes());
     }
 
     void writeUnitTest(ExampleSet exampleSet) throws IOException {
@@ -213,15 +223,17 @@ public class ExampleGenerator {
     static class ExampleSet {
         private final String categoryName;
         private final String testName;
+        private final Path mdFile;
         private final Path rosettaFile;
         private final Path xsdFile;
         private final List<Path> xmlFiles;
         private final Properties settings;
 
 
-        public ExampleSet(String categoryName, String testName, Path rosettaFile, Path xsdFile, List<Path> xmlFiles, Properties settings) {
+        public ExampleSet(String categoryName, String testName, Path mdFile, Path rosettaFile, Path xsdFile, List<Path> xmlFiles, Properties settings) {
             this.categoryName = categoryName;
             this.testName = testName;
+            this.mdFile = mdFile;
             this.rosettaFile = rosettaFile;
             this.xsdFile = xsdFile;
             this.xmlFiles = xmlFiles;

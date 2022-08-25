@@ -1,8 +1,39 @@
 namespace demo.translate.mappers.example_2
 version "${project.version}"
 
+/*
+shouldFlipLegs test2
+*/
 synonym source MAPPERS_EXAMPLE_2
 
 type Root:
     [rootType]
-	//insert here
+	// add content here
+
+/*
+Schema:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="dataDocument">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="top">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="leg" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="a" type="xs:string" />
+                                        <xs:element name="b" type="xs:string" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
+*/

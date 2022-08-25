@@ -1,6 +1,9 @@
 namespace demo.translate.conditional_set.example_4
 version "${project.version}"
 
+/*
+
+*/
 synonym source CONDITIONAL_SET_EXAMPLE_4
 
 type Root:
@@ -21,3 +24,37 @@ type Y:
 type Z:
     boolField boolean (1..1)
         [synonym CONDITIONAL_SET_EXAMPLE_4 value "d"]
+
+/*
+Schema:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="dataDocument">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="a">
+                    <xs:complexType>
+                        <xs:all>
+                            <xs:element name="b">
+                                <xs:complexType>
+                                    <xs:all>
+                                        <xs:element name="c">
+                                            <xs:complexType>
+                                                <xs:all>
+                                                    <xs:element name="d" type="xs:boolean" />
+                                                    <xs:element name="e" type="xs:string" />
+                                                </xs:all>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:all>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:all>
+                    </xs:complexType>
+                </xs:element>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
+*/

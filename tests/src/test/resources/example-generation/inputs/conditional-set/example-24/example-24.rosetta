@@ -1,6 +1,9 @@
 namespace demo.translate.conditional_set.example_24
 version "${project.version}"
 
+/*
+$DESCRIPTION$
+*/
 synonym source CONDITIONAL_SET_EXAMPLE_24
 
 type Root:
@@ -23,3 +26,9 @@ enum TestEnum:
 enum Test2Enum:
 	BAZ
 	    [synonym CONDITIONAL_SET_EXAMPLE_24 value "baz"]
+
+/*
+Schema:
+
+$SCHEMA$
+*/

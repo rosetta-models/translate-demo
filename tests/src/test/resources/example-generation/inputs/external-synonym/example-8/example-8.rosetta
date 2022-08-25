@@ -1,6 +1,9 @@
 namespace demo.translate.external_synonym.example_8
 version "${project.version}"
 
+/*
+$DESCRIPTION$
+*/
 synonym source EXTERNAL_SYNONYM_EXAMPLE_8_BASE_0
 
 synonym source EXTERNAL_SYNONYM_EXAMPLE_8_BASE_1 extends EXTERNAL_SYNONYM_EXAMPLE_8_BASE_0
@@ -78,3 +81,9 @@ type Z:
 enum TestEnum:
 	Foo
 	Bar
+
+/*
+Schema:
+
+$SCHEMA$
+*/

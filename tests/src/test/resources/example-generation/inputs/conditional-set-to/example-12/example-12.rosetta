@@ -1,6 +1,9 @@
 namespace demo.translate.conditional_set_to.example_12
 version "${project.version}"
 
+/*
+$DESCRIPTION$
+*/
 synonym source CONDITIONAL_SET_TO_EXAMPLE_12
 
 type Root:
@@ -20,3 +23,9 @@ type Z:
 		[synonym CONDITIONAL_SET_TO_EXAMPLE_12 value "ClOrdID"]
 		[synonym CONDITIONAL_SET_TO_EXAMPLE_12 value "TS" path "TrdRegTS"]
 		[synonym CONDITIONAL_SET_TO_EXAMPLE_12 set to "Customer Account" when "Pty->R" = "24"]
+
+/*
+Schema:
+
+$SCHEMA$
+*/

@@ -1,6 +1,9 @@
 namespace demo.translate.meta_scheme.example_1
 version "${project.version}"
 
+/*
+$DESCRIPTION$
+*/
 synonym source META_SCHEME_EXAMPLE_1
 
 type Root:
@@ -12,3 +15,9 @@ type Z:
     strField string (1..*)
         [metadata scheme]
         [synonym META_SCHEME_EXAMPLE_1 value "partyReference" meta "scheme"]
+
+/*
+Schema:
+
+$SCHEMA$
+*/

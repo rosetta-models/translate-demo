@@ -1,8 +1,17 @@
 namespace demo.translate.mappers.example_1
 version "${project.version}"
 
+/*
+$DESCRIPTION$
+*/
 synonym source MAPPERS_EXAMPLE_1
 
 type Root:
     [rootType]
-	//insert here
+	// add content here
+
+/*
+Schema:
+
+$SCHEMA$
+*/

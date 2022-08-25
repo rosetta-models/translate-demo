@@ -1,6 +1,9 @@
 namespace demo.translate.format.example_1
 version "${project.version}"
 
+/*
+$DESCRIPTION$
+*/
 synonym source FORMAT_EXAMPLE_1
 
 type Root:
@@ -28,3 +31,9 @@ enum TestEnum:
 		[synonym FORMAT_EXAMPLE_1 value "M" pattern "[0-9]*(.*)" "$1"]
 	Y
 		[synonym FORMAT_EXAMPLE_1 value "Y" pattern "[0-9]*(.*)" "$1"]
+
+/*
+Schema:
+
+$SCHEMA$
+*/

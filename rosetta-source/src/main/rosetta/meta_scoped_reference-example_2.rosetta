@@ -1,6 +1,9 @@
 namespace demo.translate.meta_scoped_reference.example_2
 version "${project.version}"
 
+/*
+
+*/
 synonym source META_SCOPED_REFERENCE_EXAMPLE_2
 
 type Root:
@@ -22,3 +25,30 @@ type ResolvablePayoutQuantity:
 type Quantity:
 	amount number (1..1)
 	    [synonym META_SCOPED_REFERENCE_EXAMPLE_2 value "c" maps 2]
+
+/*
+Schema:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="dataDocument">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="a">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="b">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="c" type="xs:string"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
+*/

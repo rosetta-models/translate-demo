@@ -1,6 +1,9 @@
 namespace demo.translate.conditional_set.example_6
 version "${project.version}"
 
+/*
+$DESCRIPTION$
+*/
 synonym source CONDITIONAL_SET_EXAMPLE_6
 
 type Root:
@@ -12,3 +15,9 @@ type Z:
 	strField string (1..1)
         [synonym CONDITIONAL_SET_EXAMPLE_6 value "e" path "b->c" set when "b->c->d" = "FISH"]
         [synonym CONDITIONAL_SET_EXAMPLE_6 value "f" path "b->c" set when "b->c->d" = "SAUSAGE"]
+
+/*
+Schema:
+
+$SCHEMA$
+*/

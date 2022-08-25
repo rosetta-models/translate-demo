@@ -1,6 +1,9 @@
 namespace demo.translate.meta_external_reference.example_1
 version "${project.version}"
 
+/*
+testGenerateAndParse1 external meta test
+*/
 synonym source META_EXTERNAL_REFERENCE_EXAMPLE_1
 
 type Root:
@@ -13,3 +16,31 @@ type Z:
     [synonym META_EXTERNAL_REFERENCE_EXAMPLE_1 meta "id"]
     strField string (0..1)
         [synonym META_EXTERNAL_REFERENCE_EXAMPLE_1 value "name"]
+
+/*
+Schema:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="dataDocument">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="a">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="party">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="name" type="xs:string"></xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute type="xs:ID" name="id" />
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
+*/

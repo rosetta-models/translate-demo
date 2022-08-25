@@ -1,6 +1,9 @@
 namespace demo.translate.type_inheritance.example_1
 version "${project.version}"
 
+/*
+$DESCRIPTION$
+*/
 synonym source TYPE_INHERITANCE_EXAMPLE_1
 
 type Root:
@@ -20,3 +23,9 @@ type Y extends X:
 type Z extends Y:
     zStrField string (1..1)
         [synonym TYPE_INHERITANCE_EXAMPLE_1 value "businessDayConvention" path "dateOffset"]
+
+/*
+Schema:
+
+$SCHEMA$
+*/

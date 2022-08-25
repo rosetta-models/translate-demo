@@ -1,6 +1,9 @@
 namespace demo.translate.meta_scoped_reference.example_1
 version "${project.version}"
 
+/*
+$DESCRIPTION$
+*/
 synonym source META_SCOPED_REFERENCE_EXAMPLE_1
 
 type Root:
@@ -22,3 +25,9 @@ type ResolvablePayoutQuantity:
 type Quantity:
 	amount number (1..1)
 	    [synonym META_SCOPED_REFERENCE_EXAMPLE_1 value "c" maps 2]
+
+/*
+Schema:
+
+$SCHEMA$
+*/

@@ -1,6 +1,9 @@
 namespace demo.translate.external_synonym.example_8
 version "${project.version}"
 
+/*
+
+*/
 synonym source EXTERNAL_SYNONYM_EXAMPLE_8_BASE_0
 
 synonym source EXTERNAL_SYNONYM_EXAMPLE_8_BASE_1 extends EXTERNAL_SYNONYM_EXAMPLE_8_BASE_0
@@ -78,3 +81,68 @@ type Z:
 enum TestEnum:
 	Foo
 	Bar
+
+/*
+Schema:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="dataDocument">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="a">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="b">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="cRef" type="CReference" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="c" type="C" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType abstract="true" name="Reference">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                The abstract base class for all types which define intra-document pointers.
+            </xs:documentation>
+        </xs:annotation>
+    </xs:complexType>
+
+    <xs:complexType name="CReference">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">Reference to C</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="Reference">
+                <xs:attribute name="href" type="xs:IDREF" use="required" />
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="C">
+        <xs:sequence>
+            <xs:element name="d" />
+            <xs:element name="e" />
+            <xs:element name="f" type="FEnum" />
+            <xs:element name="g" />
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:ID" use="required" />
+    </xs:complexType>
+
+    <xs:simpleType name="FEnum">
+        <xs:restriction base="xs:token">
+            <xs:enumeration value="AA">
+            </xs:enumeration>
+            <xs:enumeration value="BB">
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
+*/
