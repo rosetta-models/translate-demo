@@ -14,7 +14,6 @@
                                                 <xs:all>
                                                     <xs:element name="d" type="xs:string" minOccurs="0"/>
                                                     <xs:element name="e" type="xs:string" minOccurs="0"/>
-                                                    <xs:element name="f" type="xs:string" minOccurs="0"/>
                                                 </xs:all>
                                             </xs:complexType>
                                         </xs:element>
