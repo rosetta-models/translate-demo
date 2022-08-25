@@ -1,5 +1,7 @@
 {
-  "zfield" : {
-    "strField" : "CHIPS"
+  "yfield" : {
+    "z1Field" : {
+      "strField" : "foo"
+    }
   }
 }

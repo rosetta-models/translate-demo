@@ -1,1 +1,2 @@
 File Name,Result,Input Path,Indexless Input Path,Unmappable CDM Path Count,Unmappable CDM Paths,Reason For Failure
+cdm-sample-files/conditional-set/example-5/example-5-1.xml,Fail_MappedMultiple,a.b.c.f,a.b.c.f,2,Root.zField.str1Field=[GRAVY] Root.zField.str2Field=[GRAVY],Element mapped to multiple rosettaFields

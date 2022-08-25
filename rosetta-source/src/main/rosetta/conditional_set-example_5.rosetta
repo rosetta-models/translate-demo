@@ -2,25 +2,27 @@ namespace demo.translate.conditional_set.example_5
 version "${project.version}"
 
 /*
-shouldSetWhenNonLeafPathExists1 shouldSetWhenNonLeafPathExists2 test 11.1-2
+Example 5:
+
+Two conditional mapping synonyms on a single attribute, each using "set" with a "when" clause that is predicated on the value of a xml element at the specified xml path.
+
+The attribute Z->str2Field is conditionally set from:
+- xml path a->b->c->e when the value at xml path a->b->c->d is "FISH"
+- xml path a->b->c->f when the value at xml path a->b->c->d is "SAUSAGE"
 */
 synonym source CONDITIONAL_SET_EXAMPLE_5
 
 type Root:
     [rootType]
-	yField Y (1..1)
+	zField Z (1..1)
 	    [synonym CONDITIONAL_SET_EXAMPLE_5 value "a"]
 
-type Y:
-	z1Field Z (0..1)
-	    [synonym CONDITIONAL_SET_EXAMPLE_5 value "b" set when "b->c" exists]
-	z2Field Z (0..1)
-	    [synonym CONDITIONAL_SET_EXAMPLE_5 value "b" set when "b->d" exists]
-
 type Z:
-	strField string (1..1)
-        [synonym CONDITIONAL_SET_EXAMPLE_5 value "e" path "c"]
-        [synonym CONDITIONAL_SET_EXAMPLE_5 value "e" path "d"]
+	str1Field string (1..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_5 value "f" path "b->c"]
+	str2Field string (0..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_5 value "e" path "b->c" set when "b->c->d" = "FISH"]
+        [synonym CONDITIONAL_SET_EXAMPLE_5 value "f" path "b->c" set when "b->c->d" = "SAUSAGE"]
 
 /*
 Schema:
@@ -35,22 +37,17 @@ Schema:
                         <xs:all>
                             <xs:element name="b">
                                 <xs:complexType>
-                                    <xs:sequence>
-                                        <xs:element name="c" minOccurs="0">
+                                    <xs:all>
+                                        <xs:element name="c">
                                             <xs:complexType>
                                                 <xs:all>
-                                                    <xs:element name="e" type="xs:string" />
+                                                    <xs:element name="d" type="xs:string" minOccurs="0"/>
+                                                    <xs:element name="e" type="xs:string" minOccurs="0"/>
+                                                    <xs:element name="f" type="xs:string" minOccurs="0"/>
                                                 </xs:all>
                                             </xs:complexType>
                                         </xs:element>
-                                        <xs:element name="d" minOccurs="0">
-                                            <xs:complexType>
-                                                <xs:all>
-                                                    <xs:element name="e" type="xs:string" />
-                                                </xs:all>
-                                            </xs:complexType>
-                                        </xs:element>
-                                    </xs:sequence>
+                                    </xs:all>
                                 </xs:complexType>
                             </xs:element>
                         </xs:all>

@@ -1,5 +1,7 @@
 {
-  "zfield" : {
-    "strField" : "GRAVY"
+  "yfield" : {
+    "z2Field" : {
+      "strField" : "foo"
+    }
   }
 }
