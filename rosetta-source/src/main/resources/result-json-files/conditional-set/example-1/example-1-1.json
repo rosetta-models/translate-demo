@@ -1,9 +1,9 @@
 {
   "xfield" : {
-    "strField" : "PIZZA",
+    "strField" : "CHIPS",
     "yfield" : {
       "zfield" : {
-        "strField" : "FISH"
+        "strField" : "PIZZA"
       }
     }
   }
