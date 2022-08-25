@@ -1,5 +1,9 @@
 {
   "yfield" : {
+    "zrefField" : {
+      "externalReference" : "xyz",
+      "globalReference" : "41f272"
+    },
     "zfield" : {
       "enumField" : "FOO",
       "meta" : {
@@ -7,10 +11,6 @@
         "globalKey" : "41f272"
       },
       "str1Field" : "FISH"
-    },
-    "zrefField" : {
-      "externalReference" : "xyz",
-      "globalReference" : "41f272"
     }
   }
 }

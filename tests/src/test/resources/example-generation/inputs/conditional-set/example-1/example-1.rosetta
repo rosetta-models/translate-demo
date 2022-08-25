@@ -12,7 +12,7 @@ type X:
 	yField Y (1..1)
 	    [synonym CONDITIONAL_SET_EXAMPLE_1 value "b"]
 	strField string (1..1)
-	    [synonym CONDITIONAL_SET_EXAMPLE_1 value "e" path "b->c" set when "b->c->d" = "FISH"]
+	    [synonym CONDITIONAL_SET_EXAMPLE_1 value "f" path "b->c" set when "b->c->d" = "FISH"]
 
 type Y:
 	zField Z (1..1)
