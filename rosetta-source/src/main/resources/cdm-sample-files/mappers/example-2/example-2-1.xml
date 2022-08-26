@@ -1,13 +1,12 @@
 <?xml version="1.0"?>
 <dataDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="example-2.xsd example-2.xsd">
-    <top>
-        <leg>
-            <a>Fish</a>
-            <b>Chips</b>
-        </leg>
-        <leg>
-            <a>Sausage</a>
-            <b>Mash</b>
-        </leg>
-    </top>
+    <a>
+        <b>
+            <c>
+                <d>FISH</d>
+                <e>CHIPS</e>
+                <f>PIZZA</f>
+            </c>
+        </b>
+    </a>
 </dataDocument>

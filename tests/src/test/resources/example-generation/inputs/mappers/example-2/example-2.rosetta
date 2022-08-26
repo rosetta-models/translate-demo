@@ -8,7 +8,12 @@ synonym source MAPPERS_EXAMPLE_2
 
 type Root:
     [rootType]
-	// add content here
+	zField Z (1..1)
+	    [synonym MAPPERS_EXAMPLE_2 value "a" mapper "Example2"]
+
+type Z:
+	str1Field string (1..1)
+	str2Field string (1..1)
 
 /*
 Schema:

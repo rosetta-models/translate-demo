@@ -1,21 +1,12 @@
 <?xml version="1.0"?>
 <dataDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="example-1.xsd example-1.xsd">
-    <swap>
-        <swapStream>
-            <payerPartyReference href="side1" />
-            <receiverPartyReference href="side2" />
-        </swapStream>
-        <tradeSide id="side1">
-            <party href="party1" />
-        </tradeSide>
-        <tradeSide id="side2">
-            <party href="party2" />
-        </tradeSide>
-        <party id="party1">
-            Party1
-        </party>
-        <party id="party2">
-            Party2
-        </party>
-    </swap>
+    <a>
+        <b>
+            <c>
+                <d>FISH</d>
+                <e>CHIPS</e>
+                <f>PIZZA</f>
+            </c>
+        </b>
+    </a>
 </dataDocument>

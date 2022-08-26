@@ -1,1 +1,1 @@
-shouldMapTradeSideIdToPartyId test1
+Example 1

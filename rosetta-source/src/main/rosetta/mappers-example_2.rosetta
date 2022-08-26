@@ -2,13 +2,18 @@ namespace demo.translate.mappers.example_2
 version "${project.version}"
 
 /*
-shouldFlipLegs test2
+Example 2
 */
 synonym source MAPPERS_EXAMPLE_2
 
 type Root:
     [rootType]
-	// add content here
+	zField Z (1..1)
+	    [synonym MAPPERS_EXAMPLE_2 value "a" mapper "Example2"]
+
+type Z:
+	str1Field string (1..1)
+	str2Field string (1..1)
 
 /*
 Schema:
@@ -18,18 +23,25 @@ Schema:
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="top">
+                <xs:element name="a">
                     <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="leg" minOccurs="0" maxOccurs="unbounded">
+                        <xs:all>
+                            <xs:element name="b">
                                 <xs:complexType>
-                                    <xs:sequence>
-                                        <xs:element name="a" type="xs:string" />
-                                        <xs:element name="b" type="xs:string" />
-                                    </xs:sequence>
+                                    <xs:all>
+                                        <xs:element name="c">
+                                            <xs:complexType>
+                                                <xs:all>
+                                                    <xs:element name="d" type="xs:string" minOccurs="0"/>
+                                                    <xs:element name="e" type="xs:string" minOccurs="0"/>
+                                                    <xs:element name="f" type="xs:string" minOccurs="0"/>
+                                                </xs:all>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:all>
                                 </xs:complexType>
                             </xs:element>
-                        </xs:sequence>
+                        </xs:all>
                     </xs:complexType>
                 </xs:element>
             </xs:all>

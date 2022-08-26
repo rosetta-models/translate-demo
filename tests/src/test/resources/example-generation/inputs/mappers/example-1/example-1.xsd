@@ -3,68 +3,28 @@
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="swap">
+                <xs:element name="a">
                     <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="swapStream">
+                        <xs:all>
+                            <xs:element name="b">
                                 <xs:complexType>
-                                    <xs:sequence>
-                                        <xs:element name="payerPartyReference" type="TradeSideReference" />
-                                        <xs:element name="receiverPartyReference" type="TradeSideReference" />
-                                    </xs:sequence>
+                                    <xs:all>
+                                        <xs:element name="c">
+                                            <xs:complexType>
+                                                <xs:all>
+                                                    <xs:element name="d" type="xs:string" minOccurs="0"/>
+                                                    <xs:element name="e" type="xs:string" minOccurs="0"/>
+                                                    <xs:element name="f" type="xs:string" minOccurs="0"/>
+                                                </xs:all>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:all>
                                 </xs:complexType>
                             </xs:element>
-                            <xs:element name="tradeSide" type="TradeSide" minOccurs="0" maxOccurs="unbounded" />
-                            <xs:element name="party" type="Party" minOccurs="0" maxOccurs="unbounded" />
-                        </xs:sequence>
+                        </xs:all>
                     </xs:complexType>
                 </xs:element>
             </xs:all>
         </xs:complexType>
     </xs:element>
-    <xs:complexType abstract="true" name="Reference">
-        <xs:annotation>
-            <xs:documentation xml:lang="en">The abstract base class
-                for all types which define intra-document pointers.
-            </xs:documentation>
-        </xs:annotation>
-    </xs:complexType>
-
-    <xs:complexType name="TradeSideReference">
-        <xs:annotation>
-            <xs:documentation xml:lang="en">Reference to a tradeSide.</xs:documentation>
-        </xs:annotation>
-        <xs:complexContent>
-            <xs:extension base="Reference">
-                <xs:attribute name="href" type="xs:IDREF"
-                              use="required" />
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>
-
-    <xs:complexType name="TradeSide">
-        <xs:sequence>
-            <xs:element name="party" type="PartyReference" />
-        </xs:sequence>
-        <xs:attribute type="xs:ID" name="id" />
-    </xs:complexType>
-
-    <xs:complexType name="PartyReference">
-        <xs:annotation>
-            <xs:documentation xml:lang="en">Reference to a party.</xs:documentation>
-        </xs:annotation>
-        <xs:complexContent>
-            <xs:extension base="Reference">
-                <xs:attribute name="href" type="xs:IDREF" use="required" />
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>
-
-    <xs:complexType name="Party">
-        <xs:simpleContent>
-            <xs:extension base="xs:string">
-                <xs:attribute type="xs:ID" name="id" />
-            </xs:extension>
-        </xs:simpleContent>
-    </xs:complexType>
 </xs:schema>
