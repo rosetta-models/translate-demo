@@ -1,7 +1,16 @@
 {
-  "yfield" : {
-    "z2Field" : {
-      "strField" : "foo"
+  "y1Field" : {
+    "zfield" : {
+      "str1Field" : "FISH",
+      "str2Field" : "CHIPS",
+      "str3Field" : "FISH"
+    }
+  },
+  "y2Field" : {
+    "zfield" : {
+      "str1Field" : "FISH2",
+      "str2Field" : "CHIPS2",
+      "str4Field" : "CHIPS2"
     }
   }
 }

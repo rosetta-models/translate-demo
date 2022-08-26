@@ -2,7 +2,12 @@ namespace demo.translate.conditional_set.example_7
 version "${project.version}"
 
 /*
-shouldSetFieldWhenRosettaPath test 13
+Example 7:
+
+Conditional mapping using "set" with a "when" clause that is predicated on the upstream rosetta path.
+
+- The attribute Z->str3Field is conditionally set from xml element e when the upstream rosetta path is Root->y1Field->zField.
+- The attribute Z->str4Field is conditionally set from xml element f when the upstream rosetta path is Root->y2Field->zField.
 */
 synonym source CONDITIONAL_SET_EXAMPLE_7
 
@@ -18,11 +23,14 @@ type Y:
 	    [synonym CONDITIONAL_SET_EXAMPLE_7 value "d"]
 
 type Z:
-	str1Field string (1..1)
-    	[synonym CONDITIONAL_SET_EXAMPLE_7 value "e"]
-	str2Field string (1..1)
-	    [synonym CONDITIONAL_SET_EXAMPLE_7 set to "FOO" when rosettaPath = Root->y1Field->zField]
-	    [synonym CONDITIONAL_SET_EXAMPLE_7 set to "BAR" when rosettaPath = Root->y2Field->zField]
+    str1Field string (1..1)
+    	[synonym CONDITIONAL_SET_EXAMPLE_7 value "e" maps 2]
+    str2Field string (1..1)
+        [synonym CONDITIONAL_SET_EXAMPLE_7 value "f" maps 2]
+	str3Field string (0..1)
+        [synonym CONDITIONAL_SET_EXAMPLE_7 value "e" set when rosettaPath = Root->y1Field->zField]
+	str4Field string (0..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_7 value "f" set when rosettaPath = Root->y2Field->zField]
 
 /*
 Schema:
@@ -57,7 +65,8 @@ Schema:
     </xs:element>
     <xs:complexType name="d">
         <xs:all>
-            <xs:element name="e" type="xs:string" />
+            <xs:element name="e" type="xs:string" minOccurs="0" />
+            <xs:element name="f" type="xs:string" minOccurs="0" />
         </xs:all>
     </xs:complexType>
 </xs:schema>

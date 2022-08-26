@@ -28,7 +28,8 @@
     </xs:element>
     <xs:complexType name="d">
         <xs:all>
-            <xs:element name="e" type="xs:string" />
+            <xs:element name="e" type="xs:string" minOccurs="0" />
+            <xs:element name="f" type="xs:string" minOccurs="0" />
         </xs:all>
     </xs:complexType>
 </xs:schema>

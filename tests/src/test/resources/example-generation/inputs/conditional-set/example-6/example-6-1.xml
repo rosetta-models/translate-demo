@@ -3,8 +3,15 @@
     <a>
         <b>
             <d>
-                <e>foo</e>
+                <e>FISH</e>
+                <f>CHIPS</f>
             </d>
         </b>
+        <c>
+            <d>
+                <e>FISH2</e>
+                <f>CHIPS2</f>
+            </d>
+        </c>
     </a>
 </dataDocument>
