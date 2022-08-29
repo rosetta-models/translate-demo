@@ -1,5 +1,9 @@
 {
   "yfield" : {
+    "zrefField" : {
+      "externalReference" : "xyz",
+      "globalReference" : "3f0fbf4"
+    },
     "zfield" : {
       "enumField" : "BAR",
       "meta" : {
@@ -7,10 +11,6 @@
         "globalKey" : "3f0fbf4"
       },
       "str1Field" : "CHIPS"
-    },
-    "zrefField" : {
-      "externalReference" : "xyz",
-      "globalReference" : "3f0fbf4"
     }
   }
 }

@@ -1,12 +1,12 @@
 {
   "wfield" : {
-    "yfield" : {
-      "strField" : "OTHER"
-    },
     "xfield" : {
       "zfield" : {
         "strField" : "FISH"
       }
+    },
+    "yfield" : {
+      "strField" : "OTHER"
     }
   }
 }

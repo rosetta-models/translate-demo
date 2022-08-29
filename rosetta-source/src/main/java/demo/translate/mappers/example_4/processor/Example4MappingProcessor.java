@@ -1,11 +1,11 @@
-package demo.translate.mappers.example_2.processor;
+package demo.translate.mappers.example_4.processor;
 
 import com.regnosys.rosetta.common.translation.MappingContext;
 import com.regnosys.rosetta.common.translation.MappingProcessor;
 import com.regnosys.rosetta.common.translation.Path;
 import com.rosetta.model.lib.RosettaModelObjectBuilder;
 import com.rosetta.model.lib.path.RosettaPath;
-import demo.translate.mappers.example_2.Z;
+import demo.translate.mappers.example_4.Z;
 
 import java.util.List;
 
@@ -13,9 +13,9 @@ import java.util.List;
  * The mapper class name must be in the form "<MapperName>MappingProcessor", and must extend MappingProcessor.
  */
 @SuppressWarnings("unused")
-public class Example2MappingProcessor extends MappingProcessor {
+public class Example4MappingProcessor extends MappingProcessor {
 
-    public Example2MappingProcessor(RosettaPath modelPath, List<Path> synonymPaths, MappingContext context) {
+    public Example4MappingProcessor(RosettaPath modelPath, List<Path> synonymPaths, MappingContext context) {
         super(modelPath, synonymPaths, context);
     }
 
@@ -37,7 +37,7 @@ public class Example2MappingProcessor extends MappingProcessor {
                     // cast builder object
                     Z.ZBuilder zBuilder = (Z.ZBuilder) builder;
                     // set new value on builder object
-                    zBuilder.setStr1Field(xmlValueFromXmlPath1 + "X");
+                    zBuilder.setStr1Field(xmlValueFromXmlPath1 + "_X");
                 });
 
         Path xmlPath2 = xmlPath.addElement("b").addElement("c").addElement("e"); // a->b->c->e (e.g. value of "CHIPS")
