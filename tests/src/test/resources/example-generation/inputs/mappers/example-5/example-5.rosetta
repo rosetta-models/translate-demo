@@ -1,0 +1,24 @@
+namespace demo.translate.mappers.example_5
+version "${project.version}"
+
+/*
+$DESCRIPTION$
+*/
+synonym source MAPPERS_EXAMPLE_5
+
+type Root:
+    [rootType]
+	zField Z (1..1)
+	    [synonym MAPPERS_EXAMPLE_5 value "a"]
+
+type Z:
+	str1Field string (1..1)
+	    [synonym MAPPERS_EXAMPLE_5 value "f" path "b->c"]
+	str2Field string (0..*)
+	    [synonym MAPPERS_EXAMPLE_5 value "e" path "b->c" mapper "Example5"]
+
+/*
+Schema:
+
+$SCHEMA$
+*/
