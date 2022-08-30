@@ -13,9 +13,9 @@ type Root:
 
 type Z:
 	str1Field string (1..1)
-	    // set by mapper
+	    // value set by mapper
 	str2Field string (1..1)
-	    // set by mapper
+	    // value set by mapper
 	str3Field string (1..1)
 	    [synonym MAPPERS_EXAMPLE_2 value "f" path "b->c"]
 

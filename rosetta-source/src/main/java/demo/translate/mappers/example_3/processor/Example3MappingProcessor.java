@@ -6,6 +6,7 @@ import com.regnosys.rosetta.common.translation.Path;
 import com.rosetta.model.lib.RosettaModelObjectBuilder;
 import com.rosetta.model.lib.path.RosettaPath;
 import com.rosetta.model.metafields.FieldWithMetaString;
+import com.rosetta.model.metafields.MetaFields;
 
 import java.util.List;
 
@@ -41,7 +42,10 @@ public class Example3MappingProcessor extends MappingProcessor {
                     // create new value to set
                     String newValue = metaStringBuilder.getValue() + "_" + xmlValueFromNewXmlPath;
                     // set new value on builder object
-                    metaStringBuilder.setValue(newValue);
+                    metaStringBuilder
+                            .setValue(newValue)
+                            .setMeta(MetaFields.builder()
+                                    .setScheme("foo-scheme-set-by-mapper"));
                 });
     }
 }

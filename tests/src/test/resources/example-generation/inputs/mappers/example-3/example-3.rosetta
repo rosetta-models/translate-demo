@@ -16,6 +16,7 @@ type Z:
 	    [synonym MAPPERS_EXAMPLE_3 value "f" path "b->c"]
 	str2Field string (0..1)
 	    [metadata scheme]
+	    // value and scheme updated by mapper
 	    [synonym MAPPERS_EXAMPLE_3 value "e" path "b->c" mapper "Example3"]
 
 /*

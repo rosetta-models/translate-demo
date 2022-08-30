@@ -15,6 +15,7 @@ type Z:
 	str1Field string (1..1)
 	    [synonym MAPPERS_EXAMPLE_1 value "f" path "b->c"]
 	str2Field string (0..1)
+	    // value updated by mapper
 	    [synonym MAPPERS_EXAMPLE_1 value "e" path "b->c" mapper "Example1"]
 
 /*
