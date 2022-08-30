@@ -1,0 +1,23 @@
+{
+  "xfield" : [ {
+    "yfield" : [ {
+      "zfield" : [ {
+        "str1Field" : "c1-value",
+        "str2Field" : "d1-value",
+        "str3Field" : "e1-value"
+      } ]
+    } ]
+  }, {
+    "strField" : "f1-value"
+  }, {
+    "yfield" : [ {
+      "zfield" : [ {
+        "str1Field" : "c2-value",
+        "str2Field" : "d2-value",
+        "str3Field" : "e2-value"
+      } ]
+    } ]
+  }, {
+    "strField" : "f2-value"
+  } ]
+}

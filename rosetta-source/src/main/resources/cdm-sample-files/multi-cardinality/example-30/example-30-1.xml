@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<dataDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="example-30.xsd example-30.xsd">
+    <a>
+        <b>b-value</b>
+        <c>c-value</c>
+        <d>d-value</d>
+    </a>
+</dataDocument>

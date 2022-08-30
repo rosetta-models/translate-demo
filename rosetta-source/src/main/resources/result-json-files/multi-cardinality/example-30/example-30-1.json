@@ -1,0 +1,13 @@
+{
+  "xfield" : [ {
+    "yfield" : [ {
+      "zfield" : [ {
+        "str1Field" : "b-value"
+      }, {
+        "str2Field" : "c-value"
+      }, {
+        "str3Field" : "d-value"
+      } ]
+    } ]
+  } ]
+}

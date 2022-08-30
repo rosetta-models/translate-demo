@@ -1,0 +1,35 @@
+namespace demo.translate.multi_cardinality.example_29
+version "${project.version}"
+
+/*
+$DESCRIPTION$
+*/
+synonym source MULTI_CARDINALITY_EXAMPLE_29
+
+type Root:
+    [rootType]
+    xField X (0..*)
+
+type X:
+    yField Y (0..*)
+        [synonym MULTI_CARDINALITY_EXAMPLE_29 value "a"]
+    strField string (0..1)
+        [synonym MULTI_CARDINALITY_EXAMPLE_29 value "f" path "a"]
+
+type Y:
+	zField Z (0..*)
+        [synonym MULTI_CARDINALITY_EXAMPLE_29 value "b"]
+
+type Z:
+	str1Field string (1..1)
+	    [synonym MULTI_CARDINALITY_EXAMPLE_29 value "c"]
+	str2Field string (1..1)
+	    [synonym MULTI_CARDINALITY_EXAMPLE_29 value "d"]
+    str3Field string (1..1)
+        [synonym MULTI_CARDINALITY_EXAMPLE_29 value "e"]
+
+/*
+Schema:
+
+$SCHEMA$
+*/

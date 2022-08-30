@@ -1,0 +1,58 @@
+namespace demo.translate.multi_cardinality.example_29
+version "${project.version}"
+
+/*
+
+*/
+synonym source MULTI_CARDINALITY_EXAMPLE_29
+
+type Root:
+    [rootType]
+    xField X (0..*)
+
+type X:
+    yField Y (0..*)
+        [synonym MULTI_CARDINALITY_EXAMPLE_29 value "a"]
+    strField string (0..1)
+        [synonym MULTI_CARDINALITY_EXAMPLE_29 value "f" path "a"]
+
+type Y:
+	zField Z (0..*)
+        [synonym MULTI_CARDINALITY_EXAMPLE_29 value "b"]
+
+type Z:
+	str1Field string (1..1)
+	    [synonym MULTI_CARDINALITY_EXAMPLE_29 value "c"]
+	str2Field string (1..1)
+	    [synonym MULTI_CARDINALITY_EXAMPLE_29 value "d"]
+    str3Field string (1..1)
+        [synonym MULTI_CARDINALITY_EXAMPLE_29 value "e"]
+
+/*
+Schema:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="dataDocument">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="a" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="b" type="B"/>
+                            <xs:element name="f" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="B" mixed="true">
+        <xs:sequence>
+            <xs:element name="c" type="xs:string"/>
+            <xs:element name="d" type="xs:string"/>
+            <xs:element name="e" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
+*/
