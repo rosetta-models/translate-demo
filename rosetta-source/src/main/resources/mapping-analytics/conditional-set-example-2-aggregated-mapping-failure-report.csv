@@ -1,6 +1,4 @@
-Mapping Coverage,0.00
+Mapping Coverage,75.00
 
 Input Path,Failed Mapping Count
-usEngineType.usEngineSpecification.usEngineDetail.powerUnit,1
-usEngineType.usEngineSpecification.usEngineDetail.combustible,2
-usEngineType.usEngineSpecification.usEngineDetail.volumeCapacityUnit,2
+usEngineType.usEngineSpecification.usEngineDetail.volumeCapacityUnit,1
