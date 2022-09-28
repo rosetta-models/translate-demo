@@ -6,20 +6,20 @@ Example 1:
 
 Conditional mapping using a "default" clause that sets an attribute if it is unmapped.
 
-The attribute Z->str2Field is mapped to xml path a->b->c->e, if that path does not exist, then the attribute is set to "DEFAULT".
+The attribute EngineType->capacityUnit is mapped to xml path usEngineType->usEngineSpecification->usEngineDetail->volumeCapacityUnit, if that path does not exist, then the attribute is set to "UK Gallon".
 */
 synonym source CONDITIONAL_DEFAULT_EXAMPLE_1
 
 type Root:
     [rootType]
-	zField Z (1..1)
-	    [synonym CONDITIONAL_DEFAULT_EXAMPLE_1 value "a"]
+	ukEngineType EngineType (1..1)
+	    [synonym CONDITIONAL_DEFAULT_EXAMPLE_1 value "usEngineType"]
 
-type Z:
-	str1Field string (1..1)
-	    [synonym CONDITIONAL_DEFAULT_EXAMPLE_1 value "f" path "b->c"]
-	str2Field string (0..1)
-	    [synonym CONDITIONAL_DEFAULT_EXAMPLE_1 value "e" path "b->c" default to "DEFAULT"]
+type EngineType:
+	fuelType string (1..1)
+	    [synonym CONDITIONAL_DEFAULT_EXAMPLE_1 value "combustible" path "usEngineSpecification->usEngineDetail"]
+	capacityUnit string (0..1)
+	    [synonym CONDITIONAL_DEFAULT_EXAMPLE_1 value "volumeCapacityUnit" path "usEngineSpecification->usEngineDetail" default to "UK Gallon"]
 
 /*
 Schema:
@@ -29,18 +29,18 @@ Schema:
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="a">
+                <xs:element name="usEngineType">
                     <xs:complexType>
                         <xs:all>
-                            <xs:element name="b">
+                            <xs:element name="usEngineSpecification">
                                 <xs:complexType>
                                     <xs:all>
-                                        <xs:element name="c">
+                                        <xs:element name="usEngineDetail">
                                             <xs:complexType>
                                                 <xs:all>
-                                                    <xs:element name="d" type="xs:string" minOccurs="0"/>
-                                                    <xs:element name="e" type="xs:string" minOccurs="0"/>
-                                                    <xs:element name="f" type="xs:string" minOccurs="0"/>
+                                                    <xs:element name="powerUnit" type="xs:string" minOccurs="0"/>
+                                                    <xs:element name="volumeCapacityUnit" type="xs:string" minOccurs="0"/>
+                                                    <xs:element name="combustible" type="xs:string" minOccurs="0"/>
                                                 </xs:all>
                                             </xs:complexType>
                                         </xs:element>

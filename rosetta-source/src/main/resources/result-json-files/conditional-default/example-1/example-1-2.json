@@ -1,6 +1,6 @@
 {
-  "zfield" : {
-    "str1Field" : "PIZZA",
-    "str2Field" : "DEFAULT"
+  "ukEngineType" : {
+    "capacityUnit" : "UK Gallon",
+    "fuelType" : "Petrol"
   }
 }
