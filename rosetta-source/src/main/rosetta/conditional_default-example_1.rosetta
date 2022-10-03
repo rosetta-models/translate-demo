@@ -6,20 +6,20 @@ Example 1:
 
 Conditional mapping using a "default" clause that sets an attribute if it is unmapped.
 
-The attribute EngineType->capacityUnit is mapped to xml path usEngineType->usEngineSpecification->usEngineDetail->volumeCapacityUnit, if that path does not exist, then the attribute is set to "UK Gallon".
+The attribute EngineSpecification->capacityUnit is mapped to xml path engine->engineType->engineDetail->volumeCapacityUnit, if that path does not exist, then the attribute is set to "UK Gallon".
 */
 synonym source CONDITIONAL_DEFAULT_EXAMPLE_1
 
 type Root:
     [rootType]
-	ukEngineType EngineType (1..1)
-	    [synonym CONDITIONAL_DEFAULT_EXAMPLE_1 value "usEngineType"]
+	engineSpecification EngineSpecification (1..1)
+	    [synonym CONDITIONAL_DEFAULT_EXAMPLE_1 value "engine"]
 
-type EngineType:
+type EngineSpecification:
 	fuelType string (1..1)
-	    [synonym CONDITIONAL_DEFAULT_EXAMPLE_1 value "combustible" path "usEngineSpecification->usEngineDetail"]
+	    [synonym CONDITIONAL_DEFAULT_EXAMPLE_1 value "combustible" path "engineType->engineDetail"]
 	capacityUnit string (0..1)
-	    [synonym CONDITIONAL_DEFAULT_EXAMPLE_1 value "volumeCapacityUnit" path "usEngineSpecification->usEngineDetail" default to "UK Gallon"]
+	    [synonym CONDITIONAL_DEFAULT_EXAMPLE_1 value "volumeCapacityUnit" path "engineType->engineDetail" default to "UK Gallon"]
 
 /*
 Schema:
@@ -29,13 +29,13 @@ Schema:
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="usEngineType">
+                <xs:element name="engine">
                     <xs:complexType>
                         <xs:all>
-                            <xs:element name="usEngineSpecification">
+                            <xs:element name="engineType">
                                 <xs:complexType>
                                     <xs:all>
-                                        <xs:element name="usEngineDetail">
+                                        <xs:element name="engineDetail">
                                             <xs:complexType>
                                                 <xs:all>
                                                     <xs:element name="powerUnit" type="xs:string" minOccurs="0"/>

@@ -8,14 +8,14 @@ synonym source CONDITIONAL_SET_EXAMPLE_2
 
 type Root:
     [rootType]
-	ukEngineType EngineType (1..1)
-	    [synonym CONDITIONAL_SET_EXAMPLE_2 value "usEngineType"]
+	engineSpecification EngineSpecification (1..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_2 value "engine"]
 
-type EngineType:
+type EngineSpecification:
 	fuelType string (1..1)
-	    [synonym CONDITIONAL_SET_EXAMPLE_2 value "combustible" path "usEngineSpecification->usEngineDetail"]
+	    [synonym CONDITIONAL_SET_EXAMPLE_2 value "combustible" path "engineType->engineDetail"]
 	capacityUnit string (0..1)
-	    [synonym CONDITIONAL_SET_EXAMPLE_2 value "volumeCapacityUnit" path "usEngineSpecification->usEngineDetail" set when "usEngineSpecification->usEngineDetail->powerUnit" exists]
+	    [synonym CONDITIONAL_SET_EXAMPLE_2 value "volumeCapacityUnit" path "engineType->engineDetail" set when "engineType->engineDetail->powerUnit" exists]
 
 /*
 Schema:

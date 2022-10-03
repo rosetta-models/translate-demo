@@ -1,5 +1,5 @@
 {
-  "ukEngineType" : {
+  "engineSpecification" : {
     "capacityUnit" : "Gallon",
     "fuelType" : "Petrol"
   }

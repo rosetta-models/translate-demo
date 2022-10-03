@@ -8,14 +8,14 @@ synonym source CONDITIONAL_DEFAULT_EXAMPLE_1
 
 type Root:
     [rootType]
-	ukEngineType EngineType (1..1)
-	    [synonym CONDITIONAL_DEFAULT_EXAMPLE_1 value "usEngineType"]
+	engineSpecification EngineSpecification (1..1)
+	    [synonym CONDITIONAL_DEFAULT_EXAMPLE_1 value "engine"]
 
-type EngineType:
+type EngineSpecification:
 	fuelType string (1..1)
-	    [synonym CONDITIONAL_DEFAULT_EXAMPLE_1 value "combustible" path "usEngineSpecification->usEngineDetail"]
+	    [synonym CONDITIONAL_DEFAULT_EXAMPLE_1 value "combustible" path "engineType->engineDetail"]
 	capacityUnit string (0..1)
-	    [synonym CONDITIONAL_DEFAULT_EXAMPLE_1 value "volumeCapacityUnit" path "usEngineSpecification->usEngineDetail" default to "UK Gallon"]
+	    [synonym CONDITIONAL_DEFAULT_EXAMPLE_1 value "volumeCapacityUnit" path "engineType->engineDetail" default to "UK Gallon"]
 
 /*
 Schema:

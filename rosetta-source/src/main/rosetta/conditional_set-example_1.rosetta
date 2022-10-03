@@ -6,20 +6,20 @@ Example 1:
 
 Conditional mapping using "set" with a "when" clause that is predicated on the value of a xml element at the specified xml path.
 
-The attribute EngineType->capacityUnit is conditionally set from xml path usEngineType->usEngineSpecification->usEngineDetail->volumeCapacityUnit when the value at xml path a->b->c->d is "FISH".
+The attribute EngineSpecification->capacityUnit is conditionally set from xml path engine->engineType->engineDetail->volumeCapacityUnit when the value at xml path a->b->c->d is "FISH".
 */
 synonym source CONDITIONAL_SET_EXAMPLE_1
 
 type Root:
     [rootType]
-	ukEngineType EngineType (1..1)
-	    [synonym CONDITIONAL_SET_EXAMPLE_1 value "usEngineType"]
+	engineSpecification EngineSpecification (1..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_1 value "engine"]
 
-type EngineType:
+type EngineSpecification:
 	fuelType string (1..1)
-	    [synonym CONDITIONAL_SET_EXAMPLE_1 value "combustible" path "usEngineSpecification->usEngineDetail"]
+	    [synonym CONDITIONAL_SET_EXAMPLE_1 value "combustible" path "engineType->engineDetail"]
 	capacityUnit string (0..1)
-	    [synonym CONDITIONAL_SET_EXAMPLE_1 value "volumeCapacityUnit" path "usEngineSpecification->usEngineDetail" set when "usEngineSpecification->usEngineDetail->powerUnit" = "Cylinder"]
+	    [synonym CONDITIONAL_SET_EXAMPLE_1 value "volumeCapacityUnit" path "engineType->engineDetail" set when "engineType->engineDetail->powerUnit" = "Cylinder"]
 
 /*
 Schema:
@@ -29,13 +29,13 @@ Schema:
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="usEngineType">
+                <xs:element name="engine">
                     <xs:complexType>
                         <xs:all>
-                            <xs:element name="usEngineSpecification">
+                            <xs:element name="engineType">
                                 <xs:complexType>
                                     <xs:all>
-                                        <xs:element name="usEngineDetail">
+                                        <xs:element name="engineDetail">
                                             <xs:complexType>
                                                 <xs:all>
                                                     <xs:element name="powerUnit" type="xs:string" minOccurs="0"/>

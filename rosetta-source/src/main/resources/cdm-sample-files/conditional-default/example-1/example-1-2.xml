@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <dataDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="example-2.xsd example-2.xsd">
-    <usEngineType>
-        <usEngineSpecification>
-            <usEngineDetail>
+    <engine>
+        <engineType>
+            <engineDetail>
                 <powerUnit>Cylinder</powerUnit>
                 <combustible>Petrol</combustible>
-            </usEngineDetail>
-        </usEngineSpecification>
-    </usEngineType>
+            </engineDetail>
+        </engineType>
+    </engine>
 </dataDocument>

@@ -3,13 +3,13 @@
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="usEngineType">
+                <xs:element name="engine">
                     <xs:complexType>
                         <xs:all>
-                            <xs:element name="usEngineSpecification">
+                            <xs:element name="engineType">
                                 <xs:complexType>
                                     <xs:all>
-                                        <xs:element name="usEngineDetail">
+                                        <xs:element name="engineDetail">
                                             <xs:complexType>
                                                 <xs:all>
                                                     <xs:element name="powerUnit" type="xs:string" minOccurs="0"/>
