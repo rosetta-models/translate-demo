@@ -1,3 +1,3 @@
 Example 6:
 
-Mapper updates fields on multi-cardinality basic type.
+Mapper set field on single cardinality complex type with metadata location.
