@@ -1,3 +1,3 @@
 Example 5:
 
-Mapper sets fields on single cardinality complex type with metadata address/location.
+Mapper sets reference on single cardinality complex type with metadata address, linking it to a metadata location that was mapped by synonyms.
