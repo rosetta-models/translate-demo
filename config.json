@@ -11,7 +11,7 @@
     "dependencyArtifact":{
         "groupId":"com.regnosys",
         "artifactId":"core-cdm-dependencies",
-        "version":"2.181.1"
+        "version":"2.183.0"
     },
     "modelArtifacts":[
         {
