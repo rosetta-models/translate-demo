@@ -1,6 +1,25 @@
 {
-  "zfield" : {
-    "str1Field" : "PIZZA",
-    "str2Field" : [ "CHIPS1_X", "CHIPS2_X", "CHIPS3_X", "CHIPS4_X" ]
+  "priceQuantity" : {
+    "quantity" : {
+      "meta" : {
+        "location" : [ {
+          "scope" : "DOCUMENT",
+          "value" : "quantity-1"
+        } ]
+      },
+      "value" : {
+        "amount" : 3
+      }
+    }
+  },
+  "product" : {
+    "resolvablePayoutQuantity" : {
+      "resolvedQuantity" : {
+        "address" : {
+          "scope" : "DOCUMENT",
+          "value" : "quantity-1"
+        }
+      }
+    }
   }
 }

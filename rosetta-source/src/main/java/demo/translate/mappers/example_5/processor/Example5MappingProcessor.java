@@ -1,15 +1,17 @@
 package demo.translate.mappers.example_5.processor;
 
+import com.regnosys.rosetta.common.translation.Mapping;
 import com.regnosys.rosetta.common.translation.MappingContext;
 import com.regnosys.rosetta.common.translation.MappingProcessor;
 import com.regnosys.rosetta.common.translation.Path;
+import com.regnosys.rosetta.common.util.PathUtils;
 import com.rosetta.model.lib.RosettaModelObjectBuilder;
+import com.rosetta.model.lib.meta.Reference;
 import com.rosetta.model.lib.path.RosettaPath;
-import demo.translate.mappers.example_5.Z;
 
-import java.util.Collection;
 import java.util.List;
-import java.util.stream.Collectors;
+
+import static demo.translate.mappers.example_5.metafields.ReferenceWithMetaQuantity.*;
 
 /**
  * The mapper class name must be in the form "<MapperName>MappingProcessor", and must extend MappingProcessor.
@@ -22,18 +24,23 @@ public class Example5MappingProcessor extends MappingProcessor {
     }
 
     /**
-     * Override the mapBasic method as this mapper is specified on a basic type list attribute Z->str2Field
+     * Override the map method as this mapper is specified on a complex type attribute ResolvablePayoutQuantity->resolvedQuantity
      */
     @Override
-    public <T> void mapBasic(Path xmlPath, Collection<? extends T> builders, RosettaModelObjectBuilder parent) {
-        Collection<String> stringBuilders = (Collection<String>) builders;
+    public void map(Path xmlPath, RosettaModelObjectBuilder builder, RosettaModelObjectBuilder parent) {
+        // parameter: xmlPath = a (the path where the "mapper" syntax is specified)
+        // parameter: builder = an instance of object ReferenceWithMetaQuantityBuilder.ReferenceWithMetaQuantityBuilderBuilder that can be updated
 
-        List<String> updatedValues = stringBuilders.stream()
-                .map(str -> str + "_X")
-                .collect(Collectors.toList());
+        // Cast the builder to the correct type, and create a reference
+        ReferenceWithMetaQuantityBuilder quantityBuilder = (ReferenceWithMetaQuantityBuilder) builder;
+        Reference.ReferenceBuilder reference = quantityBuilder.getOrCreateReference();
 
-       ((Z.ZBuilder) parent).setStr2Field(updatedValues);
+        // Add a new mapping linking the xml path to this model path, with the relevant reference object so the
+        // reference post processor can figure out what should be a reference.
+        getMappings().add(createSuccessMapping(xmlPath, getModelPath(), reference));
+    }
 
-       // TODO update existing mappings with new values
+    private Mapping createSuccessMapping(Path xmlPath, RosettaPath modelPath, Reference.ReferenceBuilder reference) {
+        return new Mapping(xmlPath, null, PathUtils.toPath(modelPath), reference, null, true, true, false);
     }
 }

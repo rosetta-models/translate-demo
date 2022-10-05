@@ -2,7 +2,9 @@ namespace demo.translate.mappers.example_1
 version "${project.version}"
 
 /*
-Example 1
+Example 1:
+
+Mapper sets field on single cardinality basic type.
 */
 synonym source MAPPERS_EXAMPLE_1
 

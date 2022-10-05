@@ -2,21 +2,34 @@ namespace demo.translate.mappers.example_5
 version "${project.version}"
 
 /*
-Example 5
+Example 5:
+
+Mapper sets fields on single cardinality complex type with metadata address/location.
 */
 synonym source MAPPERS_EXAMPLE_5
 
 type Root:
     [rootType]
-	zField Z (1..1)
-	    [synonym MAPPERS_EXAMPLE_5 value "a"]
+	priceQuantity PriceQuantity (1..1)
+	product Product (1..1)
 
-type Z:
-	str1Field string (1..1)
-	    [synonym MAPPERS_EXAMPLE_5 value "f" path "b->c"]
-	str2Field string (0..*)
-        // list items updated by mapper
-	    [synonym MAPPERS_EXAMPLE_5 value "e" path "b->c" mapper "Example5"]
+type PriceQuantity:
+	quantity Quantity (1..1)
+        [metadata location]
+        [synonym MAPPERS_EXAMPLE_5 value "b" path "a"]
+
+type Product:
+    resolvablePayoutQuantity ResolvablePayoutQuantity (1..1)
+	    [synonym MAPPERS_EXAMPLE_5 value "b" path "a"]
+
+type ResolvablePayoutQuantity:
+	resolvedQuantity Quantity (1..1)
+        [metadata address "pointsTo"=PriceQuantity->quantity]
+        [synonym MAPPERS_EXAMPLE_5 value "c" mapper "Example5"]
+
+type Quantity:
+	amount number (1..1)
+	    [synonym MAPPERS_EXAMPLE_5 value "c" maps 2]
 
 /*
 Schema:
@@ -28,23 +41,15 @@ Schema:
             <xs:all>
                 <xs:element name="a">
                     <xs:complexType>
-                        <xs:all>
+                        <xs:sequence>
                             <xs:element name="b">
                                 <xs:complexType>
-                                    <xs:all>
-                                        <xs:element name="c">
-                                            <xs:complexType>
-                                                <xs:sequence>
-                                                    <xs:element name="d" type="xs:string" minOccurs="0"/>
-                                                    <xs:element name="e" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
-                                                    <xs:element name="f" type="xs:string" minOccurs="0"/>
-                                                </xs:sequence>
-                                            </xs:complexType>
-                                        </xs:element>
-                                    </xs:all>
+                                    <xs:sequence>
+                                        <xs:element name="c" type="xs:string"/>
+                                    </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
-                        </xs:all>
+                        </xs:sequence>
                     </xs:complexType>
                 </xs:element>
             </xs:all>

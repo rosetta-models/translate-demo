@@ -8,14 +8,17 @@ synonym source META_SCOPED_REFERENCE_EXAMPLE_1
 
 type Root:
     [rootType]
-	pq PriceQuantity (1..1)
-	rpq ResolvablePayoutQuantity (1..1)
-	    [synonym META_SCOPED_REFERENCE_EXAMPLE_1 value "a"]
+	priceQuantity PriceQuantity (1..1)
+	product Product (1..1)
 
 type PriceQuantity:
 	quantity Quantity (1..1)
         [metadata location]
         [synonym META_SCOPED_REFERENCE_EXAMPLE_1 value "b" path "a"]
+
+type Product:
+    resolvablePayoutQuantity ResolvablePayoutQuantity (1..1)
+	    [synonym META_SCOPED_REFERENCE_EXAMPLE_1 value "a"]
 
 type ResolvablePayoutQuantity:
 	resolvedQuantity Quantity (1..1)

@@ -2,7 +2,9 @@ namespace demo.translate.mappers.example_4
 version "${project.version}"
 
 /*
-Example 4
+Example 4:
+
+Mapper sets fields on single cardinality complex type with metadata scheme.
 */
 synonym source MAPPERS_EXAMPLE_4
 

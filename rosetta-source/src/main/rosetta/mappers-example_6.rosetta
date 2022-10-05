@@ -1,25 +1,24 @@
-namespace demo.translate.mappers.example_3
+namespace demo.translate.mappers.example_6
 version "${project.version}"
 
 /*
-Example 3:
+Example 6:
 
-Mapper sets field on single cardinality basic type with metadata scheme.
+Mapper updates fields on multi-cardinality basic type.
 */
-synonym source MAPPERS_EXAMPLE_3
+synonym source MAPPERS_EXAMPLE_6
 
 type Root:
     [rootType]
 	zField Z (1..1)
-	    [synonym MAPPERS_EXAMPLE_3 value "a"]
+	    [synonym MAPPERS_EXAMPLE_6 value "a"]
 
 type Z:
 	str1Field string (1..1)
-	    [synonym MAPPERS_EXAMPLE_3 value "f" path "b->c"]
-	str2Field string (0..1)
-	    [metadata scheme]
-	    // value and scheme updated by mapper
-	    [synonym MAPPERS_EXAMPLE_3 value "e" path "b->c" mapper "Example3"]
+	    [synonym MAPPERS_EXAMPLE_6 value "f" path "b->c"]
+	str2Field string (0..*)
+        // list items updated by mapper
+	    [synonym MAPPERS_EXAMPLE_6 value "e" path "b->c" mapper "Example6"]
 
 /*
 Schema:
@@ -37,11 +36,11 @@ Schema:
                                     <xs:all>
                                         <xs:element name="c">
                                             <xs:complexType>
-                                                <xs:all>
+                                                <xs:sequence>
                                                     <xs:element name="d" type="xs:string" minOccurs="0"/>
-                                                    <xs:element name="e" type="xs:string" minOccurs="0"/>
+                                                    <xs:element name="e" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
                                                     <xs:element name="f" type="xs:string" minOccurs="0"/>
-                                                </xs:all>
+                                                </xs:sequence>
                                             </xs:complexType>
                                         </xs:element>
                                     </xs:all>

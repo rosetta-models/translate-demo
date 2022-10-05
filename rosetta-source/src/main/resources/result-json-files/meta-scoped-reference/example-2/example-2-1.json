@@ -1,5 +1,5 @@
 {
-  "pq" : {
+  "priceQuantity" : {
     "quantity" : {
       "meta" : {
         "location" : [ {
@@ -12,11 +12,13 @@
       }
     }
   },
-  "rpq" : {
-    "resolvedQuantity" : {
-      "address" : {
-        "scope" : "DOCUMENT",
-        "value" : "quantity-1"
+  "product" : {
+    "resolvablePayoutQuantity" : {
+      "resolvedQuantity" : {
+        "address" : {
+          "scope" : "DOCUMENT",
+          "value" : "quantity-1"
+        }
       }
     }
   }
