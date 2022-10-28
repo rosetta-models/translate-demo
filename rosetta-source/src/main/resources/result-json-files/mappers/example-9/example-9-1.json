@@ -1,14 +1,11 @@
 {
-  "zfield" : {
-    "str1Field" : "PIZZA",
-    "str2Field" : [ {
-      "value" : "CHIPS1"
-    }, {
-      "value" : "CHIPS2"
-    }, {
-      "value" : "CHIPS3"
-    }, {
-      "value" : "CHIPS4"
-    } ]
-  }
+  "zfield" : [ {
+    "str1Field" : "FISH_X",
+    "str2Field" : "CHIPS_Y",
+    "str3Field" : "PIZZA_Z"
+  }, {
+    "str1Field" : "MEAT_X",
+    "str2Field" : "FISH_Y",
+    "str3Field" : "SOUP_Z"
+  } ]
 }
