@@ -1,0 +1,55 @@
+namespace demo.translate.mappers.example_10
+version "${project.version}"
+
+/*
+Example 9:
+Mapper updates fields on multi-cardinality basic type with metadata scheme
+*/
+synonym source MAPPERS_EXAMPLE_10
+
+type Root:
+    [rootType]
+	zField Z (1..1)
+	    [metadata scheme]
+	    [synonym MAPPERS_EXAMPLE_10 value "a"]
+
+type Z:
+	str1Field string (1..1)
+	    [synonym MAPPERS_EXAMPLE_10 value "d" path "b->c"]
+	str2Field string (0..*)
+	    [metadata scheme]
+	    // value and scheme updated by mapper
+	    [synonym MAPPERS_EXAMPLE_10 value "e" path "b->c" mapper "Example10"]
+/*
+Schema:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="dataDocument">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="a">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="b">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="c">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element type="xs:string" name="d"/>
+                                                    <xs:element type="xs:string" name="e" maxOccurs="unbounded" minOccurs="0"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
+*/

@@ -1,0 +1,11 @@
+{
+  "zfield" : [ {
+    "str1Field" : "FISH",
+    "str2Field" : "CHIPS",
+    "str3Field" : "PIZZA"
+  }, {
+    "str1Field" : "MEAT",
+    "str2Field" : "FISH",
+    "str3Field" : "SOUP"
+  } ]
+}

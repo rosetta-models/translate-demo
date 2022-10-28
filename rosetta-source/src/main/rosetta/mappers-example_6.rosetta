@@ -4,7 +4,7 @@ version "${project.version}"
 /*
 Example 6:
 
-Mapper updates fields on multi-cardinality basic type.
+Mapper set field on single cardinality complex type with metadata location.
 */
 synonym source MAPPERS_EXAMPLE_6
 
