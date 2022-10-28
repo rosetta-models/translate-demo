@@ -1,2 +1,2 @@
-Example 8.2:
-Mapper updates fields on multi-cardinality complex type from Root
+Example 9:
+Mapper sets fields on multi-cardinality complex type
