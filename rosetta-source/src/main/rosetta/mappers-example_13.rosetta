@@ -1,31 +1,30 @@
-namespace demo.translate.mappers.example_6
+namespace demo.translate.mappers.example_13
 version "${project.version}"
 
 /*
-Example 6:
-
-Mapper set field on single cardinality complex type with metadata location.
+Example 12:
+Mapper sets references on multi-cardinality complex types with metadata address
 */
-synonym source MAPPERS_EXAMPLE_6
+synonym source MAPPERS_EXAMPLE_13
 
 type Root:
     [rootType]
-	priceQuantity PriceQuantity (1..1)
-	product Product (1..1)
+	priceQuantity PriceQuantity (1..*)
+	product Product (1..*)
 
 type PriceQuantity:
 	quantity Quantity (1..1)
         [metadata location]
-        [synonym MAPPERS_EXAMPLE_6 value "b" path "a" mapper "Example6"]
+        [synonym MAPPERS_EXAMPLE_13 value "b" path "a" mapper "Example13"]
 
 type Product:
     resolvablePayoutQuantity ResolvablePayoutQuantity (1..1)
-	    [synonym MAPPERS_EXAMPLE_6 value "b" path "a"]
+	    [synonym MAPPERS_EXAMPLE_13 value "b" path "a"]
 
 type ResolvablePayoutQuantity:
 	resolvedQuantity Quantity (1..1)
         [metadata address "pointsTo"=PriceQuantity->quantity]
-        [synonym MAPPERS_EXAMPLE_6 meta "c"]
+        [synonym MAPPERS_EXAMPLE_13 meta "c"]
 
 type Quantity:
 	amount number (1..1)
@@ -37,8 +36,8 @@ Schema:
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
     <xs:element name="dataDocument">
         <xs:complexType>
-            <xs:all>
-                <xs:element name="a">
+            <xs:sequence>
+                <xs:element name="a" maxOccurs="unbounded">
                     <xs:complexType>
                         <xs:sequence>
                             <xs:element name="b">
@@ -51,8 +50,9 @@ Schema:
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
-            </xs:all>
+            </xs:sequence>
         </xs:complexType>
     </xs:element>
 </xs:schema>
+
 */

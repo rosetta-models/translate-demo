@@ -1,0 +1,57 @@
+namespace demo.translate.mappers.example_8
+version "${project.version}"
+
+/*
+Example 8:
+Mapper updates fields on multi-cardinality complex type
+*/
+synonym source MAPPERS_EXAMPLE_8
+
+type Root:
+    [rootType]
+     // list items updated by mapper
+	zField Z (1..*)
+	    [synonym MAPPERS_EXAMPLE_8 value "a" mapper "Example8"]
+
+type Z:
+	str1Field string (1..1)
+	    [synonym MAPPERS_EXAMPLE_8 value "d" path "b->c"]
+	str2Field string (1..1)
+	    [synonym MAPPERS_EXAMPLE_8 value "e" path "b->c"]
+	str3Field string (1..1)
+	    [synonym MAPPERS_EXAMPLE_8 value "f" path "b->c"]
+
+/*
+Schema:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="dataDocument">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="a" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:all>
+                            <xs:element name="b">
+                                <xs:complexType>
+                                    <xs:all>
+                                        <xs:element name="c">
+                                            <xs:complexType>
+                                                <xs:all>
+                                                    <xs:element name="d" type="xs:string" minOccurs="0"/>
+                                                    <xs:element name="e" type="xs:string" minOccurs="0"/>
+                                                    <xs:element name="f" type="xs:string" minOccurs="0"/>
+                                                </xs:all>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:all>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:all>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
+*/

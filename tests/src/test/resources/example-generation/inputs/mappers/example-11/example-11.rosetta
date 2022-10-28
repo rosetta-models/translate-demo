@@ -1,0 +1,27 @@
+namespace demo.translate.mappers.example_11
+version "${project.version}"
+
+/*
+$DESCRIPTION$
+*/
+synonym source MAPPERS_EXAMPLE_11
+
+type Root:
+    [rootType]
+	zField Z (1..*)
+	    [metadata scheme]
+	    [synonym MAPPERS_EXAMPLE_11 value "a" mapper "Example11"]
+
+type Z:
+	str1Field string (1..1)
+	    [synonym MAPPERS_EXAMPLE_11 value "d" path "b->c"]
+	str2Field string (1..1)
+	    [synonym MAPPERS_EXAMPLE_11 value "e" path "b->c"]
+	str3Field string (1..1)
+	    [synonym MAPPERS_EXAMPLE_11 value "f" path "b->c"]
+
+/*
+Schema:
+
+$SCHEMA$
+*/

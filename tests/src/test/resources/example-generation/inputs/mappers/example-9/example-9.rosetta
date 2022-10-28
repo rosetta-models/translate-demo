@@ -1,0 +1,24 @@
+namespace demo.translate.mappers.example_9
+version "${project.version}"
+
+/*
+$DESCRIPTION$
+*/
+synonym source MAPPERS_EXAMPLE_9
+
+type Root:
+    [rootType]
+     // list items updated by mapper
+	zField Z (1..*)
+	    [synonym MAPPERS_EXAMPLE_9 value "a" mapper "Example9"]
+
+type Z:
+	str1Field string (1..1)
+	str2Field string (1..1)
+	str3Field string (1..1)
+
+/*
+Schema:
+
+$SCHEMA$
+*/

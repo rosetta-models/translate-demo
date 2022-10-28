@@ -9,7 +9,7 @@ import static com.regnosys.ExampleGenerator.*;
 public class ExampleTemplateGenerator {
 
     public static final String CATEGORY_NAME = "mappers";
-    public static final String FILENAME_SUFFIX = "7";
+    public static final String FILENAME_SUFFIX = "14";
 
     private final String categoryName;
     private final String exampleName;
