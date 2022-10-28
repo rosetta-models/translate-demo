@@ -11,13 +11,12 @@
     "dependencyArtifact":{
         "groupId":"com.regnosys",
         "artifactId":"core-cdm-dependencies",
-        "version":"2.183.0"
+        "version":"2.187.1"
     },
     "modelArtifacts":[
         {
             "groupId":"com.regnosys.model.translate-demo",
-            "artifactId":"rosetta-source",
-            "version":"0.0.1"
+            "artifactId":"rosetta-source"
         }
     ]
 }
