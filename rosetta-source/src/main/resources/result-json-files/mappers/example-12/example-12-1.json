@@ -1,6 +1,6 @@
 {
-  "zfield" : {
-    "afield" : [ {
+  "yfield" : {
+    "zfield" : [ {
       "str1Field" : "FISH_X",
       "str2Field" : "CHIPS_X",
       "str3Field" : "MEAT_Y",

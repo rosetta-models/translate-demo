@@ -8,25 +8,23 @@ synonym source MAPPERS_EXAMPLE_12
 
 type Root:
     [rootType]
-	zField Z (1..1)
+	yField Y (1..1)
 	    [synonym MAPPERS_EXAMPLE_12 value "a"]
 
-type Z:
-	aField A (1..*)
-	    // merging two lists
+type Y:
+	zField Z (0..*)
+	    // merge lists b and e together
 	    [synonym MAPPERS_EXAMPLE_12 value "b" mapper "Example12"]
 
-
-type A:
-    //value updated by the mapper
+type Z:
+    // value updated by the mapper
     str1Field string (1..1)
-    //value updated by the mapper
+    // value updated by the mapper
     str2Field string (1..1)
-    //value updated by the mapper
+    // value updated by the mapper
     str3Field string (1..1)
-    //value updated by the mapper
+    // value updated by the mapper
     str4Field string (1..1)
-
 
 /*
 Schema:
