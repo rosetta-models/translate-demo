@@ -16,7 +16,7 @@ import static demo.translate.mappers.example_5.metafields.ReferenceWithMetaQuant
 /**
  * The mapper class name must be in the form "<MapperName>MappingProcessor", and must extend MappingProcessor.
  */
-@SuppressWarnings("unused")
+@SuppressWarnings("unused") // Used in generated code
 public class Example5MappingProcessor extends MappingProcessor {
 
     public Example5MappingProcessor(RosettaPath modelPath, List<Path> synonymPaths, MappingContext context) {

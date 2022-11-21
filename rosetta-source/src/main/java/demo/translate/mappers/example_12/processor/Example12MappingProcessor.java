@@ -14,7 +14,7 @@ import java.util.Optional;
 /**
  * The mapper class name must be in the form "<MapperName>MappingProcessor", and must extend MappingProcessor.
  */
-@SuppressWarnings("unused")
+@SuppressWarnings("unused") // Used in generated code
 public class Example12MappingProcessor extends MappingProcessor {
 
     public Example12MappingProcessor(RosettaPath modelPath, List<Path> synonymPaths, MappingContext context) {
@@ -37,7 +37,8 @@ public class Example12MappingProcessor extends MappingProcessor {
         while (true) {
             // Get parent path, e.g. from "a.b" to "a"
             Path aPath = xmlPath.getParent();
-            Optional<? extends Z> z = getZBuilder(i++, aPath);
+            // Attempt to build z
+            Optional<? extends Z> z = getZBuilder(aPath, i++);
             // If z exists, add to the list and try the next index, otherwise break
             if (z.isPresent()) {
                 zBuilder.addZField(z.get());
@@ -47,23 +48,23 @@ public class Example12MappingProcessor extends MappingProcessor {
         }
     }
 
-    private Optional<? extends Z> getZBuilder(Integer i, Path aPath) {
+    private Optional<? extends Z> getZBuilder(Path aPath, int pathIndex) {
         Z.ZBuilder zBuilder = Z.builder();
 
         // set from path a.b(i).c
-        setValueAndUpdateMappings(aPath.addElement("b", i).addElement("c"),
+        setValueAndUpdateMappings(aPath.addElement("b", pathIndex).addElement("c"),
                 xmlValue -> zBuilder.setStr1Field(xmlValue + "_X"));
 
         // set from path a.b(i).d
-        setValueAndUpdateMappings(aPath.addElement("b", i).addElement("d"),
+        setValueAndUpdateMappings(aPath.addElement("b", pathIndex).addElement("d"),
                 xmlValue -> zBuilder.setStr2Field(xmlValue + "_X"));
 
         // set from path a.e(i).f
-        setValueAndUpdateMappings(aPath.addElement("e", i).addElement("f"),
+        setValueAndUpdateMappings(aPath.addElement("e", pathIndex).addElement("f"),
                 xmlValue -> zBuilder.setStr3Field(xmlValue + "_Y"));
 
         // set from path a.e(i).g
-        setValueAndUpdateMappings(aPath.addElement("e", i).addElement("g"),
+        setValueAndUpdateMappings(aPath.addElement("e", pathIndex).addElement("g"),
                 xmlValue -> zBuilder.setStr4Field(xmlValue + "_Y"));
 
         return zBuilder.hasData() ? Optional.of(zBuilder.build()) : Optional.empty();

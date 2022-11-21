@@ -1,6 +1,6 @@
 {
   "zfield" : {
     "str1Field" : "PIZZA",
-    "str2Field" : [ "CHIPS1_X", "CHIPS2_X", "CHIPS3_X", "CHIPS4_X" ]
+    "str2Field" : [ "CHIPS1", "CHIPS2", "CHIPS3", "CHIPS4" ]
   }
 }

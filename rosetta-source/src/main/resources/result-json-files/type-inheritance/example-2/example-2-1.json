@@ -1,7 +1,7 @@
 {
   "zfield" : {
     "zstrField" : "1 Foo Street",
-    "ystr1Field" : "John",
-    "ystr2Field" : "Smith"
+    "ystr2Field" : "Smith",
+    "ystr1Field" : "John"
   }
 }
