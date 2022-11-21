@@ -2,7 +2,8 @@ namespace demo.translate.mappers.example_12
 version "${project.version}"
 
 /*
-Example 11:
+Example 12:
+
 Mapper merges two lists, b and e, into a list of type Z.
 */
 synonym source MAPPERS_EXAMPLE_12

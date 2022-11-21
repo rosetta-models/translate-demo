@@ -9,7 +9,6 @@ synonym source MAPPERS_EXAMPLE_10
 type Root:
     [rootType]
 	zField Z (1..1)
-	    [metadata scheme]
 	    [synonym MAPPERS_EXAMPLE_10 value "a"]
 
 type Z:

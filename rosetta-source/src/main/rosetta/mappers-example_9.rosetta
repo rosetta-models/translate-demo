@@ -3,7 +3,8 @@ version "${project.version}"
 
 /*
 Example 9:
-Mapper sets fields on multi-cardinality complex type
+
+Mapper sets fields on multi-cardinality complex type.
 */
 synonym source MAPPERS_EXAMPLE_9
 
