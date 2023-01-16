@@ -8,14 +8,14 @@ synonym source CONDITIONAL_SET_EXAMPLE_11
 
 type Root:
     [rootType]
-	zField Z (1..*)
-	    [synonym CONDITIONAL_SET_EXAMPLE_11 value "b" path "a"]
+	engineSpecification EngineSpecification (1..*)
+	    [synonym CONDITIONAL_SET_EXAMPLE_11 value "engineDetail" path "engineType"]
 
-type Z:
-	str1Field string (1..1)
-	    [synonym CONDITIONAL_SET_EXAMPLE_11 value "c" set when "d" = "CHIPS"]
-	str2Field string (1..1)
-	    [synonym CONDITIONAL_SET_EXAMPLE_11 value "d"]
+type EngineSpecification:
+	capacityUnit string (1..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_11 value "volumeCapacityUnit" set when "combustible" = "Petrol"]
+	fuelType string (1..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_11 value "combustible"]
 
 /*
 Schema:

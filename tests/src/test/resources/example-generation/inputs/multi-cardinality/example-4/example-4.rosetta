@@ -8,21 +8,21 @@ synonym source MULTI_CARDINALITY_EXAMPLE_4
 
 type Root:
     [rootType]
-	xField X (1..1)
-	    [synonym MULTI_CARDINALITY_EXAMPLE_4 value "a"]
+	engine Engine (1..1)
+	    [synonym MULTI_CARDINALITY_EXAMPLE_4 value "engineType"]
 
-type X:
-	yField Y (1..*)
+type Engine:
+	engineSpecification EngineSpecification (1..*)
 
-type Y:
-	zField Z (1..1)
-	    [synonym MULTI_CARDINALITY_EXAMPLE_4 value "b"]
+type EngineSpecification:
+	engineMetric EngineMetric (1..1)
+	    [synonym MULTI_CARDINALITY_EXAMPLE_4 value "engineDetail"]
 
-type Z:
-	str1Field string (1..1)
-	    [synonym MULTI_CARDINALITY_EXAMPLE_4 value "c"]
-	str2Field string (1..1)
-	    [synonym MULTI_CARDINALITY_EXAMPLE_4 value "d"]
+type EngineMetric:
+	fuel string (1..1)
+	    [synonym MULTI_CARDINALITY_EXAMPLE_4 value "combustible"]
+	capacity string (1..1)
+	    [synonym MULTI_CARDINALITY_EXAMPLE_4 value "capacity"]
 
 /*
 Schema:

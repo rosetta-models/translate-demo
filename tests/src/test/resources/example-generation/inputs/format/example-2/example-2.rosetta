@@ -8,8 +8,8 @@ synonym source FORMAT_EXAMPLE_2
 
 type Root:
     [rootType]
-	strField string (1..1)
-	    [synonym FORMAT_EXAMPLE_2 value "b" path "a" removeHtml]
+	fuelType string (1..1)
+	    [synonym FORMAT_EXAMPLE_2 value "combustible" path "engineType" removeHtml]
 
 /*
 Schema:

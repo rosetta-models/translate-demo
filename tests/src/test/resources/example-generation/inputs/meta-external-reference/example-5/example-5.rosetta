@@ -8,13 +8,13 @@ synonym source META_EXTERNAL_REFERENCE_EXAMPLE_5
 
 type Root:
     [rootType]
-    zField Z (0..1)
-    	[synonym META_EXTERNAL_REFERENCE_EXAMPLE_5 value "partyTradeIdentifier" path "a"]
+    engine Engine (0..1)
+    	[synonym META_EXTERNAL_REFERENCE_EXAMPLE_5 value "engineDetail" path "engineType"]
 
-type Z:
-    numberField number (1..*)
+type Engine:
+    engineReference number (1..*)
         [metadata reference]
-        [synonym META_EXTERNAL_REFERENCE_EXAMPLE_5 value "partyReference" meta "href"]
+        [synonym META_EXTERNAL_REFERENCE_EXAMPLE_5 value "engineReference" meta "href"]
 
 /*
 Schema:

@@ -9,30 +9,30 @@ synonym source EXTERNAL_SYNONYM_EXAMPLE_3_BASE
 synonym source EXTERNAL_SYNONYM_EXAMPLE_3 extends EXTERNAL_SYNONYM_EXAMPLE_3_BASE
 {
 	Root:
-		+ zField
-			[value "partyTradeIdentifier" path "a"]
+		+ engineSpecification
+			[value "engineDetail" path "engineType"]
 
-	Z:
-		+ enumField
-			[value "partyReference"]
+	EngineSpecification:
+		+ fuelEnum
+			[value "combustible"]
 
 	enums
 
-	TestEnum:
-		+ Foo
-			[value "FISH"]
-		+ Bar
-			[value "CHIPS"]
+	FuelEnum:
+		+ Gasoline
+			[value "GASOLINE"]
+		+ Diesel
+			[value "DIESEL"]
 }
 
 type Root:
     [rootType]
-    zField Z (0..1)
+    engineSpecification EngineSpecification (0..1)
 
 
-type Z:
-    enumField TestEnum (1..*)
+type EngineSpecification:
+    fuelEnum FuelEnum (1..*)
 
-enum TestEnum:
-    Foo
-    Bar
+enum FuelEnum:
+    Gasoline
+    Diesel

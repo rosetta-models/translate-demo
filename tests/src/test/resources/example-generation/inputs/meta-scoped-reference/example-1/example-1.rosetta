@@ -8,26 +8,26 @@ synonym source META_SCOPED_REFERENCE_EXAMPLE_1
 
 type Root:
     [rootType]
-	priceQuantity PriceQuantity (1..1)
-	product Product (1..1)
+	engine Engine (1..1)
+	engineMetric EngineMetric (1..1)
 
-type PriceQuantity:
-	quantity Quantity (1..1)
+type Engine:
+	engineMetric EngineMetric (1..1)
         [metadata location]
-        [synonym META_SCOPED_REFERENCE_EXAMPLE_1 value "b" path "a"]
+        [synonym META_SCOPED_REFERENCE_EXAMPLE_1 value "engineDetail" path "engineType"]
 
 type Product:
     resolvablePayoutQuantity ResolvablePayoutQuantity (1..1)
-	    [synonym META_SCOPED_REFERENCE_EXAMPLE_1 value "a"]
+	    [synonym META_SCOPED_REFERENCE_EXAMPLE_1 value "engineType"]
 
 type ResolvablePayoutQuantity:
-	resolvedQuantity Quantity (1..1)
-        [metadata address "pointsTo"=PriceQuantity->quantity]
-        [synonym META_SCOPED_REFERENCE_EXAMPLE_1 value "b" meta "c"]
+	engineMetric EngineMetric (1..1)
+        [metadata address "pointsTo"=Engine->engineMetric]
+        [synonym META_SCOPED_REFERENCE_EXAMPLE_1 value "engineDetail" meta "horsePower"]
 
-type Quantity:
-	amount number (1..1)
-	    [synonym META_SCOPED_REFERENCE_EXAMPLE_1 value "c" maps 2]
+type EngineMetric:
+	horsePower number (1..1)
+	    [synonym META_SCOPED_REFERENCE_EXAMPLE_1 value "horsePower" maps 2]
 
 /*
 Schema:

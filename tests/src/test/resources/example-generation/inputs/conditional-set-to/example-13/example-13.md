@@ -1,1 +1,2 @@
-test27_1 enumWith2PathsExistCondition1 and test27_3 enumWith2PathsExistCondition3
+Example 13:
+The rosetta element engineEnum is conditional set to "HYBRID" from EngineEnum when "alternativeFuelDetail" exists and  "fuelDetail" exists

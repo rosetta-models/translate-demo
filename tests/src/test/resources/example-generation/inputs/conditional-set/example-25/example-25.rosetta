@@ -8,22 +8,22 @@ synonym source CONDITIONAL_SET_EXAMPLE_25
 
 type Root:
     [rootType]
-	yField Y (0..1)
-		[synonym CONDITIONAL_SET_EXAMPLE_25 value "a"]
+	engineSpecification EngineSpecification (0..1)
+		[synonym CONDITIONAL_SET_EXAMPLE_25 value "engineType"]
 
-type Y:
-    z1Field Z (0..1)
-        [synonym CONDITIONAL_SET_EXAMPLE_25 value "c" set when "c->bref->href" = "source"]
-        [synonym CONDITIONAL_SET_EXAMPLE_25 value "b" set when "b->id" = "source"]
-    z2Field Z (0..1)
-        [synonym CONDITIONAL_SET_EXAMPLE_25 value "c" set when "c->bref->href" = "counter"]
-        [synonym CONDITIONAL_SET_EXAMPLE_25 value "b" set when "b->id" = "counter"]
+type EngineSpecification:
+    usEngineVersion EngineVersion (0..1)
+        [synonym CONDITIONAL_SET_EXAMPLE_25 value "fuelSpecs" set when "fuel->combustibleref->href" = "US"]
+        [synonym CONDITIONAL_SET_EXAMPLE_25 value "combustible" set when "combustible->id" = "US"]
+    ukEngineSpecification EngineVersion (0..1)
+        [synonym CONDITIONAL_SET_EXAMPLE_25 value "fuelSpecs" set when "fuelSpecs->combustibleref->href" = "UK"]
+        [synonym CONDITIONAL_SET_EXAMPLE_25 value "combustible" set when "combustible->id" = "UK"]
 
-type Z:
-    str1Field string (0..1)
-        [synonym CONDITIONAL_SET_EXAMPLE_25 value "bId"]
-    str2Field string (0..1)
-        [synonym CONDITIONAL_SET_EXAMPLE_25 value "pid"]
+type EngineVersion:
+    fuelType string (0..1)
+        [synonym CONDITIONAL_SET_EXAMPLE_25 value "combustibleId"]
+    capacityUnit string (0..1)
+        [synonym CONDITIONAL_SET_EXAMPLE_25 value "capacityUnitId"]
 
 /*
 Schema:

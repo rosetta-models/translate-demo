@@ -1,21 +1,21 @@
 <?xml version="1.0"?>
 <dataDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="example-12.xsd example-12.xsd">
-    <a>
-        <b>
-            <c>FISH</c>
-            <d>CHIPS</d>
-        </b>
-        <b>
-            <c>BREAD</c>
-            <d>CARROT</d>
-        </b>
-        <e>
-            <f>MEAT</f>
-            <g>FISH</g>
-        </e>
-        <e>
-            <f>EGGS</f>
-            <g>HAM</g>
-        </e>
-    </a>
+    <engineType>
+        <engineDetail>
+            <emmissions>Mid-Emmissions</emmissions>
+            <combustible>Gasoline</combustible>
+        </engineDetail>
+        <fuelDetail>
+            <emmissions>High-Emmissions</emmissions>
+            <combustible>Diesel</combustible>
+        </fuelDetail>
+        <capacityDetail>
+            <capacityUnit>Liters</capacityUnit>
+            <volumeConsumption>7L/100km</volumeConsumption>
+        </capacityDetail>
+        <capacityDetail>
+            <capacityUnit>Gallon</capacityUnit>
+            <volumeConsumption>0.03889 gal/mi</volumeConsumption>
+        </capacityDetail>
+    </engineType>
 </dataDocument>

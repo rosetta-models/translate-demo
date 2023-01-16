@@ -8,12 +8,12 @@ synonym source MULTI_CARDINALITY_EXAMPLE_2
 
 type Root:
     [rootType]
-	zField Z (1..1)
-	    [synonym MULTI_CARDINALITY_EXAMPLE_2 value "a"]
+	engineSpecification EngineSpecification (1..1)
+	    [synonym MULTI_CARDINALITY_EXAMPLE_2 value "engineType"]
 
-type Z:
-	strField string (1..*)
-	    [synonym MULTI_CARDINALITY_EXAMPLE_2 value "c" path "b"]
+type EngineSpecification:
+	fuel string (1..*)
+	    [synonym MULTI_CARDINALITY_EXAMPLE_2 value "combustible" path "engineDetail"]
 
 /*
 Schema:

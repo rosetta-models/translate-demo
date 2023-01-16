@@ -9,78 +9,78 @@ synonym source EXTERNAL_SYNONYM_EXAMPLE_8_BASE_0
 synonym source EXTERNAL_SYNONYM_EXAMPLE_8_BASE_1 extends EXTERNAL_SYNONYM_EXAMPLE_8_BASE_0
 {
 	Root:
-		+ yField
-			[value "a"]
+		+ engine
+			[value "engineType"]
 
-	Y:
-		+ zRefField
-			[value "cRef" path "b" meta "href"]
-		+ zField
-			[value "c"]
+	Engine:
+		+ engineSpecificationRef
+			[value "specificationRef" path "engineDetail" meta "href"]
+		+ engineSpecification
+			[value "specification"]
 
-	Z:
-		[value "Z" meta "id"]
-		+ str1Field
-			[value "d"]
-		+ enumField
-			[value "f"]
+	EngineSpecification:
+		[value "engineDetail" meta "id"]
+		+ powerUnit
+			[value "powerUnit"]
+		+ fuelEnum
+			[value "combustible"]
 
 	enums
 
-	TestEnum:
-		+ Foo
-			[value "AA"]
-		+ Bar
-			[value "BB"]
+	FuelEnum:
+		+ Diesel
+			[value "Diesel"]
+		+ Gasoline
+			[value "Gasoline"]
 }
 
 synonym source EXTERNAL_SYNONYM_EXAMPLE_8_BASE_2 extends EXTERNAL_SYNONYM_EXAMPLE_8_BASE_1
 {
-	Z:
-		- str1Field
+	EngineSpecification:
+		- fuel
 
 	enums
 
-	TestEnum:
-		- Foo
+	FuelEnum:
+		- Diesel
 }
 
 synonym source EXTERNAL_SYNONYM_EXAMPLE_8 extends EXTERNAL_SYNONYM_EXAMPLE_8_BASE_2
 {
-	Z:
-		- str1Field
-		+ str1Field
-			[value "e"]
+	EngineSpecification:
+		- fuel
+		+ fuel
+			[value "combustible"]
 
 	enums
 
-	TestEnum:
-		- Foo
-		+ Foo
-			[value "BB"]
-		- Bar
-		+ Bar
-			[value "AA"]
+	FuelEnum:
+		- Diesel
+		+ Diesel
+			[value "Diesel"]
+		- Gasoline
+		+ Gasoline
+			[value "Gasoline"]
 }
 
 type Root:
     [rootType]
-	yField Y (0..1)
+	engine Engine (0..1)
 
-type Y:
-	zRefField Z (1..1)
+type Engine:
+	engineSpecificationRef EngineSpecification (1..1)
 		[metadata reference]
-	zField Z (1..1)
+	engineSpecification EngineSpecification (1..1)
 
-type Z:
+type EngineSpecification:
 	[metadata key]
-	str1Field string (0..1)
-	str2Field string (0..1)
-    enumField TestEnum (0..1)
+	fuel string (0..1)
+	powerUnit string (0..1)
+    fuelEnum FuelEnum (0..1)
 
-enum TestEnum:
-	Foo
-	Bar
+enum FuelEnum:
+	Diesel
+	Gasoline
 
 /*
 Schema:

@@ -9,16 +9,16 @@ synonym source EXTERNAL_SYNONYM_EXAMPLE_2_BASE
 synonym source EXTERNAL_SYNONYM_EXAMPLE_2 extends EXTERNAL_SYNONYM_EXAMPLE_2_BASE
 {
 	Root:
-		+ zField
-			[value "partyTradeIdentifier" path "a"]
+		+ engineSpecification
+			[value "engineDetail" path "engineType"]
 
-	Z:
-		+ strField
-			[value "partyReference"]
+	EngineSpecification:
+		+ fuel
+			[value "combustible"]
 }
 type Root:
     [rootType]
-	zField Z (0..1)
+	engineSpecification EngineSpecification (0..1)
 
-type Z:
-	strField string (1..*)
+type EngineSpecification:
+	fuel string (1..*)

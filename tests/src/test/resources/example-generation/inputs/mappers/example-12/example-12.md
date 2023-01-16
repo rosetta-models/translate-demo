@@ -1,2 +1,3 @@
-Example 11:
-Mapper merges two lists into a single complex type list
+Example 12:
+
+Mapper merges two lists, engineDetail and e, into a list of type EngineSpecification.

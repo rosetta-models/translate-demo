@@ -8,21 +8,21 @@ synonym source TYPE_INHERITANCE_EXAMPLE_1
 
 type Root:
     [rootType]
-    zField Z (1..1)
-        [synonym TYPE_INHERITANCE_EXAMPLE_1 value "relativeDateSequence"]
+    car Car (1..1)
+        [synonym TYPE_INHERITANCE_EXAMPLE_1 value "vehicle"]
 
-type X:
-    xIntField int (1..1)
-        [synonym TYPE_INHERITANCE_EXAMPLE_1 value "periodMultiplier" path "dateOffset"]
-    xStrField string (1..1)
-        [synonym TYPE_INHERITANCE_EXAMPLE_1 value "period" path "dateOffset"]
+type Vehicle:
+    capacity int (0..1)
+        [synonym TYPE_INHERITANCE_EXAMPLE_1 value "capacity" path "vehicleDetail"]
+    state string (0..1)
+        [synonym TYPE_INHERITANCE_EXAMPLE_1 value "state" path "vehicleDetail"]
 
-type Y extends X:
-    yStrField string (0..1)
+type VehicleOwner extends Vehicle:
+    fuelType string (0..1)
 
-type Z extends Y:
-    zStrField string (1..1)
-        [synonym TYPE_INHERITANCE_EXAMPLE_1 value "businessDayConvention" path "dateOffset"]
+type Owner extends VehicleOwner:
+    model string (1..1)
+        [synonym TYPE_INHERITANCE_EXAMPLE_1 value "model" path "vehicleDetail"]
 
 /*
 Schema:

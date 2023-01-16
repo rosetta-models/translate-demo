@@ -8,16 +8,16 @@ synonym source MAPPERS_EXAMPLE_2
 
 type Root:
     [rootType]
-	zField Z (1..1)
-	    [synonym MAPPERS_EXAMPLE_2 value "a" mapper "Example2"]
+	engineSpecification EngineSpecification (1..1)
+	    [synonym MAPPERS_EXAMPLE_2 value "engineType" mapper "Example2"]
 
-type Z:
-	str1Field string (1..1)
+type EngineSpecification:
+	emmissions string (1..1)
 	    // value set by mapper
-	str2Field string (1..1)
+	fuelType string (1..1)
 	    // value set by mapper
-	str3Field string (1..1)
-	    [synonym MAPPERS_EXAMPLE_2 value "f" path "b->c"]
+	volumeUnit string (1..1)
+	    [synonym MAPPERS_EXAMPLE_2 value "capacityUnit" path "engineDetail->metric"]
 
 /*
 Schema:

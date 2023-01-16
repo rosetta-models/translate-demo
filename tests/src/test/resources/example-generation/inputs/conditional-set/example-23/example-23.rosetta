@@ -8,13 +8,13 @@ synonym source CONDITIONAL_SET_EXAMPLE_23
 
 type Root:
     [rootType]
-	zField Z (1..1)
-	    [synonym CONDITIONAL_SET_EXAMPLE_23 value "a"]
+	engineSpecification EngineSpecification (1..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_23 value "engineType"]
 
-type Z:
-	strField string (0..*)
-        [synonym CONDITIONAL_SET_EXAMPLE_23 value "b" set when rosettaPath = Root->zField]
-        [synonym CONDITIONAL_SET_EXAMPLE_23 value "c" set when rosettaPath = Root->zField]
+type EngineSpecification:
+	fuelType string (0..*)
+        [synonym CONDITIONAL_SET_EXAMPLE_23 value "combustible" set when rosettaPath = Root->engineSpecification]
+        [synonym CONDITIONAL_SET_EXAMPLE_23 value "complementaryEnergy" set when rosettaPath = Root->engineSpecification]
 
 /*
 Schema:

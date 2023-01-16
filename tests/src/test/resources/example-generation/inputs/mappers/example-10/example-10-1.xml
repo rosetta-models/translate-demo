@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <dataDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="example-10.xsd example-10.xsd">
-    <a>
-        <b>
-            <c>
-                <d>FISH</d>
-                <e>CHIPS</e>
-                <e>MEAT</e>
-            </c>
-        </b>
-    </a>
+    <engineType>
+        <engineDetail>
+            <metric>
+                <emmissions>Low-Emmissions</emmissions>
+                <combustible>Gasoline</combustible>
+                <combustible>Propane</combustible>
+            </metric>
+        </engineDetail>
+    </engineType>
 </dataDocument>

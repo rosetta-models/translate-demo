@@ -1,1 +1,2 @@
-test 7.1 shouldSetFieldFromSynonymSetToMultipleWhen1,2,3
+Example 6:
+The rosetta element engineSystem is conditional set to "COMBUSTION" when xml element "engineDetail->fuelDetail->combustible" = "Gasoline" else if "engineDetail->fuelDetail->combustible" = "Electricity" is set to ELECTRIC else is DEFAULT

@@ -8,23 +8,23 @@ synonym source CONDITIONAL_SET_TO_EXAMPLE_13
 
 type Root:
     [rootType]
-    str1Field string (1..1)
-        [synonym CONDITIONAL_SET_TO_EXAMPLE_13 value "d" path "a->b->c1"]
-    str2Field string (1..1)
-        [synonym CONDITIONAL_SET_TO_EXAMPLE_13 value "d" path "a->b->c2"]
-    yField Y (1..*)
-        [synonym CONDITIONAL_SET_TO_EXAMPLE_13 value "a"]
+    fuel string (1..1)
+        [synonym CONDITIONAL_SET_TO_EXAMPLE_13 value "combustible" path "engineType->engineDetail->fuelDetail"]
+    alternativeFuel string (1..1)
+        [synonym CONDITIONAL_SET_TO_EXAMPLE_13 value "combustible" path "engineType->engineDetail->alternativeFuelDetail"]
+    engineSpecification EngineSpecification (1..*)
+        [synonym CONDITIONAL_SET_TO_EXAMPLE_13 value "engineType"]
 
-type Y:
-    zField Z (1..*)
-        [synonym CONDITIONAL_SET_TO_EXAMPLE_13 value "b"]
+type EngineSpecification:
+    engineMetric EngineMetric (1..*)
+        [synonym CONDITIONAL_SET_TO_EXAMPLE_13 value "engineDetail"]
 
-type Z:
-    enumField TestEnum (0..1)
-        [synonym CONDITIONAL_SET_TO_EXAMPLE_13 set to TestEnum->FOO when "c2" exists and "c1" exists]
+type EngineMetric:
+    engineEnum EngineEnum (0..1)
+        [synonym CONDITIONAL_SET_TO_EXAMPLE_13 set to EngineEnum->HYBRID when "alternativeFuelDetail" exists and "fuelDetail" exists]
 
-enum TestEnum:
-    FOO
+enum EngineEnum:
+    HYBRID
 
 /*
 Schema:

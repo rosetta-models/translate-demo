@@ -3,18 +3,18 @@
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="a">
+                <xs:element name="engineType">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="partyTradeIdentifier">
+                            <xs:element name="engineDetail">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="partyReference"
-                                                    type="PartyReference" />
+                                        <xs:element name="engineReference"
+                                                    type="EngineReference" />
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
-                            <xs:element name="party" type="Party"/>
+                            <xs:element name="fuelDetail" type="FuelDetail"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
@@ -29,7 +29,7 @@
         </xs:annotation>
     </xs:complexType>
 
-    <xs:complexType name="PartyReference">
+    <xs:complexType name="EngineReference">
         <xs:annotation>
             <xs:documentation xml:lang="en">Reference to a party.
             </xs:documentation>
@@ -42,7 +42,7 @@
         </xs:complexContent>
     </xs:complexType>
 
-    <xs:complexType name="Party">
+    <xs:complexType name="FuelDetail">
         <xs:simpleContent>
             <xs:extension base="xs:string">
                 <xs:attribute type="xs:ID" name="id" />

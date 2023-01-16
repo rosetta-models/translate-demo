@@ -8,15 +8,15 @@ synonym source CONDITIONAL_SET_EXAMPLE_5
 
 type Root:
     [rootType]
-	zField Z (1..1)
-	    [synonym CONDITIONAL_SET_EXAMPLE_5 value "a"]
+	engineSpecification EngineSpecification (1..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_5 value "engine"]
 
-type Z:
-	str1Field string (1..1)
-	    [synonym CONDITIONAL_SET_EXAMPLE_5 value "f" path "b->c"]
-	str2Field string (0..1)
-	    [synonym CONDITIONAL_SET_EXAMPLE_5 value "e" path "b->c" set when "b->c->d" = "FISH"]
-        [synonym CONDITIONAL_SET_EXAMPLE_5 value "f" path "b->c" set when "b->c->d" = "SAUSAGE"]
+type EngineSpecification:
+	fuelType string (1..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_5 value "energyCategory" path "engineType->engineDetail"]
+	alternativeFuelType string (0..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_5 value "complementaryEnergy" path "engineType->engineDetail" set when "engineType->engineDetail->engineCategory" = "HYBRID"]
+        [synonym CONDITIONAL_SET_EXAMPLE_5 value "combustible" path "engineType->engineDetail" set when "engineType->engineDetail->engineCategory" = "HYDROCARBON"]
 
 /*
 Schema:

@@ -8,29 +8,28 @@ synonym source CONDITIONAL_SET_TO_EXAMPLE_7
 
 type Root:
     [rootType]
-	xField X (1..1)
-		[synonym CONDITIONAL_SET_TO_EXAMPLE_7 value "a"]
+	engine Engine (1..1)
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_7 value "engineType"]
 
-type X:
-	yField Y (1..1)
-		[synonym CONDITIONAL_SET_TO_EXAMPLE_7 value "b"]
-	enumField TestEnum (1..1)
-		[synonym CONDITIONAL_SET_TO_EXAMPLE_7 set to TestEnum -> FOO when "b->c->e" exists]
+type Engine:
+	engineSpecification EngineSpecification (1..1)
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_7 value "engineDetail"]
+	alternativeCombustible FuelEnum (1..1)
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_7 set to FuelEnum -> ELECTRICITY when "engineDetail->fuelDetail->alternativeCombustible" exists]
 
-type Y:
-	zField Z (1..1)
-		[synonym CONDITIONAL_SET_TO_EXAMPLE_7 value "c"]
+type EngineSpecification:
+	engineMetric EngineMetric (1..1)
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_7 value "fuelDetail"]
 
-type Z:
-	enumField TestEnum (1..1)
-		[synonym CONDITIONAL_SET_TO_EXAMPLE_7 value "d"]
+type EngineMetric:
+	fuelEnum FuelEnum (1..1)
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_7 value "combustible"]
 
-enum TestEnum:
-	FOO
-		[synonym CONDITIONAL_SET_TO_EXAMPLE_7 value "foo"]
-	BAR
-		[synonym CONDITIONAL_SET_TO_EXAMPLE_7 value "bar"]
-
+enum FuelEnum:
+	ELECTRICITY
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_7 value "electricity"]
+	GASOLINE
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_7 value "gasoline"]
 /*
 Schema:
 

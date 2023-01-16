@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <dataDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="example-6.xsd example-6.xsd">
-    <a>
-        <partyTradeIdentifier>
-            <party id="g4789">
-                <name>blah</name>
-            </party>
-        </partyTradeIdentifier>
-    </a>
+    <engineType>
+        <engineDetail>
+            <fuelDetail id="g4789">
+                <combustible>blah</combustible>
+            </fuelDetail>
+        </engineDetail>
+    </engineType>
 </dataDocument>

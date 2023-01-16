@@ -8,25 +8,25 @@ synonym source MAPPERS_EXAMPLE_13
 
 type Root:
     [rootType]
-	priceQuantity PriceQuantity (1..*)
-	product Product (1..*)
+	engine Engine (1..*)
+	vehicle Vehicle (1..*)
 
-type PriceQuantity:
-	quantity Quantity (1..1)
+type Engine:
+	engineMetric EngineMetric (1..1)
         [metadata location]
-        [synonym MAPPERS_EXAMPLE_13 value "b" path "a" mapper "Example13"]
+        [synonym MAPPERS_EXAMPLE_13 value "engineDetail" path "engineType" mapper "Example13"]
 
-type Product:
+type Vehicle:
     resolvablePayoutQuantity ResolvablePayoutQuantity (1..1)
-	    [synonym MAPPERS_EXAMPLE_13 value "b" path "a"]
+	    [synonym MAPPERS_EXAMPLE_13 value "engineDetail" path "engineType"]
 
 type ResolvablePayoutQuantity:
 	resolvedQuantity Quantity (1..1)
-        [metadata address "pointsTo"=PriceQuantity->quantity]
-        [synonym MAPPERS_EXAMPLE_13 meta "c"]
+        [metadata address "pointsTo"=Engine->engineMetric]
+        [synonym MAPPERS_EXAMPLE_13 meta "horsePower"]
 
 type Quantity:
-	amount number (1..1)
+	horsePower number (1..1)
 
 /*
 Schema:
