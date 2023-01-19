@@ -2,8 +2,9 @@ namespace demo.translate.mappers.example_9
 version "${project.version}"
 
 /*
-Example 8.2:
-Mapper updates fields on multi-cardinality complex type from Root
+Example 9:
+
+Mapper sets fields on multi-cardinality complex type.
 */
 synonym source MAPPERS_EXAMPLE_9
 

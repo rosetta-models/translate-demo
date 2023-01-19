@@ -12,6 +12,10 @@ import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * The mapper class name must be in the form "<MapperName>MappingProcessor", and must extend MappingProcessor.
+ */
+@SuppressWarnings("unused") // Used in generated code
 public class Example10MappingProcessor extends MappingProcessor {
 
     public Example10MappingProcessor(RosettaPath modelPath, List<Path> synonymPaths, MappingContext context) {

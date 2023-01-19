@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 /**
  * The mapper class name must be in the form "<MapperName>MappingProcessor", and must extend MappingProcessor.
  */
-@SuppressWarnings("unused")
+@SuppressWarnings("unused") // Used in generated code
 public class Example7MappingProcessor extends MappingProcessor {
 
     public Example7MappingProcessor(RosettaPath modelPath, List<Path> synonymPaths, MappingContext context) {
@@ -27,12 +27,15 @@ public class Example7MappingProcessor extends MappingProcessor {
     @Override
     public <T> void mapBasic(Path xmlPath, Collection<? extends T> builders, RosettaModelObjectBuilder parent) {
         Collection<String> stringBuilders = (Collection<String>) builders;
+        Z.ZBuilder zBuilder = (Z.ZBuilder) parent;
 
+        // Create new list of strings
         List<String> updatedValues = stringBuilders.stream()
                 .map(str -> str + "_X")
                 .collect(Collectors.toList());
 
-       ((Z.ZBuilder) parent).setStr2Field(updatedValues);
+        // Update the parent with the new list of string values
+        zBuilder.setStr2Field(updatedValues);
 
        // TODO update existing mappings with new values
     }

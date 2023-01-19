@@ -1,8 +1,8 @@
 {
-  "yfield" : {
-    "strField" : "FISH"
-  },
   "zfield" : {
     "strField" : "CHIPS"
+  },
+  "yfield" : {
+    "strField" : "FISH"
   }
 }

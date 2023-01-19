@@ -1,9 +1,16 @@
 <?xml version="1.0"?>
 <dataDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="example-2.xsd example-2.xsd">
+<<<<<<< HEAD
     <vehicleOwner>
         <firstname>Tom</firstname>
         <lastname>Forwood</lastname>
         <vehicleOwned>Car</vehicleOwned>
+=======
+    <employee>
+        <firstname>John</firstname>
+        <lastname>Smith</lastname>
+        <address>1 Foo Street</address>
+>>>>>>> dfdc5b690cc24c58177a5121ae6a352abd9d9af9
         <city>London</city>
         <country>UK</country>
     </vehicleOwner>

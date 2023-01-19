@@ -8,6 +8,7 @@ synonym source MAPPERS_EXAMPLE_12
 
 type Root:
     [rootType]
+<<<<<<< HEAD
 	engine Engine (1..1)
 	    [synonym MAPPERS_EXAMPLE_12 value "engineType"]
 
@@ -25,7 +26,25 @@ type EngineSpecification:
     volumeUnit string (1..1)
     // value updated by the mapper
     volumeConsumption string (1..1)
+=======
+	yField Y (1..1)
+	    [synonym MAPPERS_EXAMPLE_12 value "a"]
 
+type Y:
+	zField Z (0..*)
+	    // merge lists b and e together
+	    [synonym MAPPERS_EXAMPLE_12 value "b" mapper "Example12"]
+
+type Z:
+    // value updated by the mapper
+    str1Field string (1..1)
+    // value updated by the mapper
+    str2Field string (1..1)
+    // value updated by the mapper
+    str3Field string (1..1)
+    // value updated by the mapper
+    str4Field string (1..1)
+>>>>>>> dfdc5b690cc24c58177a5121ae6a352abd9d9af9
 
 /*
 Schema:

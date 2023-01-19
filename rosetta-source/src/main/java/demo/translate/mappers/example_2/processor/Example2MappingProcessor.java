@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * The mapper class name must be in the form "<MapperName>MappingProcessor", and must extend MappingProcessor.
  */
-@SuppressWarnings("unused")
+@SuppressWarnings("unused") // Used in generated code
 public class Example2MappingProcessor extends MappingProcessor {
 
     public Example2MappingProcessor(RosettaPath modelPath, List<Path> synonymPaths, MappingContext context) {

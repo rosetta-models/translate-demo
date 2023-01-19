@@ -2,15 +2,15 @@ namespace demo.translate.mappers.example_10
 version "${project.version}"
 
 /*
-Example 9:
-Mapper updates fields on multi-cardinality basic type with metadata scheme
+Example 10:
+
+Mapper updates fields on multi-cardinality basic type with metadata scheme.
 */
 synonym source MAPPERS_EXAMPLE_10
 
 type Root:
     [rootType]
 	zField Z (1..1)
-	    [metadata scheme]
 	    [synonym MAPPERS_EXAMPLE_10 value "a"]
 
 type Z:
