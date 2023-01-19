@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <dataDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="example-1.xsd example-1.xsd">
-    <a>
-        <b>
-            <c>3</c>
-        </b>
-    </a>
+    <engineType>
+        <engineDetail>
+            <horsePower>300</horsePower>
+        </engineDetail>
+    </engineType>
 </dataDocument>

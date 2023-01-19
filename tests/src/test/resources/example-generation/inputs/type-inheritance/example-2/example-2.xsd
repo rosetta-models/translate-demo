@@ -3,7 +3,7 @@
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="employee" type="fullpersoninfo" />
+                <xs:element name="vehicleOwner" type="fullpersoninfo" />
             </xs:all>
         </xs:complexType>
     </xs:element>

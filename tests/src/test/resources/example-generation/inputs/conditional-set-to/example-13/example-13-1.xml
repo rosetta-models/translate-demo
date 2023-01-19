@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <dataDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="example-13.xsd example-13.xsd">
-    <a>
-        <b>
-            <c1><d>FOO</d></c1>
-            <c2><d>BAR</d></c2>
-        </b>
-    </a>
+    <engineType>
+        <engineDetail>
+            <fuelDetail><combustible>HYBRID</combustible></fuelDetail>
+            <alternativeFuelDetail><combustible>COMBUSTION</combustible></alternativeFuelDetail>
+        </engineDetail>
+    </engineType>
 </dataDocument>

@@ -8,34 +8,34 @@ synonym source EXTERNAL_SYNONYM_EXAMPLE_5_BASE
 
 synonym source EXTERNAL_SYNONYM_EXAMPLE_5_MID extends EXTERNAL_SYNONYM_EXAMPLE_5_BASE
 {
-	Z:
-		+ strField
-			[value "accountReference" meta "scheme"]
+	EngineMetric:
+		+ fuel
+			[value "alternativeCombustible" meta "scheme"]
 }
 
 synonym source EXTERNAL_SYNONYM_EXAMPLE_5 extends EXTERNAL_SYNONYM_EXAMPLE_5_MID
 {
-	X:
-		+ yField
-			[value "partyTradeIdentifier" path "a"]
+	Engine:
+		+ engineSpecification
+			[value "engineDetail" path "engineType"]
 
-	Z:
-		+ strField
-			[value "partyReference" meta "scheme"]
+	EngineMetric:
+		+ fuel
+			[value "combustible" meta "scheme"]
 }
 
 type Root:
     [rootType]
-	xField X (1..1)
+	engine Engine (1..1)
 
-type X:
-	yField Y (1..*)
+type Engine:
+	engineSpecification EngineSpecification (1..*)
 
-type Y:
-	zField Z (1..*)
+type EngineSpecification:
+	engineMetric EngineMetric (1..*)
 
-type Z:
-	strField string (1..1)
+type EngineMetric:
+	fuel string (1..1)
 		[metadata scheme]
 
 /*

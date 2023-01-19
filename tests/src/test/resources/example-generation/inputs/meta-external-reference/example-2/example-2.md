@@ -1,1 +1,2 @@
-testGenerateAndParse2 external meta test
+Example 2:
+Mapping performed using external meta reference in Engine and meta key in EngineSpecification

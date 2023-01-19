@@ -3,17 +3,17 @@
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="a">
+                <xs:element name="engineType">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="b">
+                            <xs:element name="engineDetail">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="cRef" type="CReference" />
+                                        <xs:element name="specificationRed" type="SpecificationReference" />
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
-                            <xs:element name="c" type="C" />
+                            <xs:element name="specifications" type="Specifications" />
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
@@ -28,7 +28,7 @@
         </xs:annotation>
     </xs:complexType>
 
-    <xs:complexType name="CReference">
+    <xs:complexType name="SpecificationReference">
         <xs:annotation>
             <xs:documentation xml:lang="en">Reference to C</xs:documentation>
         </xs:annotation>
@@ -39,21 +39,21 @@
         </xs:complexContent>
     </xs:complexType>
 
-    <xs:complexType name="C">
+    <xs:complexType name="Specifications">
         <xs:sequence>
-            <xs:element name="d" />
-            <xs:element name="e" />
-            <xs:element name="f" type="FEnum" />
-            <xs:element name="g" />
+            <xs:element name="powerUnit" />
+            <xs:element name="cylinders" />
+            <xs:element name="combustible" type="FuelEnum" />
+            <xs:element name="manufacturer" />
         </xs:sequence>
         <xs:attribute name="id" type="xs:ID" use="required" />
     </xs:complexType>
 
-    <xs:simpleType name="FEnum">
+    <xs:simpleType name="FuelEnum">
         <xs:restriction base="xs:token">
-            <xs:enumeration value="AA">
+            <xs:enumeration value="Diesel">
             </xs:enumeration>
-            <xs:enumeration value="BB">
+            <xs:enumeration value="Gasoline">
             </xs:enumeration>
         </xs:restriction>
     </xs:simpleType>

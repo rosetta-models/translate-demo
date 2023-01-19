@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <dataDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="example-8.xsd example-8.xsd">
-    <a>
-        <b id="blah">
-            <c id="blib">
-                <f>foo</f>
-            </c>
-            <e>
-                <f>bar</f>
-            </e>
-        </b>
-    </a>
+    <engineType>
+        <engineDetail id="123">
+            <fuelDetail id="456">
+                <combustible>hybrid</combustible>
+            </fuelDetail>
+            <alternativeFuel>
+                <combustible>combustion</combustible>
+            </alternativeFuel>
+        </engineDetail>
+    </engineType>
 </dataDocument>

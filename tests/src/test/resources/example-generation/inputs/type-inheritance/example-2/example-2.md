@@ -1,1 +1,2 @@
-testGenerateAndParse1 extends example
+Exemple 2:
+The mapping is performed with one extended type

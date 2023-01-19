@@ -8,16 +8,16 @@ synonym source CONDITIONAL_SET_EXAMPLE_19
 
 type Root:
     [rootType]
-	zField Z (1..1)
-	    [synonym CONDITIONAL_SET_EXAMPLE_19 value "a"]
+	engineSpecification EngineSpecification (1..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_19 value "engineType"]
 
-type Z:
-	str1Field string (0..1)
-	    [synonym CONDITIONAL_SET_EXAMPLE_19 value "b" set when "c" exists]
-	str2Field string (0..1)
-	    [synonym CONDITIONAL_SET_EXAMPLE_19 value "c"]
-	str3Field string (0..1)
-	    [synonym CONDITIONAL_SET_EXAMPLE_19 value "d"]
+type EngineSpecification:
+	capacityUnit string (0..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_19 value "volumeCapacityUnit" set when "combustible" exists]
+	fuelType string (0..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_19 value "combustible"]
+	alternativeFuelType string (0..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_19 value "complementaryEnergy"]
 
 /*
 Schema:

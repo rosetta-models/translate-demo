@@ -8,18 +8,19 @@ synonym source TYPE_INHERITANCE_EXAMPLE_2
 
 type Root:
     [rootType]
-	zField Z (1..1)
-	    [synonym TYPE_INHERITANCE_EXAMPLE_2 value "employee"]
+	vehicle Vehicle (1..1)
+	    [synonym TYPE_INHERITANCE_EXAMPLE_2 value "vehicleOwner"]   //VehicleOwner
 
-type Y:
-	yStr1Field string (1..1)
+type Vehicle: //Y
+	vehicleType string (1..1)
+	    [synonym TYPE_INHERITANCE_EXAMPLE_2 value "property"]
+
+type VehicleOwner extends Vehicle: //Z extends Y
+
+    firstname string (1..1)
 	    [synonym TYPE_INHERITANCE_EXAMPLE_2 value "firstname"]
-	yStr2Field string (1..1)
+	lastname string (1..1)
 	    [synonym TYPE_INHERITANCE_EXAMPLE_2 value "lastname"]
-
-type Z extends Y:
-	zStrField string (1..1)
-	    [synonym TYPE_INHERITANCE_EXAMPLE_2 value "address"]
 
 /*
 Schema:

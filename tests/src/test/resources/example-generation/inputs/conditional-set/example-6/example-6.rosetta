@@ -8,24 +8,24 @@ synonym source CONDITIONAL_SET_EXAMPLE_6
 
 type Root:
     [rootType]
-	y1Field Y (1..1)
-	    [synonym CONDITIONAL_SET_EXAMPLE_6 value "b" path "a"]
-	y2Field Y (1..1)
-	    [synonym CONDITIONAL_SET_EXAMPLE_6 value "c" path "a"]
+	usEngineVersion EngineVersion (1..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_6 value "usEngineSpecification" path "engine"]
+	ukEngineVersion EngineVersion (1..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_6 value "ukEngineSpecification" path "engine"]
 
-type Y:
-	zField Z (1..1)
-	    [synonym CONDITIONAL_SET_EXAMPLE_6 value "d"]
+type EngineVersion:
+	terminology Terminology (1..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_6 value "engineDetail"]
 
-type Z:
-    str1Field string (1..1)
-    	[synonym CONDITIONAL_SET_EXAMPLE_6 value "e" maps 2]
-    str2Field string (1..1)
-        [synonym CONDITIONAL_SET_EXAMPLE_6 value "f" maps 2]
-	str3Field string (0..1)
-        [synonym CONDITIONAL_SET_EXAMPLE_6 value "e" set when path = "b->d"]
-	str4Field string (0..1)
-	    [synonym CONDITIONAL_SET_EXAMPLE_6 value "f" set when path = "c->d"]
+type Terminology:
+    fuelType string (1..1)
+    	[synonym CONDITIONAL_SET_EXAMPLE_6 value "combustible" maps 2]
+    capacity string (1..1)
+        [synonym CONDITIONAL_SET_EXAMPLE_6 value "capacity" maps 2]
+	combustibleTaxBand string (0..1)
+        [synonym CONDITIONAL_SET_EXAMPLE_6 value "combustible" set when path = "usEngineVersion->terminology"]
+	volume string (0..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_6 value "capacity" set when path = "ukEngineVersion->terminology"]
 
 /*
 Schema:

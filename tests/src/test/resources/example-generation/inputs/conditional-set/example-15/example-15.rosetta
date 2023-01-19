@@ -8,13 +8,13 @@ synonym source CONDITIONAL_SET_EXAMPLE_15
 
 type Root:
     [rootType]
-	zField Z (1..*)
-	    [synonym CONDITIONAL_SET_EXAMPLE_15 value "b" path "a" set when "a->b->c->scheme" = "fishScheme"]
+	engineSpecification EngineSpecification (1..*)
+	    [synonym CONDITIONAL_SET_EXAMPLE_15 value "engineDetail" path "engineType" set when "engineType->engineDetail->combustible->scheme" = "gasScheme"]
 
-type Z:
-	strField string (1..1) 
+type EngineSpecification:
+	fuelType string (1..1)
 	    [metadata scheme]
-	    [synonym CONDITIONAL_SET_EXAMPLE_15 value "c" meta "scheme"]
+	    [synonym CONDITIONAL_SET_EXAMPLE_15 value "combustible" meta "scheme"]
 
 /*
 Schema:

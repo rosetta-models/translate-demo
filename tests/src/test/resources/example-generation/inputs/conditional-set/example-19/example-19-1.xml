@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <dataDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="example-19.xsd example-19.xsd">
-    <a>
-        <b>fish</b>
-        <c>and</c>
-        <d>chips</d>
-    </a>
+    <engineType>
+        <volumeCapacityUnit>Gallon</volumeCapacityUnit>
+        <combustible>Gasoline</combustible>
+        <complementaryEnergy>Electricity</complementaryEnergy>
+    </engineType>
 </dataDocument>

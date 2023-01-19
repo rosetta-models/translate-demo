@@ -8,30 +8,30 @@ synonym source MULTI_CARDINALITY_EXAMPLE_17
 
 type Root:
     [rootType]
-    vField V (1..1)
-    	[synonym MULTI_CARDINALITY_EXAMPLE_17 value "a"]
+    engine Engine (1..1)
+    	[synonym MULTI_CARDINALITY_EXAMPLE_17 value "engineType"]
 
-type V:
-    wField W (0..*)
-    	[synonym MULTI_CARDINALITY_EXAMPLE_17 value "b", "c"]
+type Engine:
+    globalVersion EngineVersion (0..*)
+    	[synonym MULTI_CARDINALITY_EXAMPLE_17 value "fuelDetail", "capacityDetail"]
 
-type W:
-    xField X (0..*)
-    	[synonym MULTI_CARDINALITY_EXAMPLE_17 hint "d", "e"] // hints have no effect in terms of keeping the list items merged
+type EngineVersion:
+    engineSpecification EngineSpecification (0..*)
+    	[synonym MULTI_CARDINALITY_EXAMPLE_17 hint "combustible", "capacity"] // hints have no effect in terms of keeping the list items merged
 
-type X:
-    yField Y (0..*)
-    	[synonym MULTI_CARDINALITY_EXAMPLE_17 hint "d", "e"]
+type EngineSpecification:
+    engineMetric EngineMetric (0..*)
+    	[synonym MULTI_CARDINALITY_EXAMPLE_17 hint "combustible", "capacity"]
 
-type Y:
-    zField Z (0..*)
-    	[synonym MULTI_CARDINALITY_EXAMPLE_17 hint "d", "e"]
+type EngineMetric:
+    volume Volume (0..*)
+    	[synonym MULTI_CARDINALITY_EXAMPLE_17 hint "combustible", "capacity"]
 
-type Z:
-    str1Field string (0..1)
-    	[synonym MULTI_CARDINALITY_EXAMPLE_17 value "d"]
-    str2Field string (0..1)
-    	[synonym MULTI_CARDINALITY_EXAMPLE_17 value "e"]
+type Volume:
+    fuel string (0..1)
+    	[synonym MULTI_CARDINALITY_EXAMPLE_17 value "combustible"]
+    capacity string (0..1)
+    	[synonym MULTI_CARDINALITY_EXAMPLE_17 value "capacity"]
 
 /*
 Schema:

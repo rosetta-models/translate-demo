@@ -8,13 +8,13 @@ synonym source META_SCHEME_EXAMPLE_1
 
 type Root:
     [rootType]
-    zField Z (0..1)
-    	[synonym META_SCHEME_EXAMPLE_1 value "partyTradeIdentifier" path "a"]
+    engineSpecification EngineSpecification (0..1)
+    	[synonym META_SCHEME_EXAMPLE_1 value "engineDetail" path "engineType"]
 
-type Z:
-    strField string (1..*)
+type EngineSpecification:
+    fuelType string (1..*)
         [metadata scheme]
-        [synonym META_SCHEME_EXAMPLE_1 value "partyReference" meta "scheme"]
+        [synonym META_SCHEME_EXAMPLE_1 value "combustible" meta "scheme"]
 
 /*
 Schema:

@@ -3,22 +3,22 @@
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="a">
+                <xs:element name="engineType">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="b" maxOccurs="unbounded" minOccurs="0">
+                            <xs:element name="fuelDetail" maxOccurs="unbounded" minOccurs="0">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element type="xs:string" name="c"/>
-                                        <xs:element type="xs:string" name="d"/>
+                                        <xs:element type="xs:string" name="emmissions"/>
+                                        <xs:element type="xs:string" name="combustible"/>
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
-                            <xs:element name="e" maxOccurs="unbounded" minOccurs="0">
+                            <xs:element name="capacityDetail" maxOccurs="unbounded" minOccurs="0">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element type="xs:string" name="f"/>
-                                        <xs:element type="xs:string" name="g"/>
+                                        <xs:element type="xs:string" name="capacityUnit"/>
+                                        <xs:element type="xs:string" name="volumeConsumption"/>
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>

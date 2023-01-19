@@ -6,21 +6,23 @@ $DESCRIPTION$
 */
 synonym source CONDITIONAL_SET_TO_EXAMPLE_11
 
+synonym source CONDITIONAL_SET_TO_EXAMPLE_11
+
 type Root:
     [rootType]
-    yField Y (1..*)
-        [synonym CONDITIONAL_SET_TO_EXAMPLE_11 value "RptSide" path "a->TrdCaptRpt"]
+    engineSpecification EngineSpecification (1..*)
+        [synonym CONDITIONAL_SET_TO_EXAMPLE_11 value "fuelDetail" path "engineType->engineDetail"]
 
-type Y:
-    zField Z (1..*)
+type EngineSpecification:
+    engineMetric EngineMetric (1..*)
 
-type Z:
-    str1Field string (1..1)
-        [synonym CONDITIONAL_SET_TO_EXAMPLE_11 set to "ClientOrderId" when path = "ClOrdID"]
-        [synonym CONDITIONAL_SET_TO_EXAMPLE_11 set to "PartyType" when path = "Pty->R"]
-    str2Field string (1..1)
-        [synonym CONDITIONAL_SET_TO_EXAMPLE_11 value "ClOrdID"]
-        [synonym CONDITIONAL_SET_TO_EXAMPLE_11 set to "Customer Account" when "Pty->R" = "24"]
+type EngineMetric:
+    fuelType string (1..1)
+        [synonym CONDITIONAL_SET_TO_EXAMPLE_11 set to "Combustible" when path = "type"]
+        [synonym CONDITIONAL_SET_TO_EXAMPLE_11 set to "RegularGasoline" when path = "combustible->octanes"]
+    alternativeFuelType string (1..1)
+        [synonym CONDITIONAL_SET_TO_EXAMPLE_11 value "type"]
+        [synonym CONDITIONAL_SET_TO_EXAMPLE_11 set to "PremiumGasoline" when "combustible->octanes" = "93"]
 
 /*
 Schema:

@@ -3,13 +3,13 @@
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="a">
+                <xs:element name="engineType">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="partyTradeIdentifier">
+                            <xs:element name="engineDetail">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element maxOccurs="unbounded" name="partyReference">
+                                        <xs:element maxOccurs="unbounded" name="combustible">
                                             <xs:complexType>
                                                 <xs:simpleContent>
                                                     <xs:extension base="xs:string">
@@ -18,7 +18,7 @@
                                                 </xs:simpleContent>
                                             </xs:complexType>
                                         </xs:element>
-                                        <xs:element minOccurs="0" maxOccurs="unbounded" name="accountReference">
+                                        <xs:element minOccurs="0" maxOccurs="unbounded" name="alternativeCombustible">
                                             <xs:complexType>
                                                 <xs:simpleContent>
                                                     <xs:extension base="xs:string">

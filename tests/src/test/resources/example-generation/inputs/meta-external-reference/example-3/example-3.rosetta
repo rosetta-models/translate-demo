@@ -8,20 +8,20 @@ synonym source META_EXTERNAL_REFERENCE_EXAMPLE_3
 
 type Root:
     [rootType]
-	yField Y (0..1)
-	    [synonym META_EXTERNAL_REFERENCE_EXAMPLE_3 value "partyTradeIdentifier" path "a"]
+	engine Engine (0..1)
+	    [synonym META_EXTERNAL_REFERENCE_EXAMPLE_3 value "engineDetail" path "engineType"]
 
-type Y:
-	zField Z (1..1)
+type Engine:
+	engineSpecification EngineSpecification (1..1)
 		[metadata reference]
-		[synonym META_EXTERNAL_REFERENCE_EXAMPLE_3 value "partyReference" meta "href"]
-		[synonym META_EXTERNAL_REFERENCE_EXAMPLE_3 value "party"]
+		[synonym META_EXTERNAL_REFERENCE_EXAMPLE_3 value "engineReference" meta "href"]
+		[synonym META_EXTERNAL_REFERENCE_EXAMPLE_3 value "fuelDetail"]
 
-type Z:
+type EngineSpecification:
 	[metadata key]
 	[synonym META_EXTERNAL_REFERENCE_EXAMPLE_3 meta "id"]
-	strField string (0..1)
-		[synonym META_EXTERNAL_REFERENCE_EXAMPLE_3 value "name"]
+	fuelType string (0..1)
+		[synonym META_EXTERNAL_REFERENCE_EXAMPLE_3 value "combustible"]
 
 /*
 Schema:

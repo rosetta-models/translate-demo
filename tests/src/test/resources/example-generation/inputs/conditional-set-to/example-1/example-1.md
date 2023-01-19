@@ -1,1 +1,2 @@
-conditional-set-to test 2.1 shouldSetFieldFromSynonymSetTo and test 2.2 shouldNotSetFieldFromSynonymSetTo
+Example 1:
+The rosetta element engineSystem is conditional set to "HYBRID" when xml element found in "engineType->engineDetail->fuelDetail->alternativeCombustible" exists

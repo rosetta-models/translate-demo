@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <dataDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="example-4.xsd example-4.xsd">
-    <a>
-        <partyTradeIdentifier>
-            <partyReference href="g4789" />
-        </partyTradeIdentifier>
-        <party id="g4789">
-            Party
-        </party>
-    </a>
+    <engineType>
+        <engineDetail>
+            <engineReference href="g4789" />
+        </engineDetail>
+        <fuelDetail id="g4789">
+            Gasoline
+        </fuelDetail>
+    </engineType>
 </dataDocument>

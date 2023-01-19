@@ -8,22 +8,22 @@ synonym source CONDITIONAL_SET_TO_EXAMPLE_1
 
 type Root:
     [rootType]
-	xField X (1..1)
-		[synonym CONDITIONAL_SET_TO_EXAMPLE_1 value "a"]
+	engine Engine (1..1)
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_1 value "engineType"]
 
-type X:
-	yField Y (1..1)
-		[synonym CONDITIONAL_SET_TO_EXAMPLE_1 value "b"]
-	strField string (1..1)
-		[synonym CONDITIONAL_SET_TO_EXAMPLE_1 set to "OTHER" when "b->c->e" exists]
+type Engine:
+	engineSpecification EngineSpecification (1..1)
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_1 value "engineDetail"]
+	engineSystem string (1..1)
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_1 set to "HYBRID" when "engineDetail->fuelDetail->alternativeCombustible" exists]
 
-type Y:
-	zField Z (1..1)
-		[synonym CONDITIONAL_SET_TO_EXAMPLE_1 value "c"]
+type EngineSpecification:
+	engineMetric EngineMetric (1..1)
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_1 value "fuelDetail"]
 
-type Z:
-	strField string (1..1)
-		[synonym CONDITIONAL_SET_TO_EXAMPLE_1 value "d"]
+type EngineMetric:
+	fuelType string (1..1)
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_1 value "combustible"]
 
 /*
 Schema:

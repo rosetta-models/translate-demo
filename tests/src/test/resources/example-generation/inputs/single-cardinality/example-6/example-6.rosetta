@@ -8,16 +8,16 @@ synonym source SINGLE_CARDINALITY_EXAMPLE_6
 
 type Root:
     [rootType]
-    yField Y (1..1)
-    zField Z (1..1)
+    engineSpecification EngineSpecification (1..1)
+    volume Volume (1..1)
 
-type Y:
-    strField string (1..1)
-        [synonym SINGLE_CARDINALITY_EXAMPLE_6 value "c" path "a"]
+type EngineSpecification:
+    fuelType string (1..1)
+        [synonym SINGLE_CARDINALITY_EXAMPLE_6 value "combustible" path "engineType"]
 
-type Z:
-    strField string (1..1)
-        [synonym SINGLE_CARDINALITY_EXAMPLE_6 value "d" path "b"]
+type Volume:
+    volumeUnit string (1..1)
+        [synonym SINGLE_CARDINALITY_EXAMPLE_6 value "capacityUnit" path "capacity"]
 
 /*
 Schema:
