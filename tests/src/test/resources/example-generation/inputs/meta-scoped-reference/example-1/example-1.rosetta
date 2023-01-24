@@ -9,18 +9,18 @@ synonym source META_SCOPED_REFERENCE_EXAMPLE_1
 type Root:
     [rootType]
 	engine Engine (1..1)
-	engineMetric EngineMetric (1..1)
+	vehicle Vehicle (1..1)
 
 type Engine:
 	engineMetric EngineMetric (1..1)
         [metadata location]
         [synonym META_SCOPED_REFERENCE_EXAMPLE_1 value "engineDetail" path "engineType"]
 
-type Product:
-    resolvablePayoutQuantity ResolvablePayoutQuantity (1..1)
+type Vehicle:
+    engineSpecification EngineSpecification (1..1)
 	    [synonym META_SCOPED_REFERENCE_EXAMPLE_1 value "engineType"]
 
-type ResolvablePayoutQuantity:
+type EngineSpecification:
 	engineMetric EngineMetric (1..1)
         [metadata address "pointsTo"=Engine->engineMetric]
         [synonym META_SCOPED_REFERENCE_EXAMPLE_1 value "engineDetail" meta "horsePower"]
