@@ -12,21 +12,21 @@ type Root:
 	vehicle Vehicle (1..1)
 
 type Engine:
-	quantity EngineMetric (1..1)
+	engineMetric EngineMetric (1..1)
         [metadata location]
         [synonym META_SCOPED_REFERENCE_EXAMPLE_2 value "engineDetail" path "engineType"]
 
 type Vehicle:
-    resolvablePayoutQuantity EngineSpecification (1..1)
+    engineSpecification EngineSpecification (1..1)
 	    [synonym META_SCOPED_REFERENCE_EXAMPLE_2 value "engineDetail" path "engineType"]
 
 type EngineSpecification:
-	resolvedQuantity EngineMetric (1..1)
-        [metadata address "pointsTo"=Engine->quantity]
+	engineMetric EngineMetric (1..1)
+        [metadata address "pointsTo"=Engine->engineMetric]
         [synonym META_SCOPED_REFERENCE_EXAMPLE_2 meta "horsePower"] // "meta" with no "value" specified
 
 type EngineMetric:
-	amount number (1..1)
+	horsePower number (1..1)
 	    [synonym META_SCOPED_REFERENCE_EXAMPLE_2 value "horsePower" maps 2]
 
 /*
