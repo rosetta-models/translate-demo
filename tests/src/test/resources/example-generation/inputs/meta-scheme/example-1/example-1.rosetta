@@ -14,7 +14,7 @@ type Root:
 type EngineSpecification:
     fuelType string (1..*)
         [metadata scheme]
-        [synonym META_SCHEME_EXAMPLE_1 value "combustible" meta "scheme"]
+        [synonym META_SCHEME_EXAMPLE_1 value "combustible" meta "fuelTypeScheme"]
 
 /*
 Schema:
