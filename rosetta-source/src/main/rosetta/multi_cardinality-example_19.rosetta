@@ -2,33 +2,34 @@ namespace demo.translate.multi_cardinality.example_19
 version "${project.version}"
 
 /*
-
+Example 19:
+Map list of basic types to nested list of basic types using path with multiple globalVersion engineSpecification engineMetric and volume.
 */
 synonym source MULTI_CARDINALITY_EXAMPLE_19
 
 type Root:
     [rootType]
-    vField V (1..1)
-	    [synonym MULTI_CARDINALITY_EXAMPLE_19 value "a"]
+    engine Engine (1..1)
+	    [synonym MULTI_CARDINALITY_EXAMPLE_19 value "engineType"]
 
-type V:
-	wField W (0..*)
+type Engine:
+	globalVersion EngineVersion (0..*)
 
-type W:
-	xField X (0..*)
-	    [synonym MULTI_CARDINALITY_EXAMPLE_19 value "b", "c"]
+type EngineVersion:
+	engineSpecification EngineSpecification (0..*)
+	    [synonym MULTI_CARDINALITY_EXAMPLE_19 value "fuelDetail", "capacityDetail"]
 
-type X:
-	yField Y (0..*)
+type EngineSpecification:
+	engineMetric EngineMetric (0..*)
 
-type Y:
-	zField Z (0..*)
+type EngineMetric:
+	volume Volume (0..*)
 
-type Z:
-	str1Field string (0..1)
-	    [synonym MULTI_CARDINALITY_EXAMPLE_19 value "d"]
-	str2Field string (0..1)
-	    [synonym MULTI_CARDINALITY_EXAMPLE_19 value "e"]
+type Volume:
+	fuel string (0..1)
+	    [synonym MULTI_CARDINALITY_EXAMPLE_19 value "combustible"]
+	capacity string (0..1)
+	    [synonym MULTI_CARDINALITY_EXAMPLE_19 value "capacity"]
 
 /*
 Schema:
@@ -38,20 +39,20 @@ Schema:
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="a">
+                <xs:element name="engineType">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="b" maxOccurs="unbounded">
+                            <xs:element name="fuelDetail" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="d" type="xs:string" />
+                                        <xs:element name="combustible" type="xs:string" />
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
-                            <xs:element name="c" maxOccurs="unbounded">
+                            <xs:element name="capacityDetail" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="e" type="xs:string" />
+                                        <xs:element name="capacity" type="xs:string" />
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>

@@ -15,7 +15,7 @@ type Engine:
 	engineSpecification EngineSpecification (1..1)
 		[synonym CONDITIONAL_SET_TO_EXAMPLE_5 value "engineDetail"]
 	engineSystem string (1..1)
-		[synonym CONDITIONAL_SET_TO_EXAMPLE_5 set to "COMBUSTION" when "engineDetail->fuelDetail->combustible" = "Gasoline"]
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_5 set to "Combustion" when "engineDetail->fuelDetail->combustible" = "Gasoline"]
 
 type EngineSpecification:
 	engineMetric EngineMetric (1..1)

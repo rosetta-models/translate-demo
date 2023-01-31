@@ -21,10 +21,10 @@ type EngineSpecification:
 
 type EngineMetric:
     engineEnum EngineEnum (0..1)
-        [synonym CONDITIONAL_SET_TO_EXAMPLE_13 set to EngineEnum->HYBRID when "alternativeFuelDetail" exists and "fuelDetail" exists]
+        [synonym CONDITIONAL_SET_TO_EXAMPLE_13 set to EngineEnum->Hybrid when "alternativeFuelDetail" exists and "fuelDetail" exists]
 
 enum EngineEnum:
-    HYBRID
+    Hybrid
 
 /*
 Schema:

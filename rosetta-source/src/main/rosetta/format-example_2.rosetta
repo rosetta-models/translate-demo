@@ -2,14 +2,15 @@ namespace demo.translate.format.example_2
 version "${project.version}"
 
 /*
-testGenerateAndParse9 test9
+Example 2:
+Map the value into the rosetta attribute removing the HTML value of it.
 */
 synonym source FORMAT_EXAMPLE_2
 
 type Root:
     [rootType]
-	strField string (1..1)
-	    [synonym FORMAT_EXAMPLE_2 value "b" path "a" removeHtml]
+	fuelType string (1..1)
+	    [synonym FORMAT_EXAMPLE_2 value "combustible" path "engineType" removeHtml]
 
 /*
 Schema:
@@ -19,10 +20,10 @@ Schema:
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="a">
+                <xs:element name="engineType">
                     <xs:complexType>
                         <xs:all>
-                            <xs:element name="b" type="xs:string"/>
+                            <xs:element name="combustible" type="xs:string"/>
                         </xs:all>
                     </xs:complexType>
                 </xs:element>

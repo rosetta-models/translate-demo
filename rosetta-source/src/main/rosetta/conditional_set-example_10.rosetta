@@ -2,27 +2,30 @@ namespace demo.translate.conditional_set.example_10
 version "${project.version}"
 
 /*
-shouldSetWhenForBranchWithMultipleCardinality2 test17
+Example 10:
+Conditional mapping using "set" with a "when" clause that is predicated on the value of a xml element at the specified xml path with multi-cardinality.
+The attribute Engine->engineSpecification->engineMetric->fuel is conditionally set from xml path
+engineType->engineDetail->combustible in engineMetric type when the value at xml path engineType->engineDetail->engineCategory = "Combustion".
 */
 synonym source CONDITIONAL_SET_EXAMPLE_10
 
 type Root:
     [rootType]
-	xField X (1..1)
-	    [synonym CONDITIONAL_SET_EXAMPLE_10 value "a"]
+	engine Engine (1..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_10 value "engineType"]
 
-type X:
-	yField Y (0..*)
-	strField string (0..1)
-	    [synonym CONDITIONAL_SET_EXAMPLE_10 value "c"]
+type Engine:
+	engineSpecification EngineSpecification (0..*)
+	engineCategory string (0..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_10 value "engineCategory"]
 
-type Y:
-	zField Z (0..1)
-	    [synonym CONDITIONAL_SET_EXAMPLE_10 value "d" path "b" set when "c" = "CHIPS"]
+type EngineSpecification:
+	engineMetric EngineMetric (0..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_10 value "combustible" path "engineDetail" set when "engineCategory" = "Combustion"]
 
-type Z:
-	strField string (0..1)
-	    [synonym CONDITIONAL_SET_EXAMPLE_10 value "e"]
+type EngineMetric:
+	fuelType string (0..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_10 value "combustibleType"]
 
 /*
 Schema:
@@ -32,23 +35,23 @@ Schema:
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="a">
+                <xs:element name="engineType">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="b" maxOccurs="unbounded">
+                            <xs:element name="engineDetail" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="d">
+                                        <xs:element name="combustible">
                                             <xs:complexType>
                                                 <xs:sequence>
-                                                    <xs:element name="e" type="xs:string" />
+                                                    <xs:element name="combustibleType" type="xs:string" />
                                                 </xs:sequence>
                                             </xs:complexType>
                                         </xs:element>
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
-                            <xs:element name="c" type="xs:string" />
+                            <xs:element name="engineCategory" type="xs:string" />
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>

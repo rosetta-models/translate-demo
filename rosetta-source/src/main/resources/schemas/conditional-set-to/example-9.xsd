@@ -3,14 +3,14 @@
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="a">
+                <xs:element name="engineType">
                     <xs:complexType>
                         <xs:all>
-                            <xs:element name="b">
+                            <xs:element name="engineDetail">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="c" type="PartyReference"/>
-                                        <xs:element name="e" type="PartyReference"/>
+                                        <xs:element name="fuelDetail" type="FuelReference"/>
+                                        <xs:element name="alternativeFuel" type="FuelReference"/>
                                     </xs:sequence>
                                     <xs:attribute name="id" type="xs:string"/>
                                 </xs:complexType>
@@ -21,9 +21,9 @@
             </xs:all>
         </xs:complexType>
     </xs:element>
-    <xs:complexType name="PartyReference">
+    <xs:complexType name="FuelReference">
         <xs:all>
-            <xs:element name = "f" type = "xs:string"/>
+            <xs:element name = "combustible" type = "xs:string"/>
         </xs:all>
         <xs:attribute name="id" type="xs:string"/>
     </xs:complexType>

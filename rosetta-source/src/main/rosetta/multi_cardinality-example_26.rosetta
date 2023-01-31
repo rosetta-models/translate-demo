@@ -2,25 +2,26 @@ namespace demo.translate.multi_cardinality.example_26
 version "${project.version}"
 
 /*
-Hard test_1,2,3 with schema1
+Example 26:
+Map list of basic types to nested list of basic types to volume multi-cardinality gap in rosetta
 */
 synonym source MULTI_CARDINALITY_EXAMPLE_26
 
 type Root:
     [rootType]
-    zField Y (1..1)
-        [synonym MULTI_CARDINALITY_EXAMPLE_26 value "a"]
+    engineSpecification EngineSpecification (1..1)
+        [synonym MULTI_CARDINALITY_EXAMPLE_26 value "engineType"]
 
-type Y:
-	zField Z (0..*)
-        [synonym MULTI_CARDINALITY_EXAMPLE_26 value "swapStream"]
-        [synonym MULTI_CARDINALITY_EXAMPLE_26  value "feeLeg", "generalTerms"]
+type EngineSpecification:
+	volume Volume (0..*)
+        [synonym MULTI_CARDINALITY_EXAMPLE_26 value "engineDetail"]
+        [synonym MULTI_CARDINALITY_EXAMPLE_26  value "fuelDetail", "capacityDetail"]
 
-type Z:
-	str1Field string (1..1)
-	    [synonym MULTI_CARDINALITY_EXAMPLE_26 value "b"]
-	str2Field string (1..1)
-	    [synonym MULTI_CARDINALITY_EXAMPLE_26 value "d"]
+type Volume:
+	fuelType string (1..1)
+	    [synonym MULTI_CARDINALITY_EXAMPLE_26 value "combustible"]
+	volumeUnit string (1..1)
+	    [synonym MULTI_CARDINALITY_EXAMPLE_26 value "capacityUnit"]
 
 /*
 Schema:
@@ -30,32 +31,32 @@ Schema:
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="a">
+                <xs:element name="engineType">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="swapStream" type="SwapStream" minOccurs="0" maxOccurs="unbounded"/>
-                            <xs:element name="feeLeg" type="FeeLeg" minOccurs="0" maxOccurs="unbounded"/>
-                            <xs:element name="generalTerms" type="GeneralTerms" minOccurs="0" maxOccurs="unbounded"/>
+                            <xs:element name="engineDetail" type="EngineDetail" minOccurs="0" maxOccurs="unbounded"/>
+                            <xs:element name="fuelDetail" type="FuelDetail" minOccurs="0" maxOccurs="unbounded"/>
+                            <xs:element name="capacityDetail" type="CapacityDetail" minOccurs="0" maxOccurs="unbounded"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
             </xs:all>
         </xs:complexType>
     </xs:element>
-    <xs:complexType name="SwapStream">
+    <xs:complexType name="EngineDetail">
             <xs:all>
-                <xs:element name="b" type="xs:string" minOccurs="0"/>
-                <xs:element name="d" minOccurs="0" type="xs:string"/>
+                <xs:element name="combustible" type="xs:string" minOccurs="0"/>
+                <xs:element name="capacityUnit" minOccurs="0" type="xs:string"/>
             </xs:all>
     </xs:complexType>
-    <xs:complexType name="FeeLeg">
+    <xs:complexType name="FuelDetail">
         <xs:all>
-            <xs:element name="b" type="xs:string"/>
+            <xs:element name="combustible" type="xs:string"/>
         </xs:all>
     </xs:complexType>
-    <xs:complexType name="GeneralTerms">
+    <xs:complexType name="CapacityDetail">
         <xs:all>
-            <xs:element name="d" type="xs:string"/>
+            <xs:element name="capacityUnit" type="xs:string"/>
         </xs:all>
     </xs:complexType>
 </xs:schema>

@@ -2,35 +2,35 @@ namespace demo.translate.conditional_set_to.example_7
 version "${project.version}"
 
 /*
-test 9.1,2 shouldSetFieldFromSynonymSetToEnum and shouldNotSetFieldFromSynonymSetToEnum
+Example 7:
+The rosetta element alternativeCombustible is conditional set to "ELECTRICITY" value from the FuelEnum when xml element "engineDetail->fuelDetail->alternativeCombustible" exists
 */
 synonym source CONDITIONAL_SET_TO_EXAMPLE_7
 
 type Root:
     [rootType]
-	xField X (1..1)
-		[synonym CONDITIONAL_SET_TO_EXAMPLE_7 value "a"]
+	engine Engine (1..1)
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_7 value "engineType"]
 
-type X:
-	yField Y (1..1)
-		[synonym CONDITIONAL_SET_TO_EXAMPLE_7 value "b"]
-	enumField TestEnum (1..1)
-		[synonym CONDITIONAL_SET_TO_EXAMPLE_7 set to TestEnum -> FOO when "b->c->e" exists]
+type Engine:
+	engineSpecification EngineSpecification (1..1)
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_7 value "engineDetail"]
+	alternativeCombustible FuelEnum (1..1)
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_7 set to FuelEnum -> ELECTRICITY when "engineDetail->fuelDetail->alternativeCombustible" exists]
 
-type Y:
-	zField Z (1..1)
-		[synonym CONDITIONAL_SET_TO_EXAMPLE_7 value "c"]
+type EngineSpecification:
+	engineMetric EngineMetric (1..1)
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_7 value "fuelDetail"]
 
-type Z:
-	enumField TestEnum (1..1)
-		[synonym CONDITIONAL_SET_TO_EXAMPLE_7 value "d"]
+type EngineMetric:
+	fuelEnum FuelEnum (1..1)
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_7 value "combustible"]
 
-enum TestEnum:
-	FOO
-		[synonym CONDITIONAL_SET_TO_EXAMPLE_7 value "foo"]
-	BAR
-		[synonym CONDITIONAL_SET_TO_EXAMPLE_7 value "bar"]
-
+enum FuelEnum:
+	ELECTRICITY
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_7 value "electricity"]
+	GASOLINE
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_7 value "gasoline"]
 /*
 Schema:
 
@@ -39,17 +39,17 @@ Schema:
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="a">
+                <xs:element name="engineType">
                     <xs:complexType>
                         <xs:all>
-                            <xs:element name="b">
+                            <xs:element name="engineDetail">
                                 <xs:complexType>
                                     <xs:all>
-                                        <xs:element name="c">
+                                        <xs:element name="fuelDetail">
                                             <xs:complexType>
                                                 <xs:all>
-                                                    <xs:element name="d" type="TestEnum" />
-                                                    <xs:element name="e" type="TestEnum" minOccurs="0"/>
+                                                    <xs:element name="combustible" type="FuelEnum" />
+                                                    <xs:element name="alternativeCombustible" type="FuelEnum" minOccurs="0"/>
                                                 </xs:all>
                                             </xs:complexType>
                                         </xs:element>
@@ -62,11 +62,11 @@ Schema:
             </xs:all>
         </xs:complexType>
     </xs:element>
-    <xs:simpleType name="TestEnum">
+    <xs:simpleType name="FuelEnum">
         <xs:restriction base="xs:token">
-            <xs:enumeration value="foo">
+            <xs:enumeration value="electricity">
             </xs:enumeration>
-            <xs:enumeration value="bar">
+            <xs:enumeration value="gasoline">
             </xs:enumeration>
         </xs:restriction>
     </xs:simpleType>

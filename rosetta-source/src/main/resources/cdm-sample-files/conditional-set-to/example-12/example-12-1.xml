@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <dataDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="example-12.xsd example-12.xsd">
-    <a>
-        <TrdCaptRpt>
-            <RptSide ClOrdID="43401154-1">
-                <Pty R="24"/>
-                <TrdRegTS Typ="1" TS="2018-10-31T14:13:19.9Z"/>
-            </RptSide>
-            <RptSide ClOrdID="43401154-2">
-                <Pty R="24"/>
-                <TrdRegTS Typ="2" TS="2018-10-31T00:00:00.00Z"/>
-            </RptSide>
-        </TrdCaptRpt>
-    </a>
+    <engineType>
+        <engineDetail>
+            <fuelDetail type="gasoline">
+                <combustible octanes="93"/>
+                <dieselType Typ="1" usage="cars"/>
+            </fuelDetail>
+            <fuelDetail type="diesel">
+                <combustible octanes="91"/>
+                <dieselType Typ="2" usage="agriculture vehicles"/>
+            </fuelDetail>
+        </engineDetail>
+    </engineType>
 </dataDocument>

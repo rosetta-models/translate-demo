@@ -3,17 +3,17 @@
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="a">
+                <xs:element name="engineType">
                     <xs:complexType>
                         <xs:all>
-                            <xs:element name="b">
+                            <xs:element name="engineDetail">
                                 <xs:complexType>
                                     <xs:all>
-                                        <xs:element name="c">
+                                        <xs:element name="fuelDetail">
                                             <xs:complexType>
                                                 <xs:all>
-                                                    <xs:element name="d" type="TestEnum" />
-                                                    <xs:element name="e" type="TestEnum" minOccurs="0"/>
+                                                    <xs:element name="combustible" type="FuelEnum" />
+                                                    <xs:element name="alternativeCombustible" type="FuelEnum" minOccurs="0"/>
                                                 </xs:all>
                                             </xs:complexType>
                                         </xs:element>
@@ -26,11 +26,11 @@
             </xs:all>
         </xs:complexType>
     </xs:element>
-    <xs:simpleType name="TestEnum">
+    <xs:simpleType name="FuelEnum">
         <xs:restriction base="xs:token">
-            <xs:enumeration value="foo">
+            <xs:enumeration value="electricity">
             </xs:enumeration>
-            <xs:enumeration value="bar">
+            <xs:enumeration value="gasoline">
             </xs:enumeration>
         </xs:restriction>
     </xs:simpleType>

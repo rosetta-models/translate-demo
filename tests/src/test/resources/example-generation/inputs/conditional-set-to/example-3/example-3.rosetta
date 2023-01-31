@@ -22,7 +22,7 @@ type EngineSpecification:
 
 type EngineType:
 	engineSystem string (1..1)
-		[synonym CONDITIONAL_SET_TO_EXAMPLE_3 set to "UNKNOWN" when path = "engineType"]
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_3 set to "Unknown" when path = "engineType"]
 
 type EngineMetric:
 	fuelType string (1..1)

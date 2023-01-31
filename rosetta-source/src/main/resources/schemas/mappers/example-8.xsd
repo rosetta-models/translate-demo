@@ -2,20 +2,20 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
     <xs:element name="dataDocument">
         <xs:complexType>
-            <xs:sequence>
-                <xs:element name="a" minOccurs="0" maxOccurs="unbounded">
+            <xs:all>
+                <xs:element name="engineType">
                     <xs:complexType>
                         <xs:all>
-                            <xs:element name="b">
+                            <xs:element name="engineDetail">
                                 <xs:complexType>
                                     <xs:all>
-                                        <xs:element name="c">
+                                        <xs:element name="metric">
                                             <xs:complexType>
-                                                <xs:all>
-                                                    <xs:element name="d" type="xs:string" minOccurs="0"/>
-                                                    <xs:element name="e" type="xs:string" minOccurs="0"/>
-                                                    <xs:element name="f" type="xs:string" minOccurs="0"/>
-                                                </xs:all>
+                                                <xs:sequence>
+                                                    <xs:element name="emmissions" type="xs:string" minOccurs="0"/>
+                                                    <xs:element name="combustible" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                                                    <xs:element name="capacityUnit" type="xs:string" minOccurs="0"/>
+                                                </xs:sequence>
                                             </xs:complexType>
                                         </xs:element>
                                     </xs:all>
@@ -24,7 +24,7 @@
                         </xs:all>
                     </xs:complexType>
                 </xs:element>
-            </xs:sequence>
+            </xs:all>
         </xs:complexType>
     </xs:element>
 </xs:schema>

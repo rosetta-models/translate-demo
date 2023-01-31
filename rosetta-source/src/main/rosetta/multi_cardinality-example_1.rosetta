@@ -3,21 +3,22 @@ version "${project.version}"
 
 /*
 example1-1.xml: Map similar list of basic types (list with 2 items)
-
+Will have a list of EngineSpecification of 2 items (fuel and volume), engineSpecification should match with engineType cardinality when consumed by syntax value
 example1-2.xml: Map similar list of basic types (list with 1 item) - same schema and rosetta, different xml
+Will have a list of EngineSpecification of 1 item (fuel or volume), engineSpecification should match with engineType cardinality when consumed by syntax value
 */
 synonym source MULTI_CARDINALITY_EXAMPLE_1
 
 type Root:
     [rootType]
-	zField Z (0..*)
-	    [synonym MULTI_CARDINALITY_EXAMPLE_1 value "a"]
+	engineSpecification EngineSpecification (0..*)
+	    [synonym MULTI_CARDINALITY_EXAMPLE_1 value "engineType"]
 
-type Z:
-	str1Field string (0..1)
-	    [synonym MULTI_CARDINALITY_EXAMPLE_1 value "b"]
-	str2Field string (0..1)
-	    [synonym MULTI_CARDINALITY_EXAMPLE_1 value "c"]
+type EngineSpecification:
+	fuel string (0..1)
+	    [synonym MULTI_CARDINALITY_EXAMPLE_1 value "combustible"]
+	volume string (0..1)
+	    [synonym MULTI_CARDINALITY_EXAMPLE_1 value "capacityUnit"]
 
 /*
 Schema:
@@ -27,11 +28,11 @@ Schema:
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="a" maxOccurs="unbounded">
+                <xs:element name="engineType" maxOccurs="unbounded">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="b" type="xs:string" minOccurs="0"/>
-                            <xs:element name="c" type="xs:string" minOccurs="0"/>
+                            <xs:element name="combustible" type="xs:string" minOccurs="0"/>
+                            <xs:element name="capacityUnit" type="xs:string" minOccurs="0"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>

@@ -2,18 +2,20 @@ namespace demo.translate.conditional_set.example_17
 version "${project.version}"
 
 /*
-shouldConditionallySetWithMultipleCardinalityAndMeta4 test20
+Example 17:
+Conditional mapping using "set" with a "when" clause that is predicated on the value of a xml element at the specified xml path with multi-cardinality and meta.
+The attribute EngineSpecification->fuelType is conditional set from xml path engineType->combustible when engineType->combustible->scheme" = "petrolScheme" 
 */
 synonym source CONDITIONAL_SET_EXAMPLE_17
 
 type Root:
     [rootType]
-	zField Z (1..*)
+	engineSpecification EngineSpecification (1..*)
 
-type Z :
-	strField string (1..1)  
+type EngineSpecification :
+	fuelType string (1..1)
 	    [metadata scheme]
-	    [synonym CONDITIONAL_SET_EXAMPLE_17 value "c"  path "a" set when "a->c->scheme" = "sausageScheme" meta "scheme"]
+	    [synonym CONDITIONAL_SET_EXAMPLE_17 value "combustible" path "engineType" set when "engineType->combustible->scheme" = "petrolScheme" meta "scheme"]
 
 /*
 Schema:
@@ -23,13 +25,13 @@ Schema:
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="a">
+                <xs:element name="engineType">
                     <xs:complexType>
                         <xs:sequence>
                             <!--xs:element name="b">
                                 <xs:complexType>
                                     <xs:sequence-->
-                            <xs:element name="c" maxOccurs="unbounded">
+                            <xs:element name="combustible" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:simpleContent>
                                         <xs:extension base="xs:string">

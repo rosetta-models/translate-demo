@@ -2,67 +2,68 @@ namespace demo.translate.external_synonym.example_7
 version "${project.version}"
 
 /*
-
+Example 7:
+Mappings are performed comming from an external synonym source where for each type (Root, Engine, EngineSpecification and FuelEnum) it is defined the mappings then another external synonym which delete the previous mappings with "-" sign
 */
 synonym source EXTERNAL_SYNONYM_EXAMPLE_7_BASE_0
 
 synonym source EXTERNAL_SYNONYM_EXAMPLE_7_BASE_1 extends EXTERNAL_SYNONYM_EXAMPLE_7_BASE_0
 {
 	Root:
-		+ yField
-			[value "a"]
+		+ engine
+			[value "engineType"]
 
-	Y:
-		+ zRefField
-			[value "cRef" path "b" meta "href"]
-		+ zField
-			[value "c"]
+	Engine:
+		+ engineSpecificationRef
+			[value "specificationRef" path "engineDetail" meta "href"]
+		+ engineSpecification
+			[value "specifications"]
 
-	Z:
-		[value "Z" meta "id"]
-		+ str1Field
-			[value "d"]
-		+ enumField
-			[value "f"]
+	EngineSpecification:
+		[value "engineDetail" meta "id"]
+		+ powerUnit
+			[value "powerUnit"]
+		+ fuelEnum
+			[value "combustible"]
 
 	enums
 
-	TestEnum:
-		+ Foo
-			[value "AA"]
-		+ Bar
-			[value "BB"]
+	FuelEnum:
+		+ Diesel
+			[value "Diesel"]
+		+ Gasoline
+			[value "Gasoline"]
 }
 
 synonym source EXTERNAL_SYNONYM_EXAMPLE_7 extends EXTERNAL_SYNONYM_EXAMPLE_7_BASE_1
 {
-	Z:
-		- str1Field
+	EngineSpecification:
+		- fuel
 
 	enums
 
-	TestEnum:
-		- Foo
+	FuelEnum:
+		- Diesel
 }
 
 type Root:
     [rootType]
-	yField Y (0..1)
+	engine Engine (0..1)
 
-type Y:
-	zRefField Z (1..1)
+type Engine:
+	engineSpecificationRef EngineSpecification (1..1)
 		[metadata reference]
-	zField Z (1..1)
+	engineSpecification EngineSpecification (1..1)
 
-type Z:
+type EngineSpecification:
 	[metadata key]
-	str1Field string (0..1)
-	str2Field string (0..1)
-    enumField TestEnum (0..1)
+	fuel string (0..1)
+	powerUnit string (0..1)
+    fuelEnum FuelEnum (0..1)
 
-enum TestEnum:
-	Foo
-	Bar
+enum FuelEnum:
+	Diesel
+	Gasoline
 
 /*
 Schema:
@@ -72,17 +73,17 @@ Schema:
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="a">
+                <xs:element name="engineType">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="b">
+                            <xs:element name="engineDetail">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="cRef" type="CReference" />
+                                        <xs:element name="specificationRed" type="SpecificationReference" />
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
-                            <xs:element name="c" type="C" />
+                            <xs:element name="specifications" type="Specifications" />
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
@@ -97,7 +98,7 @@ Schema:
         </xs:annotation>
     </xs:complexType>
 
-    <xs:complexType name="CReference">
+    <xs:complexType name="SpecificationReference">
         <xs:annotation>
             <xs:documentation xml:lang="en">Reference to C</xs:documentation>
         </xs:annotation>
@@ -108,21 +109,21 @@ Schema:
         </xs:complexContent>
     </xs:complexType>
 
-    <xs:complexType name="C">
+    <xs:complexType name="Specifications">
         <xs:sequence>
-            <xs:element name="d" />
-            <xs:element name="e" />
-            <xs:element name="f" type="FEnum" />
-            <xs:element name="g" />
+            <xs:element name="powerUnit" />
+            <xs:element name="cylinders" />
+            <xs:element name="combustible" type="FuelEnum" />
+            <xs:element name="manufacturer" />
         </xs:sequence>
         <xs:attribute name="id" type="xs:ID" use="required" />
     </xs:complexType>
 
-    <xs:simpleType name="FEnum">
+    <xs:simpleType name="FuelEnum">
         <xs:restriction base="xs:token">
-            <xs:enumeration value="AA">
+            <xs:enumeration value="Diesel">
             </xs:enumeration>
-            <xs:enumeration value="BB">
+            <xs:enumeration value="Gasoline">
             </xs:enumeration>
         </xs:restriction>
     </xs:simpleType>

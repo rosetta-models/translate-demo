@@ -2,27 +2,29 @@ namespace demo.translate.multi_cardinality.example_4
 version "${project.version}"
 
 /*
+Example 4:
 Map list of complex types to list of complex types (multiple attributes)
+List of complex types in xml (engineDetail) are mapped into a list of complex types in rosetta (engineSpecification)
 */
 synonym source MULTI_CARDINALITY_EXAMPLE_4
 
 type Root:
     [rootType]
-	xField X (1..1)
-	    [synonym MULTI_CARDINALITY_EXAMPLE_4 value "a"]
+	engine Engine (1..1)
+	    [synonym MULTI_CARDINALITY_EXAMPLE_4 value "engineType"]
 
-type X:
-	yField Y (1..*)
+type Engine:
+	engineSpecification EngineSpecification (1..*)
 
-type Y:
-	zField Z (1..1)
-	    [synonym MULTI_CARDINALITY_EXAMPLE_4 value "b"]
+type EngineSpecification:
+	engineMetric EngineMetric (1..1)
+	    [synonym MULTI_CARDINALITY_EXAMPLE_4 value "engineDetail"]
 
-type Z:
-	str1Field string (1..1)
-	    [synonym MULTI_CARDINALITY_EXAMPLE_4 value "c"]
-	str2Field string (1..1)
-	    [synonym MULTI_CARDINALITY_EXAMPLE_4 value "d"]
+type EngineMetric:
+	fuel string (1..1)
+	    [synonym MULTI_CARDINALITY_EXAMPLE_4 value "combustible"]
+	capacity string (1..1)
+	    [synonym MULTI_CARDINALITY_EXAMPLE_4 value "capacity"]
 
 /*
 Schema:
@@ -32,14 +34,14 @@ Schema:
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="a">
+                <xs:element name="engineType">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="b" maxOccurs="100">
+                            <xs:element name="engineDetail" maxOccurs="100">
                                 <xs:complexType>
                                     <xs:all>
-                                        <xs:element name="c" type="xs:string"/>
-                                        <xs:element name="d" type="xs:string" minOccurs="0"/>
+                                        <xs:element name="combustible" type="xs:string"/>
+                                        <xs:element name="capacity" type="xs:string" minOccurs="0"/>
                                     </xs:all>
                                 </xs:complexType>
                             </xs:element>

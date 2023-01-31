@@ -16,9 +16,9 @@ type Engine:
 		[synonym CONDITIONAL_SET_TO_EXAMPLE_6 value "engineDetail"]
 	engineSystem string (1..1)
 		[synonym CONDITIONAL_SET_TO_EXAMPLE_6
-			set to "COMBUSTION" when "engineDetail->fuelDetail->combustible" = "Gasoline",
-			set to "ELECTRIC" when "engineDetail->fuelDetail->combustible" = "Electricity",
-			set to "DEFAULT"]
+			set to "Combustion" when "engineDetail->fuelDetail->combustible" = "Gasoline",
+			set to "Electric" when "engineDetail->fuelDetail->combustible" = "Electricity",
+			set to "Default"]
 
 type EngineSpecification:
 	engineMetric EngineMetric (1..1)

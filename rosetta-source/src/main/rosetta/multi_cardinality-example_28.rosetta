@@ -2,22 +2,23 @@ namespace demo.translate.multi_cardinality.example_28
 version "${project.version}"
 
 /*
-testGenerateAndParse3
+Example 28:
+Map list of basic types to nested list of basic types to volume multi-cardinality gap in rosetta
 */
 synonym source MULTI_CARDINALITY_EXAMPLE_28
 
 type Root:
     [rootType]
-    yField Y (1..1)
-    	[synonym MULTI_CARDINALITY_EXAMPLE_28 value "a"]
+    engineSpecification EngineSpecification (1..1)
+    	[synonym MULTI_CARDINALITY_EXAMPLE_28 value "engineType"]
 
-type Y:
-    zField Z (1..*)
+type EngineSpecification:
+    volume Volume (1..*)
 
-type Z:
-    strField string (1..1)
-        [synonym MULTI_CARDINALITY_EXAMPLE_28 value "c1"]
-        [synonym MULTI_CARDINALITY_EXAMPLE_28 value "c2"]
+type Volume:
+    volumeUnit string (1..1)
+        [synonym MULTI_CARDINALITY_EXAMPLE_28 value "volume"]
+        [synonym MULTI_CARDINALITY_EXAMPLE_28 value "capacityUnit"]
 
 /*
 Schema:
@@ -27,11 +28,11 @@ Schema:
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="a">
+                <xs:element name="engineType">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="c1" type="xs:string" maxOccurs="unbounded"/>
-                            <xs:element name="c2" type="xs:string" maxOccurs="unbounded"/>
+                            <xs:element name="volume" type="xs:string" maxOccurs="unbounded"/>
+                            <xs:element name="capacityUnit" type="xs:string" maxOccurs="unbounded"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>

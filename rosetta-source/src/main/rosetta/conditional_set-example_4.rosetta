@@ -6,20 +6,20 @@ Example 4:
 
 Conditional mapping using "set" with a "when" clause that is predicated on the value of a xml element at the specified xml path.
 
-The attribute Z->str2Field is conditionally set from xml path a->b->c->e when the value at xml path a->b->c->d is True.
+The attribute EngineSpecification->capacityUnit is conditionally set from xml path engine->engineType->engineDetail->volumeCapacityUnit when the value at xml path engine->engineType->engineDetail->isFromUK is True.
 */
 synonym source CONDITIONAL_SET_EXAMPLE_4
 
 type Root:
     [rootType]
-	zField Z (1..1)
-	    [synonym CONDITIONAL_SET_EXAMPLE_4 value "a"]
+	engineSpecification EngineSpecification (1..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_4 value "engine"]
 
-type Z:
-	str1Field string (1..1)
-	    [synonym CONDITIONAL_SET_EXAMPLE_4 value "f" path "b->c"]
-	str2Field string (0..1)
-	    [synonym CONDITIONAL_SET_EXAMPLE_4 value "e" path "b->c" set when "b->c->d" = True]
+type EngineSpecification:
+	fuelType string (1..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_4 value "combustible" path "engineType->engineDetail"]
+	capacityUnit string (0..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_4 value "volumeCapacityUnit" path "engineType->engineDetail" set when "engineType->engineDetail->isFromUK" = True]
 
 /*
 Schema:
@@ -29,18 +29,18 @@ Schema:
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="a">
+                <xs:element name="engine">
                     <xs:complexType>
                         <xs:all>
-                            <xs:element name="b">
+                            <xs:element name="engineType">
                                 <xs:complexType>
                                     <xs:all>
-                                        <xs:element name="c">
+                                        <xs:element name="engineDetail">
                                             <xs:complexType>
                                                 <xs:all>
-                                                    <xs:element name="d" type="xs:boolean" />
-                                                    <xs:element name="e" type="xs:string" />
-                                                    <xs:element name="f" type="xs:string" />
+                                                    <xs:element name="isFromUK" type="xs:boolean" />
+                                                    <xs:element name="volumeCapacityUnit" type="xs:string" />
+                                                    <xs:element name="combustible" type="xs:string" />
                                                 </xs:all>
                                             </xs:complexType>
                                         </xs:element>

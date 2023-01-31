@@ -2,31 +2,32 @@ namespace demo.translate.conditional_set_to.example_6
 version "${project.version}"
 
 /*
-test 7.1 shouldSetFieldFromSynonymSetToMultipleWhen1,2,3
+Example 6:
+The rosetta element engineSystem is conditional set to "COMBUSTION" when xml element "engineDetail->fuelDetail->combustible" = "Gasoline" else if "engineDetail->fuelDetail->combustible" = "Electricity" is set to ELECTRIC else is DEFAULT
 */
 synonym source CONDITIONAL_SET_TO_EXAMPLE_6
 
 type Root:
     [rootType]
-	xField X (1..1)
-		[synonym CONDITIONAL_SET_TO_EXAMPLE_6 value "a"]
+	engine Engine (1..1)
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_6 value "engineType"]
 
-type X:
-	yField Y (1..1)
-		[synonym CONDITIONAL_SET_TO_EXAMPLE_6 value "b"]
-	strField string (1..1)
+type Engine:
+	engineSpecification EngineSpecification (1..1)
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_6 value "engineDetail"]
+	engineSystem string (1..1)
 		[synonym CONDITIONAL_SET_TO_EXAMPLE_6
-			set to "FISH2" when "b->c->d" = "FISH",
-			set to "SAUSAGE2" when "b->c->d" = "SAUSAGE",
+			set to "COMBUSTION" when "engineDetail->fuelDetail->combustible" = "Gasoline",
+			set to "ELECTRIC" when "engineDetail->fuelDetail->combustible" = "Electricity",
 			set to "DEFAULT"]
 
-type Y:
-	zField Z (1..1)
-		[synonym CONDITIONAL_SET_TO_EXAMPLE_6 value "c"]
+type EngineSpecification:
+	engineMetric EngineMetric (1..1)
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_6 value "fuelDetail"]
 
-type Z:
-	strField string (1..1)
-		[synonym CONDITIONAL_SET_TO_EXAMPLE_6 value "d"]
+type EngineMetric:
+	fuelType string (1..1)
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_6 value "combustible"]
 
 /*
 Schema:
@@ -36,18 +37,18 @@ Schema:
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="a">
+                <xs:element name="engineType">
                     <xs:complexType>
                         <xs:all>
-                            <xs:element name="b">
+                            <xs:element name="engineDetail">
                                 <xs:complexType>
                                     <xs:all>
-                                        <xs:element name="c">
+                                        <xs:element name="fuelDetail">
                                             <xs:complexType>
                                                 <xs:all>
-                                                    <xs:element name="d" type="xs:string" minOccurs="0"/>
-                                                    <xs:element name="e" type="xs:string" minOccurs="0"/>
-                                                    <xs:element name="f" type="xs:string" minOccurs="0"/>
+                                                    <xs:element name="combustible" type="xs:string" minOccurs="0"/>
+                                                    <xs:element name="alternativeCombustible" type="xs:string" minOccurs="0"/>
+                                                    <xs:element name="properties" type="xs:string" minOccurs="0"/>
                                                 </xs:all>
                                             </xs:complexType>
                                         </xs:element>

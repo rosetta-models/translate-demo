@@ -2,25 +2,29 @@ namespace demo.translate.conditional_set_to.example_11
 version "${project.version}"
 
 /*
-test21 shouldConditionallyMultiCardItemValue
+Example 11:
+The rosetta element fuelType is conditional set to "Gasoline" when xml attribute "type"  or "RegularGasoline" when path = "combustible->octanes"
+and element alternativeFuelType set to "PremiumGasoline" when "combustible->octanes" = "93"
 */
+synonym source CONDITIONAL_SET_TO_EXAMPLE_11
+
 synonym source CONDITIONAL_SET_TO_EXAMPLE_11
 
 type Root:
     [rootType]
-    yField Y (1..*)
-        [synonym CONDITIONAL_SET_TO_EXAMPLE_11 value "RptSide" path "a->TrdCaptRpt"]
+    engineSpecification EngineSpecification (1..*)
+        [synonym CONDITIONAL_SET_TO_EXAMPLE_11 value "fuelDetail" path "engineType->engineDetail"]
 
-type Y:
-    zField Z (1..*)
+type EngineSpecification:
+    engineMetric EngineMetric (1..*)
 
-type Z:
-    str1Field string (1..1)
-        [synonym CONDITIONAL_SET_TO_EXAMPLE_11 set to "ClientOrderId" when path = "ClOrdID"]
-        [synonym CONDITIONAL_SET_TO_EXAMPLE_11 set to "PartyType" when path = "Pty->R"]
-    str2Field string (1..1)
-        [synonym CONDITIONAL_SET_TO_EXAMPLE_11 value "ClOrdID"]
-        [synonym CONDITIONAL_SET_TO_EXAMPLE_11 set to "Customer Account" when "Pty->R" = "24"]
+type EngineMetric:
+    fuelType string (1..1)
+        [synonym CONDITIONAL_SET_TO_EXAMPLE_11 set to "Combustible" when path = "type"]
+        [synonym CONDITIONAL_SET_TO_EXAMPLE_11 set to "RegularGasoline" when path = "combustible->octanes"]
+    alternativeFuelType string (1..1)
+        [synonym CONDITIONAL_SET_TO_EXAMPLE_11 value "type"]
+        [synonym CONDITIONAL_SET_TO_EXAMPLE_11 set to "PremiumGasoline" when "combustible->octanes" = "93"]
 
 /*
 Schema:
@@ -30,28 +34,28 @@ Schema:
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="a">
+                <xs:element name="engineType">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="TrdCaptRpt">
+                            <xs:element name="engineDetail">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="RptSide" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:element name="fuelDetail" minOccurs="0" maxOccurs="unbounded">
                                             <xs:complexType>
                                                 <xs:sequence>
-                                                    <xs:element name="Pty" minOccurs="0" maxOccurs="unbounded">
+                                                    <xs:element name="combustible" minOccurs="0" maxOccurs="unbounded">
                                                         <xs:complexType>
-                                                            <xs:attribute type="xs:string" name="R" use="optional"/>
+                                                            <xs:attribute type="xs:string" name="octanes" use="optional"/>
                                                         </xs:complexType>
                                                     </xs:element>
-                                                    <xs:element name="TrdRegTS" minOccurs="0" maxOccurs="unbounded">
+                                                    <xs:element name="dieselType" minOccurs="0" maxOccurs="unbounded">
                                                         <xs:complexType>
-                                                            <xs:attribute type="xs:string" name="TS" use="optional"/>
+                                                            <xs:attribute type="xs:string" name="usage" use="optional"/>
                                                             <xs:attribute type="xs:string" name="Typ" use="optional"/>
                                                         </xs:complexType>
                                                     </xs:element>
                                                 </xs:sequence>
-                                                <xs:attribute type="xs:string" name="ClOrdID"/>
+                                                <xs:attribute type="xs:string" name="type"/>
                                             </xs:complexType>
                                         </xs:element>
                                     </xs:sequence>

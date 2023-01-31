@@ -2,36 +2,37 @@ namespace demo.translate.multi_cardinality.example_17
 version "${project.version}"
 
 /*
-
+Example 17:
+Map list of basic types to nested list of basic types using path with multiple globalVersion engineSpecification and engineMetric.
 */
 synonym source MULTI_CARDINALITY_EXAMPLE_17
 
 type Root:
     [rootType]
-    vField V (1..1)
-    	[synonym MULTI_CARDINALITY_EXAMPLE_17 value "a"]
+    engine Engine (1..1)
+    	[synonym MULTI_CARDINALITY_EXAMPLE_17 value "engineType"]
 
-type V:
-    wField W (0..*)
-    	[synonym MULTI_CARDINALITY_EXAMPLE_17 value "b", "c"]
+type Engine:
+    globalVersion EngineVersion (0..*)
+    	[synonym MULTI_CARDINALITY_EXAMPLE_17 value "fuelDetail", "capacityDetail"]
 
-type W:
-    xField X (0..*)
-    	[synonym MULTI_CARDINALITY_EXAMPLE_17 hint "d", "e"] // hints have no effect in terms of keeping the list items merged
+type EngineVersion:
+    engineSpecification EngineSpecification (0..*)
+    	[synonym MULTI_CARDINALITY_EXAMPLE_17 hint "combustible", "capacity"] // hints have no effect in terms of keeping the list items merged
 
-type X:
-    yField Y (0..*)
-    	[synonym MULTI_CARDINALITY_EXAMPLE_17 hint "d", "e"]
+type EngineSpecification:
+    engineMetric EngineMetric (0..*)
+    	[synonym MULTI_CARDINALITY_EXAMPLE_17 hint "combustible", "capacity"]
 
-type Y:
-    zField Z (0..*)
-    	[synonym MULTI_CARDINALITY_EXAMPLE_17 hint "d", "e"]
+type EngineMetric:
+    volume Volume (0..*)
+    	[synonym MULTI_CARDINALITY_EXAMPLE_17 hint "combustible", "capacity"]
 
-type Z:
-    str1Field string (0..1)
-    	[synonym MULTI_CARDINALITY_EXAMPLE_17 value "d"]
-    str2Field string (0..1)
-    	[synonym MULTI_CARDINALITY_EXAMPLE_17 value "e"]
+type Volume:
+    fuel string (0..1)
+    	[synonym MULTI_CARDINALITY_EXAMPLE_17 value "combustible"]
+    capacity string (0..1)
+    	[synonym MULTI_CARDINALITY_EXAMPLE_17 value "capacity"]
 
 /*
 Schema:
@@ -41,20 +42,20 @@ Schema:
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="a">
+                <xs:element name="engineType">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="b" maxOccurs="unbounded">
+                            <xs:element name="fuelDetail" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="d" type="xs:string" />
+                                        <xs:element name="combustible" type="xs:string" />
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
-                            <xs:element name="c" maxOccurs="unbounded">
+                            <xs:element name="capacityDetail" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="e" type="xs:string" />
+                                        <xs:element name="capacity" type="xs:string" />
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>

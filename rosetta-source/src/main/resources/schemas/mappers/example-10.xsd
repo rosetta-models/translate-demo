@@ -3,17 +3,17 @@
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="a">
+                <xs:element name="engineType">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="b">
+                            <xs:element name="engineDetail">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="c">
+                                        <xs:element name="metric">
                                             <xs:complexType>
                                                 <xs:sequence>
-                                                    <xs:element type="xs:string" name="d"/>
-                                                    <xs:element type="xs:string" name="e" maxOccurs="unbounded" minOccurs="0"/>
+                                                    <xs:element type="xs:string" name="emmissions"/>
+                                                    <xs:element type="xs:string" name="combustible" maxOccurs="unbounded" minOccurs="0"/>
                                                 </xs:sequence>
                                             </xs:complexType>
                                         </xs:element>

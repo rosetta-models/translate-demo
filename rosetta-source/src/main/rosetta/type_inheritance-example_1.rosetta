@@ -2,27 +2,28 @@ namespace demo.translate.type_inheritance.example_1
 version "${project.version}"
 
 /*
-
+Exemple 1:
+The mapping is performed with extended types
 */
 synonym source TYPE_INHERITANCE_EXAMPLE_1
 
 type Root:
     [rootType]
-    zField Z (1..1)
-        [synonym TYPE_INHERITANCE_EXAMPLE_1 value "relativeDateSequence"]
+    car Car (1..1)
+        [synonym TYPE_INHERITANCE_EXAMPLE_1 value "vehicle"]
 
-type X:
-    xIntField int (1..1)
-        [synonym TYPE_INHERITANCE_EXAMPLE_1 value "periodMultiplier" path "dateOffset"]
-    xStrField string (1..1)
-        [synonym TYPE_INHERITANCE_EXAMPLE_1 value "period" path "dateOffset"]
+type Vehicle:
+    capacity int (0..1)
+        [synonym TYPE_INHERITANCE_EXAMPLE_1 value "capacity" path "vehicleDetail"]
+    state string (0..1)
+        [synonym TYPE_INHERITANCE_EXAMPLE_1 value "state" path "vehicleDetail"]
 
-type Y extends X:
-    yStrField string (0..1)
+type VehicleOwner extends Vehicle:
+    fuelType string (0..1)
 
-type Z extends Y:
-    zStrField string (1..1)
-        [synonym TYPE_INHERITANCE_EXAMPLE_1 value "businessDayConvention" path "dateOffset"]
+type Owner extends VehicleOwner:
+    model string (1..1)
+        [synonym TYPE_INHERITANCE_EXAMPLE_1 value "model" path "vehicleDetail"]
 
 /*
 Schema:
@@ -32,19 +33,19 @@ Schema:
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="relativeDateSequence" type="RelativeDateSequence"/>
+                <xs:element name="vehicle" type="Vehicle"/>
             </xs:all>
         </xs:complexType>
     </xs:element>
-    <xs:complexType name="RelativeDateSequence">
+    <xs:complexType name="Vehicle">
         <xs:sequence>
-            <xs:element name="dateOffset" type="DateOffset" maxOccurs="unbounded"/>
+            <xs:element name="vehicleDetail" type="VehicleDetail" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
-    <xs:complexType name="DateOffset">
+    <xs:complexType name="VehicleDetail">
         <xs:sequence>
-            <xs:element name="periodMultiplier" type="xs:integer"/>
-            <xs:element name="businessDayConvention" type="xs:string"/>
+            <xs:element name="capacity" type="xs:integer"/>
+            <xs:element name="model" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>
 </xs:schema>

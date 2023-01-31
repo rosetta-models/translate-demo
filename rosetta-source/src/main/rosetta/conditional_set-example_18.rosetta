@@ -2,21 +2,23 @@ namespace demo.translate.conditional_set.example_18
 version "${project.version}"
 
 /*
-shouldConditionallySetWithMultipleCardinalityAndMeta5 test20
+Example 18:
+Conditional mapping using "set" with a "when" clause that is predicated on the value of a xml element at the specified xml path and rosettaPath with multi-cardinality and meta.
+The attribute Root->usEngineVersion->capacityUnit and Root->ukEngineVersion->capacityUnit are conditional set from xml path engineType->volumeCapacityUnit when "engineType->volumeCapacityUnit->scheme" = "usScheme" and "ukScheme" and rosettaPath is Root->ukEngineVersion->capacityUnit and Root->usEngineVersion->capacityUnit respectively
 */
 synonym source CONDITIONAL_SET_EXAMPLE_18
 
 type Root:
     [rootType]
-	z1Field Z (1..*)
-	z2Field Z (1..*)
+	usEngineVersion EngineVersion (1..*)
+	ukEngineVersion EngineVersion (1..*)
 
-type Z:
-	strField string (1..1)  
+type EngineVersion:
+	volumeCapacity string (1..1)
         [metadata scheme]
-        [synonym CONDITIONAL_SET_EXAMPLE_18 value "c" path "a" 
-            set when "a->c->scheme" = "sausageScheme" and rosettaPath = Root->z1Field->strField,
-            set when "a->c->scheme" = "steakScheme" and rosettaPath = Root->z2Field->strField meta "scheme"]
+        [synonym CONDITIONAL_SET_EXAMPLE_18 value "volumeCapacityUnit" path "engineType"
+            set when "engineType->volumeCapacityUnit->scheme" = "usScheme" and rosettaPath = Root->ukEngineVersion->strField,
+            set when "engineType->volumeCapacityUnit->scheme" = "ukScheme" and rosettaPath = Root->usEngineVersion->strField meta "scheme"]
 
 /*
 Schema:
@@ -26,13 +28,13 @@ Schema:
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="a">
+                <xs:element name="engineType">
                     <xs:complexType>
                         <xs:sequence>
                             <!--xs:element name="b">
                                 <xs:complexType>
                                     <xs:sequence-->
-                            <xs:element name="c" maxOccurs="unbounded">
+                            <xs:element name="volumeCapacityUnit" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:simpleContent>
                                         <xs:extension base="xs:string">

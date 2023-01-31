@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <dataDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="example-7.xsd example-7.xsd">
-    <a>
-        <b>
-            <c>
-                <d>FISH</d>
-                <e>CHIPS1</e>
-                <e>CHIPS2</e>
-                <e>CHIPS3</e>
-                <e>CHIPS4</e>
-                <f>PIZZA</f>
-            </c>
-        </b>
-    </a>
+    <enigneType>
+        <engineDetail>
+            <metric>
+                <emmissions>Low-Emmissions</emmissions>
+                <combustible>Gasoline</combustible>
+                <combustible>Diesel</combustible>
+                <combustible>Gasoline-Premium</combustible>
+                <combustible>DieselB</combustible>
+                <capacityUnit>Gallon</capacityUnit>
+            </metric>
+        </engineDetail>
+    </enigneType>
 </dataDocument>

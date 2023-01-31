@@ -2,21 +2,23 @@ namespace demo.translate.single_cardinality.example_1
 version "${project.version}"
 
 /*
+Example 1:
 Map xml element to rosetta type using value syntax
+The attribute EngineSpecification->fuel->fuelType is mapped from xml path engineType->combustible
 */
 synonym source SINGLE_CARDINALITY_EXAMPLE_1
 
 type Root:
     [rootType]
-	yField Y (1..1)
-	    [synonym SINGLE_CARDINALITY_EXAMPLE_1 value "a"]
+	engineSpecification EngineSpecification (1..1)
+	    [synonym SINGLE_CARDINALITY_EXAMPLE_1 value "engineType"]
 
-type Y:
-	zField Z (1..1)
+type EngineSpecification:
+	fuel Fuel (1..1)
 
-type Z:
-	strField string (1..1)
-	    [synonym SINGLE_CARDINALITY_EXAMPLE_1 value "b"]
+type Fuel:
+	fuelType string (1..1)
+	    [synonym SINGLE_CARDINALITY_EXAMPLE_1 value "combustible"]
 
 /*
 Schema:
@@ -26,10 +28,10 @@ Schema:
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="a">
+                <xs:element name="engineType">
                     <xs:complexType>
                         <xs:all>
-                            <xs:element name="b" type="xs:string"/>
+                            <xs:element name="combustible" type="xs:string"/>
                         </xs:all>
                     </xs:complexType>
                 </xs:element>

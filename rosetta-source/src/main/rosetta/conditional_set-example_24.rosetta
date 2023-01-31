@@ -2,30 +2,31 @@ namespace demo.translate.conditional_set.example_24
 version "${project.version}"
 
 /*
-enumWithSchemeCondition test26
+Example 23:
+Conditional mapping using "set" with a "when" clause that is predicated on the value of a xml element at the specified xml path with multiple rosetta path conditions for a multi-cardinality field.
 */
 synonym source CONDITIONAL_SET_EXAMPLE_24
 
 type Root:
     [rootType]
-	zField Z (0..1)
-	    [synonym CONDITIONAL_SET_EXAMPLE_24 value "a"]
+	engineSpecification EngineSpecification (0..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_24 value "engineType"]
 
-type Z:
-	enum1Field TestEnum (0..1)
-	    [synonym CONDITIONAL_SET_EXAMPLE_24 value "b" set when "b->scheme" = "abc"]
-	enum2Field Test2Enum (0..1)
-	    [synonym CONDITIONAL_SET_EXAMPLE_24 value "b" set when "b->scheme" = "def"]
+type EngineSpecification:
+	fuel FuelEnum (0..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_24 value "combustible" set when "combustible->scheme" = "fuel"]
+	alternativeFuel AlternativeFuelEnum (0..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_24 value "combustible" set when "combustible->scheme" = "alternativeFuel"]
 
-enum TestEnum:
-	FOO
-	    [synonym CONDITIONAL_SET_EXAMPLE_24 value "foo"]
-	BAR
-	    [synonym CONDITIONAL_SET_EXAMPLE_24 value "bar"]
+enum FuelEnum:
+	PETROL
+	    [synonym CONDITIONAL_SET_EXAMPLE_24 value "Petrol"]
+	DIESEL
+	    [synonym CONDITIONAL_SET_EXAMPLE_24 value "Diesel"]
 
-enum Test2Enum:
-	BAZ
-	    [synonym CONDITIONAL_SET_EXAMPLE_24 value "baz"]
+enum AlternativeFuelEnum:
+	ELECTRICITY
+	    [synonym CONDITIONAL_SET_EXAMPLE_24 value "Electricity"]
 
 /*
 Schema:
@@ -35,10 +36,10 @@ Schema:
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="a">
+                <xs:element name="engineType">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="b">
+                            <xs:element name="combustible">
                                 <xs:complexType>
                                     <xs:simpleContent>
                                         <xs:extension base="xs:string">

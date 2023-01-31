@@ -11,16 +11,16 @@ synonym source MAPPERS_EXAMPLE_8
 type Root:
     [rootType]
      // list items updated by mapper
-	zField Z (1..*)
-	    [synonym MAPPERS_EXAMPLE_8 value "a" mapper "Example8"]
+	engineSpecification EngineSpecification (1..*)
+	    [synonym MAPPERS_EXAMPLE_8 value "engineType" mapper "Example8"]
 
-type Z:
-	str1Field string (1..1)
-	    [synonym MAPPERS_EXAMPLE_8 value "d" path "b->c"]
-	str2Field string (1..1)
-	    [synonym MAPPERS_EXAMPLE_8 value "e" path "b->c"]
-	str3Field string (1..1)
-	    [synonym MAPPERS_EXAMPLE_8 value "f" path "b->c"]
+type EngineSpecification:
+	emmissions string (1..1)
+	    [synonym MAPPERS_EXAMPLE_8 value "emmissions" path "engineDetail->metric"]
+	fuelType string (1..1)
+	    [synonym MAPPERS_EXAMPLE_8 value "combustible" path "engineDetail->metric"]
+	volumeUnit string (1..1)
+	    [synonym MAPPERS_EXAMPLE_8 value "capacityUnit" path "engineDetail->metric"]
 
 /*
 Schema:
@@ -29,20 +29,20 @@ Schema:
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
     <xs:element name="dataDocument">
         <xs:complexType>
-            <xs:sequence>
-                <xs:element name="a" minOccurs="0" maxOccurs="unbounded">
+            <xs:all>
+                <xs:element name="engineType">
                     <xs:complexType>
                         <xs:all>
-                            <xs:element name="b">
+                            <xs:element name="engineDetail">
                                 <xs:complexType>
                                     <xs:all>
-                                        <xs:element name="c">
+                                        <xs:element name="metric">
                                             <xs:complexType>
-                                                <xs:all>
-                                                    <xs:element name="d" type="xs:string" minOccurs="0"/>
-                                                    <xs:element name="e" type="xs:string" minOccurs="0"/>
-                                                    <xs:element name="f" type="xs:string" minOccurs="0"/>
-                                                </xs:all>
+                                                <xs:sequence>
+                                                    <xs:element name="emmissions" type="xs:string" minOccurs="0"/>
+                                                    <xs:element name="combustible" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                                                    <xs:element name="capacityUnit" type="xs:string" minOccurs="0"/>
+                                                </xs:sequence>
                                             </xs:complexType>
                                         </xs:element>
                                     </xs:all>
@@ -51,7 +51,7 @@ Schema:
                         </xs:all>
                     </xs:complexType>
                 </xs:element>
-            </xs:sequence>
+            </xs:all>
         </xs:complexType>
     </xs:element>
 </xs:schema>

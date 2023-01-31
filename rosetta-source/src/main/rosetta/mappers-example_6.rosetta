@@ -10,24 +10,24 @@ synonym source MAPPERS_EXAMPLE_6
 
 type Root:
     [rootType]
-	priceQuantity PriceQuantity (1..1)
-	product Product (1..1)
+	engine Engine (1..1)
+	vehicle Vehicle (1..1)
 
-type PriceQuantity:
-	quantity Quantity (1..1)
+type Engine:
+	quantity EngineMetric (1..1)
         [metadata location]
-        [synonym MAPPERS_EXAMPLE_6 value "b" path "a" mapper "Example6"]
+        [synonym MAPPERS_EXAMPLE_6 value "engineDetail" path "engineType" mapper "Example6"]
 
-type Product:
-    resolvablePayoutQuantity ResolvablePayoutQuantity (1..1)
-	    [synonym MAPPERS_EXAMPLE_6 value "b" path "a"]
+type Vehicle:
+    resolvablePayoutQuantity EngineSpecification (1..1)
+	    [synonym MAPPERS_EXAMPLE_6 value "engineDetail" path "engineType"]
 
-type ResolvablePayoutQuantity:
-	resolvedQuantity Quantity (1..1)
-        [metadata address "pointsTo"=PriceQuantity->quantity]
-        [synonym MAPPERS_EXAMPLE_6 meta "c"]
+type EngineSpecification:
+	resolvedQuantity EngineMetric (1..1)
+        [metadata address "pointsTo"=Engine->quantity]
+        [synonym MAPPERS_EXAMPLE_6 meta "metric"]
 
-type Quantity:
+type EngineMetric:
 	amount number (1..1)
 
 /*
@@ -38,13 +38,13 @@ Schema:
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="a">
+                <xs:element name="engineType">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="b">
+                            <xs:element name="engineDetail">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="c" type="xs:string"/>
+                                        <xs:element name="horsePower" type="xs:string"/>
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>

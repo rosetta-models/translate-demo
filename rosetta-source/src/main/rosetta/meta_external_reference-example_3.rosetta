@@ -2,26 +2,27 @@ namespace demo.translate.meta_external_reference.example_3
 version "${project.version}"
 
 /*
-testActualInPlaceOfReference external meta test
+Example 3:
+Mapping performed using external meta reference in Engine and meta key in EngineSpecification
 */
 synonym source META_EXTERNAL_REFERENCE_EXAMPLE_3
 
 type Root:
     [rootType]
-	yField Y (0..1)
-	    [synonym META_EXTERNAL_REFERENCE_EXAMPLE_3 value "partyTradeIdentifier" path "a"]
+	engine Engine (0..1)
+	    [synonym META_EXTERNAL_REFERENCE_EXAMPLE_3 value "engineDetail" path "engineType"]
 
-type Y:
-	zField Z (1..1)
+type Engine:
+	engineSpecification EngineSpecification (1..1)
 		[metadata reference]
-		[synonym META_EXTERNAL_REFERENCE_EXAMPLE_3 value "partyReference" meta "href"]
-		[synonym META_EXTERNAL_REFERENCE_EXAMPLE_3 value "party"]
+		[synonym META_EXTERNAL_REFERENCE_EXAMPLE_3 value "engineReference" meta "href"]
+		[synonym META_EXTERNAL_REFERENCE_EXAMPLE_3 value "fuelDetail"]
 
-type Z:
+type EngineSpecification:
 	[metadata key]
 	[synonym META_EXTERNAL_REFERENCE_EXAMPLE_3 meta "id"]
-	strField string (0..1)
-		[synonym META_EXTERNAL_REFERENCE_EXAMPLE_3 value "name"]
+	fuelType string (0..1)
+		[synonym META_EXTERNAL_REFERENCE_EXAMPLE_3 value "combustible"]
 
 /*
 Schema:
@@ -31,15 +32,15 @@ Schema:
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="a">
+                <xs:element name="engineType">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="partyTradeIdentifier">
+                            <xs:element name="engineDetail">
                                 <xs:complexType>
                                     <xs:choice>
-                                        <xs:element name="partyReference"
-                                                    type="Party" />
-                                        <xs:element name="party" type="Party"/>
+                                        <xs:element name="engineReference"
+                                                    type="EngineReference" />
+                                        <xs:element name="fuelDetail" type="FuelDetail"/>
                                     </xs:choice>
                                 </xs:complexType>
                             </xs:element>
@@ -57,7 +58,7 @@ Schema:
         </xs:annotation>
     </xs:complexType>
 
-    <xs:complexType name="PartyReference">
+    <xs:complexType name="EngineReference">
         <xs:annotation>
             <xs:documentation xml:lang="en">Reference to a party.
             </xs:documentation>
@@ -70,7 +71,7 @@ Schema:
         </xs:complexContent>
     </xs:complexType>
 
-    <xs:complexType name="Party">
+    <xs:complexType name="FuelDetail">
         <xs:sequence>
             <xs:element name = "name" type="xs:string"></xs:element>
         </xs:sequence>

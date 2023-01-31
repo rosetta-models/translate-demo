@@ -3,10 +3,10 @@
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="a">
+                <xs:element name="engineType">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="b" type="xs:string" maxOccurs="100"/>
+                            <xs:element name="combustible" type="xs:string" maxOccurs="100"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>

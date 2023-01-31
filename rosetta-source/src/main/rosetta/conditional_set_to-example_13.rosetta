@@ -2,29 +2,30 @@ namespace demo.translate.conditional_set_to.example_13
 version "${project.version}"
 
 /*
-test27_1 enumWith2PathsExistCondition1 and test27_3 enumWith2PathsExistCondition3
+Example 13:
+The rosetta element engineEnum is conditional set to "HYBRID" from EngineEnum when "alternativeFuelDetail" exists and  "fuelDetail" exists
 */
 synonym source CONDITIONAL_SET_TO_EXAMPLE_13
 
 type Root:
     [rootType]
-    str1Field string (1..1)
-        [synonym CONDITIONAL_SET_TO_EXAMPLE_13 value "d" path "a->b->c1"]
-    str2Field string (1..1)
-        [synonym CONDITIONAL_SET_TO_EXAMPLE_13 value "d" path "a->b->c2"]
-    yField Y (1..*)
-        [synonym CONDITIONAL_SET_TO_EXAMPLE_13 value "a"]
+    fuel string (1..1)
+        [synonym CONDITIONAL_SET_TO_EXAMPLE_13 value "combustible" path "engineType->engineDetail->fuelDetail"]
+    alternativeFuel string (1..1)
+        [synonym CONDITIONAL_SET_TO_EXAMPLE_13 value "combustible" path "engineType->engineDetail->alternativeFuelDetail"]
+    engineSpecification EngineSpecification (1..*)
+        [synonym CONDITIONAL_SET_TO_EXAMPLE_13 value "engineType"]
 
-type Y:
-    zField Z (1..*)
-        [synonym CONDITIONAL_SET_TO_EXAMPLE_13 value "b"]
+type EngineSpecification:
+    engineMetric EngineMetric (1..*)
+        [synonym CONDITIONAL_SET_TO_EXAMPLE_13 value "engineDetail"]
 
-type Z:
-    enumField TestEnum (0..1)
-        [synonym CONDITIONAL_SET_TO_EXAMPLE_13 set to TestEnum->FOO when "c2" exists and "c1" exists]
+type EngineMetric:
+    engineEnum EngineEnum (0..1)
+        [synonym CONDITIONAL_SET_TO_EXAMPLE_13 set to EngineEnum->HYBRID when "alternativeFuelDetail" exists and "fuelDetail" exists]
 
-enum TestEnum:
-    FOO
+enum EngineEnum:
+    HYBRID
 
 /*
 Schema:
@@ -34,23 +35,23 @@ Schema:
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="a">
+                <xs:element name="engineType">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="b" minOccurs="0" maxOccurs="unbounded">
+                            <xs:element name="engineDetail" minOccurs="0" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="c1" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:element name="fuelDetail" minOccurs="0" maxOccurs="unbounded">
                                             <xs:complexType>
                                                 <xs:sequence>
-                                                    <xs:element name="d" type="xs:string" />
+                                                    <xs:element name="combustible" type="xs:string" />
                                                 </xs:sequence>
                                             </xs:complexType>
                                         </xs:element>
-                                        <xs:element name="c2" minOccurs="0">
+                                        <xs:element name="alternativeFuelDetail" minOccurs="0">
                                             <xs:complexType>
                                                 <xs:sequence>
-                                                    <xs:element name="d" type="xs:string" />
+                                                    <xs:element name="combustible" type="xs:string" />
                                                 </xs:sequence>
                                             </xs:complexType>
                                         </xs:element>

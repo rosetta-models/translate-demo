@@ -2,27 +2,28 @@ namespace demo.translate.external_synonym.example_1
 version "${project.version}"
 
 /*
-testGenerateAndParse1 test
+Example 1:
+Mappings are performed comming from an external synonym source where for each type (Root and EngineSpecification) it is defined the mappings
 */
 synonym source EXTERNAL_SYNONYM_EXAMPLE_1_BASE
 
 synonym source EXTERNAL_SYNONYM_EXAMPLE_1 extends EXTERNAL_SYNONYM_EXAMPLE_1_BASE
 {
 	Root:
-		+ zField
-			[value "partyTradeIdentifier" path "a"]
+		+ engineSpecification
+			[value "engineDetail" path "engineType"]
 
-	Z:
-		+ strField
-			[value "partyReference" meta "scheme"]
+	EngineSpecification:
+		+ fuel
+			[value "combustible" meta "scheme"]
 }
 
 type Root:
     [rootType]
-	zField Z (0..1)
+	engineSpecification EngineSpecification (0..1)
 
-type Z:
-	strField string (1..*)
+type EngineSpecification:
+	fuel string (1..*)
 		[metadata scheme]
 
 /*
@@ -33,13 +34,13 @@ Schema:
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="a">
+                <xs:element name="engineType">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="partyTradeIdentifier">
+                            <xs:element name="engineDetail">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element maxOccurs="unbounded" name="partyReference">
+                                        <xs:element maxOccurs="unbounded" name="combustible">
                                             <xs:complexType>
                                                 <xs:simpleContent>
                                                     <xs:extension base="xs:string">
@@ -48,7 +49,7 @@ Schema:
                                                 </xs:simpleContent>
                                             </xs:complexType>
                                         </xs:element>
-                                        <xs:element minOccurs="0" maxOccurs="unbounded" name="accountReference">
+                                        <xs:element minOccurs="0" maxOccurs="unbounded" name="alternativeCombustible">
                                             <xs:complexType>
                                                 <xs:simpleContent>
                                                     <xs:extension base="xs:string">
