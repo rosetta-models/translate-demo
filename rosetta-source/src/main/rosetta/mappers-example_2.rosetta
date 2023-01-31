@@ -10,16 +10,16 @@ synonym source MAPPERS_EXAMPLE_2
 
 type Root:
     [rootType]
-	zField Z (1..1)
-	    [synonym MAPPERS_EXAMPLE_2 value "a" mapper "Example2"]
+	engineSpecification EngineSpecification (1..1)
+	    [synonym MAPPERS_EXAMPLE_2 value "engineType" mapper "Example2"]
 
-type Z:
-	str1Field string (1..1)
+type EngineSpecification:
+	emmissions string (1..1)
 	    // value set by mapper
-	str2Field string (1..1)
+	fuelType string (1..1)
 	    // value set by mapper
-	str3Field string (1..1)
-	    [synonym MAPPERS_EXAMPLE_2 value "f" path "b->c"]
+	volumeUnit string (1..1)
+	    [synonym MAPPERS_EXAMPLE_2 value "capacityUnit" path "engineDetail->metric"]
 
 /*
 Schema:
@@ -29,18 +29,18 @@ Schema:
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="a">
+                <xs:element name="engineType">
                     <xs:complexType>
                         <xs:all>
-                            <xs:element name="b">
+                            <xs:element name="engineDetail">
                                 <xs:complexType>
                                     <xs:all>
-                                        <xs:element name="c">
+                                        <xs:element name="metric">
                                             <xs:complexType>
                                                 <xs:all>
-                                                    <xs:element name="d" type="xs:string" minOccurs="0"/>
-                                                    <xs:element name="e" type="xs:string" minOccurs="0"/>
-                                                    <xs:element name="f" type="xs:string" minOccurs="0"/>
+                                                    <xs:element name="emmissions" type="xs:string" minOccurs="0"/>
+                                                    <xs:element name="combustible" type="xs:string" minOccurs="0"/>
+                                                    <xs:element name="capacityUnit" type="xs:string" minOccurs="0"/>
                                                 </xs:all>
                                             </xs:complexType>
                                         </xs:element>

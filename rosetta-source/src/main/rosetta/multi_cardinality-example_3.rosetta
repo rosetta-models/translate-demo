@@ -2,18 +2,20 @@ namespace demo.translate.multi_cardinality.example_3
 version "${project.version}"
 
 /*
+Example 3:
 Map list of complex types to list of basic types
+The engineSpecification type contains a list of fuel (list of combustible)
 */
 synonym source MULTI_CARDINALITY_EXAMPLE_3
 
 type Root:
     [rootType]
-	zField Z (1..1)
-    	[synonym MULTI_CARDINALITY_EXAMPLE_3 value "a"]
+	engineSpecification EngineSpecification (1..1)
+	    [synonym MULTI_CARDINALITY_EXAMPLE_2 value "engineType"]
 
-type Z:
-	strField string (1..*)
-	    [synonym MULTI_CARDINALITY_EXAMPLE_3 value "c" path "b"]
+type EngineSpecification:
+	fuel string (1..*)
+	    [synonym MULTI_CARDINALITY_EXAMPLE_2 value "combustible" path "engineDetail"]
 
 /*
 Schema:
@@ -23,13 +25,13 @@ Schema:
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="a">
+                <xs:element name="engineType">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="b">
+                            <xs:element name="engineDetail">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="c" type="xs:string" maxOccurs="100"/>
+                                        <xs:element name="combustible" type="xs:string" maxOccurs="100"/>
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>

@@ -2,27 +2,28 @@ namespace demo.translate.format.example_1
 version "${project.version}"
 
 /*
-
+Example 1:
+Mappings are performed if the dateFormat is "MM/dd/yyyy" and pattern are digits ([0-9]) or all alphabetical characters including minus and mayus ([a-zA-Z]*) for the corresponding fields
 */
 synonym source FORMAT_EXAMPLE_1
 
 type Root:
     [rootType]
-	zField Z (0..1)
-		[synonym FORMAT_EXAMPLE_1 value "a"]
+	engineSpecification EngineSpecification (0..1)
+		[synonym FORMAT_EXAMPLE_1 value "engineType"]
 
-type Z:
-	dateField date (1..1)
-		[synonym FORMAT_EXAMPLE_1 value "startDate" dateFormat "MM/dd/yyyy"]
-	intField int (1..1)
-		[synonym FORMAT_EXAMPLE_1 value "tenor" maps 2 pattern "([0-9])*.*" "$1"]
-	enumField TestEnum (1..1)
-		[synonym FORMAT_EXAMPLE_1 value "tenor" maps 2 pattern "[0-9]*(.*)" "$1"]
-	strField string (0..*)
-		[synonym FORMAT_EXAMPLE_1 value "b"]
-		[synonym FORMAT_EXAMPLE_1 value "bplus" pattern "Fish and ([a-zA-Z]*)" "$1"]
+type EngineSpecification:
+	fabricationDate date (1..1)
+		[synonym FORMAT_EXAMPLE_1 value "fabricationDate" dateFormat "MM/dd/yyyy"]
+	guaranteePeriod int (1..1)
+		[synonym FORMAT_EXAMPLE_1 value "guaranteePeriod" maps 2 pattern "([0-9])*.*" "$1"]
+	periodEnum PeriodEnum (1..1)
+		[synonym FORMAT_EXAMPLE_1 value "guaranteePeriod" maps 2 pattern "[0-9]*(.*)" "$1"]
+	fuel string (0..*)
+		[synonym FORMAT_EXAMPLE_1 value "combustible"]
+		[synonym FORMAT_EXAMPLE_1 value "alternativeCombustible" pattern "Gasoline and ([a-zA-Z]*)" "$1"]
 
-enum TestEnum:
+enum PeriodEnum:
 	D
 		[synonym FORMAT_EXAMPLE_1 value "D" pattern "[0-9]*(.*)" "$1"]
 	W
@@ -40,7 +41,7 @@ Schema:
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="a">
+                <xs:element name="engineType">
                     <xs:complexType>
                         <xs:all>
                             <xs:element name="startDate" type="xs:string"/>

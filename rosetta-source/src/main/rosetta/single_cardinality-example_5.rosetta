@@ -2,23 +2,25 @@ namespace demo.translate.single_cardinality.example_5
 version "${project.version}"
 
 /*
-Map two xml elements on to single nested rosetta type using value and path syntax
+Example 5:
+Map two xml elements on to single nested rosetta type using value and path syntax.
+The rosetta attributes volumeUnit and fuelType are mapped comming from path engineType->engineDetail
 */
 synonym source SINGLE_CARDINALITY_EXAMPLE_5
 
 type Root:
     [rootType]
-    yField Y (1..1)
-        [synonym SINGLE_CARDINALITY_EXAMPLE_5 value "a"]
+    engineSpecification EngineSpecification (1..1)
+        [synonym SINGLE_CARDINALITY_EXAMPLE_5 value "engineType"]
 
-type Y:
-    zField Z (1..1)
+type EngineSpecification:
+    volume Volume (1..1)
 
-type Z:
-    str1Field string (1..1)
-        [synonym SINGLE_CARDINALITY_EXAMPLE_5 value "c" path "b"]
-    str2Field string (1..1)
-        [synonym SINGLE_CARDINALITY_EXAMPLE_5 value "d" path "b"]
+type Volume:
+    volumeUnit string (1..1)
+        [synonym SINGLE_CARDINALITY_EXAMPLE_5 value "capacityUnit" path "engineDetail"]
+    fuelType string (1..1)
+        [synonym SINGLE_CARDINALITY_EXAMPLE_5 value "combustible" path "engineDetail"]
 
 /*
 Schema:
@@ -28,14 +30,14 @@ Schema:
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="a">
+                <xs:element name="engineType">
                     <xs:complexType>
                         <xs:all>
-                            <xs:element name="b">
+                            <xs:element name="engineDetail">
                                 <xs:complexType>
                                     <xs:all>
-                                        <xs:element name="c" type="xs:string" />
-                                        <xs:element name="d" type="xs:string" />
+                                        <xs:element name="capacityUnit" type="xs:string" />
+                                        <xs:element name="combustible" type="xs:string" />
                                     </xs:all>
                                 </xs:complexType>
                             </xs:element>

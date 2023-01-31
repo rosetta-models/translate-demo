@@ -2,24 +2,26 @@ namespace demo.translate.multi_cardinality.example_6
 version "${project.version}"
 
 /*
--
+Example 6:
+Map list of basic types to nested list of complex types (multiple attributes)
+List of engineDetail mapped into engineMetric list (EngineSpecification->engineMetric)
 */
 synonym source MULTI_CARDINALITY_EXAMPLE_6
 
 type Root:
     [rootType]
-	yField Y (1..1)
-    	[synonym MULTI_CARDINALITY_EXAMPLE_6 value "a"]
+	engineSpecification EngineSpecification (1..1)
+    	[synonym MULTI_CARDINALITY_EXAMPLE_6 value "engineType"]
 
-type Y:
-	zField Z (1..*)
-	    [synonym MULTI_CARDINALITY_EXAMPLE_6 value "b"]
+type EngineSpecification:
+	engineMetric EngineMetric (1..*)
+	    [synonym MULTI_CARDINALITY_EXAMPLE_6 value "engineDetail"]
 
-type Z:
-	str1Field string (1..1)
-	    [synonym MULTI_CARDINALITY_EXAMPLE_6 value "c"]
-	str2Field string (1..1)
-	    [synonym MULTI_CARDINALITY_EXAMPLE_6 value "d"]
+type EngineMetric:
+	fuel string (1..1)
+	    [synonym MULTI_CARDINALITY_EXAMPLE_6 value "combustible"]
+	capacity string (1..1)
+	    [synonym MULTI_CARDINALITY_EXAMPLE_6 value "capacity"]
 
 /*
 Schema:
@@ -29,14 +31,14 @@ Schema:
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="a">
+                <xs:element name="engineType">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="b" maxOccurs="100">
+                            <xs:element name="engineDetail" maxOccurs="100">
                                 <xs:complexType>
                                     <xs:all>
-                                        <xs:element name="c" type="xs:string"/>
-                                        <xs:element name="d" minOccurs="0" type="xs:string"/>
+                                        <xs:element name="combustible" type="xs:string"/>
+                                        <xs:element name="capacity" minOccurs="0" type="xs:string"/>
                                     </xs:all>
                                 </xs:complexType>
                             </xs:element>

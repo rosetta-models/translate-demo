@@ -3,32 +3,32 @@
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="a">
+                <xs:element name="engineType">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="swapStream" type="SwapStream" minOccurs="0" maxOccurs="unbounded"/>
-                            <xs:element name="feeLeg" type="FeeLeg" minOccurs="0" maxOccurs="unbounded"/>
-                            <xs:element name="generalTerms" type="GeneralTerms" minOccurs="0" maxOccurs="unbounded"/>
+                            <xs:element name="engineDetail" type="EngineDetail" minOccurs="0" maxOccurs="unbounded"/>
+                            <xs:element name="fuelDetail" type="FuelDetail" minOccurs="0" maxOccurs="unbounded"/>
+                            <xs:element name="capacityDetail" type="CapacityDetail" minOccurs="0" maxOccurs="unbounded"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
             </xs:all>
         </xs:complexType>
     </xs:element>
-    <xs:complexType name="SwapStream">
+    <xs:complexType name="EngineDetail">
             <xs:all>
-                <xs:element name="b" type="xs:string" minOccurs="0"/>
-                <xs:element name="d" minOccurs="0" type="xs:string"/>
+                <xs:element name="combustible" type="xs:string" minOccurs="0"/>
+                <xs:element name="capacityUnit" minOccurs="0" type="xs:string"/>
             </xs:all>
     </xs:complexType>
-    <xs:complexType name="FeeLeg">
+    <xs:complexType name="FuelDetail">
         <xs:all>
-            <xs:element name="b" type="xs:string"/>
+            <xs:element name="combustible" type="xs:string"/>
         </xs:all>
     </xs:complexType>
-    <xs:complexType name="GeneralTerms">
+    <xs:complexType name="CapacityDetail">
         <xs:all>
-            <xs:element name="d" type="xs:string"/>
+            <xs:element name="capacityUnit" type="xs:string"/>
         </xs:all>
     </xs:complexType>
 </xs:schema>

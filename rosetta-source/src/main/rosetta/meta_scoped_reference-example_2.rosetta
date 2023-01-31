@@ -2,32 +2,33 @@ namespace demo.translate.meta_scoped_reference.example_2
 version "${project.version}"
 
 /*
-
+Example 2:
+Mapping is performed storing a metadata address that points to a rosetta attribute with no value specified
 */
 synonym source META_SCOPED_REFERENCE_EXAMPLE_2
 
 type Root:
     [rootType]
-	priceQuantity PriceQuantity (1..1)
-	product Product (1..1)
+	engine Engine (1..1)
+	vehicle Vehicle (1..1)
 
-type PriceQuantity:
-	quantity Quantity (1..1)
+type Engine:
+	engineMetric EngineMetric (1..1)
         [metadata location]
-        [synonym META_SCOPED_REFERENCE_EXAMPLE_2 value "b" path "a"]
+        [synonym META_SCOPED_REFERENCE_EXAMPLE_2 value "engineDetail" path "engineType"]
 
-type Product:
-    resolvablePayoutQuantity ResolvablePayoutQuantity (1..1)
-	    [synonym META_SCOPED_REFERENCE_EXAMPLE_2 value "b" path "a"]
+type Vehicle:
+    engineSpecification EngineSpecification (1..1)
+	    [synonym META_SCOPED_REFERENCE_EXAMPLE_2 value "engineDetail" path "engineType"]
 
-type ResolvablePayoutQuantity:
-	resolvedQuantity Quantity (1..1)
-        [metadata address "pointsTo"=PriceQuantity->quantity]
-        [synonym META_SCOPED_REFERENCE_EXAMPLE_2 meta "c"] // "meta" with no "value" specified
+type EngineSpecification:
+	engineMetric EngineMetric (1..1)
+        [metadata address "pointsTo"=Engine->engineMetric]
+        [synonym META_SCOPED_REFERENCE_EXAMPLE_2 meta "horsePower"] // "meta" with no "value" specified
 
-type Quantity:
-	amount number (1..1)
-	    [synonym META_SCOPED_REFERENCE_EXAMPLE_2 value "c" maps 2]
+type EngineMetric:
+	horsePower number (1..1)
+	    [synonym META_SCOPED_REFERENCE_EXAMPLE_2 value "horsePower" maps 2]
 
 /*
 Schema:
@@ -37,13 +38,13 @@ Schema:
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="a">
+                <xs:element name="engineType">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="b">
+                            <xs:element name="engineDetail">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="c" type="xs:string"/>
+                                        <xs:element name="horsePower" type="xs:string"/>
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>

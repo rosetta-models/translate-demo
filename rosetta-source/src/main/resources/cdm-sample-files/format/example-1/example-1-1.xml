@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <dataDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="example-1.xsd example-1.xsd">
-    <a>
-        <startDate>01/31/2020</startDate>
-        <tenor>6M</tenor>
-        <b>Fish and Chips</b>
-        <bplus>Fish and Chips</bplus>
-    </a>
+    <engineType>
+        <fabricationDate>01/31/2020</fabricationDate>
+        <nomenclatureMotor>6M</nomenclatureMotor>
+        <combustible>Gasoline</combustible>
+        <alternativeCombustible>Gasoline and Electricity</alternativeCombustible>
+    </engineType>
 </dataDocument>

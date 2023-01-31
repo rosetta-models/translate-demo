@@ -2,22 +2,24 @@ namespace demo.translate.conditional_set.example_19
 version "${project.version}"
 
 /*
-shouldSetWhenSeparatePathExists1 shouldSetWhenSeparatePathExists2 test23
+Example 19:
+Conditional mapping using "set" with a "when" clause that is predicated on the value of a xml element at the specified xml path and rosettaPath with single-cardinality.
+The attribute EngineSpecification->capacityUnit is conditional set from xml path engineType->volumeCapacityUnit when engineType-> combustible exists
 */
 synonym source CONDITIONAL_SET_EXAMPLE_19
 
 type Root:
     [rootType]
-	zField Z (1..1)
-	    [synonym CONDITIONAL_SET_EXAMPLE_19 value "a"]
+	engineSpecification EngineSpecification (1..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_19 value "engineType"]
 
-type Z:
-	str1Field string (0..1)
-	    [synonym CONDITIONAL_SET_EXAMPLE_19 value "b" set when "c" exists]
-	str2Field string (0..1)
-	    [synonym CONDITIONAL_SET_EXAMPLE_19 value "c"]
-	str3Field string (0..1)
-	    [synonym CONDITIONAL_SET_EXAMPLE_19 value "d"]
+type EngineSpecification:
+	capacityUnit string (0..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_19 value "volumeCapacityUnit" set when "combustible" exists]
+	fuelType string (0..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_19 value "combustible"]
+	alternativeFuelType string (0..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_19 value "complementaryEnergy"]
 
 /*
 Schema:
@@ -27,12 +29,12 @@ Schema:
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="a">
+                <xs:element name="engineType">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="b" type="xs:string" minOccurs="0" />
-                            <xs:element name="c" type="xs:string" minOccurs="0" />
-                            <xs:element name="d" type="xs:string" minOccurs="0" />
+                            <xs:element name="volumeCapacityUnit" type="xs:string" minOccurs="0" />
+                            <xs:element name="combustible" type="xs:string" minOccurs="0" />
+                            <xs:element name="complementaryEnergy" type="xs:string" minOccurs="0" />
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>

@@ -2,24 +2,25 @@ namespace demo.translate.conditional_set_to.example_10
 version "${project.version}"
 
 /*
-test14.1 shouldSetFieldFromSynonymSetEnumnWhen
+Example 10:
+The rosetta element engineEnum is conditional set to "HYBRID" value from the EngineEnum when xml element "engineDetail->hasAlternativeCombustible" = true 
 */
 synonym source CONDITIONAL_SET_TO_EXAMPLE_10
 
 type Root:
     [rootType]
-	zField Z (1..1)
-		[synonym CONDITIONAL_SET_TO_EXAMPLE_10 value "a"]
+	engineSpecification EngineSpecification (1..1)
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_10 value "engineType"]
 
-type Z:
-	enumField TestEnum (1..1)
-		[synonym CONDITIONAL_SET_TO_EXAMPLE_10 set to TestEnum -> FOO when "b->c->d" = True]
+type EngineSpecification:
+	engineEnum EngineEnum (1..1)
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_10 set to EngineEnum -> HYBRID when "engineDetail->fuelDetail->hasAlternativeCombustible" = True]
 
-enum TestEnum:
-	FOO
-		[synonym CONDITIONAL_SET_TO_EXAMPLE_10 value "foo"]
-	BAR
-		[synonym CONDITIONAL_SET_TO_EXAMPLE_10 value "bar"]
+enum EngineEnum:
+	HYBRID
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_10 value "hybrid"]
+	COMBUSTION
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_10 value "combustion"]
 
 /*
 Schema:
@@ -29,17 +30,17 @@ Schema:
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="a">
+                <xs:element name="engineType">
                     <xs:complexType>
                         <xs:all>
-                            <xs:element name="b">
+                            <xs:element name="engineDetail">
                                 <xs:complexType>
                                     <xs:all>
-                                        <xs:element name="c">
+                                        <xs:element name="fuelDetail">
                                             <xs:complexType>
                                                 <xs:all>
-                                                    <xs:element name="d" type="xs:boolean" />
-                                                    <xs:element name="e" type="xs:string" />
+                                                    <xs:element name="hasAlternativeCombustible" type="xs:boolean" />
+                                                    <xs:element name="combustible" type="xs:string" />
                                                 </xs:all>
                                             </xs:complexType>
                                         </xs:element>

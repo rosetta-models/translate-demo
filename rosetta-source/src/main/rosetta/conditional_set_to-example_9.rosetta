@@ -2,32 +2,33 @@ namespace demo.translate.conditional_set_to.example_9
 version "${project.version}"
 
 /*
-test10 shouldSetFieldWithPathOnSingleCardinality
+Example 9:
+The rosetta element engineEnum is conditional set to "COMBUSTION" or "HYBRID" value from the EngineEnum when xml element "engineDetail->primaryFuel" or "engineDetail->alternativeCombustible" exists respectively
 */
 synonym source CONDITIONAL_SET_TO_EXAMPLE_9
 
 type Root:
     [rootType]
-    yField Y (1..1)
+    engine Engine (1..1)
         [synonym CONDITIONAL_SET_TO_EXAMPLE_9 value
-            "c" path "a->b",
-            "e" path "a->b"]
+            "primaryFuel" path "engineType->engineDetail",
+            "secundaryFuel" path "engineType->engineDetail"]
 
-type Y:
-    zField Z (0..1)
+type Engine:
+    engineSpecification EngineSpecification (0..1)
 
-type Z:
-    strField string (1..1)
-        [synonym CONDITIONAL_SET_TO_EXAMPLE_9 value "f"]
-    enumField TestEnum (1..1)
-        [synonym CONDITIONAL_SET_TO_EXAMPLE_9 set to TestEnum -> FOO when path = "b->c"]
-        [synonym CONDITIONAL_SET_TO_EXAMPLE_9 set to TestEnum -> BAR when path = "b->e"]
+type EngineSpecification:
+    fuel string (1..1)
+        [synonym CONDITIONAL_SET_TO_EXAMPLE_9 value "combustible"]
+    engineEnum EngineEnum (1..1)
+        [synonym CONDITIONAL_SET_TO_EXAMPLE_9 set to EngineEnum -> COMBUSTION when path = "engineDetail->primaryFuel"]
+        [synonym CONDITIONAL_SET_TO_EXAMPLE_9 set to EngineEnum -> HYBRID when path = "engineDetail->secondaryFuel"]
 
-enum TestEnum:
-	FOO
-	    [synonym CONDITIONAL_SET_TO_EXAMPLE_9 value "foo"]
-	BAR
-	    [synonym CONDITIONAL_SET_TO_EXAMPLE_9 value "bar"]
+enum EngineEnum:
+	HYBRID
+	    [synonym CONDITIONAL_SET_TO_EXAMPLE_9 value "hybrid"]
+	COMBUSTION
+	    [synonym CONDITIONAL_SET_TO_EXAMPLE_9 value "combustion"]
 
 /*
 Schema:
@@ -37,14 +38,14 @@ Schema:
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="a">
+                <xs:element name="engineType">
                     <xs:complexType>
                         <xs:all>
-                            <xs:element name="b">
+                            <xs:element name="engineDetail">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="c" type="PartyReference"/>
-                                        <xs:element name="e" type="PartyReference"/>
+                                        <xs:element name="fuelDetail" type="FuelReference"/>
+                                        <xs:element name="alternativeFuel" type="FuelReference"/>
                                     </xs:sequence>
                                     <xs:attribute name="id" type="xs:string"/>
                                 </xs:complexType>
@@ -55,9 +56,9 @@ Schema:
             </xs:all>
         </xs:complexType>
     </xs:element>
-    <xs:complexType name="PartyReference">
+    <xs:complexType name="FuelReference">
         <xs:all>
-            <xs:element name = "f" type = "xs:string"/>
+            <xs:element name = "combustible" type = "xs:string"/>
         </xs:all>
         <xs:attribute name="id" type="xs:string"/>
     </xs:complexType>

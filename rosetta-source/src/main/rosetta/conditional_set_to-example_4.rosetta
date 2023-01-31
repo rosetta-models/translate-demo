@@ -2,28 +2,29 @@ namespace demo.translate.conditional_set_to.example_4
 version "${project.version}"
 
 /*
-test 2.1 shouldSetFieldFromSynonymSetToPath
+Exemple 4:
+The rosetta element engineSystem is conditional set to "UNKNOWN" when xml element "engineType" exists
 */
 synonym source CONDITIONAL_SET_TO_EXAMPLE_4
 
 type Root:
     [rootType]
- 	xField X (1..1)
- 	    [synonym CONDITIONAL_SET_TO_EXAMPLE_4 value "a"]
+ 	engine Engine (1..1)
+ 	    [synonym CONDITIONAL_SET_TO_EXAMPLE_4 value "engineType"]
 
-type X:
- 	yField Y (1..1)
- 	    [synonym CONDITIONAL_SET_TO_EXAMPLE_4 value "b"]
- 	strField string (1..1)
- 	    [synonym CONDITIONAL_SET_TO_EXAMPLE_4 set to "OTHER" when path = "a"]
+type Engine:
+ 	engineSpecification EngineSpecification (1..1)
+ 	    [synonym CONDITIONAL_SET_TO_EXAMPLE_4 value "engineDetail"]
+ 	engineSystem string (1..1)
+ 	    [synonym CONDITIONAL_SET_TO_EXAMPLE_4 set to "UNKNOWN" when path = "engineType"]
 
-type Y:
- 	zField Z (1..1)
- 	    [synonym CONDITIONAL_SET_TO_EXAMPLE_4 value "c"]
+type EngineSpecification:
+ 	engineMetric EngineMetric (1..1)
+ 	    [synonym CONDITIONAL_SET_TO_EXAMPLE_4 value "fuelDetail"]
 
-type Z:
- 	strField string (1..1)
- 	    [synonym CONDITIONAL_SET_TO_EXAMPLE_4 value "d"]
+type EngineMetric:
+ 	fuelType string (1..1)
+ 	    [synonym CONDITIONAL_SET_TO_EXAMPLE_4 value "combustible"]
 
 /*
 Schema:
@@ -33,18 +34,18 @@ Schema:
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="a">
+                <xs:element name="engineType">
                     <xs:complexType>
                         <xs:all>
-                            <xs:element name="b">
+                            <xs:element name="engineDetail">
                                 <xs:complexType>
                                     <xs:all>
-                                        <xs:element name="c">
+                                        <xs:element name="fuelDetail">
                                             <xs:complexType>
                                                 <xs:all>
-                                                    <xs:element name="d" type="xs:string" minOccurs="0"/>
-                                                    <xs:element name="e" type="xs:string" minOccurs="0"/>
-                                                    <xs:element name="f" type="xs:string" minOccurs="0"/>
+                                                    <xs:element name="combustible" type="xs:string" minOccurs="0"/>
+                                                    <xs:element name="alternativeCombustible" type="xs:string" minOccurs="0"/>
+                                                    <xs:element name="properties" type="xs:string" minOccurs="0"/>
                                                 </xs:all>
                                             </xs:complexType>
                                         </xs:element>

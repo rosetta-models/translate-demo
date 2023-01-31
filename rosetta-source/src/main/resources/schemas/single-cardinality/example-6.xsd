@@ -3,17 +3,17 @@
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="a">
+                <xs:element name="engineType">
                     <xs:complexType>
                         <xs:all>
-                            <xs:element name="c" type="xs:string" />
+                            <xs:element name="combustible" type="xs:string" />
                         </xs:all>
                     </xs:complexType>
                 </xs:element>
-                <xs:element name="b">
+                <xs:element name="capacity">
                     <xs:complexType>
                         <xs:all>
-                            <xs:element name="d" type="xs:string" />
+                            <xs:element name="capacityUnit" type="xs:string" />
                         </xs:all>
                     </xs:complexType>
                 </xs:element>

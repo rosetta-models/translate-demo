@@ -3,7 +3,7 @@
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="a">
+                <xs:element name="engineType">
                     <xs:complexType>
                         <xs:all>
                             <xs:element name="startDate" type="xs:string"/>

@@ -2,20 +2,21 @@ namespace demo.translate.meta_external_reference.example_1
 version "${project.version}"
 
 /*
-testGenerateAndParse1 external meta test
+Example 1:
+Mapping performed using external meta key in EngineSpecification
 */
 synonym source META_EXTERNAL_REFERENCE_EXAMPLE_1
 
 type Root:
     [rootType]
-    zField Z (0..1)
-        [synonym META_EXTERNAL_REFERENCE_EXAMPLE_1 value "party" path "a"]
+    engineSpecification EngineSpecification (0..1)
+        [synonym META_EXTERNAL_REFERENCE_EXAMPLE_1 value "engineDetail" path "engineType"]
 
-type Z:
+type EngineSpecification:
     [metadata key]
     [synonym META_EXTERNAL_REFERENCE_EXAMPLE_1 meta "id"]
-    strField string (0..1)
-        [synonym META_EXTERNAL_REFERENCE_EXAMPLE_1 value "name"]
+    fuelType string (0..1)
+        [synonym META_EXTERNAL_REFERENCE_EXAMPLE_1 value "combustible"]
 
 /*
 Schema:
@@ -25,13 +26,13 @@ Schema:
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="a">
+                <xs:element name="engineType">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="party">
+                            <xs:element name="engineDetail">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="name" type="xs:string"></xs:element>
+                                        <xs:element name="combustible" type="xs:string"></xs:element>
                                     </xs:sequence>
                                     <xs:attribute type="xs:ID" name="id" />
                                 </xs:complexType>

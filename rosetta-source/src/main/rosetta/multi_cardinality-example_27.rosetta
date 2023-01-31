@@ -2,22 +2,23 @@ namespace demo.translate.multi_cardinality.example_27
 version "${project.version}"
 
 /*
-testGenerateAndParse2, what to o with testGenerateAndParse2Errors
+Example 27:
+Map list of basic types to nested list of basic types to engineMetric multi-cardinality gap in rosetta
 */
 synonym source MULTI_CARDINALITY_EXAMPLE_27
 
 type Root:
     [rootType]
-    yField Y (1..1)
-        [synonym MULTI_CARDINALITY_EXAMPLE_27 value "a"]
+    engineSpecification EngineSpecification (1..1)
+        [synonym MULTI_CARDINALITY_EXAMPLE_27 value "engineType"]
 
-type Y:
-	zField Z (1..*)
+type EngineSpecification:
+	engineMetric EngineMetric (1..*)
 
-type Z:
-	strField string (1..1)
-        [synonym MULTI_CARDINALITY_EXAMPLE_27 value "id" path "submitter"]
-        [synonym MULTI_CARDINALITY_EXAMPLE_27 value "id" path "walker"]
+type EngineMetric:
+	unitMetric string (1..1)
+        [synonym MULTI_CARDINALITY_EXAMPLE_27 value "detail" path "fuelDetail"]
+        [synonym MULTI_CARDINALITY_EXAMPLE_27 value "detail" path "capacityDetail"]
 
 /*
 Schema:
@@ -27,7 +28,7 @@ Schema:
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="a">
+                <xs:element name="engineType">
                     <xs:complexType>
                         <xs:sequence>
                             <xs:element name="submitter" type="Identifier" maxOccurs="unbounded"/>

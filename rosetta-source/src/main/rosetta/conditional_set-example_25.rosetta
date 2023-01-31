@@ -2,28 +2,31 @@ namespace demo.translate.conditional_set.example_25
 version "${project.version}"
 
 /*
-twoConditions test28
+Example 25:
+Conditional mapping using "set" with a "when" clause that is predicated on the value of a xml element at the specified xml path conditioned when it finds 2 conditions for rosetta attribute usEngineVersion and ukEngineSpecification respectively:
+-"fuelSpecs->combustibleref->href" = "US" or "fuelSpecs->combustibleref->href" = "UK".
+-"combustible" set when "combustible->id" = "US" or "combustible" set when "combustible->id" = "UK" 
 */
 synonym source CONDITIONAL_SET_EXAMPLE_25
 
 type Root:
     [rootType]
-	yField Y (0..1)
-		[synonym CONDITIONAL_SET_EXAMPLE_25 value "a"]
+	engineSpecification EngineSpecification (0..1)
+		[synonym CONDITIONAL_SET_EXAMPLE_25 value "engineType"]
 
-type Y:
-    z1Field Z (0..1)
-        [synonym CONDITIONAL_SET_EXAMPLE_25 value "c" set when "c->bref->href" = "source"]
-        [synonym CONDITIONAL_SET_EXAMPLE_25 value "b" set when "b->id" = "source"]
-    z2Field Z (0..1)
-        [synonym CONDITIONAL_SET_EXAMPLE_25 value "c" set when "c->bref->href" = "counter"]
-        [synonym CONDITIONAL_SET_EXAMPLE_25 value "b" set when "b->id" = "counter"]
+type EngineSpecification:
+    usEngineVersion EngineVersion (0..1)
+        [synonym CONDITIONAL_SET_EXAMPLE_25 value "fuelSpecs" set when "fuel->combustibleref->href" = "US"]
+        [synonym CONDITIONAL_SET_EXAMPLE_25 value "combustible" set when "combustible->id" = "US"]
+    ukEngineSpecification EngineVersion (0..1)
+        [synonym CONDITIONAL_SET_EXAMPLE_25 value "fuelSpecs" set when "fuelSpecs->combustibleref->href" = "UK"]
+        [synonym CONDITIONAL_SET_EXAMPLE_25 value "combustible" set when "combustible->id" = "UK"]
 
-type Z:
-    str1Field string (0..1)
-        [synonym CONDITIONAL_SET_EXAMPLE_25 value "bId"]
-    str2Field string (0..1)
-        [synonym CONDITIONAL_SET_EXAMPLE_25 value "pid"]
+type EngineVersion:
+    fuelType string (0..1)
+        [synonym CONDITIONAL_SET_EXAMPLE_25 value "combustibleId"]
+    capacityUnit string (0..1)
+        [synonym CONDITIONAL_SET_EXAMPLE_25 value "capacityUnitId"]
 
 /*
 Schema:
@@ -33,21 +36,21 @@ Schema:
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="a">
+                <xs:element name="engineType">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="b" maxOccurs="unbounded" minOccurs="0">
+                            <xs:element name="combustible" maxOccurs="unbounded" minOccurs="0">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element type="xs:string" name="bId" />
+                                        <xs:element type="xs:string" name="combustibleId" />
                                     </xs:sequence>
                                     <xs:attribute type="xs:string" name="id" use="optional" />
                                 </xs:complexType>
                             </xs:element>
-                            <xs:element name="c" maxOccurs="unbounded" minOccurs="0">
+                            <xs:element name="fuelSpecs" maxOccurs="unbounded" minOccurs="0">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="bref">
+                                        <xs:element name="combustibleref">
                                             <xs:complexType>
                                                 <xs:simpleContent>
                                                     <xs:extension base="xs:string">
@@ -56,7 +59,7 @@ Schema:
                                                 </xs:simpleContent>
                                             </xs:complexType>
                                         </xs:element>
-                                        <xs:element type="xs:string" name="pid" />
+                                        <xs:element type="xs:string" name="capacityUnitId" />
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>

@@ -15,7 +15,7 @@ type Engine:
 	engineSpecification EngineSpecification (1..1)
 		[synonym CONDITIONAL_SET_TO_EXAMPLE_7 value "engineDetail"]
 	alternativeCombustible FuelEnum (1..1)
-		[synonym CONDITIONAL_SET_TO_EXAMPLE_7 set to FuelEnum -> ELECTRICITY when "engineDetail->fuelDetail->alternativeCombustible" exists]
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_7 set to FuelEnum -> Electricity when "engineDetail->fuelDetail->alternativeCombustible" exists]
 
 type EngineSpecification:
 	engineMetric EngineMetric (1..1)

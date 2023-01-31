@@ -2,25 +2,28 @@ namespace demo.translate.single_cardinality.example_4
 version "${project.version}"
 
 /*
+Example 4:
 Map two xml elements on to single nested rosetta type using value syntax
+The attribute EngineSpecification->volume->volumeUnit is mapped from xml path engineType->engineDetail->capacityUnit
+The attribute EngineSpecification->volume->fuelType is mapped from xml path engineType->engineDetail->combustibleType
 */
 synonym source SINGLE_CARDINALITY_EXAMPLE_4
 
 type Root:
     [rootType]
-    yField Y (1..1)
-        [synonym SINGLE_CARDINALITY_EXAMPLE_4 value "a"]
+    engineSpecification EngineSpecification (1..1)
+        [synonym SINGLE_CARDINALITY_EXAMPLE_4 value "engineType"]
 
-type Y:
-    zField Z (1..1)
-        [synonym SINGLE_CARDINALITY_EXAMPLE_4 value "b"]
-        [synonym SINGLE_CARDINALITY_EXAMPLE_4 value "d"]
+type EngineSpecification:
+    volume Volume (1..1)
+        [synonym SINGLE_CARDINALITY_EXAMPLE_4 value "engineDetail"]
+        [synonym SINGLE_CARDINALITY_EXAMPLE_4 value "combustible"]
 
-type Z:
-    str1Field string (1..1)
-        [synonym SINGLE_CARDINALITY_EXAMPLE_4 value "c"]
-    str2Field string (1..1)
-        [synonym SINGLE_CARDINALITY_EXAMPLE_4 value "e"]
+type Volume:
+    volumeUnit string (1..1)
+        [synonym SINGLE_CARDINALITY_EXAMPLE_4 value "capacityUnit"]
+    fuelType string (1..1)
+        [synonym SINGLE_CARDINALITY_EXAMPLE_4 value "combustibleType"]
 
 /*
 Schema:
@@ -30,20 +33,20 @@ Schema:
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="a">
+                <xs:element name="engineType">
                     <xs:complexType>
                         <xs:all>
-                            <xs:element name="b">
+                            <xs:element name="engineDetail">
                                 <xs:complexType>
                                     <xs:all>
-                                        <xs:element name="c" type="xs:string" />
+                                        <xs:element name="capacityUnit" type="xs:string" />
                                     </xs:all>
                                 </xs:complexType>
                             </xs:element>
-                            <xs:element name="d">
+                            <xs:element name="combustible">
                                 <xs:complexType>
                                     <xs:all>
-                                        <xs:element name="e" type="xs:string" />
+                                        <xs:element name="combustibleType" type="xs:string" />
                                     </xs:all>
                                 </xs:complexType>
                             </xs:element>

@@ -2,23 +2,25 @@ namespace demo.translate.conditional_set.example_16
 version "${project.version}"
 
 /*
-shouldConditionallySetWithMultipleCardinalityAndMeta3 test19
+Example 16:
+Conditional mapping using "set" with a "when" clause that is predicated on the value of a xml element at the specified xml path and rosettaPath with multi-cardinality and meta.
+The attribute EngineSpecification->fuel->fuelType is conditional set from xml path engineType->engineDetail->combustible when
+"engineDetail->combustible->scheme"="petrolScheme" in xml and Root->engineSpecification->fuel->fuelType in rosettaPath 
 */
 synonym source CONDITIONAL_SET_EXAMPLE_16
 
 type Root:
     [rootType]
-	yField Y (1..1)
-	    [synonym CONDITIONAL_SET_EXAMPLE_16 value "a"]
+	engineSpecification EngineSpecification (1..1)
+	    [synonym CONDITIONAL_SET_EXAMPLE_16 value "engineType"]
 
-type Y:
-	zField Z (1..*)
+type EngineSpecification:
+	fuel Fuel (1..*)
 
-type Z:
-	strField string (1..1) 
+type Fuel:
+	fuelType string (1..1)
 	    [metadata scheme]
-	    [synonym CONDITIONAL_SET_EXAMPLE_16 value "c" path "b" set when "b->c->scheme"="fishScheme" and rosettaPath = Root->yField->zField->strField meta "scheme"]
-
+	    [synonym CONDITIONAL_SET_EXAMPLE_16 value "combustible" path "engineDetail" set when "engineDetail->combustible->scheme"="petrolScheme" and rosettaPath = Root->engineSpecification->fuel->fuelType meta "scheme"]
 /*
 Schema:
 
@@ -27,13 +29,13 @@ Schema:
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="a">
+                <xs:element name="engineType">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="b" maxOccurs="unbounded">
+                            <xs:element name="engineDetail" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="c">
+                                        <xs:element name="combustible">
                                             <xs:complexType>
                                                 <xs:simpleContent>
                                                     <xs:extension base="xs:string">
