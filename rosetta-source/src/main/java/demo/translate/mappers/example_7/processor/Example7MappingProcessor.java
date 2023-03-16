@@ -5,7 +5,7 @@ import com.regnosys.rosetta.common.translation.MappingProcessor;
 import com.regnosys.rosetta.common.translation.Path;
 import com.rosetta.model.lib.RosettaModelObjectBuilder;
 import com.rosetta.model.lib.path.RosettaPath;
-import demo.translate.mappers.example_7.Z;
+import demo.translate.mappers.example_12.Z;
 
 import java.util.Collection;
 import java.util.List;
@@ -35,7 +35,7 @@ public class Example7MappingProcessor extends MappingProcessor {
                 .collect(Collectors.toList());
 
         // Update the parent with the new list of string values
-        zBuilder.setStr2Field(updatedValues);
+        zBuilder.setStr2Field(updatedValues.toString());
 
        // TODO update existing mappings with new values
     }

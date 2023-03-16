@@ -5,7 +5,8 @@ import com.regnosys.rosetta.common.translation.MappingProcessor;
 import com.regnosys.rosetta.common.translation.Path;
 import com.rosetta.model.lib.RosettaModelObjectBuilder;
 import com.rosetta.model.lib.path.RosettaPath;
-import demo.translate.mappers.example_9.Z;
+import demo.translate.mappers.example_12.Z;
+import demo.translate.mappers.example_9.EngineSpecification;
 import demo.translate.mappers.example_9.Root.RootBuilder;
 
 import java.util.List;
@@ -32,7 +33,7 @@ public class Example9MappingProcessor extends MappingProcessor {
             Optional<? extends Z> z = getZBuilder(xmlPath, i++);
             // If z exists, add to the list and try the next index, otherwise break
             if (z.isPresent()) {
-                rootBuilder.addZField(z.get());
+                rootBuilder.addEngineSpecification((List<? extends EngineSpecification>) z.get());
             } else {
                 break;
             }

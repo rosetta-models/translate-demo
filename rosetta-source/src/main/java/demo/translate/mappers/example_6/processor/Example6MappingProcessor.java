@@ -12,7 +12,7 @@ import com.rosetta.model.lib.path.RosettaPath;
 import java.math.BigDecimal;
 import java.util.List;
 
-import static demo.translate.mappers.example_6.metafields.FieldWithMetaQuantity.FieldWithMetaQuantityBuilder;
+import static demo.translate.mappers.example_6.metafields.FieldWithMetaEngineMetric.FieldWithMetaEngineMetricBuilder.*;
 
 /**
  * The mapper class name must be in the form "<MapperName>MappingProcessor", and must extend MappingProcessor.
@@ -34,7 +34,7 @@ public class Example6MappingProcessor extends MappingProcessor {
 
         // Set the quantity from the path (and update mappings), and the location/address reference should just work
         setValueAndUpdateMappings(xmlPath.addElement("c"),
-                (xmlValue) -> ((FieldWithMetaQuantityBuilder) builder).getOrCreateValue().setAmount(new BigDecimal(xmlValue)));
+                (xmlValue) -> ((FieldWithMetaEngineMetricBuilder) builder).getOrCreateValue().setAmount(new BigDecimal(xmlValue)));
     }
 
     private Mapping createSuccessMapping(Path xmlPath, RosettaPath modelPath, Reference.ReferenceBuilder reference) {

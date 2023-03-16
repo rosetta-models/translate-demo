@@ -7,7 +7,7 @@ import com.rosetta.model.lib.RosettaModelObjectBuilder;
 import com.rosetta.model.lib.path.RosettaPath;
 import com.rosetta.model.metafields.FieldWithMetaString;
 import com.rosetta.model.metafields.MetaFields;
-import demo.translate.mappers.example_11.Z;
+import demo.translate.mappers.example_12.Z;
 
 import java.util.Collection;
 import java.util.List;

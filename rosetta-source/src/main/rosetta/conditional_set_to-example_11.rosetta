@@ -8,8 +8,6 @@ and element alternativeFuelType set to "PremiumGasoline" when "combustible->octa
 */
 synonym source CONDITIONAL_SET_TO_EXAMPLE_11
 
-synonym source CONDITIONAL_SET_TO_EXAMPLE_11
-
 type Root:
     [rootType]
     engineSpecification EngineSpecification (1..*)
