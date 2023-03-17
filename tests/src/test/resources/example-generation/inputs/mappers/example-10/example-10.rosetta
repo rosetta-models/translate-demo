@@ -16,8 +16,10 @@ type EngineSpecification:
 	    [synonym MAPPERS_EXAMPLE_10 value "emissions" path "engineDetail->metric"]
 	fuelType string (0..*)
 	    [metadata scheme]
-	    // value and scheme updated by mapper
+	    // value set by synonym
+	    // scheme updated by mapper
 	    [synonym MAPPERS_EXAMPLE_10 value "combustible" path "engineDetail->metric" mapper "Example10"]
+
 /*
 Schema:
 

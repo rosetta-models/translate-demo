@@ -29,17 +29,12 @@ public class Example3MappingProcessor extends MappingProcessor {
         // parameter: builder = an instance of object FieldWithMetaString, where the value has been set to "Gasoline" (the value at the path where the mapper is specified)
         // parameter: parent = an instance of object EngineSpecificationBuilder that can be updated
 
-        // this helper function will look up a xml path, and pass it to the consumer function, then updates the mapping stats
-        setValueAndUpdateMappings(xmlPath,
-                // consumer function that takes value found at the xml path
-                xmlValueFromNewXmlPath -> {
-                    // cast builder object
-                    FieldWithMetaString.FieldWithMetaStringBuilder metaStringBuilder =
-                            (FieldWithMetaString.FieldWithMetaStringBuilder) builder;
-                    // set new value on builder object
-                    metaStringBuilder
-                            .setMeta(MetaFields.builder()
-                                    .setScheme("fuel-type-scheme"));
-                });
+        // cast builder object
+        FieldWithMetaString.FieldWithMetaStringBuilder metaStringBuilder =
+                (FieldWithMetaString.FieldWithMetaStringBuilder) builder;
+        // set new value on builder object
+        metaStringBuilder
+                .setMeta(MetaFields.builder()
+                        .setScheme("fuel-type-scheme"));
     }
 }
