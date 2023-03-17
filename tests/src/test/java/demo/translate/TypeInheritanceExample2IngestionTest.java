@@ -1,11 +1,11 @@
 package demo.translate;
 
 import com.regnosys.TestUtils;
-import com.regnosys.granite.ingestor.ExpectationUtil;
-import com.regnosys.granite.ingestor.IngestionTest;
-import com.regnosys.granite.ingestor.IngestionTestUtil;
-import com.regnosys.granite.ingestor.service.IngestionFactory;
-import com.regnosys.granite.ingestor.service.IngestionService;
+import com.regnosys.ingest.test.framework.ingestor.ExpectationUtil;
+import com.regnosys.ingest.test.framework.ingestor.IngestionTest;
+import com.regnosys.ingest.test.framework.ingestor.IngestionTestUtil;
+import com.regnosys.ingest.test.framework.ingestor.service.IngestionFactory;
+import com.regnosys.ingest.test.framework.ingestor.service.IngestionService;
 import com.regnosys.model.ModelRuntimeModule;
 import org.junit.jupiter.api.function.Executable;
 import org.junit.jupiter.api.BeforeAll;
