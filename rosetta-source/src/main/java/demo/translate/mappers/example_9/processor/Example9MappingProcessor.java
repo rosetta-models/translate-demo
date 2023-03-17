@@ -5,7 +5,7 @@ import com.regnosys.rosetta.common.translation.MappingProcessor;
 import com.regnosys.rosetta.common.translation.Path;
 import com.rosetta.model.lib.RosettaModelObjectBuilder;
 import com.rosetta.model.lib.path.RosettaPath;
-//import demo.translate.mappers.example_9.Z;
+import demo.translate.mappers.example_9.EngineSpecification;
 import demo.translate.mappers.example_9.Root.RootBuilder;
 
 import java.util.List;
@@ -26,35 +26,35 @@ public class Example9MappingProcessor extends MappingProcessor {
         RootBuilder rootBuilder = (RootBuilder) parent;
 
         // Loop through the xml paths, incrementing the index until no xml elements are found
-//        int i = 0;
-//        while (true) {
-//            // Attempt to build z
-//            Optional<? extends Z> z = getZBuilder(xmlPath, i++);
-//            // If z exists, add to the list and try the next index, otherwise break
-//            if (z.isPresent()) {
-//                rootBuilder.addZField(z.get());
-//            } else {
-//                break;
-//            }
-//        }
+        int i = 0;
+        while (true) {
+            // Attempt to build z
+            Optional<? extends EngineSpecification> engineSpecificationBuilder = getEngineSpecificationBuilder(xmlPath, i++);
+            // If engineSpecification exists, add to the list and try the next index, otherwise break
+            if (engineSpecificationBuilder.isPresent()) {
+                rootBuilder.addEngineSpecification(engineSpecificationBuilder.get());
+            } else {
+                break;
+            }
+        }
     }
 
-//    private Optional<? extends Z> getZBuilder(Path aPath, int pathIndex) {
-//        Z.ZBuilder zBuilder = Z.builder();
-//
-//        // aPath is indexless, get the parent (dataDocument path) and add "a" element with index
-//        Path dataDocumentPath = aPath.getParent();
-//        Path cPath = dataDocumentPath.addElement("a", pathIndex).addElement("b").addElement("c");
-//
-//        setValueAndUpdateMappings(cPath.addElement("d"),
-//                xmlValue -> zBuilder.setStr1Field(xmlValue + "_X"));
-//
-//        setValueAndUpdateMappings(cPath.addElement("e"),
-//                xmlValue -> zBuilder.setStr2Field(xmlValue + "_Y"));
-//
-//        setValueAndUpdateMappings(cPath.addElement("f"),
-//                xmlValue -> zBuilder.setStr3Field(xmlValue + "_Z"));
-//
-//        return zBuilder.hasData() ? Optional.of(zBuilder.build()) : Optional.empty();
-//    }
+    private Optional<? extends EngineSpecification> getEngineSpecificationBuilder(Path engineTypePath, int pathIndex) {
+        EngineSpecification.EngineSpecificationBuilder builder = EngineSpecification.builder();
+
+        // engineTypePath is indexless, get the parent (dataDocument path) and add "engineType" element with index
+        Path dataDocumentPath = engineTypePath.getParent();
+        Path cPath = dataDocumentPath.addElement("engineType", pathIndex).addElement("engineDetail").addElement("metric");
+
+        setValueAndUpdateMappings(cPath.addElement("emissions"),
+                xmlValue -> builder.setEmissions(xmlValue));
+
+        setValueAndUpdateMappings(cPath.addElement("combustible"),
+                xmlValue -> builder.setFuelType(xmlValue));
+
+        setValueAndUpdateMappings(cPath.addElement("capacityUnit"),
+                xmlValue -> builder.setVolumeUnit(xmlValue));
+
+        return builder.hasData() ? Optional.of(builder.build()) : Optional.empty();
+    }
 }
