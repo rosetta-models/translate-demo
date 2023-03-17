@@ -36,7 +36,8 @@ Schema:
                         <xs:sequence>
                             <xs:element name="engineDetail" type="EngineDetail" minOccurs="0" maxOccurs="unbounded"/>
                             <xs:element name="fuelDetail" type="FuelDetail" minOccurs="0" maxOccurs="unbounded"/>
-                            <xs:element name="capacityDetail" type="CapacityDetail" minOccurs="0" maxOccurs="unbounded"/>
+                            <xs:element name="capacityDetail" type="CapacityDetail" minOccurs="0"
+                                        maxOccurs="unbounded"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
@@ -44,10 +45,10 @@ Schema:
         </xs:complexType>
     </xs:element>
     <xs:complexType name="EngineDetail">
-            <xs:all>
-                <xs:element name="combustible" type="xs:string" minOccurs="0"/>
-                <xs:element name="capacityUnit" minOccurs="0" type="xs:string"/>
-            </xs:all>
+        <xs:all>
+            <xs:element name="combustible" type="xs:string" minOccurs="0"/>
+            <xs:element name="capacityUnit" minOccurs="0" type="xs:string"/>
+        </xs:all>
     </xs:complexType>
     <xs:complexType name="FuelDetail">
         <xs:all>

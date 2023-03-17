@@ -11,7 +11,7 @@ import com.rosetta.model.lib.path.RosettaPath;
 
 import java.util.List;
 
-import static demo.translate.mappers.example_5.metafields.ReferenceWithMetaQuantity.*;
+//import static demo.translate.mappers.example_5.metafields.ReferenceWithMetaQuantity.*;
 
 /**
  * The mapper class name must be in the form "<MapperName>MappingProcessor", and must extend MappingProcessor.
@@ -32,12 +32,12 @@ public class Example5MappingProcessor extends MappingProcessor {
         // parameter: builder = an instance of object ReferenceWithMetaQuantityBuilder.ReferenceWithMetaQuantityBuilderBuilder that can be updated
 
         // Cast the builder to the correct type, and create a reference
-        ReferenceWithMetaQuantityBuilder quantityBuilder = (ReferenceWithMetaQuantityBuilder) builder;
-        Reference.ReferenceBuilder reference = quantityBuilder.getOrCreateReference();
+//        ReferenceWithMetaQuantityBuilder quantityBuilder = (ReferenceWithMetaQuantityBuilder) builder;
+//        Reference.ReferenceBuilder reference = quantityBuilder.getOrCreateReference();
 
         // Add a new mapping linking the xml path to this model path, with the relevant reference object so the
         // reference post processor can figure out what should be a reference.
-        getMappings().add(createSuccessMapping(xmlPath, getModelPath(), reference));
+//        getMappings().add(createSuccessMapping(xmlPath, getModelPath(), reference));
     }
 
     private Mapping createSuccessMapping(Path xmlPath, RosettaPath modelPath, Reference.ReferenceBuilder reference) {

@@ -2,14 +2,14 @@ namespace demo.translate.type_inheritance.example_1
 version "${project.version}"
 
 /*
-Exemple 1:
+Example 1:
 The mapping is performed with extended types
 */
 synonym source TYPE_INHERITANCE_EXAMPLE_1
 
 type Root:
     [rootType]
-    car Car (1..1)
+    owner Owner (1..1)
         [synonym TYPE_INHERITANCE_EXAMPLE_1 value "vehicle"]
 
 type Vehicle:

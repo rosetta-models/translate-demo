@@ -1,9 +1,8 @@
 {
-  "xfield" : {
-    "strField" : "CHIPS",
-    "yfield" : {
-      "zfield" : {
-        "strField" : "FISH"
+  "engineSpecification" : {
+    "volume" : {
+      "volumeUnit" : {
+        "volumeDetails" : "UK Gallon"
       }
     }
   }

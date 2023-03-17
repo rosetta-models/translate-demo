@@ -5,7 +5,7 @@ import com.regnosys.rosetta.common.translation.MappingProcessor;
 import com.regnosys.rosetta.common.translation.Path;
 import com.rosetta.model.lib.RosettaModelObjectBuilder;
 import com.rosetta.model.lib.path.RosettaPath;
-import demo.translate.mappers.example_1.Z;
+import demo.translate.mappers.example_1.EngineSpecification;
 
 import java.util.List;
 
@@ -20,7 +20,7 @@ public class Example1MappingProcessor extends MappingProcessor {
     }
 
     /**
-     * Override the mapBasic method as this mapper is specified on a basic type attribute Z->str2Field
+     * Override the mapBasic method as this mapper is specified on a basic type attribute EngineSpecification->fuelType
      */
     @Override
     public <T> void mapBasic(Path xmlPath, T xmlValueFromXmlPath, RosettaModelObjectBuilder parent) {
@@ -36,11 +36,12 @@ public class Example1MappingProcessor extends MappingProcessor {
                 // consumer function that takes value found at the xml path
                 xmlValueFromNewXmlPath -> {
                     // cast builder object
-                    Z.ZBuilder zBuilder = (Z.ZBuilder) parent;
+                    EngineSpecification.EngineSpecificationBuilder engineSpecificationBuilder =
+                            (EngineSpecification.EngineSpecificationBuilder) parent;
                     // create new value to set
                     String newValue = xmlValueFromXmlPath + "_" + xmlValueFromNewXmlPath;
                     // set new value on builder object
-                    zBuilder.setStr2Field(newValue);
+                    engineSpecificationBuilder.setFuelType(newValue);
                 });
     }
 }

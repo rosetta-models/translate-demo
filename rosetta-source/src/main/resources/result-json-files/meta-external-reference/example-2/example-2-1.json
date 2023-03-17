@@ -1,6 +1,6 @@
 {
-  "yfield" : {
-    "zfield" : {
+  "engine" : {
+    "engineSpecification" : {
       "externalReference" : "g4789"
     }
   }

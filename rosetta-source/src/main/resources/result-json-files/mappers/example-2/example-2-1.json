@@ -1,7 +1,5 @@
 {
-  "zfield" : {
-    "str1Field" : "FISHX",
-    "str2Field" : "CHIPS_Y",
-    "str3Field" : "PIZZA"
+  "engineSpecification" : {
+    "volumeUnit" : "Gallon"
   }
 }

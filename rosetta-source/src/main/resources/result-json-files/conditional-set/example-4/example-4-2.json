@@ -1,5 +1,5 @@
 {
-  "zfield" : {
-    "str1Field" : "PIZZA"
+  "engineSpecification" : {
+    "fuelType" : "Petrol"
   }
 }

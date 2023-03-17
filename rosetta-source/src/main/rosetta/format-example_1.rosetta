@@ -3,7 +3,8 @@ version "${project.version}"
 
 /*
 Example 1:
-Mappings are performed if the dateFormat is "MM/dd/yyyy" and pattern are digits ([0-9]) or all alphabetical characters including minus and mayus ([a-zA-Z]*) for the corresponding fields
+Mappings are performed if the dateFormat is "MM/dd/yyyy" and pattern are digits ([0-9]) or all alphabetical characters
+including minus and mayus ([a-zA-Z]*) for the corresponding fields
 */
 synonym source FORMAT_EXAMPLE_1
 
@@ -44,10 +45,10 @@ Schema:
                 <xs:element name="engineType">
                     <xs:complexType>
                         <xs:all>
-                            <xs:element name="startDate" type="xs:string"/>
-                            <xs:element name="tenor" type="xs:string"/>
-                            <xs:element name="b" type="xs:string"/>
-                            <xs:element name="bplus" type="xs:string"/>
+                            <xs:element name="fabricationDate" type="xs:string"/>
+                            <xs:element name="nomenclatureMotor" type="xs:string"/>
+                            <xs:element name="combustible" type="xs:string"/>
+                            <xs:element name="alternativeCombustible" type="xs:string"/>
                         </xs:all>
                     </xs:complexType>
                 </xs:element>

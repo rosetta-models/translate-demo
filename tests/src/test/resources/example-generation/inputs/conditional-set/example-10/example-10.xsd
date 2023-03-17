@@ -12,14 +12,14 @@
                                         <xs:element name="combustible">
                                             <xs:complexType>
                                                 <xs:sequence>
-                                                    <xs:element name="combustibleType" type="xs:string" />
+                                                    <xs:element name="combustibleType" type="xs:string"/>
                                                 </xs:sequence>
                                             </xs:complexType>
                                         </xs:element>
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
-                            <xs:element name="engineCategory" type="xs:string" />
+                            <xs:element name="engineCategory" type="xs:string"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>

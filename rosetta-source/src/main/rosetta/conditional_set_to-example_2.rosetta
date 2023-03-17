@@ -2,7 +2,9 @@ namespace demo.translate.conditional_set_to.example_2
 version "${project.version}"
 
 /*
-shouldSetNestedFieldFromSynonymSetTo test 2.1
+Example 2:
+The rosetta element engineSystem is conditional set to "Hybrid" when xml element found in "engineType->engineDetail->
+fuelDetail->alternativeCombustible" exists
 */
 synonym source CONDITIONAL_SET_TO_EXAMPLE_2
 
@@ -22,7 +24,7 @@ type EngineSpecification:
 
 type EngineType:
 	engineSystem string (1..1)
-		[synonym CONDITIONAL_SET_TO_EXAMPLE_2 set to "HYBRID" when "engineDetail->fuelDetail->alternativeCombustible" exists]
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_2 set to "Hybrid" when "engineDetail->fuelDetail->alternativeCombustible" exists]
 
 type EngineMetric:
 	fuelType string (1..1)
@@ -46,7 +48,8 @@ Schema:
                                             <xs:complexType>
                                                 <xs:all>
                                                     <xs:element name="combustible" type="xs:string" minOccurs="0"/>
-                                                    <xs:element name="alternativeCombustible" type="xs:string" minOccurs="0"/>
+                                                    <xs:element name="alternativeCombustible" type="xs:string"
+                                                                minOccurs="0"/>
                                                     <xs:element name="properties" type="xs:string" minOccurs="0"/>
                                                 </xs:all>
                                             </xs:complexType>

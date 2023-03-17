@@ -10,13 +10,8 @@ synonym source MAPPERS_EXAMPLE_10
 
 type Root:
     [rootType]
-<<<<<<< HEAD
 	engineSpecification EngineSpecification (1..1)
 	    [synonym MAPPERS_EXAMPLE_10 value "engineType"]
-=======
-	zField Z (1..1)
-	    [synonym MAPPERS_EXAMPLE_10 value "a"]
->>>>>>> dfdc5b690cc24c58177a5121ae6a352abd9d9af9
 
 type EngineSpecification:
 	emissions string (1..1)
@@ -43,7 +38,8 @@ Schema:
                                             <xs:complexType>
                                                 <xs:sequence>
                                                     <xs:element type="xs:string" name="emissions"/>
-                                                    <xs:element type="xs:string" name="combustible" maxOccurs="unbounded" minOccurs="0"/>
+                                                    <xs:element type="xs:string" name="combustible"
+                                                                maxOccurs="unbounded" minOccurs="0"/>
                                                 </xs:sequence>
                                             </xs:complexType>
                                         </xs:element>

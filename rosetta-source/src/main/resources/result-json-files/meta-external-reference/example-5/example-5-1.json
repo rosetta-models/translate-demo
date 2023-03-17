@@ -1,6 +1,6 @@
 {
-  "zfield" : {
-    "numberField" : [ {
+  "engine" : {
+    "engineReference" : [ {
       "externalReference" : "g4789"
     } ]
   }

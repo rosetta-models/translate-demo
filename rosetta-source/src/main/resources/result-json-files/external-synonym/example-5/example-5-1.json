@@ -1,26 +1,26 @@
 {
-  "xfield" : {
-    "yfield" : [ {
-      "zfield" : [ {
-        "strField" : {
+  "engine" : {
+    "engineSpecification" : [ {
+      "engineMetric" : [ {
+        "fuel" : {
           "meta" : {
             "scheme" : "scheme1"
           },
-          "value" : "FISH"
+          "value" : "Gasoline"
         }
       }, {
-        "strField" : {
+        "fuel" : {
           "meta" : {
             "scheme" : "scheme2"
           },
-          "value" : "CHIPS"
+          "value" : "Diesel"
         }
       }, {
-        "strField" : {
+        "fuel" : {
           "meta" : {
             "scheme" : "acc-scheme1"
           },
-          "value" : "FRITES"
+          "value" : "Electricity"
         }
       } ]
     } ]

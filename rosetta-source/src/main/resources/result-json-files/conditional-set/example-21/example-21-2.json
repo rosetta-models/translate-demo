@@ -1,5 +1,5 @@
 {
-  "yfield" : {
-    "str2Field" : "chips"
+  "engineSpecification" : {
+    "alternativeFuelType" : "Electricity"
   }
 }

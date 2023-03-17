@@ -1,9 +1,9 @@
 {
-  "zfield" : {
+  "engineSpecification" : {
+    "fuelType" : "Gasoline",
     "meta" : {
       "externalKey" : "g4789",
-      "globalKey" : "20ee58"
-    },
-    "strField" : "FISH"
+      "globalKey" : "a53c15ca"
+    }
   }
 }

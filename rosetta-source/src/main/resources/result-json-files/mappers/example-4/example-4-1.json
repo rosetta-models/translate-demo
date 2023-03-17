@@ -1,7 +1,7 @@
 {
-  "zfield" : {
+  "engineSpecification" : {
     "value" : {
-      "str3Field" : "PIZZA"
+      "volumeType" : "Gallon"
     }
   }
 }

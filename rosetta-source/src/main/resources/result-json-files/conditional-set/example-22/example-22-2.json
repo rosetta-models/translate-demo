@@ -1,6 +1,6 @@
 {
-  "yfield" : {
-    "str1Field" : "fish",
-    "str2Field" : "chips"
+  "engineSpecification" : {
+    "alternativeFuelType" : "Electricity",
+    "fuelType" : "Gasoline"
   }
 }

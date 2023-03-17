@@ -1,10 +1,9 @@
 {
-  "zfield" : [ {
-    "str1Field" : "FISH",
-    "str2Field" : "CHIPS"
+  "engineSpecification" : [ {
+    "fuelType" : "Gasoline"
   }, {
-    "str2Field" : "GRAVY"
+    "fuelType" : "Diesel"
   }, {
-    "str2Field" : "POTATOS"
+    "fuelType" : "Electricity"
   } ]
 }

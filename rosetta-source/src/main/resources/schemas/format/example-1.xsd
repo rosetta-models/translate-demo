@@ -6,10 +6,10 @@
                 <xs:element name="engineType">
                     <xs:complexType>
                         <xs:all>
-                            <xs:element name="startDate" type="xs:string"/>
-                            <xs:element name="tenor" type="xs:string"/>
-                            <xs:element name="b" type="xs:string"/>
-                            <xs:element name="bplus" type="xs:string"/>
+                            <xs:element name="fabricationDate" type="xs:string"/>
+                            <xs:element name="nomenclatureMotor" type="xs:string"/>
+                            <xs:element name="combustible" type="xs:string"/>
+                            <xs:element name="alternativeCombustible" type="xs:string"/>
                         </xs:all>
                     </xs:complexType>
                 </xs:element>

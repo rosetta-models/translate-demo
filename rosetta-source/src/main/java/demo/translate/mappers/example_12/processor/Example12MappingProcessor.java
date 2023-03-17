@@ -5,8 +5,8 @@ import com.regnosys.rosetta.common.translation.MappingProcessor;
 import com.regnosys.rosetta.common.translation.Path;
 import com.rosetta.model.lib.RosettaModelObjectBuilder;
 import com.rosetta.model.lib.path.RosettaPath;
-import demo.translate.mappers.example_12.Y;
-import demo.translate.mappers.example_12.Z;
+//import demo.translate.mappers.example_12.Y;
+//import demo.translate.mappers.example_12.Z;
 
 import java.util.List;
 import java.util.Optional;
@@ -30,43 +30,43 @@ public class Example12MappingProcessor extends MappingProcessor {
         // parameter: builder = an empty list of Z.ZBuilder (as nothing is mapped)
         // parameter: parent = an instance of Y.YBuilder
 
-        Y.YBuilder zBuilder = (Y.YBuilder) parent;
-
-        // Loop through the xml paths, incrementing the index until no xml elements are found
-        int i = 0;
-        while (true) {
-            // Get parent path, e.g. from "a.b" to "a"
-            Path aPath = xmlPath.getParent();
-            // Attempt to build z
-            Optional<? extends Z> z = getZBuilder(aPath, i++);
-            // If z exists, add to the list and try the next index, otherwise break
-            if (z.isPresent()) {
-                zBuilder.addZField(z.get());
-            } else {
-                break;
-            }
-        }
+//        Y.YBuilder zBuilder = (Y.YBuilder) parent;
+//
+//        // Loop through the xml paths, incrementing the index until no xml elements are found
+//        int i = 0;
+//        while (true) {
+//            // Get parent path, e.g. from "a.b" to "a"
+//            Path aPath = xmlPath.getParent();
+//            // Attempt to build z
+//            Optional<? extends Z> z = getZBuilder(aPath, i++);
+//            // If z exists, add to the list and try the next index, otherwise break
+//            if (z.isPresent()) {
+//                zBuilder.addZField(z.get());
+//            } else {
+//                break;
+//            }
+//        }
     }
 
-    private Optional<? extends Z> getZBuilder(Path aPath, int pathIndex) {
-        Z.ZBuilder zBuilder = Z.builder();
-
-        // set from path a.b(i).c
-        setValueAndUpdateMappings(aPath.addElement("b", pathIndex).addElement("c"),
-                xmlValue -> zBuilder.setStr1Field(xmlValue + "_X"));
-
-        // set from path a.b(i).d
-        setValueAndUpdateMappings(aPath.addElement("b", pathIndex).addElement("d"),
-                xmlValue -> zBuilder.setStr2Field(xmlValue + "_X"));
-
-        // set from path a.e(i).f
-        setValueAndUpdateMappings(aPath.addElement("e", pathIndex).addElement("f"),
-                xmlValue -> zBuilder.setStr3Field(xmlValue + "_Y"));
-
-        // set from path a.e(i).g
-        setValueAndUpdateMappings(aPath.addElement("e", pathIndex).addElement("g"),
-                xmlValue -> zBuilder.setStr4Field(xmlValue + "_Y"));
-
-        return zBuilder.hasData() ? Optional.of(zBuilder.build()) : Optional.empty();
-    }
+//    private Optional<? extends Z> getZBuilder(Path aPath, int pathIndex) {
+//        Z.ZBuilder zBuilder = Z.builder();
+//
+//        // set from path a.b(i).c
+//        setValueAndUpdateMappings(aPath.addElement("b", pathIndex).addElement("c"),
+//                xmlValue -> zBuilder.setStr1Field(xmlValue + "_X"));
+//
+//        // set from path a.b(i).d
+//        setValueAndUpdateMappings(aPath.addElement("b", pathIndex).addElement("d"),
+//                xmlValue -> zBuilder.setStr2Field(xmlValue + "_X"));
+//
+//        // set from path a.e(i).f
+//        setValueAndUpdateMappings(aPath.addElement("e", pathIndex).addElement("f"),
+//                xmlValue -> zBuilder.setStr3Field(xmlValue + "_Y"));
+//
+//        // set from path a.e(i).g
+//        setValueAndUpdateMappings(aPath.addElement("e", pathIndex).addElement("g"),
+//                xmlValue -> zBuilder.setStr4Field(xmlValue + "_Y"));
+//
+//        return zBuilder.hasData() ? Optional.of(zBuilder.build()) : Optional.empty();
+//    }
 }

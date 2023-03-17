@@ -3,7 +3,8 @@ version "${project.version}"
 
 /*
 Example 8:
-Conditional mapping using "set" with a "when" clause that is predicated on the value of a xml element at the specified xml path
+Conditional mapping using "set" with a "when" clause that is predicated on the value of a xml element at the specified
+xml path
 
 The attribute EngineSpecification->volume->volumeUnit->volumeDetails is conditionally set from xml path
 engineType->engineDetail when the value at xml path engineType->engineDetail->combustible = "Petrol".
@@ -46,14 +47,14 @@ Schema:
                                         <xs:element name="capacity">
                                             <xs:complexType>
                                                 <xs:all>
-                                                    <xs:element name="capacityUnit" type="xs:string" />
+                                                    <xs:element name="capacityUnit" type="xs:string"/>
                                                 </xs:all>
                                             </xs:complexType>
                                         </xs:element>
                                     </xs:all>
                                 </xs:complexType>
                             </xs:element>
-                            <xs:element name="combustible" type="xs:string" />
+                            <xs:element name="combustible" type="xs:string"/>
                         </xs:all>
                     </xs:complexType>
                 </xs:element>

@@ -2,7 +2,7 @@
 <dataDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="example-26.xsd example-26.xsd">
     <engineType>
         <fuelDetail>
-            <combutible>Petrol</combutible>
+            <combustible>Petrol</combustible>
         </fuelDetail>
         <capacityDetail>
             <capacityUnit>Gallon</capacityUnit>

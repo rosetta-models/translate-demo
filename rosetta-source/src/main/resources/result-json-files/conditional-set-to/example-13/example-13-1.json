@@ -1,9 +1,9 @@
 {
-  "str1Field" : "FOO",
-  "str2Field" : "BAR",
-  "yfield" : [ {
-    "zfield" : [ {
-      "enumField" : "FOO"
+  "alternativeFuel" : "Combustion",
+  "engineSpecification" : [ {
+    "engineMetric" : [ {
+      "engineEnum" : "HYBRID"
     } ]
-  } ]
+  } ],
+  "fuel" : "Hybrid"
 }

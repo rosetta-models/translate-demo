@@ -1,10 +1,10 @@
 {
-  "yfield" : {
-    "zfield" : [ {
-      "str1Field" : "FISH",
-      "str2Field" : "AND"
+  "engineSpecification" : {
+    "engineMetric" : [ {
+      "capacity" : "Gallon",
+      "fuel" : "Gasoline"
     }, {
-      "str1Field" : "CHIPS"
+      "fuel" : "Diesel"
     } ]
   }
 }

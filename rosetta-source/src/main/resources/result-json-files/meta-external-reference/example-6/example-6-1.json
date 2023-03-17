@@ -1,12 +1,12 @@
 {
-  "yfield" : [ {
-    "zfield" : {
+  "engine" : [ {
+    "engineSpecification" : {
       "value" : {
+        "fuelType" : "blah",
         "meta" : {
           "externalKey" : "g4789",
           "globalKey" : "2e2df1"
-        },
-        "strField" : "blah"
+        }
       }
     }
   } ]

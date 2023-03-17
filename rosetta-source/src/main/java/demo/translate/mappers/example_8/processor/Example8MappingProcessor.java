@@ -5,7 +5,7 @@ import com.regnosys.rosetta.common.translation.MappingProcessor;
 import com.regnosys.rosetta.common.translation.Path;
 import com.rosetta.model.lib.RosettaModelObjectBuilder;
 import com.rosetta.model.lib.path.RosettaPath;
-import demo.translate.mappers.example_8.Z;
+//import demo.translate.mappers.example_8.Z;
 
 import java.util.List;
 
@@ -24,12 +24,12 @@ public class Example8MappingProcessor extends MappingProcessor {
      */
     @Override
     public void map(Path xmlPath, List<? extends RosettaModelObjectBuilder> builder, RosettaModelObjectBuilder parent) {
-        List<Z.ZBuilder> zBuilders = (List<Z.ZBuilder>) builder;
-
-        zBuilders.forEach(zBuilder -> {
-            zBuilder.setStr1Field(zBuilder.getStr1Field() + "_X");
-            zBuilder.setStr2Field(zBuilder.getStr2Field() + "_Y");
-            zBuilder.setStr3Field(zBuilder.getStr3Field() + "_Z");
-        });
+//        List<Z.ZBuilder> zBuilders = (List<Z.ZBuilder>) builder;
+//
+//        zBuilders.forEach(zBuilder -> {
+//            zBuilder.setStr1Field(zBuilder.getStr1Field() + "_X");
+//            zBuilder.setStr2Field(zBuilder.getStr2Field() + "_Y");
+//            zBuilder.setStr3Field(zBuilder.getStr3Field() + "_Z");
+//        });
     }
 }

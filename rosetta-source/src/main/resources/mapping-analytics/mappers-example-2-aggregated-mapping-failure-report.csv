@@ -1,3 +1,5 @@
-Mapping Coverage,100.00
+Mapping Coverage,33.33
 
 Input Path,Failed Mapping Count
+engineType.engineDetail.metric.combustible,1
+engineType.engineDetail.metric.emissions,1

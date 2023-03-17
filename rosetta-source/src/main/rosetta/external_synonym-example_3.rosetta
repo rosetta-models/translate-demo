@@ -3,7 +3,8 @@ version "${project.version}"
 
 /*
 Example 3:
-Mappings are performed comming from an external synonym source where for each type (Root and EngineSpecification) and FuelEnum it is defined the mappings
+Mappings are performed comming from an external synonym source where for each type (Root and EngineSpecification) and
+FuelEnum it is defined the mappings
 */
 synonym source EXTERNAL_SYNONYM_EXAMPLE_3_BASE
 

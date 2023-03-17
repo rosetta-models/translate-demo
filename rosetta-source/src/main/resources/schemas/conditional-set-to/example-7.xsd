@@ -12,8 +12,9 @@
                                         <xs:element name="fuelDetail">
                                             <xs:complexType>
                                                 <xs:all>
-                                                    <xs:element name="combustible" type="FuelEnum" />
-                                                    <xs:element name="alternativeCombustible" type="FuelEnum" minOccurs="0"/>
+                                                    <xs:element name="combustible" type="FuelEnum"/>
+                                                    <xs:element name="alternativeCombustible" type="FuelEnum"
+                                                                minOccurs="0"/>
                                                 </xs:all>
                                             </xs:complexType>
                                         </xs:element>

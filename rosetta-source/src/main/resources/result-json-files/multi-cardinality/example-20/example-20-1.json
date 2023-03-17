@@ -1,34 +1,34 @@
 {
-  "vfield" : {
-    "wfield" : [ {
-      "xfield" : [ {
-        "yfield" : [ {
-          "zfield" : [ {
-            "str1Field" : "FISH"
+  "engine" : {
+    "globalVersion" : [ {
+      "engineSpecification" : [ {
+        "engineMetric" : [ {
+          "volume" : [ {
+            "fuel" : "Petrol"
           } ]
         } ]
       } ]
     }, {
-      "xfield" : [ {
-        "yfield" : [ {
-          "zfield" : [ {
-            "str1Field" : "SAUSAGE"
+      "engineSpecification" : [ {
+        "engineMetric" : [ {
+          "volume" : [ {
+            "fuel" : "Diesel"
           } ]
         } ]
       } ]
     }, {
-      "xfield" : [ {
-        "yfield" : [ {
-          "zfield" : [ {
-            "str2Field" : "STEAK"
+      "engineSpecification" : [ {
+        "engineMetric" : [ {
+          "volume" : [ {
+            "capacity" : "Gallon"
           } ]
         } ]
       } ]
     }, {
-      "xfield" : [ {
-        "yfield" : [ {
-          "zfield" : [ {
-            "str2Field" : "PIZZA"
+      "engineSpecification" : [ {
+        "engineMetric" : [ {
+          "volume" : [ {
+            "capacity" : "Gallon"
           } ]
         } ]
       } ]

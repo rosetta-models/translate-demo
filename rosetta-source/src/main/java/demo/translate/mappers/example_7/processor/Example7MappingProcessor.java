@@ -5,7 +5,7 @@ import com.regnosys.rosetta.common.translation.MappingProcessor;
 import com.regnosys.rosetta.common.translation.Path;
 import com.rosetta.model.lib.RosettaModelObjectBuilder;
 import com.rosetta.model.lib.path.RosettaPath;
-import demo.translate.mappers.example_7.Z;
+//import demo.translate.mappers.example_7.Z;
 
 import java.util.Collection;
 import java.util.List;
@@ -26,16 +26,16 @@ public class Example7MappingProcessor extends MappingProcessor {
      */
     @Override
     public <T> void mapBasic(Path xmlPath, Collection<? extends T> builders, RosettaModelObjectBuilder parent) {
-        Collection<String> stringBuilders = (Collection<String>) builders;
-        Z.ZBuilder zBuilder = (Z.ZBuilder) parent;
-
-        // Create new list of strings
-        List<String> updatedValues = stringBuilders.stream()
-                .map(str -> str + "_X")
-                .collect(Collectors.toList());
-
-        // Update the parent with the new list of string values
-        zBuilder.setStr2Field(updatedValues);
+//        Collection<String> stringBuilders = (Collection<String>) builders;
+//        Z.ZBuilder zBuilder = (Z.ZBuilder) parent;
+//
+//        // Create new list of strings
+//        List<String> updatedValues = stringBuilders.stream()
+//                .map(str -> str + "_X")
+//                .collect(Collectors.toList());
+//
+//        // Update the parent with the new list of string values
+//        zBuilder.setStr2Field(updatedValues);
 
        // TODO update existing mappings with new values
     }

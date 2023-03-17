@@ -3,7 +3,8 @@ version "${project.version}"
 
 /*
 Example 23:
-Conditional mapping using "set" with a "when" clause that is predicated on the value of a xml element at the specified xml path with multiple rosetta path conditions for a multi-cardinality field.
+Conditional mapping using "set" with a "when" clause that is predicated on the value of a xml element at the specified
+xml path with multiple rosetta path conditions for a multi-cardinality field.
 */
 synonym source CONDITIONAL_SET_EXAMPLE_24
 
@@ -25,7 +26,7 @@ enum FuelEnum:
 	    [synonym CONDITIONAL_SET_EXAMPLE_24 value "Diesel"]
 
 enum AlternativeFuelEnum:
-	ELECTRICITY
+	Electricity
 	    [synonym CONDITIONAL_SET_EXAMPLE_24 value "Electricity"]
 
 /*

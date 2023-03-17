@@ -36,8 +36,8 @@ Schema:
                             <xs:element name="engineDetail">
                                 <xs:complexType>
                                     <xs:all>
-                                        <xs:element name="capacityUnit" type="xs:string" />
-                                        <xs:element name="combustible" type="xs:string" />
+                                        <xs:element name="capacityUnit" type="xs:string"/>
+                                        <xs:element name="combustible" type="xs:string"/>
                                     </xs:all>
                                 </xs:complexType>
                             </xs:element>

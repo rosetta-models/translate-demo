@@ -39,14 +39,14 @@ Schema:
                             <xs:element name="engineDetail">
                                 <xs:complexType>
                                     <xs:all>
-                                        <xs:element name="capacityUnit" type="xs:string" />
+                                        <xs:element name="capacityUnit" type="xs:string"/>
                                     </xs:all>
                                 </xs:complexType>
                             </xs:element>
                             <xs:element name="combustible">
                                 <xs:complexType>
                                     <xs:all>
-                                        <xs:element name="combustibleType" type="xs:string" />
+                                        <xs:element name="combustibleType" type="xs:string"/>
                                     </xs:all>
                                 </xs:complexType>
                             </xs:element>

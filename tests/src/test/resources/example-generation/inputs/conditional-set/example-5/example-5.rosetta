@@ -15,7 +15,7 @@ type EngineSpecification:
 	fuelType string (1..1)
 	    [synonym CONDITIONAL_SET_EXAMPLE_5 value "energyCategory" path "engineType->engineDetail"]
 	alternativeFuelType string (0..1)
-	    [synonym CONDITIONAL_SET_EXAMPLE_5 value "complementaryEnergy" path "engineType->engineDetail" set when "engineType->engineDetail->engineCategory" = "HYBRID"]
+	    [synonym CONDITIONAL_SET_EXAMPLE_5 value "complementaryEnergy" path "engineType->engineDetail" set when "engineType->engineDetail->engineCategory" = "Hybrid"]
         [synonym CONDITIONAL_SET_EXAMPLE_5 value "combustible" path "engineType->engineDetail" set when "engineType->engineDetail->engineCategory" = "HYDROCARBON"]
 
 /*

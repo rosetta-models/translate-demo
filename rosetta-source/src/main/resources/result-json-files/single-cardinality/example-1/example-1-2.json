@@ -1,7 +1,7 @@
 {
-  "yfield" : {
-    "zfield" : {
-      "strField" : "Chips"
+  "engineSpecification" : {
+    "fuel" : {
+      "fuelType" : "Gas"
     }
   }
 }

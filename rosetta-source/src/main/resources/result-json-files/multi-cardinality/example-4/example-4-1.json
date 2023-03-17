@@ -1,13 +1,13 @@
 {
-  "xfield" : {
-    "yfield" : [ {
-      "zfield" : {
-        "str1Field" : "FISH",
-        "str2Field" : "AND"
+  "engine" : {
+    "engineSpecification" : [ {
+      "engineMetric" : {
+        "capacity" : "Gallon",
+        "fuel" : "Gas"
       }
     }, {
-      "zfield" : {
-        "str1Field" : "CHIPS"
+      "engineMetric" : {
+        "fuel" : "Petrol"
       }
     } ]
   }

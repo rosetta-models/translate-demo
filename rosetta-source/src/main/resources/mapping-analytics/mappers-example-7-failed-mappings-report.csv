@@ -1,2 +1,1 @@
 File Name,Result,Input Path,Indexless Input Path,Unmappable CDM Path Count,Unmappable CDM Paths,Reason For Failure
-cdm-sample-files/mappers/example-7/example-7-1.xml,Fail_MappedNone,a.b.c.d,a.b.c.d,0,,Element with value FISH could not be mapped to a rosettaField

@@ -3,8 +3,7 @@ version "${project.version}"
 
 /*
 Example 3:
-The rosetta element engineSystem is conditional set to "UNKNOWN" when xml element "engineType" exists
-test 2.1 shouldSetNestedFieldFromSynonymSetToPath
+The rosetta element engineSystem is conditional set to "Unknown" when xml element "engineType" exists
 */
 synonym source CONDITIONAL_SET_TO_EXAMPLE_3
 
@@ -24,7 +23,7 @@ type EngineSpecification:
 
 type EngineType:
 	engineSystem string (1..1)
-		[synonym CONDITIONAL_SET_TO_EXAMPLE_3 set to "UNKNOWN" when path = "engineType"]
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_3 set to "Unknown" when path = "engineType"]
 
 type EngineMetric:
 	fuelType string (1..1)
@@ -48,7 +47,8 @@ Schema:
                                             <xs:complexType>
                                                 <xs:all>
                                                     <xs:element name="combustible" type="xs:string" minOccurs="0"/>
-                                                    <xs:element name="alternativeCombustible" type="xs:string" minOccurs="0"/>
+                                                    <xs:element name="alternativeCombustible" type="xs:string"
+                                                                minOccurs="0"/>
                                                     <xs:element name="properties" type="xs:string" minOccurs="0"/>
                                                 </xs:all>
                                             </xs:complexType>

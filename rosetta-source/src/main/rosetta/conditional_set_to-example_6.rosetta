@@ -3,7 +3,9 @@ version "${project.version}"
 
 /*
 Example 6:
-The rosetta element engineSystem is conditional set to "COMBUSTION" when xml element "engineDetail->fuelDetail->combustible" = "Gasoline" else if "engineDetail->fuelDetail->combustible" = "Electricity" is set to ELECTRIC else is DEFAULT
+The rosetta element engineSystem is conditional set to "Combustion" when xml element "engineDetail->fuelDetail->
+combustible" = "Gasoline" else if "engineDetail->fuelDetail->combustible" = "Electricity" is set to ELECTRIC else is
+DEFAULT
 */
 synonym source CONDITIONAL_SET_TO_EXAMPLE_6
 
@@ -17,9 +19,9 @@ type Engine:
 		[synonym CONDITIONAL_SET_TO_EXAMPLE_6 value "engineDetail"]
 	engineSystem string (1..1)
 		[synonym CONDITIONAL_SET_TO_EXAMPLE_6
-			set to "COMBUSTION" when "engineDetail->fuelDetail->combustible" = "Gasoline",
-			set to "ELECTRIC" when "engineDetail->fuelDetail->combustible" = "Electricity",
-			set to "DEFAULT"]
+			set to "Combustion" when "engineDetail->fuelDetail->combustible" = "Gasoline",
+			set to "Electric" when "engineDetail->fuelDetail->combustible" = "Electricity",
+			set to "Default"]
 
 type EngineSpecification:
 	engineMetric EngineMetric (1..1)
@@ -47,7 +49,8 @@ Schema:
                                             <xs:complexType>
                                                 <xs:all>
                                                     <xs:element name="combustible" type="xs:string" minOccurs="0"/>
-                                                    <xs:element name="alternativeCombustible" type="xs:string" minOccurs="0"/>
+                                                    <xs:element name="alternativeCombustible" type="xs:string"
+                                                                minOccurs="0"/>
                                                     <xs:element name="properties" type="xs:string" minOccurs="0"/>
                                                 </xs:all>
                                             </xs:complexType>

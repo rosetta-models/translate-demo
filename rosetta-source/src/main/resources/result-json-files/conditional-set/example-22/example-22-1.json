@@ -1,8 +1,8 @@
 {
-  "yfield" : {
-    "str2Field" : "chips",
-    "zfield" : [ {
-      "strField" : "and"
+  "engineSpecification" : {
+    "alternativeFuelType" : "Electricity",
+    "volume" : [ {
+      "capacityUnit" : "Gallon"
     } ]
   }
 }

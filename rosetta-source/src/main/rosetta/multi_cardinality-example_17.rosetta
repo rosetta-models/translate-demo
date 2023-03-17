@@ -3,7 +3,8 @@ version "${project.version}"
 
 /*
 Example 17:
-Map list of basic types to nested list of basic types using path with multiple globalVersion engineSpecification and engineMetric.
+Map list of basic types to nested list of basic types using path with multiple globalVersion engineSpecification and
+engineMetric.
 */
 synonym source MULTI_CARDINALITY_EXAMPLE_17
 
@@ -48,14 +49,14 @@ Schema:
                             <xs:element name="fuelDetail" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="combustible" type="xs:string" />
+                                        <xs:element name="combustible" type="xs:string"/>
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
                             <xs:element name="capacityDetail" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="capacity" type="xs:string" />
+                                        <xs:element name="capacity" type="xs:string"/>
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>

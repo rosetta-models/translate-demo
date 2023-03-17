@@ -1,16 +1,14 @@
 {
-  "y1Field" : {
-    "zfield" : {
-      "str1Field" : "FISH",
-      "str2Field" : "CHIPS",
-      "str3Field" : "FISH"
+  "ukEngineVersion" : {
+    "terminology" : {
+      "capacity" : "US Gallon",
+      "fuelType" : "Gas"
     }
   },
-  "y2Field" : {
-    "zfield" : {
-      "str1Field" : "FISH2",
-      "str2Field" : "CHIPS2",
-      "str4Field" : "CHIPS2"
+  "usEngineVersion" : {
+    "terminology" : {
+      "capacity" : "UK Gallon",
+      "fuelType" : "Petrol"
     }
   }
 }

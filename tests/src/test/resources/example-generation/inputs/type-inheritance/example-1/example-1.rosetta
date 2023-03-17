@@ -8,7 +8,7 @@ synonym source TYPE_INHERITANCE_EXAMPLE_1
 
 type Root:
     [rootType]
-    vehicle Vehicle (1..1)
+    owner Owner (1..1)
         [synonym TYPE_INHERITANCE_EXAMPLE_1 value "vehicle"]
 
 type Vehicle:

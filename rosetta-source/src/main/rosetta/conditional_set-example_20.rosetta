@@ -3,9 +3,11 @@ version "${project.version}"
 
 /*
 Example 20:
-Conditional mapping using "set" with a "when" clause that is predicated on the value of a xml element at the specified xml path and rosettaPath with single-cardinality.
+Conditional mapping using "set" with a "when" clause that is predicated on the value of a xml element at the specified
+xml path and rosettaPath with single-cardinality.
 
-The attribute EngineSpecification->fuelType is conditional set from xml path engineType->combustible when engineType-> complementaryEnergy is absent
+The attribute EngineSpecification->fuelType is conditional set from xml path engineType->combustible when engineType->
+complementaryEnergy is absent
 */
 synonym source CONDITIONAL_SET_EXAMPLE_20
 
@@ -34,9 +36,9 @@ Schema:
                 <xs:element name="engineType">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="combustible" type="xs:string" minOccurs="0" />
-                            <xs:element name="complementaryEnergy" type="xs:string" minOccurs="0" />
-                            <xs:element name="volumeCapacityUnit" type="xs:string" minOccurs="0" />
+                            <xs:element name="combustible" type="xs:string" minOccurs="0"/>
+                            <xs:element name="complementaryEnergy" type="xs:string" minOccurs="0"/>
+                            <xs:element name="volumeCapacityUnit" type="xs:string" minOccurs="0"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>

@@ -23,9 +23,9 @@ type EngineSpecification:
 		[synonym CONDITIONAL_SET_TO_EXAMPLE_8 set to EngineEnum -> Hybrid when path = "engineDetail->alternativeCombustible"]
 
 enum EngineEnum:
-	HYBRID
+	Hybrid
 		[synonym CONDITIONAL_SET_TO_EXAMPLE_8 value "hybrid"]
-	COMBUSTION
+	Combustion
 		[synonym CONDITIONAL_SET_TO_EXAMPLE_8 value "combustion"]
 
 /*

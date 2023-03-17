@@ -3,7 +3,8 @@ version "${project.version}"
 
 /*
 Example 8:
-The rosetta element engineEnum is conditional set to "COMBUSTION" or "HYBRID" value from the EngineEnum when xml element "engineDetail->primaryFuel" or "engineDetail->alternativeCombustible" exists respectively
+The rosetta element engineEnum is conditional set to "Combustion" or "Hybrid" value from the EngineEnum when xml
+element "engineDetail->primaryFuel" or "engineDetail->alternativeCombustible" exists respectively
 */
 synonym source CONDITIONAL_SET_TO_EXAMPLE_8
 
@@ -20,13 +21,13 @@ type EngineSpecification:
 		[synonym CONDITIONAL_SET_TO_EXAMPLE_8 value "combustible" path "engineDetail->primaryFuel" ]
 		[synonym CONDITIONAL_SET_TO_EXAMPLE_8 value "combustible" path "engineDetail->secondaryFuel" ]
 	engineEnum EngineEnum (1..1)
-		[synonym CONDITIONAL_SET_TO_EXAMPLE_8 set to EngineEnum -> COMBUSTION when path = "engineDetail->primaryFuel"]
-		[synonym CONDITIONAL_SET_TO_EXAMPLE_8 set to EngineEnum -> HYBRID when path = "engineDetail->alternativeCombustible"]
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_8 set to EngineEnum -> Combustion when path = "engineDetail->primaryFuel"]
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_8 set to EngineEnum -> Hybrid when path = "engineDetail->alternativeCombustible"]
 
 enum EngineEnum:
-	HYBRID
+	Hybrid
 		[synonym CONDITIONAL_SET_TO_EXAMPLE_8 value "hybrid"]
-	COMBUSTION
+	Combustion
 		[synonym CONDITIONAL_SET_TO_EXAMPLE_8 value "combustion"]
 
 /*
@@ -57,7 +58,7 @@ Schema:
     </xs:element>
     <xs:complexType name="FuelReference">
         <xs:all>
-            <xs:element name = "combustible" type = "xs:string"/>
+            <xs:element name="combustible" type="xs:string"/>
         </xs:all>
         <xs:attribute name="id" type="xs:string"/>
     </xs:complexType>

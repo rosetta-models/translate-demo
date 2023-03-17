@@ -14,7 +14,8 @@
                                                 <xs:sequence>
                                                     <xs:element name="combustible" minOccurs="0" maxOccurs="unbounded">
                                                         <xs:complexType>
-                                                            <xs:attribute type="xs:string" name="octanes" use="optional"/>
+                                                            <xs:attribute type="xs:string" name="octanes"
+                                                                          use="optional"/>
                                                         </xs:complexType>
                                                     </xs:element>
                                                     <xs:element name="dieselType" minOccurs="0" maxOccurs="unbounded">

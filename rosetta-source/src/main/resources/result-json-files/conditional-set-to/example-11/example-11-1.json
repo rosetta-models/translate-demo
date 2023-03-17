@@ -1,19 +1,16 @@
 {
-  "yfield" : [ {
-    "zfield" : [ {
-      "str1Field" : "ClientOrderId",
-      "str2Field" : "43401154-1"
+  "engineSpecification" : [ {
+    "engineMetric" : [ {
+      "alternativeFuelType" : "gasoline",
+      "fuelType" : "Combustible"
     }, {
-      "str1Field" : "PartyType",
-      "str2Field" : "Customer Account"
+      "alternativeFuelType" : "PremiumGasoline",
+      "fuelType" : "RegularGasoline"
     } ]
   }, {
-    "zfield" : [ {
-      "str1Field" : "ClientOrderId",
-      "str2Field" : "43401154-2"
-    }, {
-      "str1Field" : "PartyType",
-      "str2Field" : "Customer Account"
+    "engineMetric" : [ {
+      "alternativeFuelType" : "gasoline",
+      "fuelType" : "Combustible"
     } ]
   } ]
 }

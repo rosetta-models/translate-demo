@@ -1,15 +1,15 @@
 {
-  "zfield" : {
-    "strField" : [ {
+  "engineSpecification" : {
+    "fuel" : [ {
       "meta" : {
         "scheme" : "scheme1"
       },
-      "value" : "FISH"
+      "value" : "Gasoline"
     }, {
       "meta" : {
         "scheme" : "scheme2"
       },
-      "value" : "CHIPS"
+      "value" : "Propane"
     } ]
   }
 }

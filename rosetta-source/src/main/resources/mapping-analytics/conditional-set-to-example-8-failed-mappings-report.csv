@@ -1,3 +1,5 @@
 File Name,Result,Input Path,Indexless Input Path,Unmappable CDM Path Count,Unmappable CDM Paths,Reason For Failure
-cdm-sample-files/conditional-set-to/example-8/example-8-1.xml,Fail_MappedNone,a.b[id=blah].id,a.b[id=blah].id,0,,Element with value blah could not be mapped to a rosettaField
-cdm-sample-files/conditional-set-to/example-8/example-8-1.xml,Fail_MappedNone,a.b[id=blah].c[id=blib].id,a.b[id=blah].c[id=blib].id,0,,Element with value blib could not be mapped to a rosettaField
+cdm-sample-files/conditional-set-to/example-8/example-8-1.xml,Success,engineType.engineDetail[id=123].fuelDetail[id=456].id,engineType.engineDetail[id=123].fuelDetail[id=456].id,0,,Element could not be mapped to a rosettaField
+cdm-sample-files/conditional-set-to/example-8/example-8-1.xml,Success,engineType.engineDetail[id=123].fuelDetail[id=456].combustible,engineType.engineDetail[id=123].fuelDetail[id=456].combustible,0,,had no destination : Element could not be mapped to a rosettaField
+cdm-sample-files/conditional-set-to/example-8/example-8-1.xml,Success,engineType.engineDetail[id=123].alternativeFuel.combustible,engineType.engineDetail[id=123].alternativeFuel.combustible,0,,had no destination : Element could not be mapped to a rosettaField
+cdm-sample-files/conditional-set-to/example-8/example-8-1.xml,Success,engineType.engineDetail[id=123].id,engineType.engineDetail[id=123].id,0,,Element could not be mapped to a rosettaField

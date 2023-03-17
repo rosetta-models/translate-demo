@@ -5,7 +5,7 @@ import com.regnosys.rosetta.common.translation.MappingProcessor;
 import com.regnosys.rosetta.common.translation.Path;
 import com.rosetta.model.lib.RosettaModelObjectBuilder;
 import com.rosetta.model.lib.path.RosettaPath;
-import demo.translate.mappers.example_2.Z;
+import demo.translate.mappers.example_2.EngineSpecification;
 
 import java.util.List;
 
@@ -31,25 +31,25 @@ public class Example2MappingProcessor extends MappingProcessor {
         Path xmlPath1 = xmlPath.addElement("b").addElement("c").addElement("d"); // a->b->c->d (e.g. value of "FISH")
 
         // this helper function will look up a xml path, and pass it to the consumer function, then updates the mapping stats
-        setValueAndUpdateMappings(xmlPath1,
-                // consumer function that takes value found at the xml path
-                xmlValueFromXmlPath1 -> {
-                    // cast builder object
-                    Z.ZBuilder zBuilder = (Z.ZBuilder) builder;
-                    // set new value on builder object
-                    zBuilder.setStr1Field(xmlValueFromXmlPath1 + "X");
-                });
-
-        Path xmlPath2 = xmlPath.addElement("b").addElement("c").addElement("e"); // a->b->c->e (e.g. value of "CHIPS")
-
-        // this helper function will look up a xml path, and pass it to the consumer function, then updates the mapping stats
-        setValueAndUpdateMappings(xmlPath2,
-                // consumer function that takes value found at the xml path
-                xmlValueFromXmlPath2 -> {
-                    // cast builder object
-                    Z.ZBuilder zBuilder = (Z.ZBuilder) builder;
-                    // set new value on builder object
-                    zBuilder.setStr2Field(xmlValueFromXmlPath2 + "_Y");
-                });
+//        setValueAndUpdateMappings(xmlPath1,
+//                // consumer function that takes value found at the xml path
+//                xmlValueFromXmlPath1 -> {
+//                    // cast builder object
+//                    EngineSpecification.EngineSpecificationBuilder engineSpecificationBuilder = (EngineSpecification.EngineSpecificationBuilder) builder;
+//                    // set new value on builder object
+//                    engineSpecificationBuilder.setStr1Field(xmlValueFromXmlPath1 + "X");
+//                });
+//
+//        Path xmlPath2 = xmlPath.addElement("b").addElement("c").addElement("e"); // a->b->c->e (e.g. value of "CHIPS")
+//
+//        // this helper function will look up a xml path, and pass it to the consumer function, then updates the mapping stats
+//        setValueAndUpdateMappings(xmlPath2,
+//                // consumer function that takes value found at the xml path
+//                xmlValueFromXmlPath2 -> {
+//                    // cast builder object
+//                    Z.ZBuilder zBuilder = (Z.ZBuilder) builder;
+//                    // set new value on builder object
+//                    zBuilder.setStr2Field(xmlValueFromXmlPath2 + "_Y");
+//                });
     }
 }

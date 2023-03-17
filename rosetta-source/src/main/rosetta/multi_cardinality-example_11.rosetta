@@ -4,7 +4,8 @@ version "${project.version}"
 /*
 Example 11:
 Map list of basic types to nested list of complex types (multiple attributes)
-List of fuelDetail (as it is the first node detected or consumed) mapped into engineMetric (EngineSpecification->engineMetric), so it does not merge both xml elements into the rosetta list type
+List of fuelDetail (as it is the first node detected or consumed) mapped into engineMetric (EngineSpecification->
+engineMetric), so it does not merge both xml elements into the rosetta list type
 */
 synonym source MULTI_CARDINALITY_EXAMPLE_11
 
@@ -41,14 +42,14 @@ Schema:
                             <xs:element name="fuelDetail" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="combustible" type="xs:string" />
+                                        <xs:element name="combustible" type="xs:string"/>
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
                             <xs:element name="capacityDetail" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="capacity" type="xs:string" />
+                                        <xs:element name="capacity" type="xs:string"/>
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>

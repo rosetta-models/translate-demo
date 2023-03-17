@@ -1,9 +1,9 @@
 {
-  "zfield" : [ {
+  "engineSpecification" : [ {
     "value" : {
-      "str1Field" : "FISH",
-      "str2Field" : "CHIPS",
-      "str3Field" : "PIZZA"
+      "emissions" : "FISH",
+      "fuelType" : "CHIPS",
+      "volumeUnit" : "PIZZA"
     }
   } ]
 }

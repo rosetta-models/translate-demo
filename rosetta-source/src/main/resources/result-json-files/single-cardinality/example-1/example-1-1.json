@@ -1,7 +1,7 @@
 {
-  "yfield" : {
-    "zfield" : {
-      "strField" : "Fish"
+  "engineSpecification" : {
+    "fuel" : {
+      "fuelType" : "Petrol"
     }
   }
 }

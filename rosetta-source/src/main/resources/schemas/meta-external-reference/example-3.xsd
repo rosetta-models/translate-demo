@@ -10,7 +10,7 @@
                                 <xs:complexType>
                                     <xs:choice>
                                         <xs:element name="engineReference"
-                                                    type="EngineReference" />
+                                                    type="EngineReference"/>
                                         <xs:element name="fuelDetail" type="FuelDetail"/>
                                     </xs:choice>
                                 </xs:complexType>
@@ -37,15 +37,15 @@
         <xs:complexContent>
             <xs:extension base="Reference">
                 <xs:attribute name="href" type="xs:IDREF"
-                              use="required" />
+                              use="required"/>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
 
     <xs:complexType name="FuelDetail">
         <xs:sequence>
-            <xs:element name = "name" type="xs:string"></xs:element>
+            <xs:element name="combustible" type="xs:string"></xs:element>
         </xs:sequence>
-        <xs:attribute type="xs:ID" name="id" />
+        <xs:attribute type="xs:ID" name="id"/>
     </xs:complexType>
 </xs:schema>

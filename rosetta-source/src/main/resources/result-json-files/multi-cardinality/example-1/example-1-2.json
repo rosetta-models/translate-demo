@@ -1,7 +1,7 @@
 {
-  "zfield" : [ {
-    "str1Field" : "Fish"
+  "engineSpecification" : [ {
+    "fuel" : "Gas"
   }, {
-    "str1Field" : "Meat"
+    "fuel" : "Petrol"
   } ]
 }

@@ -1,12 +1,11 @@
 {
-  "yfield" : {
-    "z1Field" : {
-      "str1Field" : "source-bid",
-      "str2Field" : "source-pid"
+  "engineSpecification" : {
+    "ukEngineSpecification" : {
+      "capacityUnit" : "UK Gallon",
+      "fuelType" : "Petrol"
     },
-    "z2Field" : {
-      "str1Field" : "counter-bid",
-      "str2Field" : "counter-pid"
+    "usEngineVersion" : {
+      "fuelType" : "Gasoline"
     }
   }
 }

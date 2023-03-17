@@ -12,17 +12,17 @@ type Root:
 	vehicle Vehicle (1..1)
 
 type Engine:
-	quantity EngineMetric (1..1)
+	engineMetric EngineMetric (1..1)
         [metadata location]
         [synonym MAPPERS_EXAMPLE_5 value "engineDetail" path "engineType"]
 
 type Vehicle:
-    resolvablePayoutQuantity EngineSpecification (1..1)
+    engineSpecification EngineSpecification (1..1)
 	    [synonym MAPPERS_EXAMPLE_5 value "engineDetail" path "engineType"]
 
 type EngineSpecification:
-	resolvedQuantity EngineMetric (1..1)
-        [metadata address "pointsTo"=Engine->quantity]
+	resolvedAmount EngineMetric (1..1)
+        [metadata address "pointsTo"=Engine->engineMetric]
         [synonym MAPPERS_EXAMPLE_5 value "horsePower" mapper "Example5"]
 
 type EngineMetric:

@@ -2,7 +2,8 @@ namespace demo.translate.external_synonym.example_2
 version "${project.version}"
 
 /*
-Mappings are performed comming from an external synonym source where for each type (Root and EngineSpecification) it is defined the mappings
+Mappings are performed comming from an external synonym source where for each type (Root and EngineSpecification) it is
+defined the mappings
 */
 synonym source EXTERNAL_SYNONYM_EXAMPLE_2_BASE
 

@@ -1,6 +1,6 @@
 {
-  "zfield" : {
-    "zstrField" : "PRECEDING",
-    "xintField" : -2
+  "owner" : {
+    "capacity" : 7,
+    "model" : "Model S"
   }
 }

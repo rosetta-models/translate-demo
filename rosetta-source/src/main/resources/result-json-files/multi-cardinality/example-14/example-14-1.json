@@ -1,12 +1,12 @@
 {
-  "xfield" : {
-    "yfield" : [ {
-      "zfield" : [ {
-        "str1Field" : "FISH",
-        "str2Field" : "STEAK"
+  "engine" : {
+    "engineSpecification" : [ {
+      "engineMetric" : [ {
+        "capacity" : "Gallon",
+        "fuel" : "Petrol"
       }, {
-        "str1Field" : "SAUSAGE",
-        "str2Field" : "PIZZA"
+        "capacity" : "Gallon",
+        "fuel" : "Diesel"
       } ]
     } ]
   }

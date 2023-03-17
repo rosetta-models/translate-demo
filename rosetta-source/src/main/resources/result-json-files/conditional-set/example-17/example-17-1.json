@@ -1,10 +1,10 @@
 {
-  "zfield" : [ {
-    "strField" : {
+  "engineSpecification" : [ {
+    "fuelType" : {
       "meta" : {
-        "scheme" : "sausageScheme"
+        "scheme" : "petrolScheme"
       },
-      "value" : "SAUSAGE"
+      "value" : "Gasoline"
     }
   } ]
 }

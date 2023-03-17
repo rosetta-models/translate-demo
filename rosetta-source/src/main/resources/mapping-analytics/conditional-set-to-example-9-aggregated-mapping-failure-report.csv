@@ -1,6 +1,7 @@
-Mapping Coverage,25.00
+Mapping Coverage,0.00
 
 Input Path,Failed Mapping Count
-a.b.e.f,1
-a.b.c.id,1
-a.b.id,1
+engineType.engineDetail.fuelDetail.id,1
+engineType.engineDetail.fuelDetail.combustible,1
+engineType.engineDetail.alternativeFuel.combustible,1
+engineType.engineDetail.id,1

@@ -1,8 +1,8 @@
 {
-  "yfield" : {
-    "zfield" : {
-      "str1Field" : "FISH",
-      "str2Field" : "CHIPS"
+  "engineSpecification" : {
+    "volume" : {
+      "fuelType" : "Petrol",
+      "volumeUnit" : "UK Gallon"
     }
   }
 }

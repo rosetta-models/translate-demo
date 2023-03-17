@@ -1,5 +1,5 @@
 {
-  "zfield" : {
-    "strField" : [ "FISH", "CHIPS" ]
+  "engineSpecification" : {
+    "fuel" : [ "FISH", "CHIPS" ]
   }
 }

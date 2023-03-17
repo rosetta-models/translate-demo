@@ -1,15 +1,1 @@
-{
-  "yfield" : {
-    "zfield" : [ {
-      "str1Field" : "FISH_X",
-      "str2Field" : "CHIPS_X",
-      "str3Field" : "MEAT_Y",
-      "str4Field" : "FISH_Y"
-    }, {
-      "str1Field" : "BREAD_X",
-      "str2Field" : "CARROT_X",
-      "str3Field" : "EGGS_Y",
-      "str4Field" : "HAM_Y"
-    } ]
-  }
-}
+null

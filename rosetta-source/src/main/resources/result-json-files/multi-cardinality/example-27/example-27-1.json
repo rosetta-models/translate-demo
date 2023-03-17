@@ -1,13 +1,13 @@
 {
-  "yfield" : {
-    "zfield" : [ {
-      "strField" : "FISH"
+  "engineSpecification" : {
+    "engineMetric" : [ {
+      "unitMetric" : "Petrol"
     }, {
-      "strField" : "CHIPS"
+      "unitMetric" : "Diesel"
     }, {
-      "strField" : "SAUSAGE"
+      "unitMetric" : "Litres"
     }, {
-      "strField" : "MASH"
+      "unitMetric" : "Gallon"
     } ]
   }
 }
