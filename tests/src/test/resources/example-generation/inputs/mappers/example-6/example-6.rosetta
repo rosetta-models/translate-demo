@@ -23,7 +23,7 @@ type Vehicle:
 type EngineSpecification:
 	resolvedAmount EngineMetric (1..1)
         [metadata address "pointsTo"=Engine->engineMetric]
-        [synonym MAPPERS_EXAMPLE_6 meta "metric"]
+        [synonym MAPPERS_EXAMPLE_6 meta "horsePower"]
 
 type EngineMetric:
 	amount number (1..1)

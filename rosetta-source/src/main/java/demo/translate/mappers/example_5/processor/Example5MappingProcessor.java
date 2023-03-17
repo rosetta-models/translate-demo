@@ -24,7 +24,7 @@ public class Example5MappingProcessor extends MappingProcessor {
     }
 
     /**
-     * Override the map method as this mapper is specified on a complex type attribute ResolvablePayoutQuantity->resolvedQuantity
+     * Override the map method as this mapper is specified on a complex type attribute EngineMetric->resolvedAmount
      */
     @Override
     public void map(Path xmlPath, RosettaModelObjectBuilder builder, RosettaModelObjectBuilder parent) {
