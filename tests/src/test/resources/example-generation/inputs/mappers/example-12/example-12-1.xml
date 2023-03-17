@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
-<dataDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="example-12.xsd example-12.xsd">
+<dataDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="d">
     <engineType>
-        <engineDetail>
+        <fuelDetail>
             <emissions>Mid-Emissions</emissions>
             <combustible>Gasoline</combustible>
-        </engineDetail>
+        </fuelDetail>
         <fuelDetail>
             <emissions>High-Emissions</emissions>
             <combustible>Diesel</combustible>

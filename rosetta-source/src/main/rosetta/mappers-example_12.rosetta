@@ -16,7 +16,7 @@ type Root:
 
 type Engine:
 	engineSpecification EngineSpecification (0..*)
-	    // merge lists b and e together
+	    // merge lists fuelDetail and capacityDetail together
 	    [synonym MAPPERS_EXAMPLE_12 value "engineDetail" mapper "Example12"]
 
 type EngineSpecification:

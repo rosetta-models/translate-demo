@@ -2,8 +2,8 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
     <xs:element name="dataDocument">
         <xs:complexType>
-            <xs:all>
-                <xs:element name="engineType">
+            <xs:sequence>
+                <xs:element name="engineType" maxOccurs="unbounded">
                     <xs:complexType>
                         <xs:all>
                             <xs:element name="engineDetail">
@@ -24,7 +24,7 @@
                         </xs:all>
                     </xs:complexType>
                 </xs:element>
-            </xs:all>
+            </xs:sequence>
         </xs:complexType>
     </xs:element>
 </xs:schema>

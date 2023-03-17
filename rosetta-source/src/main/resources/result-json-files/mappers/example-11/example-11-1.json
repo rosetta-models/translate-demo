@@ -1,9 +1,21 @@
 {
   "engineSpecification" : [ {
+    "meta" : {
+      "scheme" : "engine-specification-scheme"
+    },
     "value" : {
-      "emissions" : "FISH",
-      "fuelType" : "CHIPS",
-      "volumeUnit" : "PIZZA"
+      "emissions" : "Low-Emissions",
+      "fuelType" : "Gasoline",
+      "volumeUnit" : "Gallon"
+    }
+  }, {
+    "meta" : {
+      "scheme" : "engine-specification-scheme"
+    },
+    "value" : {
+      "emissions" : "High-Emissions",
+      "fuelType" : "Diesel",
+      "volumeUnit" : "Liters"
     }
   } ]
 }
