@@ -1,6 +1,8 @@
 {
   "engineSpecification" : {
     "value" : {
+      "emissions" : "Low-Emission",
+      "fuelType" : "Gasoline",
       "volumeType" : "Gallon"
     }
   }
