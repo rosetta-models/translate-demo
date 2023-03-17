@@ -1,9 +1,1 @@
 File Name,Result,Input Path,Indexless Input Path,Unmappable CDM Path Count,Unmappable CDM Paths,Reason For Failure
-cdm-sample-files/mappers/example-12/example-12-1.xml,Success,engineType.fuelDetail(1).combustible,engineType.fuelDetail.combustible,0,,had no destination : Element could not be mapped to a rosettaField
-cdm-sample-files/mappers/example-12/example-12-1.xml,Success,engineType.capacityDetail(0).volumeConsumption,engineType.capacityDetail.volumeConsumption,0,,had no destination : Element could not be mapped to a rosettaField
-cdm-sample-files/mappers/example-12/example-12-1.xml,Success,engineType.capacityDetail(1).volumeConsumption,engineType.capacityDetail.volumeConsumption,0,,had no destination : Element could not be mapped to a rosettaField
-cdm-sample-files/mappers/example-12/example-12-1.xml,Success,engineType.capacityDetail(1).capacityUnit,engineType.capacityDetail.capacityUnit,0,,had no destination : Element could not be mapped to a rosettaField
-cdm-sample-files/mappers/example-12/example-12-1.xml,Success,engineType.fuelDetail(0).emissions,engineType.fuelDetail.emissions,0,,had no destination : Element could not be mapped to a rosettaField
-cdm-sample-files/mappers/example-12/example-12-1.xml,Success,engineType.capacityDetail(0).capacityUnit,engineType.capacityDetail.capacityUnit,0,,had no destination : Element could not be mapped to a rosettaField
-cdm-sample-files/mappers/example-12/example-12-1.xml,Success,engineType.fuelDetail(1).emissions,engineType.fuelDetail.emissions,0,,had no destination : Element could not be mapped to a rosettaField
-cdm-sample-files/mappers/example-12/example-12-1.xml,Success,engineType.fuelDetail(0).combustible,engineType.fuelDetail.combustible,0,,had no destination : Element could not be mapped to a rosettaField

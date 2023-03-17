@@ -1,7 +1,3 @@
-Mapping Coverage,0.00
+Mapping Coverage,100.00
 
 Input Path,Failed Mapping Count
-engineType.fuelDetail.emissions,2
-engineType.capacityDetail.volumeConsumption,2
-engineType.fuelDetail.combustible,2
-engineType.capacityDetail.capacityUnit,2
