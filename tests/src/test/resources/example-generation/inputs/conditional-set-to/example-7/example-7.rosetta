@@ -26,9 +26,9 @@ type EngineMetric:
 		[synonym CONDITIONAL_SET_TO_EXAMPLE_7 value "combustible"]
 
 enum FuelEnum:
-	ELECTRICITY
+	Electricity
 		[synonym CONDITIONAL_SET_TO_EXAMPLE_7 value "electricity"]
-	GASOLINE
+	Gasoline
 		[synonym CONDITIONAL_SET_TO_EXAMPLE_7 value "gasoline"]
 /*
 Schema:

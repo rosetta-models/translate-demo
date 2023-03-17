@@ -1,11 +1,11 @@
 {
-  "yfield" : {
-    "zfield" : [ {
-      "enumField" : "FOO",
-      "strField" : "foo"
+  "engine" : {
+    "engineSpecification" : [ {
+      "engineEnum" : "COMBUSTION",
+      "fuel" : "Gasoline"
     }, {
-      "enumField" : "BAR",
-      "strField" : "bar"
+      "engineEnum" : "HYBRID",
+      "fuel" : "Electricity"
     } ]
   }
 }

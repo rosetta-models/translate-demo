@@ -9,7 +9,7 @@
                             <xs:element name="fuelDetail" maxOccurs="unbounded" minOccurs="0">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element type="xs:string" name="emmissions"/>
+                                        <xs:element type="xs:string" name="emissions"/>
                                         <xs:element type="xs:string" name="combustible"/>
                                     </xs:sequence>
                                 </xs:complexType>

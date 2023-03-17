@@ -34,7 +34,7 @@ Schema:
                                     <xs:sequence>
                                         <xs:element name="combustible" type="xs:string"></xs:element>
                                     </xs:sequence>
-                                    <xs:attribute type="xs:ID" name="id" />
+                                    <xs:attribute type="xs:ID" name="id"/>
                                 </xs:complexType>
                             </xs:element>
                         </xs:sequence>

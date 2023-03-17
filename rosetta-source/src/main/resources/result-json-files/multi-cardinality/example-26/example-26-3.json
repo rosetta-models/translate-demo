@@ -1,10 +1,10 @@
 {
-  "zfield" : {
-    "zfield" : [ {
-      "str1Field" : "FISH"
+  "engineSpecification" : {
+    "volume" : [ {
+      "fuelType" : "Petrol"
     }, {
-      "str1Field" : "AND",
-      "str2Field" : "CHIPS"
+      "fuelType" : "Diesel",
+      "volumeUnit" : "Gallon"
     } ]
   }
 }

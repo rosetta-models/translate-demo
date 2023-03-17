@@ -1,16 +1,7 @@
 {
-  "yfield" : {
-    "zrefField" : {
-      "externalReference" : "xyz",
-      "globalReference" : "3f0fbf4"
-    },
-    "zfield" : {
-      "enumField" : "BAR",
-      "meta" : {
-        "externalKey" : "xyz",
-        "globalKey" : "3f0fbf4"
-      },
-      "str1Field" : "CHIPS"
+  "engine" : {
+    "engineSpecificationRef" : {
+      "externalReference" : "xyz"
     }
   }
 }

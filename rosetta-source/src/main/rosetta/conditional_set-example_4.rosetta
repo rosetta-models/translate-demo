@@ -4,9 +4,11 @@ version "${project.version}"
 /*
 Example 4:
 
-Conditional mapping using "set" with a "when" clause that is predicated on the value of a xml element at the specified xml path.
+Conditional mapping using "set" with a "when" clause that is predicated on the value of a xml element at the specified
+xml path.
 
-The attribute EngineSpecification->capacityUnit is conditionally set from xml path engine->engineType->engineDetail->volumeCapacityUnit when the value at xml path engine->engineType->engineDetail->isFromUK is True.
+The attribute EngineSpecification->capacityUnit is conditionally set from xml path engine->engineType->engineDetail->
+volumeCapacityUnit when the value at xml path engine->engineType->engineDetail->isFromUK is True.
 */
 synonym source CONDITIONAL_SET_EXAMPLE_4
 
@@ -38,9 +40,9 @@ Schema:
                                         <xs:element name="engineDetail">
                                             <xs:complexType>
                                                 <xs:all>
-                                                    <xs:element name="isFromUK" type="xs:boolean" />
-                                                    <xs:element name="volumeCapacityUnit" type="xs:string" />
-                                                    <xs:element name="combustible" type="xs:string" />
+                                                    <xs:element name="isFromUK" type="xs:boolean"/>
+                                                    <xs:element name="volumeCapacityUnit" type="xs:string"/>
+                                                    <xs:element name="combustible" type="xs:string"/>
                                                 </xs:all>
                                             </xs:complexType>
                                         </xs:element>

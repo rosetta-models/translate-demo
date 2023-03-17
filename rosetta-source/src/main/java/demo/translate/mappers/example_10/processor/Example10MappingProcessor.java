@@ -23,31 +23,20 @@ public class Example10MappingProcessor extends MappingProcessor {
     }
 
     /**
-     * Override the mapBasic method as this mapper is specified on a basic type list attribute Z->str2Field
+     * Override the mapBasic method as this mapper is specified on a basic type list attribute EngineSpecificationBuilder->fuelType
      */
     @Override
-    public void map(Path xmlPath, List<? extends RosettaModelObjectBuilder> builder, RosettaModelObjectBuilder parent) {
-        // parameter: xmlPath = a->b->c->e (the path where the "mapper" syntax is specified)
-        // parameter: builder = ana instance of object FieldWithMetaString, where the value has been set to "CHIPS" (the value at the path where the mapper is specified)
-        // parameter: parent = an instance of object Z.ZBuilder that can be updated
+    public void map(Path xmlPath, List<? extends RosettaModelObjectBuilder> builders, RosettaModelObjectBuilder parent) {
+        // parameter: xmlPath = engineType->engineDetail->metric->combustible (the path where the "mapper" syntax is specified)
+        // parameter: builder = a list of object FieldWithMetaString
+        // parameter: parent = an instance of object EngineSpecificationBuilder that can be updated
 
-        Path parentXmlPath = xmlPath.getParent(); // a->b->c
-        Path newXmlPath = parentXmlPath.addElement("d"); // a->b->c->d (e.g. value of "FISH")
-
-        // this helper function will look up a xml path, and pass it to the consumer function, then updates the mapping stats
-        setValueAndUpdateMappings(newXmlPath,
-                // consumer function that takes value found at the xml path
-                xmlValueFromNewXmlPath -> {
-                    // cast builder object
-                    FieldWithMetaString.FieldWithMetaStringBuilder metaStringBuilder =
-                            (FieldWithMetaString.FieldWithMetaStringBuilder) builder;
-                    // create new value to set
-                    String newValue = metaStringBuilder.getValue() + "_" + xmlValueFromNewXmlPath;
-                    // set new value on builder object
-                    metaStringBuilder
-                            .setValue(newValue)
-                            .setMeta(MetaFields.builder()
-                                    .setScheme("foo-scheme-set-by-mapper-multi-cardinality"));
-                });
+        // cast builder object
+        List<FieldWithMetaString.FieldWithMetaStringBuilder> metaStringBuilders =
+                (List<FieldWithMetaString.FieldWithMetaStringBuilder>) builders;
+        // set scheme on builder object
+        metaStringBuilders.forEach(metaStringBuilder ->
+                metaStringBuilder.setMeta(MetaFields.builder()
+                        .setScheme("fuel-type-scheme")));
     }
 }

@@ -3,23 +3,21 @@
     <xs:element name="dataDocument">
         <xs:complexType>
             <xs:all>
-                <xs:element name="vehicleOwner" type="fullpersoninfo" />
+                <xs:element name="vehicleOwner" type="fullPersonInfo"/>
             </xs:all>
         </xs:complexType>
     </xs:element>
-    <xs:complexType name="personinfo">
+    <xs:complexType name="personInfo">
         <xs:sequence>
-            <xs:element name="firstname" type="xs:string" />
-            <xs:element name="lastname" type="xs:string" />
+            <xs:element name="firstname" type="xs:string"/>
+            <xs:element name="lastname" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>
-    <xs:complexType name="fullpersoninfo">
+    <xs:complexType name="fullPersonInfo">
         <xs:complexContent>
-            <xs:extension base="personinfo">
+            <xs:extension base="personInfo">
                 <xs:sequence>
-                    <xs:element name="address" type="xs:string" />
-                    <xs:element name="city" type="xs:string" />
-                    <xs:element name="country" type="xs:string" />
+                    <xs:element name="vehicleOwned" type="xs:string"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>

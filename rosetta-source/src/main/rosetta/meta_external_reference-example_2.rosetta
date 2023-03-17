@@ -39,7 +39,7 @@ Schema:
                                 <xs:complexType>
                                     <xs:sequence>
                                         <xs:element name="engineReference"
-                                                    type="EngineReference" />
+                                                    type="EngineReference"/>
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
@@ -66,7 +66,7 @@ Schema:
         <xs:complexContent>
             <xs:extension base="Reference">
                 <xs:attribute name="href" type="xs:IDREF"
-                              use="required" />
+                              use="required"/>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
@@ -74,7 +74,7 @@ Schema:
     <xs:complexType name="FuelDetail">
         <xs:simpleContent>
             <xs:extension base="xs:string">
-                <xs:attribute type="xs:ID" name="id" />
+                <xs:attribute type="xs:ID" name="id"/>
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>

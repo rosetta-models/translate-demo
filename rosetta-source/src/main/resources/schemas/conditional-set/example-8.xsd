@@ -12,14 +12,14 @@
                                         <xs:element name="capacity">
                                             <xs:complexType>
                                                 <xs:all>
-                                                    <xs:element name="capacityUnit" type="xs:string" />
+                                                    <xs:element name="capacityUnit" type="xs:string"/>
                                                 </xs:all>
                                             </xs:complexType>
                                         </xs:element>
                                     </xs:all>
                                 </xs:complexType>
                             </xs:element>
-                            <xs:element name="combustible" type="xs:string" />
+                            <xs:element name="combustible" type="xs:string"/>
                         </xs:all>
                     </xs:complexType>
                 </xs:element>

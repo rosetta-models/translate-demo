@@ -8,15 +8,14 @@ synonym source TYPE_INHERITANCE_EXAMPLE_2
 
 type Root:
     [rootType]
-	vehicle Vehicle (1..1)
-	    [synonym TYPE_INHERITANCE_EXAMPLE_2 value "vehicleOwner"]   //VehicleOwner
+	vehicleOwner VehicleOwner (1..1)
+	    [synonym TYPE_INHERITANCE_EXAMPLE_2 value "vehicleOwner"]
 
-type Vehicle: //Y
+type Vehicle:
 	vehicleType string (1..1)
-	    [synonym TYPE_INHERITANCE_EXAMPLE_2 value "property"]
+	    [synonym TYPE_INHERITANCE_EXAMPLE_2 value "vehicleOwned"]
 
-type VehicleOwner extends Vehicle: //Z extends Y
-
+type VehicleOwner extends Vehicle:
     firstname string (1..1)
 	    [synonym TYPE_INHERITANCE_EXAMPLE_2 value "firstname"]
 	lastname string (1..1)

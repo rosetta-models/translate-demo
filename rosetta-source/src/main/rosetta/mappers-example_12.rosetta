@@ -4,54 +4,29 @@ version "${project.version}"
 /*
 Example 12:
 
-<<<<<<< HEAD
 Mapper merges two lists, engineDetail and e, into a list of type EngineSpecification.
-=======
-Mapper merges two lists, b and e, into a list of type Z.
->>>>>>> dfdc5b690cc24c58177a5121ae6a352abd9d9af9
 
 */
 synonym source MAPPERS_EXAMPLE_12
 
 type Root:
     [rootType]
-<<<<<<< HEAD
 	engine Engine (1..1)
-	    [synonym MAPPERS_EXAMPLE_12 value "engineType"]
 
 type Engine:
 	engineSpecification EngineSpecification (0..*)
-	    // merge lists b and e together
-	    [synonym MAPPERS_EXAMPLE_12 value "engineDetail" mapper "Example12"]
+	    // merge lists fuelDetail and capacityDetail together
+	    [synonym MAPPERS_EXAMPLE_12 value "engineType" mapper "Example12"]
 
 type EngineSpecification:
     // value updated by the mapper
-    emmissions string (1..1)
+    emissions string (1..1)
     // value updated by the mapper
     fuelType string (1..1)
     // value updated by the mapper
     volumeUnit string (1..1)
     // value updated by the mapper
     volumeConsumption string (1..1)
-=======
-	yField Y (1..1)
-	    [synonym MAPPERS_EXAMPLE_12 value "a"]
-
-type Y:
-	zField Z (0..*)
-	    // merge lists b and e together
-	    [synonym MAPPERS_EXAMPLE_12 value "b" mapper "Example12"]
-
-type Z:
-    // value updated by the mapper
-    str1Field string (1..1)
-    // value updated by the mapper
-    str2Field string (1..1)
-    // value updated by the mapper
-    str3Field string (1..1)
-    // value updated by the mapper
-    str4Field string (1..1)
->>>>>>> dfdc5b690cc24c58177a5121ae6a352abd9d9af9
 
 /*
 Schema:
@@ -67,7 +42,7 @@ Schema:
                             <xs:element name="fuelDetail" maxOccurs="unbounded" minOccurs="0">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element type="xs:string" name="emmissions"/>
+                                        <xs:element type="xs:string" name="emissions"/>
                                         <xs:element type="xs:string" name="combustible"/>
                                     </xs:sequence>
                                 </xs:complexType>

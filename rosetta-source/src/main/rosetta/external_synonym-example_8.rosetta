@@ -3,7 +3,8 @@ version "${project.version}"
 
 /*
 Example 8:
-Mappings are performed comming from an external synonym source where for each type it is defined the mappings then another external synonym which delete the previous mappings with "-" sign
+Mappings are performed comming from an external synonym source where for each type it is defined the mappings then
+another external synonym which delete the previous mappings with "-" sign
 */
 synonym source EXTERNAL_SYNONYM_EXAMPLE_8_BASE_0
 
@@ -97,11 +98,11 @@ Schema:
                             <xs:element name="engineDetail">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="specificationRed" type="SpecificationReference" />
+                                        <xs:element name="specificationRef" type="SpecificationReference"/>
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
-                            <xs:element name="specifications" type="Specifications" />
+                            <xs:element name="specifications" type="Specifications"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
@@ -122,19 +123,19 @@ Schema:
         </xs:annotation>
         <xs:complexContent>
             <xs:extension base="Reference">
-                <xs:attribute name="href" type="xs:IDREF" use="required" />
+                <xs:attribute name="href" type="xs:IDREF" use="required"/>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
 
     <xs:complexType name="Specifications">
         <xs:sequence>
-            <xs:element name="powerUnit" />
-            <xs:element name="cylinders" />
-            <xs:element name="combustible" type="FuelEnum" />
-            <xs:element name="manufacturer" />
+            <xs:element name="powerUnit"/>
+            <xs:element name="cylinders"/>
+            <xs:element name="combustible" type="FuelEnum"/>
+            <xs:element name="manufacturer"/>
         </xs:sequence>
-        <xs:attribute name="id" type="xs:ID" use="required" />
+        <xs:attribute name="id" type="xs:ID" use="required"/>
     </xs:complexType>
 
     <xs:simpleType name="FuelEnum">

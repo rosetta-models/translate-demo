@@ -1,15 +1,15 @@
 {
-  "yfield" : {
-    "zfield" : [ {
-      "str1Field" : "FISH_X",
-      "str2Field" : "CHIPS_X",
-      "str3Field" : "MEAT_Y",
-      "str4Field" : "FISH_Y"
+  "engine" : {
+    "engineSpecification" : [ {
+      "emissions" : "Mid-Emissions",
+      "fuelType" : "Gasoline",
+      "volumeConsumption" : "Liters",
+      "volumeUnit" : "7L/100km"
     }, {
-      "str1Field" : "BREAD_X",
-      "str2Field" : "CARROT_X",
-      "str3Field" : "EGGS_Y",
-      "str4Field" : "HAM_Y"
+      "emissions" : "High-Emissions",
+      "fuelType" : "Diesel",
+      "volumeConsumption" : "Gallon",
+      "volumeUnit" : "0.03889 gal/mi"
     } ]
   }
 }

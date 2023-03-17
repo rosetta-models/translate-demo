@@ -15,8 +15,8 @@ type Root:
 	    [synonym MAPPERS_EXAMPLE_8 value "engineType" mapper "Example8"]
 
 type EngineSpecification:
-	emmissions string (1..1)
-	    [synonym MAPPERS_EXAMPLE_8 value "emmissions" path "engineDetail->metric"]
+	emissions string (1..1)
+	    [synonym MAPPERS_EXAMPLE_8 value "emissions" path "engineDetail->metric"]
 	fuelType string (1..1)
 	    [synonym MAPPERS_EXAMPLE_8 value "combustible" path "engineDetail->metric"]
 	volumeUnit string (1..1)
@@ -29,8 +29,8 @@ Schema:
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
     <xs:element name="dataDocument">
         <xs:complexType>
-            <xs:all>
-                <xs:element name="engineType">
+            <xs:sequence>
+                <xs:element name="engineType" maxOccurs="unbounded">
                     <xs:complexType>
                         <xs:all>
                             <xs:element name="engineDetail">
@@ -39,8 +39,8 @@ Schema:
                                         <xs:element name="metric">
                                             <xs:complexType>
                                                 <xs:sequence>
-                                                    <xs:element name="emmissions" type="xs:string" minOccurs="0"/>
-                                                    <xs:element name="combustible" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                                                    <xs:element name="emissions" type="xs:string" minOccurs="0"/>
+                                                    <xs:element name="combustible" type="xs:string" minOccurs="0"/>
                                                     <xs:element name="capacityUnit" type="xs:string" minOccurs="0"/>
                                                 </xs:sequence>
                                             </xs:complexType>
@@ -51,7 +51,7 @@ Schema:
                         </xs:all>
                     </xs:complexType>
                 </xs:element>
-            </xs:all>
+            </xs:sequence>
         </xs:complexType>
     </xs:element>
 </xs:schema>

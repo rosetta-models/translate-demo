@@ -3,7 +3,7 @@
     <engineType>
         <engineDetail>
             <metric>
-                <emmissionCategory>Low-Emmissions</emmissionCategory>
+                <emissions>Low-Emissions</emissions>
                 <combustible>Gasoline</combustible>
                 <capacityUnit>Gallon</capacityUnit>
             </metric>

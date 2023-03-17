@@ -9,7 +9,7 @@ synonym source CONDITIONAL_SET_EXAMPLE_9
 type Root:
     [rootType]
 	engine Engine (1..1)
-	    [synonym CONDITIONAL_SET_EXAMPLE_9 value "a"]
+	    [synonym CONDITIONAL_SET_EXAMPLE_9 value "engineType"]
 
 type Engine:
 	engineSpecification EngineSpecification (0..*)

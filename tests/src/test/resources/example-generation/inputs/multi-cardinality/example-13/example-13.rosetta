@@ -15,7 +15,7 @@ type Engine:
 	engineSpecification EngineSpecification (0..*)
 
 type EngineSpecification:
-    enigneMetric EngineMetric (0..*)
+    engineMetric EngineMetric (0..*)
 
 type EngineMetric:
 	fuel string (0..1)

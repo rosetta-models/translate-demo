@@ -6,17 +6,17 @@
                 <xs:element name="engineType">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="submitter" type="Identifier" maxOccurs="unbounded"/>
-                            <xs:element name="walker" type="Identifier" maxOccurs="unbounded"/>
+                            <xs:element name="fuelDetail" type="Detail" maxOccurs="unbounded"/>
+                            <xs:element name="capacityDetail" type="Detail" maxOccurs="unbounded"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
             </xs:all>
         </xs:complexType>
     </xs:element>
-    <xs:complexType name="Identifier">
+    <xs:complexType name="Detail">
         <xs:sequence>
-            <xs:element name="id" type="xs:string" maxOccurs="unbounded"/>
+            <xs:element name="detail" type="xs:string" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
 </xs:schema>

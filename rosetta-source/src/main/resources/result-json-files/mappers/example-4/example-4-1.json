@@ -1,7 +1,9 @@
 {
-  "zfield" : {
+  "engineSpecification" : {
     "value" : {
-      "str3Field" : "PIZZA"
+      "emissions" : "Low-Emission",
+      "fuelType" : "Gasoline",
+      "volumeType" : "Gallon"
     }
   }
 }

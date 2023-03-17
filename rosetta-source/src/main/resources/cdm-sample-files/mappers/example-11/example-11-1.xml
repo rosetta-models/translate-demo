@@ -1,11 +1,20 @@
 <?xml version="1.0"?>
-<dataDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="example-11.xsd example-11.xsd">
+<dataDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="d">
     <engineType>
         <engineDetail>
             <metric>
-                <emmissions>FISH</emmissions>
-                <combustible>CHIPS</combustible>
-                <capacityUnit>PIZZA</capacityUnit>
+                <emissions>Low-Emissions</emissions>
+                <combustible>Gasoline</combustible>
+                <capacityUnit>Gallon</capacityUnit>
+            </metric>
+        </engineDetail>
+    </engineType>
+    <engineType>
+        <engineDetail>
+            <metric>
+                <emissions>High-Emissions</emissions>
+                <combustible>Diesel</combustible>
+                <capacityUnit>Liters</capacityUnit>
             </metric>
         </engineDetail>
     </engineType>

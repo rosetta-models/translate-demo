@@ -1,17 +1,17 @@
 {
-  "xfield" : {
-    "strField" : "CHIPS",
-    "yfield" : [ {
-      "zfield" : {
-        "strField" : "FISH"
+  "engine" : {
+    "energyCategory" : "Combustion",
+    "engineSpecification" : [ {
+      "engineMetric" : {
+        "fuelType" : "Gasoline"
       }
     }, {
-      "zfield" : {
-        "strField" : "SAUSAGE"
+      "engineMetric" : {
+        "fuelType" : "Diesel"
       }
     }, {
-      "zfield" : {
-        "strField" : "STEAK"
+      "engineMetric" : {
+        "fuelType" : "Propane"
       }
     } ]
   }

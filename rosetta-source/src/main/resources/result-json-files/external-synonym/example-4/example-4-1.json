@@ -1,21 +1,21 @@
 {
-  "zfield" : {
-    "str1Field" : [ {
+  "engineSpecification" : {
+    "alternativeCombustible" : [ {
+      "meta" : {
+        "scheme" : "acc-scheme1"
+      },
+      "value" : "Electricity"
+    } ],
+    "fuel" : [ {
       "meta" : {
         "scheme" : "scheme1"
       },
-      "value" : "FISH"
+      "value" : "Gasoline"
     }, {
       "meta" : {
         "scheme" : "scheme2"
       },
-      "value" : "CHIPS"
-    } ],
-    "str2Field" : [ {
-      "meta" : {
-        "scheme" : "acc-scheme1"
-      },
-      "value" : "FRITES"
+      "value" : "Diesel"
     } ]
   }
 }

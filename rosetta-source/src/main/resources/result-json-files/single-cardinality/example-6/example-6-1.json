@@ -1,8 +1,8 @@
 {
-  "zfield" : {
-    "strField" : "CHIPS"
+  "engineSpecification" : {
+    "fuelType" : "Gasoline"
   },
-  "yfield" : {
-    "strField" : "FISH"
+  "volume" : {
+    "volumeUnit" : "Gallon"
   }
 }

@@ -5,7 +5,7 @@
             <combustibleId>Gasoline</combustibleId>
         </combustible>
         <combustible id="UK">
-            <bId>Petrol</bId>
+            <combustibleId>Petrol</combustibleId>
         </combustible>
         <fuelSpecs>
             <combustibleref href="UK"/>

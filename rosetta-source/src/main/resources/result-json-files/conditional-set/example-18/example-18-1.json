@@ -1,18 +1,18 @@
 {
-  "z1Field" : [ {
-    "strField" : {
+  "ukEngineVersion" : [ {
+    "volumeCapacity" : {
       "meta" : {
-        "scheme" : "sausageScheme"
+        "scheme" : "usScheme"
       },
-      "value" : "SAUSAGE"
+      "value" : "US Gallon"
     }
   } ],
-  "z2Field" : [ {
-    "strField" : {
+  "usEngineVersion" : [ {
+    "volumeCapacity" : {
       "meta" : {
-        "scheme" : "steakScheme"
+        "scheme" : "ukScheme"
       },
-      "value" : "STEAK"
+      "value" : "UK Gallon"
     }
   } ]
 }

@@ -5,7 +5,8 @@ import com.regnosys.rosetta.common.translation.MappingProcessor;
 import com.regnosys.rosetta.common.translation.Path;
 import com.rosetta.model.lib.RosettaModelObjectBuilder;
 import com.rosetta.model.lib.path.RosettaPath;
-import demo.translate.mappers.example_4.Z;
+import demo.translate.mappers.example_4.EngineSpecification;
+import demo.translate.mappers.example_4.metafields.FieldWithMetaEngineSpecification;
 
 import java.util.List;
 
@@ -20,36 +21,41 @@ public class Example4MappingProcessor extends MappingProcessor {
     }
 
     /**
-     * Override the map method as this mapper is specified on a complex type attribute Y->zField
+     * Override the map method as this mapper is specified on a complex type attribute Root->engineSpecification
      */
     @Override
     public void map(Path xmlPath, RosettaModelObjectBuilder builder, RosettaModelObjectBuilder parent) {
-        // parameter: xmlPath = a (the path where the "mapper" syntax is specified)
-        // parameter: builder = an instance of object Z.ZBuilder that can be updated
-        // parameter: parent = an instance of parent object Root.RootBuilder that can be updated
+        // parameter: xmlPath = engineType (the path where the "mapper" syntax is specified)
+        // parameter: builder = an instance of object FieldWithMetaEngineSpecificationBuilder that can be updated
+        // parameter: parent = an instance of parent object RootBuilder that can be updated
 
-        Path xmlPath1 = xmlPath.addElement("b").addElement("c").addElement("d"); // a->b->c->d (e.g. value of "FISH")
+        // engineType->engineDetail->metric->emissions (e.g. value of "Low-Emission")
+        Path xmlPath1 = xmlPath.addElement("engineDetail").addElement("metric").addElement("emissions");
+        // cast builder object
+        FieldWithMetaEngineSpecification.FieldWithMetaEngineSpecificationBuilder metaEngineSpecificationBuilder =
+                (FieldWithMetaEngineSpecification.FieldWithMetaEngineSpecificationBuilder) builder;
 
         // this helper function will look up a xml path, and pass it to the consumer function, then updates the mapping stats
         setValueAndUpdateMappings(xmlPath1,
                 // consumer function that takes value found at the xml path
                 xmlValueFromXmlPath1 -> {
-                    // cast builder object
-                    Z.ZBuilder zBuilder = (Z.ZBuilder) builder;
+                    // get value from meta type
+                    EngineSpecification.EngineSpecificationBuilder engineSpecificationBuilder = metaEngineSpecificationBuilder.getOrCreateValue();
                     // set new value on builder object
-                    zBuilder.setStr1Field(xmlValueFromXmlPath1 + "_X");
+                    engineSpecificationBuilder.setEmissions(xmlValueFromXmlPath1);
                 });
 
-        Path xmlPath2 = xmlPath.addElement("b").addElement("c").addElement("e"); // a->b->c->e (e.g. value of "CHIPS")
+        // engineType->engineDetail->metric->combustible (e.g. value of "Gasoline")
+        Path xmlPath2 = xmlPath.addElement("engineDetail").addElement("metric").addElement("combustible");
 
         // this helper function will look up a xml path, and pass it to the consumer function, then updates the mapping stats
         setValueAndUpdateMappings(xmlPath2,
                 // consumer function that takes value found at the xml path
                 xmlValueFromXmlPath2 -> {
-                    // cast builder object
-                    Z.ZBuilder zBuilder = (Z.ZBuilder) builder;
+                    // get value from meta type
+                    EngineSpecification.EngineSpecificationBuilder engineSpecificationBuilder = metaEngineSpecificationBuilder.getOrCreateValue();
                     // set new value on builder object
-                    zBuilder.setStr2Field(xmlValueFromXmlPath2 + "_Y");
+                    engineSpecificationBuilder.setFuelType(xmlValueFromXmlPath2);
                 });
     }
 }

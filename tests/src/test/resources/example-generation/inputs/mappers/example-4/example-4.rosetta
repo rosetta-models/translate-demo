@@ -13,7 +13,7 @@ type Root:
 	    [synonym MAPPERS_EXAMPLE_4 value "engineType" mapper "Example4"]
 
 type EngineSpecification:
-	emmissions string (1..1)
+	emissions string (1..1)
 	    // value set by mapper
 	fuelType string (1..1)
 	    // value set by mapper

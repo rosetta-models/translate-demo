@@ -3,7 +3,8 @@ version "${project.version}"
 
 /*
 Example 12:
-The rosetta element engineEnum is conditional set to "RegularGasoline" when xml attribute "combustible->octanes" exists  or "Diesel For Agrigultural Uses" "dieselType->usage" and "dieselType->Typ"=2
+The rosetta element engineEnum is conditional set to "RegularGasoline" when xml attribute "combustible->octanes" exists
+or "Diesel For Agrigultural Uses" "dieselType->usage" and "dieselType->Typ"=2
 and element alternativeFuelType set to "PremiumGasoline" when "combustible->octanes" = "93"
 */
 synonym source CONDITIONAL_SET_TO_EXAMPLE_12
@@ -19,7 +20,7 @@ type Engine:
 type EngineSpecification:
 	fuelType string (1..1)
 		[synonym CONDITIONAL_SET_TO_EXAMPLE_12 set to "Combustible" when path = "type"]
-		[synonym CONDITIONAL_SET_TO_EXAMPLE_12 set to "Diesel For Agrigultural Uses" when path = "dieselType->usage" and "dieselType->Typ"=2]
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_12 set to "Diesel For Agricultural Uses" when path = "dieselType->usage" and "dieselType->Typ"=2]
 		[synonym CONDITIONAL_SET_TO_EXAMPLE_12 set to "RegularGasoline" when path = "combustible->octanes"]
 	alternativeFuelType string (1..1)
 		[synonym CONDITIONAL_SET_TO_EXAMPLE_12 value "type"]
@@ -45,7 +46,8 @@ Schema:
                                                 <xs:sequence>
                                                     <xs:element name="combustible" minOccurs="0" maxOccurs="unbounded">
                                                         <xs:complexType>
-                                                            <xs:attribute type="xs:string" name="octanes" use="optional"/>
+                                                            <xs:attribute type="xs:string" name="octanes"
+                                                                          use="optional"/>
                                                         </xs:complexType>
                                                     </xs:element>
                                                     <xs:element name="dieselType" minOccurs="0" maxOccurs="unbounded">

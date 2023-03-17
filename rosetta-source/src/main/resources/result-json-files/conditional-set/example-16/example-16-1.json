@@ -1,11 +1,11 @@
 {
-  "yfield" : {
-    "zfield" : [ {
-      "strField" : {
+  "engineSpecification" : {
+    "fuel" : [ {
+      "fuelType" : {
         "meta" : {
-          "scheme" : "fishScheme"
+          "scheme" : "petrolScheme"
         },
-        "value" : "FISH"
+        "value" : "Gasoline"
       }
     } ]
   }

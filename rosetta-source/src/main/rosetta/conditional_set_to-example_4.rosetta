@@ -2,8 +2,8 @@ namespace demo.translate.conditional_set_to.example_4
 version "${project.version}"
 
 /*
-Exemple 4:
-The rosetta element engineSystem is conditional set to "UNKNOWN" when xml element "engineType" exists
+Example 4:
+The rosetta element engineSystem is conditional set to "Unknown" when xml element "engineType" exists
 */
 synonym source CONDITIONAL_SET_TO_EXAMPLE_4
 
@@ -16,7 +16,7 @@ type Engine:
  	engineSpecification EngineSpecification (1..1)
  	    [synonym CONDITIONAL_SET_TO_EXAMPLE_4 value "engineDetail"]
  	engineSystem string (1..1)
- 	    [synonym CONDITIONAL_SET_TO_EXAMPLE_4 set to "UNKNOWN" when path = "engineType"]
+ 	    [synonym CONDITIONAL_SET_TO_EXAMPLE_4 set to "Unknown" when path = "engineType"]
 
 type EngineSpecification:
  	engineMetric EngineMetric (1..1)
@@ -44,7 +44,8 @@ Schema:
                                             <xs:complexType>
                                                 <xs:all>
                                                     <xs:element name="combustible" type="xs:string" minOccurs="0"/>
-                                                    <xs:element name="alternativeCombustible" type="xs:string" minOccurs="0"/>
+                                                    <xs:element name="alternativeCombustible" type="xs:string"
+                                                                minOccurs="0"/>
                                                     <xs:element name="properties" type="xs:string" minOccurs="0"/>
                                                 </xs:all>
                                             </xs:complexType>

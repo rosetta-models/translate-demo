@@ -1,5 +1,6 @@
 {
-  "zfield" : {
-    "str3Field" : "chips"
+  "engineSpecification" : {
+    "capacityUnit" : "Gallon",
+    "fuelType" : "Gasoline"
   }
 }

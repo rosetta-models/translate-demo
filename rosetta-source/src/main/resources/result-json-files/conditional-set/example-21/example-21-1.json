@@ -1,9 +1,9 @@
 {
-  "yfield" : {
-    "str1Field" : "fish",
-    "str2Field" : "chips",
-    "zfield" : [ {
-      "strField" : "and"
+  "engineSpecification" : {
+    "alternativeFuelType" : "Electricity",
+    "fuelType" : "Gasoline",
+    "volume" : [ {
+      "volumeUnit" : "Gallon"
     } ]
   }
 }

@@ -23,7 +23,7 @@
     </xs:element>
     <xs:complexType name="FuelReference">
         <xs:all>
-            <xs:element name = "combustible" type = "xs:string"/>
+            <xs:element name="combustible" type="xs:string"/>
         </xs:all>
         <xs:attribute name="id" type="xs:string"/>
     </xs:complexType>

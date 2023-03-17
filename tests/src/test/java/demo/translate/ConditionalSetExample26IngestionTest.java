@@ -15,11 +15,11 @@ import java.net.URL;
 import java.util.*;
 import java.util.stream.Stream;
 
+//@org.junit.jupiter.api.Disabled
+public class ConditionalSetExample26IngestionTest extends IngestionTest<demo.translate.conditional_set.example_26.Root> {
 
-public class MappersExample13IngestionTest extends IngestionTest<demo.translate.mappers.example_13.Root> {
-
-    private static final String SAMPLE_FILES_DIR = "cdm-sample-files/mappers/example-13";
-    private static final String INSTANCE_NAME = "target/MAPPERS_EXAMPLE_13";
+    private static final String SAMPLE_FILES_DIR = "cdm-sample-files/conditional-set/example-26";
+    private static final String INSTANCE_NAME = "target/CONDITIONAL_SET_EXAMPLE_26";
 
     private static IngestionService ingestionService;
 
@@ -27,18 +27,18 @@ public class MappersExample13IngestionTest extends IngestionTest<demo.translate.
     static void setup() {
         writeActualExpectations = ExpectationUtil.WRITE_EXPECTATIONS;
 
-        ClassLoader cl = MappersExample13IngestionTest.class.getClassLoader();
+        ClassLoader cl = ConditionalSetExample26IngestionTest.class.getClassLoader();
         Collection<URL> ingestURLs = List.of(
-                Objects.requireNonNull(cl.getResource("ingestions/mappers-example-13-ingestions.json")));
+                Objects.requireNonNull(cl.getResource("ingestions/conditional-set-example-26-ingestions.json")));
         ModelRuntimeModule runtimeModule = new ModelRuntimeModule();
         initialiseIngestionFactory(INSTANCE_NAME, ingestURLs, runtimeModule, new ArrayList<>(IngestionTestUtil.getPostProcessors(runtimeModule)));
         IngestionFactory factory = IngestionFactory.getInstance(INSTANCE_NAME);
-        ingestionService = factory.getService("MAPPERS_EXAMPLE_13");
+        ingestionService = factory.getService("CONDITIONAL_SET_EXAMPLE_26");
     }
 
     @Override
-    protected Class<demo.translate.mappers.example_13.Root> getClazz() {
-        return demo.translate.mappers.example_13.Root.class;
+    protected Class<demo.translate.conditional_set.example_26.Root> getClazz() {
+        return demo.translate.conditional_set.example_26.Root.class;
     }
 
     @Override

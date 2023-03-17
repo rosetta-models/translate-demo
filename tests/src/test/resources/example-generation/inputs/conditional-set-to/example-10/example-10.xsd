@@ -12,8 +12,8 @@
                                         <xs:element name="fuelDetail">
                                             <xs:complexType>
                                                 <xs:all>
-                                                    <xs:element name="hasAlternativeCombustible" type="xs:boolean" />
-                                                    <xs:element name="combustible" type="xs:string" />
+                                                    <xs:element name="hasAlternativeCombustible" type="xs:boolean"/>
+                                                    <xs:element name="combustible" type="xs:string"/>
                                                 </xs:all>
                                             </xs:complexType>
                                         </xs:element>

@@ -1,11 +1,11 @@
 {
-  "zfield" : {
-    "str1Field" : "PIZZA",
-    "str2Field" : {
+  "engineSpecification" : {
+    "fuelType" : {
       "meta" : {
-        "scheme" : "foo-scheme-set-by-mapper"
+        "scheme" : "fuel-type-scheme"
       },
-      "value" : "CHIPS_FISH"
-    }
+      "value" : "Gasoline"
+    },
+    "volumeUnit" : "Gallon"
   }
 }

@@ -1,15 +1,15 @@
 {
-  "zfield" : {
-    "strField" : [ {
+  "engineSpecification" : {
+    "fuelType" : [ {
       "meta" : {
-        "scheme" : "scheme1"
+        "scheme" : "mainCombustibles"
       },
-      "value" : "FISH"
+      "value" : "Gasoline"
     }, {
       "meta" : {
-        "scheme" : "scheme2"
+        "scheme" : "alternativeCombustibles"
       },
-      "value" : "CHIPS"
+      "value" : "Electricity"
     } ]
   }
 }

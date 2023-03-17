@@ -15,8 +15,8 @@ type EngineVersion:
 	volumeCapacity string (1..1)
         [metadata scheme]
         [synonym CONDITIONAL_SET_EXAMPLE_18 value "volumeCapacityUnit" path "engineType"
-            set when "engineType->volumeCapacityUnit->scheme" = "usScheme" and rosettaPath = Root->ukEngineVersion->strField,
-            set when "engineType->volumeCapacityUnit->scheme" = "ukScheme" and rosettaPath = Root->usEngineVersion->strField meta "scheme"]
+            set when "engineType->volumeCapacityUnit->scheme" = "usScheme" and rosettaPath = Root->ukEngineVersion->volumeCapacity,
+            set when "engineType->volumeCapacityUnit->scheme" = "ukScheme" and rosettaPath = Root->usEngineVersion->volumeCapacity meta "scheme"]
 
 /*
 Schema:

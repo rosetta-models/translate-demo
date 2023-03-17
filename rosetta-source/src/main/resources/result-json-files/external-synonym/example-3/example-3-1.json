@@ -1,5 +1,5 @@
 {
-  "zfield" : {
-    "enumField" : [ "FOO", "BAR" ]
+  "engineSpecification" : {
+    "fuelEnum" : [ "GASOLINE", "DIESEL" ]
   }
 }

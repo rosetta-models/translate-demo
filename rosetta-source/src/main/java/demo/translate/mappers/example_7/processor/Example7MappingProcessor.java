@@ -5,11 +5,12 @@ import com.regnosys.rosetta.common.translation.MappingProcessor;
 import com.regnosys.rosetta.common.translation.Path;
 import com.rosetta.model.lib.RosettaModelObjectBuilder;
 import com.rosetta.model.lib.path.RosettaPath;
-import demo.translate.mappers.example_7.Z;
 
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import static demo.translate.mappers.example_7.EngineSpecification.EngineSpecificationBuilder;
 
 /**
  * The mapper class name must be in the form "<MapperName>MappingProcessor", and must extend MappingProcessor.
@@ -22,20 +23,20 @@ public class Example7MappingProcessor extends MappingProcessor {
     }
 
     /**
-     * Override the mapBasic method as this mapper is specified on a basic type list attribute Z->str2Field
+     * Override the mapBasic method as this mapper is specified on a basic type list attribute EngineSpecification->fuelType
      */
     @Override
     public <T> void mapBasic(Path xmlPath, Collection<? extends T> builders, RosettaModelObjectBuilder parent) {
         Collection<String> stringBuilders = (Collection<String>) builders;
-        Z.ZBuilder zBuilder = (Z.ZBuilder) parent;
+        EngineSpecificationBuilder zBuilder = (EngineSpecificationBuilder) parent;
 
         // Create new list of strings
         List<String> updatedValues = stringBuilders.stream()
-                .map(str -> str + "_X")
+                .map(str -> str + "_Updated")
                 .collect(Collectors.toList());
 
         // Update the parent with the new list of string values
-        zBuilder.setStr2Field(updatedValues);
+        zBuilder.setFuelType(updatedValues);
 
        // TODO update existing mappings with new values
     }

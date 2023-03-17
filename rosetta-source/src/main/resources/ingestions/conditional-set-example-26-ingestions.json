@@ -1,19 +1,19 @@
 {
-  "defaultTranslator": "MAPPERS_EXAMPLE_13",
+  "defaultTranslator": "CONDITIONAL_SET_EXAMPLE_26",
   "options": {
-    "MAPPERS_EXAMPLE_13": {
-      "name": "MAPPERS_EXAMPLE_13",
+    "CONDITIONAL_SET_EXAMPLE_26": {
+      "name": "CONDITIONAL_SET_EXAMPLE_26",
       "modelClasspath": ["model", "translate-demo/rosetta"],
       "modelFileDirIncludeRegex": ".*\\.rosetta",
       "modelFileDirExcludeRegex": null,
       "rosettaClasses": ["Root"],
-      "generatedPackage": "demo.translate.mappers.example_13",
-      "generatedFactoryName": "MAPPERS_EXAMPLE_13XmlHandlerFactory",
+      "generatedPackage": "demo.translate.conditional_set.example_26",
+      "generatedFactoryName": "CONDITIONAL_SET_EXAMPLE_26XmlHandlerFactory",
       "xsdFilePaths": {
-        "Root": "schemas/mappers/example-13.xsd"
+        "Root": "schemas/conditional-set/example-26.xsd"
       },
       "synonymSources": {
-          "Root": ["MAPPERS_EXAMPLE_13"]
+          "Root": ["CONDITIONAL_SET_EXAMPLE_26"]
       },
       "topLevelTags": {
         "Root": ["dataDocument"]
@@ -24,14 +24,14 @@
       "xmlExclusionsFilePath": "config/translate-demo.excluded-paths.txt",
       "cdmClassesDir": "",
       "integrationTestRoots": {
-        "Root": ["cdm-sample-files/mappers/example-13"]
+        "Root": ["cdm-sample-files/conditional-set/example-26"]
       },
       "default": true,
       "childPackageName":
         {
           "Root": "dataDocument"
         },
-      "fullClassnames": { "Root": "demo.translate.mappers.example_13.Root" }
+      "fullClassnames": { "Root": "demo.translate.conditional_set.example_26.Root" }
     }
   }
 }

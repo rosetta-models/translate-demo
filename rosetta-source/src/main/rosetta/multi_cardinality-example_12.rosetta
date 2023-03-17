@@ -4,7 +4,8 @@ version "${project.version}"
 /*
 Example 12:
 Map list of basic types to nested list of complex types (multiple attributes) using hint.
-List of fuelDetail and capacityDetail mapped into engineSpecification and engineMetric respectively since values are consumed and hint only specifies that at below level there is an element, passing through it without consume it.
+List of fuelDetail and capacityDetail mapped into engineSpecification and engineMetric respectively since values are
+consumed and hint only specifies that at below level there is an element, passing through it without consume it.
 */
 synonym source MULTI_CARDINALITY_EXAMPLE_12
 
@@ -43,14 +44,14 @@ Schema:
                             <xs:element name="fuelDetail" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="combustible" type="xs:string" />
+                                        <xs:element name="combustible" type="xs:string"/>
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
                             <xs:element name="capacityDetail" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="capacity" type="xs:string" />
+                                        <xs:element name="capacity" type="xs:string"/>
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>

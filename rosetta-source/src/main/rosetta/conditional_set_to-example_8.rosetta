@@ -3,31 +3,31 @@ version "${project.version}"
 
 /*
 Example 8:
-The rosetta element engineEnum is conditional set to "COMBUSTION" or "HYBRID" value from the EngineEnum when xml element "engineDetail->primaryFuel" or "engineDetail->alternativeCombustible" exists respectively
+The rosetta element engineEnum is conditional set to "Combustion" or "Hybrid" value from the EngineEnum when xml
+element "engineDetail->primaryFuel" or "engineDetail->alternativeCombustible" exists respectively
 */
 synonym source CONDITIONAL_SET_TO_EXAMPLE_8
 
 type Root:
     [rootType]
 	engine Engine (1..1)
-		[synonym CONDITIONAL_SET_TO_EXAMPLE_8 value "engineType"]
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_8 value "engineDetail" path "engineType"]
 
 type Engine:
 	engineSpecification EngineSpecification (0..*)
+	    [synonym CONDITIONAL_SET_TO_EXAMPLE_8 value "fuelDetail"]
+	    [synonym CONDITIONAL_SET_TO_EXAMPLE_8 value "alternativeFuel"]
 
 type EngineSpecification:
 	fuel string (1..1)
-		[synonym CONDITIONAL_SET_TO_EXAMPLE_8 value "combustible" path "engineDetail->primaryFuel" ]
-		[synonym CONDITIONAL_SET_TO_EXAMPLE_8 value "combustible" path "engineDetail->secondaryFuel" ]
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_8 value "combustible"]
 	engineEnum EngineEnum (1..1)
-		[synonym CONDITIONAL_SET_TO_EXAMPLE_8 set to EngineEnum -> COMBUSTION when path = "engineDetail->primaryFuel"]
-		[synonym CONDITIONAL_SET_TO_EXAMPLE_8 set to EngineEnum -> HYBRID when path = "engineDetail->alternativeCombustible"]
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_8 set to EngineEnum -> Combustion when path = "fuelDetail"]
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_8 set to EngineEnum -> Hybrid when path = "alternativeFuel"]
 
 enum EngineEnum:
-	HYBRID
-		[synonym CONDITIONAL_SET_TO_EXAMPLE_8 value "hybrid"]
-	COMBUSTION
-		[synonym CONDITIONAL_SET_TO_EXAMPLE_8 value "combustion"]
+	Hybrid
+	Combustion
 
 /*
 Schema:
@@ -57,7 +57,7 @@ Schema:
     </xs:element>
     <xs:complexType name="FuelReference">
         <xs:all>
-            <xs:element name = "combustible" type = "xs:string"/>
+            <xs:element name="combustible" type="xs:string"/>
         </xs:all>
         <xs:attribute name="id" type="xs:string"/>
     </xs:complexType>

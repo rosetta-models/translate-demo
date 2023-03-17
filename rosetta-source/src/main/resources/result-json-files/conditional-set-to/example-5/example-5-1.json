@@ -1,10 +1,10 @@
 {
-  "xfield" : {
-    "strField" : "OTHER",
-    "yfield" : {
-      "zfield" : {
-        "strField" : "FISH"
+  "engine" : {
+    "engineSpecification" : {
+      "engineMetric" : {
+        "fuelType" : "Gasoline"
       }
-    }
+    },
+    "engineSystem" : "Combustion"
   }
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <dataDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="example-7.xsd example-7.xsd">
-    <enigneType>
+    <engineType>
         <engineDetail>
             <metric>
-                <emmissions>Low-Emmissions</emmissions>
+                <emissions>Low-Emissions</emissions>
                 <combustible>Gasoline</combustible>
                 <combustible>Diesel</combustible>
                 <combustible>Gasoline-Premium</combustible>
@@ -11,5 +11,5 @@
                 <capacityUnit>Gallon</capacityUnit>
             </metric>
         </engineDetail>
-    </enigneType>
+    </engineType>
 </dataDocument>

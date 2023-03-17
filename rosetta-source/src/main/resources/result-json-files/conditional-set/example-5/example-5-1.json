@@ -1,6 +1,5 @@
 {
-  "zfield" : {
-    "str1Field" : "GRAVY",
-    "str2Field" : "GRAVY"
+  "engineSpecification" : {
+    "alternativeFuelType" : "Petrol"
   }
 }

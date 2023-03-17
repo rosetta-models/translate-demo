@@ -1,8 +1,5 @@
-Mapping Coverage,16.67
+Mapping Coverage,66.67
 
 Input Path,Failed Mapping Count
-a.c.e,1
-a.c.d,1
-a.c.g,1
-a.c.f,1
-a.c.id,1
+engineType.specifications.cylinders,1
+engineType.specifications.manufacturer,1

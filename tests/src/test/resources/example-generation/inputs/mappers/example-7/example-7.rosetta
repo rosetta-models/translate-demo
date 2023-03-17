@@ -15,7 +15,7 @@ type EngineSpecification:
 	volumeUnit string (1..1)
 	    [synonym MAPPERS_EXAMPLE_7 value "capacityUnit" path "engineDetail->metric"]
 	fuelType string (0..*)
-        // list items updated by mapper
+        // list items set by synonym then updated by mapper
 	    [synonym MAPPERS_EXAMPLE_7 value "combustible" path "engineDetail->metric" mapper "Example7"]
 
 /*

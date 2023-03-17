@@ -3,7 +3,8 @@ version "${project.version}"
 
 /*
 Example 7:
-The rosetta element alternativeCombustible is conditional set to "ELECTRICITY" value from the FuelEnum when xml element "engineDetail->fuelDetail->alternativeCombustible" exists
+The rosetta element alternativeCombustible is conditional set to "Electricity" value from the FuelEnum when xml
+element "engineDetail->fuelDetail->alternativeCombustible" exists
 */
 synonym source CONDITIONAL_SET_TO_EXAMPLE_7
 
@@ -16,7 +17,7 @@ type Engine:
 	engineSpecification EngineSpecification (1..1)
 		[synonym CONDITIONAL_SET_TO_EXAMPLE_7 value "engineDetail"]
 	alternativeCombustible FuelEnum (1..1)
-		[synonym CONDITIONAL_SET_TO_EXAMPLE_7 set to FuelEnum -> ELECTRICITY when "engineDetail->fuelDetail->alternativeCombustible" exists]
+		[synonym CONDITIONAL_SET_TO_EXAMPLE_7 set to FuelEnum -> Electricity when "engineDetail->fuelDetail->alternativeCombustible" exists]
 
 type EngineSpecification:
 	engineMetric EngineMetric (1..1)
@@ -27,9 +28,9 @@ type EngineMetric:
 		[synonym CONDITIONAL_SET_TO_EXAMPLE_7 value "combustible"]
 
 enum FuelEnum:
-	ELECTRICITY
+	Electricity
 		[synonym CONDITIONAL_SET_TO_EXAMPLE_7 value "electricity"]
-	GASOLINE
+	Gasoline
 		[synonym CONDITIONAL_SET_TO_EXAMPLE_7 value "gasoline"]
 /*
 Schema:
@@ -48,8 +49,9 @@ Schema:
                                         <xs:element name="fuelDetail">
                                             <xs:complexType>
                                                 <xs:all>
-                                                    <xs:element name="combustible" type="FuelEnum" />
-                                                    <xs:element name="alternativeCombustible" type="FuelEnum" minOccurs="0"/>
+                                                    <xs:element name="combustible" type="FuelEnum"/>
+                                                    <xs:element name="alternativeCombustible" type="FuelEnum"
+                                                                minOccurs="0"/>
                                                 </xs:all>
                                             </xs:complexType>
                                         </xs:element>

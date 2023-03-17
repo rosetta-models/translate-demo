@@ -1,9 +1,9 @@
 {
-  "yfield" : {
-    "zfield" : [ {
-      "strField" : "CHIPS"
+  "engineSpecification" : {
+    "volume" : [ {
+      "volumeUnit" : "Liters"
     }, {
-      "strField" : "FISH"
+      "volumeUnit" : "Gallon"
     } ]
   }
 }

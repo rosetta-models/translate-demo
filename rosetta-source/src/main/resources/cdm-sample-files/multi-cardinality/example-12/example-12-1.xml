@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
-<dataDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="../example-12/example-12.xsd example-12.xsd">
+<dataDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="../example-12/example-12.xsd example-12.xsd">
     <engineType>
         <fuelDetail>
             <combustible>Petrol</combustible>

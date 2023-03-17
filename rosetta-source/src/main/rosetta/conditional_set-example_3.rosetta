@@ -4,9 +4,11 @@ version "${project.version}"
 /*
 Example 3:
 
-Conditional mapping using "set" with a "when" clause that is predicated on whether a xml element at the specified xml path is absent.
+Conditional mapping using "set" with a "when" clause that is predicated on whether a xml element at the specified xml
+path is absent.
 
-The attribute EngineSpecification->capacityUnit is conditionally set from xml path engine->engineType->engineDetail->volumeCapacityUnit when there is no value at xml path engine->engineType->engineDetail->powerUnit.
+The attribute EngineSpecification->capacityUnit is conditionally set from xml path engine->engineType->engineDetail->
+volumeCapacityUnit when there is no value at xml path engine->engineType->engineDetail->powerUnit.
 */
 synonym source CONDITIONAL_SET_EXAMPLE_3
 
@@ -39,7 +41,8 @@ Schema:
                                             <xs:complexType>
                                                 <xs:all>
                                                     <xs:element name="powerUnit" type="xs:string" minOccurs="0"/>
-                                                    <xs:element name="volumeCapacityUnit" type="xs:string" minOccurs="0"/>
+                                                    <xs:element name="volumeCapacityUnit" type="xs:string"
+                                                                minOccurs="0"/>
                                                     <xs:element name="combustible" type="xs:string" minOccurs="0"/>
                                                 </xs:all>
                                             </xs:complexType>

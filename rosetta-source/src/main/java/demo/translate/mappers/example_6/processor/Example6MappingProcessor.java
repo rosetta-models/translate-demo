@@ -12,7 +12,8 @@ import com.rosetta.model.lib.path.RosettaPath;
 import java.math.BigDecimal;
 import java.util.List;
 
-import static demo.translate.mappers.example_6.metafields.FieldWithMetaQuantity.FieldWithMetaQuantityBuilder;
+import static demo.translate.mappers.example_6.EngineMetric.EngineMetricBuilder;
+import static demo.translate.mappers.example_6.metafields.FieldWithMetaEngineMetric.FieldWithMetaEngineMetricBuilder;
 
 /**
  * The mapper class name must be in the form "<MapperName>MappingProcessor", and must extend MappingProcessor.
@@ -25,16 +26,20 @@ public class Example6MappingProcessor extends MappingProcessor {
     }
 
     /**
-     * Override the map method as this mapper is specified on a complex type attribute PriceQuantity->quantity
+     * Override the map method as this mapper is specified on a complex type attribute Engine->engineMetric
      */
     @Override
     public void map(Path xmlPath, RosettaModelObjectBuilder builder, RosettaModelObjectBuilder parent) {
-        // parameter: xmlPath = a (the path where the "mapper" syntax is specified)
-        // parameter: builder = an instance of object FieldWithMetaQuantityBuilder.FieldWithMetaQuantityBuilderBuilder that can be updated
+        // parameter: xmlPath = engineType->engineDetail (the path where the "mapper" syntax is specified)
+        // parameter: builder = an instance of object FieldWithMetaEngineMetricBuilder that can be updated
 
-        // Set the quantity from the path (and update mappings), and the location/address reference should just work
-        setValueAndUpdateMappings(xmlPath.addElement("c"),
-                (xmlValue) -> ((FieldWithMetaQuantityBuilder) builder).getOrCreateValue().setAmount(new BigDecimal(xmlValue)));
+        // Set the amount from the path (and update mappings), and the location/address reference should just work
+        setValueAndUpdateMappings(xmlPath.addElement("horsePower"),
+                (xmlValue) -> {
+                    FieldWithMetaEngineMetricBuilder metaEngineMetricBuilder = (FieldWithMetaEngineMetricBuilder) builder;
+                    EngineMetricBuilder engineMetricBuilder = metaEngineMetricBuilder.getOrCreateValue();
+                    engineMetricBuilder.setAmount(new BigDecimal(xmlValue));
+                });
     }
 
     private Mapping createSuccessMapping(Path xmlPath, RosettaPath modelPath, Reference.ReferenceBuilder reference) {

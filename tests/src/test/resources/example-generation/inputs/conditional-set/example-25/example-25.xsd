@@ -9,9 +9,9 @@
                             <xs:element name="combustible" maxOccurs="unbounded" minOccurs="0">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element type="xs:string" name="combustibleId" />
+                                        <xs:element type="xs:string" name="combustibleId"/>
                                     </xs:sequence>
-                                    <xs:attribute type="xs:string" name="id" use="optional" />
+                                    <xs:attribute type="xs:string" name="id" use="optional"/>
                                 </xs:complexType>
                             </xs:element>
                             <xs:element name="fuelSpecs" maxOccurs="unbounded" minOccurs="0">
@@ -21,12 +21,12 @@
                                             <xs:complexType>
                                                 <xs:simpleContent>
                                                     <xs:extension base="xs:string">
-                                                        <xs:attribute type="xs:string" name="href" use="optional" />
+                                                        <xs:attribute type="xs:string" name="href" use="optional"/>
                                                     </xs:extension>
                                                 </xs:simpleContent>
                                             </xs:complexType>
                                         </xs:element>
-                                        <xs:element type="xs:string" name="capacityUnitId" />
+                                        <xs:element type="xs:string" name="capacityUnitId"/>
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>

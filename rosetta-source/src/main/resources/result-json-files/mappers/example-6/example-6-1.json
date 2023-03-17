@@ -1,23 +1,23 @@
 {
-  "priceQuantity" : {
-    "quantity" : {
+  "engine" : {
+    "engineMetric" : {
       "meta" : {
         "location" : [ {
           "scope" : "DOCUMENT",
-          "value" : "quantity-1"
+          "value" : "engineMetric-1"
         } ]
       },
       "value" : {
-        "amount" : 3
+        "amount" : 300
       }
     }
   },
-  "product" : {
-    "resolvablePayoutQuantity" : {
-      "resolvedQuantity" : {
+  "vehicle" : {
+    "engineSpecification" : {
+      "resolvedAmount" : {
         "address" : {
           "scope" : "DOCUMENT",
-          "value" : "quantity-1"
+          "value" : "engineMetric-1"
         }
       }
     }

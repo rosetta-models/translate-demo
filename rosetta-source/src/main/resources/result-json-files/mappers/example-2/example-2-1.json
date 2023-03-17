@@ -1,7 +1,7 @@
 {
-  "zfield" : {
-    "str1Field" : "FISHX",
-    "str2Field" : "CHIPS_Y",
-    "str3Field" : "PIZZA"
+  "engineSpecification" : {
+    "emissions" : "Low-Emission",
+    "fuelType" : "Gasoline",
+    "volumeUnit" : "Gallon"
   }
 }

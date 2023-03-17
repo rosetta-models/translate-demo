@@ -1,10 +1,16 @@
 {
-  "zfield" : {
-    "str1Field" : "FISH",
-    "str2Field" : [ {
-      "value" : "CHIPS"
+  "engineSpecification" : {
+    "emissions" : "Low-Emissions",
+    "fuelType" : [ {
+      "meta" : {
+        "scheme" : "fuel-type-scheme"
+      },
+      "value" : "Gasoline"
     }, {
-      "value" : "MEAT"
+      "meta" : {
+        "scheme" : "fuel-type-scheme"
+      },
+      "value" : "Propane"
     } ]
   }
 }

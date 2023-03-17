@@ -1,11 +1,11 @@
 {
-  "zfield" : [ {
-    "str1Field" : "FISH_X",
-    "str2Field" : "CHIPS_Y",
-    "str3Field" : "PIZZA_Z"
+  "engineSpecification" : [ {
+    "emissions" : "High-Emissions_Updated",
+    "fuelType" : "Diesel_Updated",
+    "volumeUnit" : "Liters_Updated"
   }, {
-    "str1Field" : "MEAT_X",
-    "str2Field" : "FISH_Y",
-    "str3Field" : "SOUP_Z"
+    "emissions" : "Mid-Emissions_Updated",
+    "fuelType" : "Gasoline_Updated",
+    "volumeUnit" : "Gallon_Updated"
   } ]
 }

@@ -1,9 +1,10 @@
 {
-  "xfield" : {
-    "yfield" : {
-      "zfield" : {
-        "strField" : "SAUSAGE"
+  "engine" : {
+    "engineSpecification" : {
+      "engineMetric" : {
+        "fuelType" : "Gasoline"
       }
-    }
+    },
+    "engineSystem" : "Combustion"
   }
 }
