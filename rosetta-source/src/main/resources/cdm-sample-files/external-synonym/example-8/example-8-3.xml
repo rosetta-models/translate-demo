@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<dataDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="example-8.xsd example-8.xsd">
-    <a>
-        <b>FISH</b>
-        <c>CHIPS</c>
-        <d>EGG</d>
-        <e>SAUSAGE</e>
-    </a>
-</dataDocument>
