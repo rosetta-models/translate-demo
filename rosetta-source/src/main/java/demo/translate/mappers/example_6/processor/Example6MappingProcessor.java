@@ -30,8 +30,8 @@ public class Example6MappingProcessor extends MappingProcessor {
      */
     @Override
     public void map(Path xmlPath, RosettaModelObjectBuilder builder, RosettaModelObjectBuilder parent) {
-        // parameter: xmlPath = engineType->engineDetail->horsePower (the path where the "mapper" syntax is specified)
-        // parameter: builder = an instance of object FieldWithMetaQuantityBuilderBuilder that can be updated
+        // parameter: xmlPath = engineType->engineDetail (the path where the "mapper" syntax is specified)
+        // parameter: builder = an instance of object FieldWithMetaEngineMetricBuilder that can be updated
 
         // Set the amount from the path (and update mappings), and the location/address reference should just work
         setValueAndUpdateMappings(xmlPath.addElement("horsePower"),
