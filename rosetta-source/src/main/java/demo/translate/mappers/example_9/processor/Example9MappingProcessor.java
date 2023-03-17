@@ -44,15 +44,15 @@ public class Example9MappingProcessor extends MappingProcessor {
 
         // engineTypePath is indexless, get the parent (dataDocument path) and add "engineType" element with index
         Path dataDocumentPath = engineTypePath.getParent();
-        Path cPath = dataDocumentPath.addElement("engineType", pathIndex).addElement("engineDetail").addElement("metric");
+        Path metricPath = dataDocumentPath.addElement("engineType", pathIndex).addElement("engineDetail").addElement("metric");
 
-        setValueAndUpdateMappings(cPath.addElement("emissions"),
+        setValueAndUpdateMappings(metricPath.addElement("emissions"),
                 xmlValue -> builder.setEmissions(xmlValue));
 
-        setValueAndUpdateMappings(cPath.addElement("combustible"),
+        setValueAndUpdateMappings(metricPath.addElement("combustible"),
                 xmlValue -> builder.setFuelType(xmlValue));
 
-        setValueAndUpdateMappings(cPath.addElement("capacityUnit"),
+        setValueAndUpdateMappings(metricPath.addElement("capacityUnit"),
                 xmlValue -> builder.setVolumeUnit(xmlValue));
 
         return builder.hasData() ? Optional.of(builder.build()) : Optional.empty();
