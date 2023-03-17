@@ -21,10 +21,10 @@
         <maven.compiler.target>11</maven.compiler.target>
         <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
         <maven-surefire-plugin.version>2.22.1</maven-surefire-plugin.version>
-        <xtext.version>2.25.0</xtext.version>
+        <xtext.version>2.27.0</xtext.version>
 
-        <rosetta.bundle.version>3.26.4</rosetta.bundle.version>
-        <rosetta.dsl.version>4.49.4</rosetta.dsl.version>
+        <rosetta.bundle.version>5.5.1</rosetta.bundle.version>
+        <rosetta.dsl.version>7.1.1</rosetta.dsl.version>
         <guava.version>30.0-jre</guava.version>
 
         <!-- Testing -->
@@ -78,11 +78,6 @@
                 <groupId>com.regnosys.rosetta</groupId>
                 <artifactId>com.regnosys.rosetta.lib</artifactId>
                 <version>${rosetta.dsl.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.regnosys</groupId>
-                <artifactId>rosetta-translate</artifactId>
-                <version>${rosetta.bundle.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.regnosys</groupId>
@@ -172,18 +167,4 @@
             <url>https://regnosys.jfrog.io/regnosys/libs-snapshot-local</url>
         </repository>
     </distributionManagement>
-
-    <!-- Required for Xsemantics, added as part of DSL version 4.34.0 -->
-    <repositories>
-        <repository>
-            <id>sonatype_snapshots</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
 </project>
