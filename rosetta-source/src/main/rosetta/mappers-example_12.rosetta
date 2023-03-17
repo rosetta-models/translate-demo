@@ -26,7 +26,7 @@ type Engine:
 
 type EngineSpecification:
     // value updated by the mapper
-    emmissions string (1..1)
+    emissions string (1..1)
     // value updated by the mapper
     fuelType string (1..1)
     // value updated by the mapper
@@ -67,7 +67,7 @@ Schema:
                             <xs:element name="fuelDetail" maxOccurs="unbounded" minOccurs="0">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element type="xs:string" name="emmissions"/>
+                                        <xs:element type="xs:string" name="emissions"/>
                                         <xs:element type="xs:string" name="combustible"/>
                                     </xs:sequence>
                                 </xs:complexType>

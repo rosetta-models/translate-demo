@@ -3,7 +3,7 @@
     <engineType>
         <engineDetail>
             <metric>
-                <emmissions>FISH</emmissions>
+                <emissions>FISH</emissions>
                 <combustible>CHIPS</combustible>
                 <capacityUnit>PIZZA</capacityUnit>
             </metric>

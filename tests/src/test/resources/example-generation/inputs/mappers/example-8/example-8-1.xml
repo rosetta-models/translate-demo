@@ -3,7 +3,7 @@
     <engineType>
         <engineDetail>
             <metric>
-                <emmissions>High-Emmissions</emmissions>
+                <emissions>High-Emissions</emissions>
                 <combustible>Diesel</combustible>
                 <capacityUnit>Liters</capacityUnit>
             </metric>
@@ -12,7 +12,7 @@
     <engineType>
         <engineDetail>
             <metric>
-                <emmissions>Mid-Emmissions</emmissions>
+                <emissions>Mid-Emissions</emissions>
                 <combustible>Gasoline</combustible>
                 <capacityUnit>Gallon</capacityUnit>
             </metric>

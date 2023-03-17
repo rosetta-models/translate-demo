@@ -19,8 +19,8 @@ type Root:
 >>>>>>> dfdc5b690cc24c58177a5121ae6a352abd9d9af9
 
 type EngineSpecification:
-	emmissions string (1..1)
-	    [synonym MAPPERS_EXAMPLE_10 value "emmissions" path "engineDetail->metric"]
+	emissions string (1..1)
+	    [synonym MAPPERS_EXAMPLE_10 value "emissions" path "engineDetail->metric"]
 	fuelType string (0..*)
 	    [metadata scheme]
 	    // value and scheme updated by mapper
@@ -42,7 +42,7 @@ Schema:
                                         <xs:element name="metric">
                                             <xs:complexType>
                                                 <xs:sequence>
-                                                    <xs:element type="xs:string" name="emmissions"/>
+                                                    <xs:element type="xs:string" name="emissions"/>
                                                     <xs:element type="xs:string" name="combustible" maxOccurs="unbounded" minOccurs="0"/>
                                                 </xs:sequence>
                                             </xs:complexType>

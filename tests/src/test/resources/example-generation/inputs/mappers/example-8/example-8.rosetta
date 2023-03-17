@@ -13,8 +13,8 @@ type Root:
 	    [synonym MAPPERS_EXAMPLE_8 value "engineType" mapper "Example8"]
 
 type EngineSpecification:
-	emmissions string (1..1)
-	    [synonym MAPPERS_EXAMPLE_8 value "emmissions" path "engineDetail->metric"]
+	emissions string (1..1)
+	    [synonym MAPPERS_EXAMPLE_8 value "emissions" path "engineDetail->metric"]
 	fuelType string (1..1)
 	    [synonym MAPPERS_EXAMPLE_8 value "combustible" path "engineDetail->metric"]
 	volumeUnit string (1..1)

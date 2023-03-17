@@ -2,11 +2,11 @@
 <dataDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="example-12.xsd example-12.xsd">
     <engineType>
         <engineDetail>
-            <emmissions>Mid-Emmissions</emmissions>
+            <emissions>Mid-Emissions</emissions>
             <combustible>Gasoline</combustible>
         </engineDetail>
         <fuelDetail>
-            <emmissions>High-Emmissions</emmissions>
+            <emissions>High-Emissions</emissions>
             <combustible>Diesel</combustible>
         </fuelDetail>
         <capacityDetail>
