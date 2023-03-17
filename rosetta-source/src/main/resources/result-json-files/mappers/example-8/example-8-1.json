@@ -1,1 +1,11 @@
-null
+{
+  "engineSpecification" : [ {
+    "emissions" : "High-Emissions_Updated",
+    "fuelType" : "Diesel_Updated",
+    "volumeUnit" : "Liters_Updated"
+  }, {
+    "emissions" : "Mid-Emissions_Updated",
+    "fuelType" : "Gasoline_Updated",
+    "volumeUnit" : "Gallon_Updated"
+  } ]
+}
