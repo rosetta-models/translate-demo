@@ -1,1 +1,6 @@
-null
+{
+  "engineSpecification" : {
+    "fuelType" : "Gasoline_Gallon",
+    "volumeUnit" : "Gallon"
+  }
+}

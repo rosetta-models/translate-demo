@@ -24,12 +24,12 @@ public class Example1MappingProcessor extends MappingProcessor {
      */
     @Override
     public <T> void mapBasic(Path xmlPath, T xmlValueFromXmlPath, RosettaModelObjectBuilder parent) {
-        // parameter: xmlPath = a->b->c->e (the path where the "mapper" syntax is specified)
-        // parameter: xmlValueFromXmlPath = "CHIPS" (the value at the path where the mapper is specified)
-        // parameter: parent = an instance of object Z.ZBuilder that can be updated
+        // parameter: xmlPath = engineType->engineDetail->metric->combustible (the path where the "mapper" syntax is specified)
+        // parameter: xmlValueFromXmlPath = "Gasoline" (the value at the path where the mapper is specified)
+        // parameter: parent = an instance of object EngineSpecificationBuilder that can be updated
 
-        Path parentXmlPath = xmlPath.getParent(); // a->b->c
-        Path newXmlPath = parentXmlPath.addElement("d"); // a->b->c->d (e.g. value of "FISH")
+        Path parentXmlPath = xmlPath.getParent(); // engineType->engineDetail->metric
+        Path newXmlPath = parentXmlPath.addElement("capacityUnit"); // engineType->engineDetail->metric->capacityUnit (e.g. value of "Gallon")
 
         // this helper function will look up a xml path, and pass it to the consumer function, then updates the mapping stats
         setValueAndUpdateMappings(newXmlPath,
@@ -38,7 +38,7 @@ public class Example1MappingProcessor extends MappingProcessor {
                     // cast builder object
                     EngineSpecification.EngineSpecificationBuilder engineSpecificationBuilder =
                             (EngineSpecification.EngineSpecificationBuilder) parent;
-                    // create new value to set
+                    // create new value to set, e.g. Gasoline_Gallon
                     String newValue = xmlValueFromXmlPath + "_" + xmlValueFromNewXmlPath;
                     // set new value on builder object
                     engineSpecificationBuilder.setFuelType(newValue);
