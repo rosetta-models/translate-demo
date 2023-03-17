@@ -17,9 +17,7 @@ type EngineSpecification:
 
 enum EngineEnum:
 	Hybrid
-		[synonym CONDITIONAL_SET_TO_EXAMPLE_10 value "hybrid"]
 	Combustion
-		[synonym CONDITIONAL_SET_TO_EXAMPLE_10 value "combustion"]
 
 /*
 Schema:

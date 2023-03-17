@@ -1,5 +1,1 @@
 File Name,Result,Input Path,Indexless Input Path,Unmappable CDM Path Count,Unmappable CDM Paths,Reason For Failure
-cdm-sample-files/conditional-set/example-9/example-9-1.xml,Success,engineType.engineCategory,engineType.engineCategory,0,,had no destination : Element could not be mapped to a rosettaField
-cdm-sample-files/conditional-set/example-9/example-9-1.xml,Success,engineType.engineDetail(1).combustible.combustibleType,engineType.engineDetail.combustible.combustibleType,0,,had no destination : Element could not be mapped to a rosettaField
-cdm-sample-files/conditional-set/example-9/example-9-1.xml,Success,engineType.engineDetail(0).combustible.combustibleType,engineType.engineDetail.combustible.combustibleType,0,,had no destination : Element could not be mapped to a rosettaField
-cdm-sample-files/conditional-set/example-9/example-9-1.xml,Success,engineType.engineDetail(2).combustible.combustibleType,engineType.engineDetail.combustible.combustibleType,0,,had no destination : Element could not be mapped to a rosettaField

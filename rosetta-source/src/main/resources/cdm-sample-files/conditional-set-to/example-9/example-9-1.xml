@@ -3,10 +3,10 @@
     <engineType>
         <engineDetail id="123">
             <fuelDetail id="456">
-                <combustible>hybrid</combustible>
+                <combustible>Gasoline</combustible>
             </fuelDetail>
             <alternativeFuel>
-                <combustible>combustion</combustible>
+                <combustible>Electricity</combustible>
             </alternativeFuel>
         </engineDetail>
     </engineType>

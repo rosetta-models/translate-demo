@@ -22,9 +22,9 @@ synonym source EXTERNAL_SYNONYM_EXAMPLE_3 extends EXTERNAL_SYNONYM_EXAMPLE_3_BAS
 
 	FuelEnum:
 		+ Gasoline
-			[value "GASOLINE"]
+			[value "Gasoline"]
 		+ Diesel
-			[value "DIESEL"]
+			[value "Diesel"]
 }
 
 type Root:
