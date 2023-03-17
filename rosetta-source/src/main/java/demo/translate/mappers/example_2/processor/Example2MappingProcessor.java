@@ -24,32 +24,32 @@ public class Example2MappingProcessor extends MappingProcessor {
      */
     @Override
     public void map(Path xmlPath, RosettaModelObjectBuilder builder, RosettaModelObjectBuilder parent) {
-        // parameter: xmlPath = a (the path where the "mapper" syntax is specified)
-        // parameter: builder = an instance of object Z.ZBuilder that can be updated
-        // parameter: parent = an instance of parent object Root.RootBuilder that can be updated
+        // parameter: xmlPath = engineType (the path where the "mapper" syntax is specified)
+        // parameter: builder = an instance of object EngineSpecificationBuilder that can be updated
+        // parameter: parent = an instance of parent object RootBuilder that can be updated
 
-        Path xmlPath1 = xmlPath.addElement("b").addElement("c").addElement("d"); // a->b->c->d (e.g. value of "FISH")
+        // engineType->engineDetail->metric->emissions (e.g. value of "Low-Emission")
+        Path xmlPath1 = xmlPath.addElement("engineDetail").addElement("metric").addElement("emissions");
+        // cast builder object
+        EngineSpecification.EngineSpecificationBuilder engineSpecificationBuilder = (EngineSpecification.EngineSpecificationBuilder) builder;
 
         // this helper function will look up a xml path, and pass it to the consumer function, then updates the mapping stats
-//        setValueAndUpdateMappings(xmlPath1,
-//                // consumer function that takes value found at the xml path
-//                xmlValueFromXmlPath1 -> {
-//                    // cast builder object
-//                    EngineSpecification.EngineSpecificationBuilder engineSpecificationBuilder = (EngineSpecification.EngineSpecificationBuilder) builder;
-//                    // set new value on builder object
-//                    engineSpecificationBuilder.setStr1Field(xmlValueFromXmlPath1 + "X");
-//                });
-//
-//        Path xmlPath2 = xmlPath.addElement("b").addElement("c").addElement("e"); // a->b->c->e (e.g. value of "CHIPS")
-//
-//        // this helper function will look up a xml path, and pass it to the consumer function, then updates the mapping stats
-//        setValueAndUpdateMappings(xmlPath2,
-//                // consumer function that takes value found at the xml path
-//                xmlValueFromXmlPath2 -> {
-//                    // cast builder object
-//                    Z.ZBuilder zBuilder = (Z.ZBuilder) builder;
-//                    // set new value on builder object
-//                    zBuilder.setStr2Field(xmlValueFromXmlPath2 + "_Y");
-//                });
+        setValueAndUpdateMappings(xmlPath1,
+                // consumer function that takes value found at the xml path
+                xmlValueFromXmlPath1 -> {
+                    // set new value on builder object
+                    engineSpecificationBuilder.setEmissions(xmlValueFromXmlPath1);
+                });
+
+        // engineType->engineDetail->metric->combustible (e.g. value of "Gasoline")
+        Path xmlPath2 = xmlPath.addElement("engineDetail").addElement("metric").addElement("combustible");
+
+        // this helper function will look up a xml path, and pass it to the consumer function, then updates the mapping stats
+        setValueAndUpdateMappings(xmlPath2,
+                // consumer function that takes value found at the xml path
+                xmlValueFromXmlPath2 -> {
+                    // set new value on builder object
+                    engineSpecificationBuilder.setFuelType(xmlValueFromXmlPath2);
+                });
     }
 }
