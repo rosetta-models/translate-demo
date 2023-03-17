@@ -1,7 +1,3 @@
-Mapping Coverage,0.00
+Mapping Coverage,100.00
 
 Input Path,Failed Mapping Count
-engineType.engineDetail.alternativeCombustible.scheme,1
-engineType.engineDetail.combustible,2
-engineType.engineDetail.alternativeCombustible,1
-engineType.engineDetail.combustible.scheme,2

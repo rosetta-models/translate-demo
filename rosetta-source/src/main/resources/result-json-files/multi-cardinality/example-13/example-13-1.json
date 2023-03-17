@@ -1,13 +1,13 @@
 {
   "engine" : {
     "engineSpecification" : [ {
-      "enigneMetric" : [ {
+      "engineMetric" : [ {
         "fuel" : "Petrol"
       }, {
         "capacity" : "Gallon"
       } ]
     }, {
-      "enigneMetric" : [ {
+      "engineMetric" : [ {
         "fuel" : "Diesel"
       }, {
         "capacity" : "Gallon"

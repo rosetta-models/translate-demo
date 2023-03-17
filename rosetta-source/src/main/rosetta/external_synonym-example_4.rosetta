@@ -12,7 +12,7 @@ synonym source EXTERNAL_SYNONYM_EXAMPLE_4_MID extends EXTERNAL_SYNONYM_EXAMPLE_4
 {
 	Root:
 		+ engineSpecification
-			[value "engineDetail" path "enigneType"]
+			[value "engineDetail" path "engineType"]
 }
 
 synonym source EXTERNAL_SYNONYM_EXAMPLE_4 extends EXTERNAL_SYNONYM_EXAMPLE_4_MID

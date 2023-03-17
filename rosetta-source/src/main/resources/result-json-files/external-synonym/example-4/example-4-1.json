@@ -1,1 +1,21 @@
-null
+{
+  "engineSpecification" : {
+    "alternativeCombustible" : [ {
+      "meta" : {
+        "scheme" : "acc-scheme1"
+      },
+      "value" : "Electricity"
+    } ],
+    "fuel" : [ {
+      "meta" : {
+        "scheme" : "scheme1"
+      },
+      "value" : "Gasoline"
+    }, {
+      "meta" : {
+        "scheme" : "scheme2"
+      },
+      "value" : "Diesel"
+    } ]
+  }
+}
